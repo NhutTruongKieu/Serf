@@ -69,9 +69,9 @@ export default function HomeScreen() {
     };
   }, []);
 
-  const playSound = async (voc: Vocabulary) => {
-    if (!voc.sound) {
-      console.log("No sound file for", voc.voc);
+  const playSound = async (soundSource: any, label?: string) => {
+    if (!soundSource) {
+      console.log("No sound file for", label || "this item");
       return;
     }
     try {
@@ -79,14 +79,12 @@ export default function HomeScreen() {
         await soundRef.current.unloadAsync();
         soundRef.current = null;
       }
-      console.log("Loading sound for", voc.voc);
+      console.log("Loading sound...");
       const { sound } = await Audio.Sound.createAsync(
-        voc.sound,
-        { shouldPlay: false } // we will play explicitly
+        soundSource,
+        { shouldPlay: true }
       );
       soundRef.current = sound;
-      console.log("Playing sound...");
-      await sound.playAsync();
       console.log("Sound played successfully!");
     } catch (e) {
       console.log("Sound error:", e);
@@ -106,7 +104,7 @@ export default function HomeScreen() {
     if (newIndex !== index) {
       setIndex(newIndex);
       setShowMeaning(false); // Hide meaning when switching words
-      if (isNext) playSound(activeVocs[newIndex]);
+      if (isNext) playSound(activeVocs[newIndex].sound, activeVocs[newIndex].voc);
     }
     // Snap back to center without animation from user's view (since it instantly changes content)
     translateX.value = 0;
@@ -175,10 +173,13 @@ export default function HomeScreen() {
 
   const tapGesture = Gesture.Tap().onEnd(() => {
     runOnJS(setShowMeaning)(true);
-    runOnJS(playSound)(activeVocs[index]);
   });
 
-  const composedGesture = Gesture.Simultaneous(panGesture, tapGesture);
+  const imageTapGesture = Gesture.Tap().onEnd(() => {
+    runOnJS(playSound)(activeVocs[index].sound, activeVocs[index].voc);
+  });
+
+  const composedGesture = panGesture; // Only pan for the whole card area
 
   const animatedCardStyle = useAnimatedStyle(() => {
     return {
@@ -187,29 +188,62 @@ export default function HomeScreen() {
   });
 
   const renderCard = (voc: Vocabulary) => (
-    <Animated.View style={[styles.card, animatedCardStyle]}>
-      <View style={styles.cardHeader}>
-        <Ionicons 
-          name="checkmark-circle-outline" 
-          size={32} 
-          color="#4ade80" 
-          onPress={markAsLearned}
-          style={styles.learnButton}
-        />
-      </View>
-      <Image source={voc.image} style={styles.image} contentFit="cover" />
-      <Text style={styles.word}>{voc.voc}</Text>
-      
-      {showMeaning ? (
-        <>
-          <View style={styles.divider} />
-          <Text style={styles.meaning}>{voc.meaning}</Text>
-        </>
-      ) : (
-        <View style={styles.hiddenMeaningPlaceholder}>
-          <Text style={styles.tapHint}>Chạm để xem nghĩa</Text>
-        </View>
-      )}
+    <Animated.View style={[styles.cardArea, animatedCardStyle]}>
+      <GestureDetector gesture={composedGesture}>
+        <Animated.View style={styles.card}>
+          <View style={styles.cardHeader}>
+            <Ionicons 
+              name="checkmark-circle-outline" 
+              size={32} 
+              color="#4ade80" 
+              onPress={markAsLearned}
+              style={styles.learnButton}
+            />
+          </View>
+          
+          <GestureDetector gesture={imageTapGesture}>
+            <Image source={voc.image} style={styles.image} contentFit="cover" />
+          </GestureDetector>
+          
+          <GestureDetector gesture={imageTapGesture}>
+            <View style={{ alignItems: 'center', width: '100%' }}>
+              <Text style={styles.word}>{voc.voc}</Text>
+            </View>
+          </GestureDetector>
+          
+          <View style={styles.soundRow}>
+            <Ionicons 
+              name="book" 
+              size={32} 
+              color="#a8dadc" 
+              onPress={() => playSound(voc.meaningSound, "Meaning")}
+              style={styles.soundBtn}
+            />
+            <Ionicons 
+              name="chatbox-ellipses" 
+              size={32} 
+              color="#4ade80" 
+              onPress={() => playSound(voc.exampleSound, "Example")}
+              style={styles.soundBtn}
+            />
+          </View>
+
+          {showMeaning && (
+            <View style={styles.meaningContainer}>
+              <View style={styles.divider} />
+              <Text style={styles.meaning}>{voc.meaning}</Text>
+            </View>
+          )}
+          
+          {!showMeaning && (
+            <GestureDetector gesture={tapGesture}>
+              <View style={styles.hiddenMeaningPlaceholder}>
+                <Text style={styles.tapHint}>Chạm để xem nghĩa</Text>
+              </View>
+            </GestureDetector>
+          )}
+        </Animated.View>
+      </GestureDetector>
     </Animated.View>
   );
 
@@ -315,6 +349,20 @@ const styles = StyleSheet.create({
     color: "#e94560",
     textAlign: "center",
     letterSpacing: 1,
+    marginBottom: 4,
+  },
+  soundRow: {
+    flexDirection: "row",
+    justifyContent: "center",
+    gap: 20,
+    marginBottom: 8,
+  },
+  soundBtn: {
+    padding: 4,
+  },
+  meaningContainer: {
+    alignItems: "center",
+    gap: 12,
   },
   meaning: {
     fontSize: 20,
