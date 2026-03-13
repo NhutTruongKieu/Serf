@@ -8,23 +8,23 @@ jobs:
     runs-on: macos-latest
 
     steps:
-      - name: Checkout repo
-        uses: actions/checkout@v3
+      - name: Checkout
+        uses: actions/checkout@v4
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
 
       - name: Install dependencies
         run: npm install
 
-      - name: Install CocoaPods
+      - name: Install pods
         run: |
           cd ios
           pod install
 
-      - name: Build iOS app (no signing)
+      - name: Build iOS (no signing)
         run: |
           cd ios
           xcodebuild \
@@ -35,7 +35,7 @@ jobs:
           -derivedDataPath build \
           CODE_SIGNING_ALLOWED=NO
 
-      - name: Package IPA
+      - name: Create IPA
         run: |
           cd ios/build/Build/Products/Release-iphoneos
           mkdir Payload
@@ -43,7 +43,7 @@ jobs:
           zip -r app.ipa Payload
 
       - name: Upload IPA
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: ios-ipa
           path: ios/build/Build/Products/Release-iphoneos/app.ipa
