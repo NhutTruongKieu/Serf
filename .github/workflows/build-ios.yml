@@ -19,6 +19,12 @@ jobs:
       - name: Install dependencies
         run: npm install
 
+      - name: Install Expo
+        run: npm install -g expo-cli
+
+      - name: Generate iOS project
+        run: npx expo prebuild --platform ios
+
       - name: Install pods
         run: |
           cd ios
