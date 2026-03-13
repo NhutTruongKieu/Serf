@@ -50,10 +50,11 @@
       "typedRoutes": true,
       "reactCompiler": true
     },
+    "owner": "truongkieu",
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "8e6c8ef6-83c5-442d-b644-27429a62331c"
+        "projectId": "21857647-0e6e-4182-be5b-df9556a7e2e2"
       }
     }
   }

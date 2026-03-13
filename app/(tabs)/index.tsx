@@ -82,12 +82,12 @@ export default function HomeScreen() {
 
   const calculateProgress = async () => {
     const progress: Record<string, { remaining: number; total: number }> = {};
-    
+
     for (const cat of sortedCategories) {
       const sets = getSetsForCategory(cat);
       let total = 0;
       let remaining = 0;
-      
+
       for (let i = 0; i < sets.length; i++) {
         total += sets[i].length;
         const storageKey = `LEARNED_VOCS_${cat}_SET_${i}`;
@@ -98,7 +98,7 @@ export default function HomeScreen() {
           } else {
             remaining += sets[i].length;
           }
-        } catch (e) {}
+        } catch (e) { }
       }
       progress[cat] = { remaining, total };
     }
@@ -111,17 +111,17 @@ export default function HomeScreen() {
       try {
         const savedCat = await AsyncStorage.getItem("CURRENT_CATEGORY") || "All";
         const savedSet = await AsyncStorage.getItem("CURRENT_SET") || "0";
-        
+
         setCurrentCategory(savedCat);
         const startingSet = parseInt(savedSet);
         setCurrentSet(startingSet);
 
         const currentSets = getSetsForCategory(savedCat);
         const setIdx = startingSet < currentSets.length ? startingSet : 0;
-        
+
         const storageKey = `LEARNED_VOCS_${savedCat}_SET_${setIdx}`;
         const savedData = await AsyncStorage.getItem(storageKey);
-        
+
         if (savedData) {
           const remainingWords = JSON.parse(savedData) as string[];
           const filteredVocs = currentSets[setIdx].filter((v) =>
@@ -156,11 +156,11 @@ export default function HomeScreen() {
     try {
       await AsyncStorage.setItem("CURRENT_CATEGORY", cat);
       await AsyncStorage.setItem("CURRENT_SET", setIdx.toString());
-      
+
       const currentSets = getSetsForCategory(cat);
       const storageKey = `LEARNED_VOCS_${cat}_SET_${setIdx}`;
       const savedData = await AsyncStorage.getItem(storageKey);
-      
+
       if (savedData) {
         const remainingWords = JSON.parse(savedData) as string[];
         const filteredVocs = currentSets[setIdx].filter((v) =>
@@ -213,7 +213,7 @@ export default function HomeScreen() {
 
   const changeIndex = (isNext: boolean) => {
     if (activeVocs.length === 0) return;
-    
+
     let newIndex = index;
     if (isNext) {
       newIndex = index < activeVocs.length - 1 ? index + 1 : index;
@@ -232,11 +232,11 @@ export default function HomeScreen() {
 
   const markAsLearned = async () => {
     if (activeVocs.length === 0) return;
-    
+
     // Create new array without the current word
     const newVocs = [...activeVocs];
     newVocs.splice(index, 1);
-    
+
     setActiveVocs(newVocs);
     setShowMeaning(false);
 
@@ -245,15 +245,15 @@ export default function HomeScreen() {
       const remainingTitles = newVocs.map(v => v.voc);
       await AsyncStorage.setItem(`LEARNED_VOCS_${currentCategory}_SET_${currentSet}`, JSON.stringify(remainingTitles));
       calculateProgress();
-    } catch (e) {}
-    
+    } catch (e) { }
+
     // Adjust index if we removed the last item
     if (index >= newVocs.length) {
       setIndex(0);
     } else {
       setIndex(index);
     }
-    
+
     // Snap to center
     translateX.value = 0;
   };
@@ -296,11 +296,7 @@ export default function HomeScreen() {
     runOnJS(setShowMeaning)(true);
   });
 
-  const imageTapGesture = Gesture.Tap().onEnd(() => {
-    runOnJS(playSound)(activeVocs[index].sound, activeVocs[index].voc);
-  });
-
-  const composedGesture = panGesture; // Only pan for the whole card area
+  const composedGesture = Gesture.Simultaneous(panGesture);
 
   const animatedCardStyle = useAnimatedStyle(() => {
     return {
@@ -310,61 +306,55 @@ export default function HomeScreen() {
 
   const renderCard = (voc: Vocabulary) => (
     <Animated.View style={[styles.cardArea, animatedCardStyle]}>
-      <GestureDetector gesture={composedGesture}>
-        <Animated.View style={styles.card}>
-          <View style={styles.cardHeader}>
-            <Ionicons 
-              name="checkmark-circle-outline" 
-              size={32} 
-              color="#4ade80" 
-              onPress={markAsLearned}
-              style={styles.learnButton}
-            />
-          </View>
-          
-          <GestureDetector gesture={imageTapGesture}>
-            <Image source={voc.image} style={styles.image} contentFit="cover" />
-          </GestureDetector>
-          
-          <GestureDetector gesture={imageTapGesture}>
-            <View style={{ alignItems: 'center', width: '100%' }}>
-              <Text style={styles.word}>{voc.voc}</Text>
-            </View>
-          </GestureDetector>
-          
-          <View style={styles.soundRow}>
-            <Ionicons 
-              name="book" 
-              size={32} 
-              color="#a8dadc" 
-              onPress={() => playSound(voc.meaningSound, "Meaning")}
-              style={styles.soundBtn}
-            />
-            <Ionicons 
-              name="chatbox-ellipses" 
-              size={32} 
-              color="#4ade80" 
-              onPress={() => playSound(voc.exampleSound, "Example")}
-              style={styles.soundBtn}
-            />
-          </View>
+      <Animated.View style={styles.card}>
+        <View style={styles.cardHeader}>
+          <Ionicons
+            name="checkmark-circle-outline"
+            size={32}
+            color="#4ade80"
+            onPress={markAsLearned}
+            style={styles.learnButton}
+          />
+        </View>
 
-          {showMeaning && (
-            <View style={styles.meaningContainer}>
-              <View style={styles.divider} />
-              <Text style={styles.meaning}>{voc.meaning}</Text>
+        <Image source={voc.image} style={styles.image} contentFit="cover" pointerEvents="none" />
+        <View style={{ alignItems: 'center', width: '100%' }}>
+          <Text style={styles.word}
+            onPress={() => playSound(voc.sound, voc.voc)}>{voc.voc}</Text>
+        </View>
+
+        <View style={styles.soundRow}>
+          <Ionicons
+            name="book"
+            size={32}
+            color="#a8dadc"
+            onPress={() => playSound(voc.meaningSound, "Meaning")}
+            style={styles.soundBtn}
+          />
+          <Ionicons
+            name="chatbox-ellipses"
+            size={32}
+            color="#4ade80"
+            onPress={() => playSound(voc.exampleSound, "Example")}
+            style={styles.soundBtn}
+          />
+        </View>
+
+        {showMeaning && (
+          <View style={styles.meaningContainer}>
+            <View style={styles.divider} />
+            <Text style={styles.meaning}>{voc.meaning}</Text>
+          </View>
+        )}
+
+        {!showMeaning && (
+          <GestureDetector gesture={tapGesture}>
+            <View style={styles.hiddenMeaningPlaceholder}>
+              <Text style={styles.tapHint}>Chạm để xem nghĩa</Text>
             </View>
-          )}
-          
-          {!showMeaning && (
-            <GestureDetector gesture={tapGesture}>
-              <View style={styles.hiddenMeaningPlaceholder}>
-                <Text style={styles.tapHint}>Chạm để xem nghĩa</Text>
-              </View>
-            </GestureDetector>
-          )}
-        </Animated.View>
-      </GestureDetector>
+          </GestureDetector>
+        )}
+      </Animated.View>
     </Animated.View>
   );
 
@@ -373,17 +363,17 @@ export default function HomeScreen() {
       <View style={styles.container}>
         <Text style={styles.congratsText}>Tuyệt vời!</Text>
         <Text style={styles.congratsSub}>Bạn đã học hết từ vựng bộ {currentSet + 1}.</Text>
-        <Ionicons 
-          name="reload-circle" 
-          size={64} 
-          color="#e94560"            onPress={async () => {
-              setActiveVocs(vocSets[currentSet]);
-              setIndex(0);
-              try {
-                await AsyncStorage.removeItem(`LEARNED_VOCS_${currentCategory}_SET_${currentSet}`);
-                calculateProgress();
-              } catch(e) {}
-            }}
+        <Ionicons
+          name="reload-circle"
+          size={64}
+          color="#e94560" onPress={async () => {
+            setActiveVocs(vocSets[currentSet]);
+            setIndex(0);
+            try {
+              await AsyncStorage.removeItem(`LEARNED_VOCS_${currentCategory}_SET_${currentSet}`);
+              calculateProgress();
+            } catch (e) { }
+          }}
           style={{ marginTop: 20 }}
         />
       </View>
@@ -393,8 +383,8 @@ export default function HomeScreen() {
   return (
     <GestureHandlerRootView style={styles.container}>
       {/* Floating Set Selection Button */}
-      <TouchableOpacity 
-        style={styles.floatingButton} 
+      <TouchableOpacity
+        style={styles.floatingButton}
         onPress={() => setIsSetPickerVisible(true)}
       >
         <Ionicons name="filter" size={24} color="#fff" />
@@ -414,11 +404,11 @@ export default function HomeScreen() {
           <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Chọn bộ từ vựng</Text>
-              <Ionicons 
-                name="close" 
-                size={28} 
-                color="#888" 
-                onPress={() => setIsSetPickerVisible(false)} 
+              <Ionicons
+                name="close"
+                size={28}
+                color="#888"
+                onPress={() => setIsSetPickerVisible(false)}
               />
             </View>
             <ScrollView contentContainerStyle={styles.modalScroll}>
@@ -433,17 +423,17 @@ export default function HomeScreen() {
                     </Text>
                     <View style={styles.setGrid}>
                       {sets.map((_, i) => (
-                        <TouchableOpacity 
-                          key={`${cat}-${i}`} 
+                        <TouchableOpacity
+                          key={`${cat}-${i}`}
                           style={[
-                            styles.setCard, 
+                            styles.setCard,
                             currentCategory === cat && currentSet === i && styles.activeSetCard
                           ]}
                           onPress={() => selectSet(cat, i)}
                         >
-                          <Text 
+                          <Text
                             style={[
-                              styles.setCardText, 
+                              styles.setCardText,
                               currentCategory === cat && currentSet === i && styles.activeSetCardText
                             ]}
                             numberOfLines={1}

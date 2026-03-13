@@ -1,0 +1,49 @@
+name: Build unsigned IPA
+
+on:
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: macos-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Install CocoaPods
+        run: |
+          cd ios
+          pod install
+
+      - name: Build iOS app (no signing)
+        run: |
+          cd ios
+          xcodebuild \
+          -workspace YourApp.xcworkspace \
+          -scheme YourApp \
+          -configuration Release \
+          -sdk iphoneos \
+          -derivedDataPath build \
+          CODE_SIGNING_ALLOWED=NO
+
+      - name: Package IPA
+        run: |
+          cd ios/build/Build/Products/Release-iphoneos
+          mkdir Payload
+          cp -r *.app Payload
+          zip -r app.ipa Payload
+
+      - name: Upload IPA
+        uses: actions/upload-artifact@v3
+        with:
+          name: ios-ipa
+          path: ios/build/Build/Products/Release-iphoneos/app.ipa
