@@ -34,8 +34,8 @@ jobs:
         run: |
           cd ios
           xcodebuild \
-          -workspace YourApp.xcworkspace \
-          -scheme YourApp \
+          -workspace Serf.xcworkspace \
+          -scheme Serf \
           -configuration Release \
           -sdk iphoneos \
           -derivedDataPath build \
