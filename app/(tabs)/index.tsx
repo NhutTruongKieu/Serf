@@ -4,7 +4,15 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio } from "expo-av";
 import { Image } from "expo-image";
 import { useEffect, useRef, useState } from "react";
-import { Dimensions, StyleSheet, Text, View } from "react-native";
+import {
+  Dimensions,
+  Modal,
+  ScrollView,
+  StyleSheet,
+  Text,
+  TouchableOpacity,
+  View,
+} from "react-native";
 import {
   Gesture,
   GestureDetector,
@@ -22,38 +30,150 @@ const { width: SCREEN_WIDTH } = Dimensions.get("window");
 const SWIPE_THRESHOLD = 80;
 
 export default function HomeScreen() {
-  const [activeVocs, setActiveVocs] = useState<Vocabulary[]>(initialVocs);
+  const [currentCategory, setCurrentCategory] = useState("All");
+  const [currentSet, setCurrentSet] = useState(0);
+  const [activeVocs, setActiveVocs] = useState<Vocabulary[]>([]);
   const [index, setIndex] = useState(0);
   const [showMeaning, setShowMeaning] = useState(false);
+  const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
+  const [categoryProgress, setCategoryProgress] = useState<Record<string, { remaining: number; total: number }>>({});
   const soundRef = useRef<Audio.Sound | null>(null);
+  // Derived category list with Vietnamese mapping
+  const categoryMap: Record<string, string> = {
+    "All": "Tất cả",
+    "Feelings & Emotions": "Cảm xúc & Tâm trạng",
+    "Nature & Landscape": "Thiên nhiên & Phong cảnh",
+    "Human Body & Health": "Cơ thể & Sức khỏe",
+    "Household & Objects": "Đồ dùng & Đồ vật",
+    "Common Actions": "Hành động thông thường",
+    "Places & Directions": "Địa điểm & Hướng",
+    "Abstract & Qualities": "Khái niệm & Phẩm chất",
+    "General": "Từ vựng chung",
+  };
+
+  const sortedCategories = [
+    "Feelings & Emotions",
+    "Nature & Landscape",
+    "Human Body & Health",
+    "Household & Objects",
+    "Common Actions",
+    "Places & Directions",
+    "Abstract & Qualities",
+    "General",
+    "All"
+  ].filter(c => initialVocs.some(v => v.category === c) || c === "All");
+
+  const getFilteredVocs = (cat: string) => {
+    return initialVocs.filter(v => cat === "All" || v.category === cat);
+  };
+
+  const getSetsForCategory = (cat: string) => {
+    const filtered = getFilteredVocs(cat);
+    return Array.from({ length: Math.ceil(filtered.length / 20) }, (_, i) =>
+      filtered.slice(i * 20, i * 20 + 20)
+    );
+  };
+
+  const vocSets = getSetsForCategory(currentCategory);
 
   const translateX = useSharedValue(0);
 
   const currentVoc = activeVocs[index];
 
+  const calculateProgress = async () => {
+    const progress: Record<string, { remaining: number; total: number }> = {};
+    
+    for (const cat of sortedCategories) {
+      const sets = getSetsForCategory(cat);
+      let total = 0;
+      let remaining = 0;
+      
+      for (let i = 0; i < sets.length; i++) {
+        total += sets[i].length;
+        const storageKey = `LEARNED_VOCS_${cat}_SET_${i}`;
+        try {
+          const savedData = await AsyncStorage.getItem(storageKey);
+          if (savedData) {
+            remaining += (JSON.parse(savedData) as string[]).length;
+          } else {
+            remaining += sets[i].length;
+          }
+        } catch (e) {}
+      }
+      progress[cat] = { remaining, total };
+    }
+    setCategoryProgress(progress);
+  };
+
   useEffect(() => {
-    // Load saved words from AsyncStorage
-    const loadSavedVocs = async () => {
+    // Load current category, set and progress
+    const loadState = async () => {
       try {
-        const savedData = await AsyncStorage.getItem("LEARNED_VOCS");
+        const savedCat = await AsyncStorage.getItem("CURRENT_CATEGORY") || "All";
+        const savedSet = await AsyncStorage.getItem("CURRENT_SET") || "0";
+        
+        setCurrentCategory(savedCat);
+        const startingSet = parseInt(savedSet);
+        setCurrentSet(startingSet);
+
+        const currentSets = getSetsForCategory(savedCat);
+        const setIdx = startingSet < currentSets.length ? startingSet : 0;
+        
+        const storageKey = `LEARNED_VOCS_${savedCat}_SET_${setIdx}`;
+        const savedData = await AsyncStorage.getItem(storageKey);
+        
         if (savedData) {
           const remainingWords = JSON.parse(savedData) as string[];
-          // Filter out learned words from initial vocs
-          const filteredVocs = initialVocs.filter((v) =>
+          const filteredVocs = currentSets[setIdx].filter((v) =>
             remainingWords.includes(v.voc)
           );
-          if (filteredVocs.length > 0) {
-            setActiveVocs(filteredVocs);
-          } else {
-            setActiveVocs([]);
-          }
+          setActiveVocs(filteredVocs.length > 0 ? filteredVocs : []);
+        } else {
+          setActiveVocs(currentSets[setIdx]);
         }
       } catch (e) {
-        console.log("Failed to load saved vocs", e);
+        console.log("Failed to load saved state", e);
+        setActiveVocs(getFilteredVocs("All").slice(0, 20));
       }
+      calculateProgress();
     };
-    loadSavedVocs();
+    loadState();
   }, []);
+
+  useEffect(() => {
+    if (isSetPickerVisible) {
+      calculateProgress();
+    }
+  }, [isSetPickerVisible]);
+
+  const selectSet = async (cat: string, setIdx: number) => {
+    setCurrentCategory(cat);
+    setCurrentSet(setIdx);
+    setIsSetPickerVisible(false);
+    setIndex(0);
+    setShowMeaning(false);
+
+    try {
+      await AsyncStorage.setItem("CURRENT_CATEGORY", cat);
+      await AsyncStorage.setItem("CURRENT_SET", setIdx.toString());
+      
+      const currentSets = getSetsForCategory(cat);
+      const storageKey = `LEARNED_VOCS_${cat}_SET_${setIdx}`;
+      const savedData = await AsyncStorage.getItem(storageKey);
+      
+      if (savedData) {
+        const remainingWords = JSON.parse(savedData) as string[];
+        const filteredVocs = currentSets[setIdx].filter((v) =>
+          remainingWords.includes(v.voc)
+        );
+        setActiveVocs(filteredVocs.length > 0 ? filteredVocs : []);
+      } else {
+        setActiveVocs(currentSets[setIdx]);
+      }
+    } catch (e) {
+      setActiveVocs(getSetsForCategory(cat)[setIdx]);
+    }
+  };
 
   useEffect(() => {
     // Config audio to play even in silent mode
@@ -122,15 +242,16 @@ export default function HomeScreen() {
 
     // Save to AsyncStorage
     try {
-      const remainingWords = newVocs.map((v) => v.voc);
-      await AsyncStorage.setItem("LEARNED_VOCS", JSON.stringify(remainingWords));
-    } catch (e) {
-      console.log("Failed to save learned vocs", e);
-    }
+      const remainingTitles = newVocs.map(v => v.voc);
+      await AsyncStorage.setItem(`LEARNED_VOCS_${currentCategory}_SET_${currentSet}`, JSON.stringify(remainingTitles));
+      calculateProgress();
+    } catch (e) {}
     
     // Adjust index if we removed the last item
-    if (index >= newVocs.length && newVocs.length > 0) {
-      setIndex(newVocs.length - 1);
+    if (index >= newVocs.length) {
+      setIndex(0);
+    } else {
+      setIndex(index);
     }
     
     // Snap to center
@@ -251,19 +372,18 @@ export default function HomeScreen() {
     return (
       <View style={styles.container}>
         <Text style={styles.congratsText}>Tuyệt vời!</Text>
-        <Text style={styles.congratsSub}>Bạn đã học hết từ vựng.</Text>
+        <Text style={styles.congratsSub}>Bạn đã học hết từ vựng bộ {currentSet + 1}.</Text>
         <Ionicons 
           name="reload-circle" 
           size={64} 
-          color="#e94560" 
-          onPress={async () => {
-            setActiveVocs(initialVocs);
-            setIndex(0);
-            try {
-              // Clear saved memory
-              await AsyncStorage.removeItem("LEARNED_VOCS");
-            } catch(e) {}
-          }}
+          color="#e94560"            onPress={async () => {
+              setActiveVocs(vocSets[currentSet]);
+              setIndex(0);
+              try {
+                await AsyncStorage.removeItem(`LEARNED_VOCS_${currentCategory}_SET_${currentSet}`);
+                calculateProgress();
+              } catch(e) {}
+            }}
           style={{ marginTop: 20 }}
         />
       </View>
@@ -272,6 +392,77 @@ export default function HomeScreen() {
 
   return (
     <GestureHandlerRootView style={styles.container}>
+      {/* Floating Set Selection Button */}
+      <TouchableOpacity 
+        style={styles.floatingButton} 
+        onPress={() => setIsSetPickerVisible(true)}
+      >
+        <Ionicons name="filter" size={24} color="#fff" />
+        <Text style={styles.floatingButtonText} numberOfLines={1}>
+          {currentCategory === "All" ? `Bộ ${currentSet + 1}` : `${categoryMap[currentCategory] || currentCategory}`}
+        </Text>
+      </TouchableOpacity>
+
+      {/* Set Picker Modal */}
+      <Modal
+        visible={isSetPickerVisible}
+        transparent={true}
+        animationType="fade"
+        onRequestClose={() => setIsSetPickerVisible(false)}
+      >
+        <View style={styles.modalOverlay}>
+          <View style={styles.modalContent}>
+            <View style={styles.modalHeader}>
+              <Text style={styles.modalTitle}>Chọn bộ từ vựng</Text>
+              <Ionicons 
+                name="close" 
+                size={28} 
+                color="#888" 
+                onPress={() => setIsSetPickerVisible(false)} 
+              />
+            </View>
+            <ScrollView contentContainerStyle={styles.modalScroll}>
+              {sortedCategories.map((cat) => {
+                const sets = getSetsForCategory(cat);
+                if (sets.length === 0) return null;
+                const prog = categoryProgress[cat];
+                return (
+                  <View key={cat} style={styles.categorySection}>
+                    <Text style={styles.categoryLabel}>
+                      {categoryMap[cat] || cat} {prog ? `(${prog.total - prog.remaining}/${prog.total})` : ""}
+                    </Text>
+                    <View style={styles.setGrid}>
+                      {sets.map((_, i) => (
+                        <TouchableOpacity 
+                          key={`${cat}-${i}`} 
+                          style={[
+                            styles.setCard, 
+                            currentCategory === cat && currentSet === i && styles.activeSetCard
+                          ]}
+                          onPress={() => selectSet(cat, i)}
+                        >
+                          <Text 
+                            style={[
+                              styles.setCardText, 
+                              currentCategory === cat && currentSet === i && styles.activeSetCardText
+                            ]}
+                            numberOfLines={1}
+                          >
+                            {sets.length > 1 ? `Phần ${i + 1}` : "Học ngay"}
+                          </Text>
+                          <Text style={styles.setCardSubText}>
+                            {sets[i].length} từ
+                          </Text>
+                        </TouchableOpacity>
+                      ))}
+                    </View>
+                  </View>
+                );
+              })}
+            </ScrollView>
+          </View>
+        </View>
+      </Modal>
       {/* Số thứ tự */}
       <View style={styles.header}>
         <Text style={styles.counter}>
@@ -412,5 +603,102 @@ const styles = StyleSheet.create({
   congratsSub: {
     fontSize: 18,
     color: "#a8dadc",
+  },
+  floatingButton: {
+    position: "absolute",
+    top: 50,
+    left: 20,
+    backgroundColor: "#e94560",
+    paddingHorizontal: 16,
+    paddingVertical: 10,
+    borderRadius: 25,
+    flexDirection: "row",
+    alignItems: "center",
+    zIndex: 100,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.3,
+    shadowRadius: 5,
+    elevation: 8,
+  },
+  floatingButtonText: {
+    color: "#fff",
+    fontWeight: "bold",
+    marginLeft: 8,
+    fontSize: 14,
+  },
+  modalOverlay: {
+    flex: 1,
+    backgroundColor: "rgba(0,0,0,0.8)",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  modalContent: {
+    width: "85%",
+    maxHeight: "70%",
+    backgroundColor: "#16213e",
+    borderRadius: 24,
+    padding: 24,
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 10 },
+    shadowOpacity: 0.5,
+    shadowRadius: 20,
+    elevation: 20,
+  },
+  modalHeader: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
+  },
+  modalTitle: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#e94560",
+  },
+  modalScroll: {
+    paddingBottom: 20,
+  },
+  categorySection: {
+    marginBottom: 20,
+  },
+  categoryLabel: {
+    color: "#a8dadc",
+    fontSize: 16,
+    fontWeight: "bold",
+    marginBottom: 10,
+    marginLeft: 4,
+  },
+  setGrid: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+  },
+  setCard: {
+    width: "47%",
+    backgroundColor: "rgba(255,255,255,0.05)",
+    padding: 16,
+    borderRadius: 16,
+    marginBottom: 16,
+    alignItems: "center",
+    borderWidth: 1,
+    borderColor: "rgba(255,255,255,0.1)",
+  },
+  activeSetCard: {
+    backgroundColor: "rgba(233, 69, 96, 0.2)",
+    borderColor: "#e94560",
+  },
+  setCardText: {
+    color: "#fff",
+    fontSize: 16,
+    fontWeight: "600",
+  },
+  activeSetCardText: {
+    color: "#e94560",
+  },
+  setCardSubText: {
+    color: "#888",
+    fontSize: 12,
+    marginTop: 4,
   }
 });

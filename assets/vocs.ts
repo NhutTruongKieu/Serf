@@ -1,4 +1,5 @@
 export type Vocabulary = {
+  category: string;
   voc: string;
   meaning: string;
   sound: any;
@@ -11,6 +12,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "anxious",
     meaning: "lo âu, băn khoăn",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_601.jpg"),
     sound: require("./data/4000B2_anxious.mp3"),
     exampleSound: require("./data/4000B2_anxious_example.mp3"),
@@ -19,6 +21,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "awful",
     meaning: "xấu xa, tồi tệ",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_602.jpg"),
     sound: require("./data/4000B2_awful.mp3"),
     exampleSound: require("./data/4000B2_awful_example.mp3"),
@@ -27,6 +30,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "consist",
     meaning: "gồm có",
+    category: "Common Actions",
     image: require("./data/4000B2_603.jpg"),
     sound: require("./data/4000B2_consist.mp3"),
     exampleSound: require("./data/4000B2_consist_example.mp3"),
@@ -35,6 +39,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "desire",
     meaning: "thèm muốn, ao ước",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_604.jpg"),
     sound: require("./data/4000B2_desire.mp3"),
     exampleSound: require("./data/4000B2_desire_example.mp3"),
@@ -43,6 +48,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "eager",
     meaning: "háo hức, hăm hở",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_605.jpg"),
     sound: require("./data/4000B2_eager.mp3"),
     exampleSound: require("./data/4000B2_eager_example.mp3"),
@@ -51,6 +57,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "household",
     meaning: "gia đình",
+    category: "Human Body & Health",
     image: require("./data/4000B2_606.jpg"),
     sound: require("./data/4000B2_household.mp3"),
     exampleSound: require("./data/4000B2_household_example.mp3"),
@@ -59,6 +66,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "intent",
     meaning: "ý định, mục đích",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_607.jpg"),
     sound: require("./data/4000B2_intent.mp3"),
     exampleSound: require("./data/4000B2_intent_example.mp3"),
@@ -67,6 +75,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "landscape",
     meaning: "phong cảnh",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_608.jpg"),
     sound: require("./data/4000B2_landscape.mp3"),
     exampleSound: require("./data/4000B2_landscape_example.mp3"),
@@ -75,6 +84,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "lift",
     meaning: "nâng, nhấc",
+    category: "General",
     image: require("./data/4000B2_609.jpg"),
     sound: require("./data/4000B2_lift.mp3"),
     exampleSound: require("./data/4000B2_lift_example.mp3"),
@@ -83,6 +93,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "load",
     meaning: "bốc hàng, chất tải, chở, nạp",
+    category: "General",
     image: require("./data/4000B2_610.jpg"),
     sound: require("./data/4000B2_load.mp3"),
     exampleSound: require("./data/4000B2_load_example.mp3"),
@@ -91,6 +102,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "lung",
     meaning: "phổi",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_611.jpg"),
     sound: require("./data/4000B2_lung.mp3"),
     exampleSound: require("./data/4000B2_lung_example.mp3"),
@@ -99,6 +111,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "motion",
     meaning: "sự chuyển động",
+    category: "General",
     image: require("./data/4000B2_612.jpg"),
     sound: require("./data/4000B2_motion.mp3"),
     exampleSound: require("./data/4000B2_motion_example.mp3"),
@@ -107,6 +120,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pace",
     meaning: "tốc độ đi, tốc độ chạy",
+    category: "Common Actions",
     image: require("./data/4000B2_613.jpg"),
     sound: require("./data/4000B2_pace.mp3"),
     exampleSound: require("./data/4000B2_pace_example.mp3"),
@@ -115,6 +129,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "polite",
     meaning: "lịch sự, lịch thiệp, lễ độ",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_614.jpg"),
     sound: require("./data/4000B2_polite.mp3"),
     exampleSound: require("./data/4000B2_polite_example.mp3"),
@@ -123,6 +138,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "possess",
     meaning: "chiếm hữu, có, sở hữu",
+    category: "Common Actions",
     image: require("./data/4000B2_615.jpg"),
     sound: require("./data/4000B2_possess.mp3"),
     exampleSound: require("./data/4000B2_possess_example.mp3"),
@@ -131,6 +147,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rapidly",
     meaning: "nhanh chóng, mau lẹ",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_616.jpg"),
     sound: require("./data/4000B2_rapidly.mp3"),
     exampleSound: require("./data/4000B2_rapidly_example.mp3"),
@@ -139,6 +156,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "remark",
     meaning: "nhận xét, chú ý, lưu ý",
+    category: "Common Actions",
     image: require("./data/4000B2_617.jpg"),
     sound: require("./data/4000B2_remark.mp3"),
     exampleSound: require("./data/4000B2_remark_example.mp3"),
@@ -147,6 +165,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "seek",
     meaning: "đi tìm, tìm kiếm, tìm",
+    category: "Common Actions",
     image: require("./data/4000B2_618.jpg"),
     sound: require("./data/4000B2_seek.mp3"),
     exampleSound: require("./data/4000B2_seek_example.mp3"),
@@ -155,6 +174,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shine",
     meaning: "toả sáng, chiếu sáng",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_619.jpg"),
     sound: require("./data/4000B2_shine.mp3"),
     exampleSound: require("./data/4000B2_shine_example.mp3"),
@@ -163,6 +183,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "spill",
     meaning: "đổ, trút, làm đổ",
+    category: "Common Actions",
     image: require("./data/4000B2_620.jpg"),
     sound: require("./data/4000B2_spill.mp3"),
     exampleSound: require("./data/4000B2_spill_example.mp3"),
@@ -171,6 +192,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bring",
     meaning: "cầm lại, đem lại, mang lại",
+    category: "Common Actions",
     image: require("./data/4000B2_621.jpg"),
     sound: require("./data/4000B2_bring.mp3"),
     exampleSound: require("./data/4000B2_bring_example.mp3"),
@@ -179,6 +201,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "castle",
     meaning: "lâu đài",
+    category: "Household & Objects",
     image: require("./data/4000B2_622.jpg"),
     sound: require("./data/4000B2_castle.mp3"),
     exampleSound: require("./data/4000B2_castle_example.mp3"),
@@ -187,6 +210,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "command",
     meaning: "ra lệnh, mệnh lệnh",
+    category: "Common Actions",
     image: require("./data/4000B2_623.jpg"),
     sound: require("./data/4000B2_command.mp3"),
     exampleSound: require("./data/4000B2_command_example.mp3"),
@@ -195,6 +219,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "counsel",
     meaning: "khuyên răn, khuyên bảo, chỉ bảo",
+    category: "Common Actions",
     image: require("./data/4000B2_624.jpg"),
     sound: require("./data/4000B2_counsel.mp3"),
     exampleSound: require("./data/4000B2_counsel_example.mp3"),
@@ -203,6 +228,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ensure",
     meaning: "bảo đảm, chắc chắn",
+    category: "Common Actions",
     image: require("./data/4000B2_625.jpg"),
     sound: require("./data/4000B2_ensure.mp3"),
     exampleSound: require("./data/4000B2_ensure_example.mp3"),
@@ -211,6 +237,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "explosion",
     meaning: "sự nổ, tiếng nổ",
+    category: "Common Actions",
     image: require("./data/4000B2_626.jpg"),
     sound: require("./data/4000B2_explosion.mp3"),
     exampleSound: require("./data/4000B2_explosion_example.mp3"),
@@ -219,6 +246,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "jewelry",
     meaning: "đồ châu báu; đồ nữ trang, đồ kim hoàn, đồ trang sức",
+    category: "Human Body & Health",
     image: require("./data/4000B2_627.jpg"),
     sound: require("./data/4000B2_jewelry.mp3"),
     exampleSound: require("./data/4000B2_jewelry_example.mp3"),
@@ -227,6 +255,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "land",
     meaning: "hạ cánh (từ máy bay), lên bờ (từ tàu thủy)",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_628.jpg"),
     sound: require("./data/4000B2_land.mp3"),
     exampleSound: require("./data/4000B2_land_example.mp3"),
@@ -235,6 +264,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "meteor",
     meaning: "sao sa, sao băng",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_629.jpg"),
     sound: require("./data/4000B2_meteor.mp3"),
     exampleSound: require("./data/4000B2_meteor_example.mp3"),
@@ -243,6 +273,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "monster",
     meaning: "quái vật, yêu quái",
+    category: "Human Body & Health",
     image: require("./data/4000B2_630.jpg"),
     sound: require("./data/4000B2_monster.mp3"),
     exampleSound: require("./data/4000B2_monster_example.mp3"),
@@ -251,6 +282,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "northern",
     meaning: "hướng bắc, phương bắc",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_631.jpg"),
     sound: require("./data/4000B2_northern.mp3"),
     exampleSound: require("./data/4000B2_northern_example.mp3"),
@@ -259,6 +291,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "remote",
     meaning: "xa, xa xôi, xa xăm, hẻo lánh",
+    category: "Places & Directions",
     image: require("./data/4000B2_632.jpg"),
     sound: require("./data/4000B2_remote.mp3"),
     exampleSound: require("./data/4000B2_remote_example.mp3"),
@@ -267,6 +300,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "southern",
     meaning: "hướng Nam, phương Nam",
+    category: "General",
     image: require("./data/4000B2_633.jpg"),
     sound: require("./data/4000B2_southern.mp3"),
     exampleSound: require("./data/4000B2_southern_example.mp3"),
@@ -275,6 +309,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "statue",
     meaning: "bức tượng",
+    category: "Household & Objects",
     image: require("./data/4000B2_634.jpg"),
     sound: require("./data/4000B2_statue.mp3"),
     exampleSound: require("./data/4000B2_statue_example.mp3"),
@@ -283,6 +318,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "steam",
     meaning: "hơi nước",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_635.jpg"),
     sound: require("./data/4000B2_steam.mp3"),
     exampleSound: require("./data/4000B2_steam_example.mp3"),
@@ -291,6 +327,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "submit",
     meaning: "chịu, cam chịu, quy phục, đệ trình",
+    category: "Common Actions",
     image: require("./data/4000B2_636.jpg"),
     sound: require("./data/4000B2_submit.mp3"),
     exampleSound: require("./data/4000B2_submit_example.mp3"),
@@ -299,6 +336,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "temple",
     meaning: "đền thờ, miếu, thánh thất, thánh đường",
+    category: "Household & Objects",
     image: require("./data/4000B2_637.jpg"),
     sound: require("./data/4000B2_temple.mp3"),
     exampleSound: require("./data/4000B2_temple_example.mp3"),
@@ -307,6 +345,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "upper",
     meaning: "trên, cao, thượng",
+    category: "General",
     image: require("./data/4000B2_638.jpg"),
     sound: require("./data/4000B2_upper.mp3"),
     exampleSound: require("./data/4000B2_upper_example.mp3"),
@@ -315,6 +354,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "weed",
     meaning: "cỏ dại",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_639.jpg"),
     sound: require("./data/4000B2_weed.mp3"),
     exampleSound: require("./data/4000B2_weed_example.mp3"),
@@ -323,6 +363,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "wing",
     meaning: "cánh (chim, sâu bọ)",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_640.jpg"),
     sound: require("./data/4000B2_wing.mp3"),
     exampleSound: require("./data/4000B2_wing_example.mp3"),
@@ -331,6 +372,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "arrow",
     meaning: "mũi tên",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_641.jpg"),
     sound: require("./data/4000B2_arrow.mp3"),
     exampleSound: require("./data/4000B2_arrow_example.mp3"),
@@ -339,6 +381,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "battle",
     meaning: "trận đánh; cuộc chiến đấu",
+    category: "Common Actions",
     image: require("./data/4000B2_642.jpg"),
     sound: require("./data/4000B2_battle.mp3"),
     exampleSound: require("./data/4000B2_battle_example.mp3"),
@@ -347,6 +390,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bow",
     meaning: "cái cung (bắn tên)",
+    category: "Household & Objects",
     image: require("./data/4000B2_643.jpg"),
     sound: require("./data/4000B2_bow.mp3"),
     exampleSound: require("./data/4000B2_bow_example.mp3"),
@@ -355,6 +399,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "brave",
     meaning: "gan dạ, can đảm, dũng cảm",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_644.jpg"),
     sound: require("./data/4000B2_brave.mp3"),
     exampleSound: require("./data/4000B2_brave_example.mp3"),
@@ -363,6 +408,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chief",
     meaning: "thủ lĩnh, lãnh tụ,&nbsp;người đứng đầu; trưởng",
+    category: "Human Body & Health",
     image: require("./data/4000B2_645.jpg"),
     sound: require("./data/4000B2_chief.mp3"),
     exampleSound: require("./data/4000B2_chief_example.mp3"),
@@ -371,6 +417,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "disadvantage",
     meaning: "sự bất lợi; thế bất lợi,&nbsp;sự thiệt hại, mối tổn thất",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_646.jpg"),
     sound: require("./data/4000B2_disadvantage.mp3"),
     exampleSound: require("./data/4000B2_disadvantage_example.mp3"),
@@ -379,6 +426,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "enemy",
     meaning: "kẻ thù, kẻ địch",
+    category: "Human Body & Health",
     image: require("./data/4000B2_647.jpg"),
     sound: require("./data/4000B2_enemy.mp3"),
     exampleSound: require("./data/4000B2_enemy_example.mp3"),
@@ -387,6 +435,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "entrance",
     meaning: "sự đi vào, lối vào",
+    category: "Places & Directions",
     image: require("./data/4000B2_648.jpg"),
     sound: require("./data/4000B2_entrance.mp3"),
     exampleSound: require("./data/4000B2_entrance_example.mp3"),
@@ -395,6 +444,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "hardly",
     meaning: "khó khăn, chật vật",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_649.jpg"),
     sound: require("./data/4000B2_hardly.mp3"),
     exampleSound: require("./data/4000B2_hardly_example.mp3"),
@@ -403,6 +453,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "intend",
     meaning: "định, có ý định, có ý muốn",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_650.jpg"),
     sound: require("./data/4000B2_intend.mp3"),
     exampleSound: require("./data/4000B2_intend_example.mp3"),
@@ -411,6 +462,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "laughter",
     meaning: "sự cười, tiếng cười to",
+    category: "General",
     image: require("./data/4000B2_651.jpg"),
     sound: require("./data/4000B2_laughter.mp3"),
     exampleSound: require("./data/4000B2_laughter_example.mp3"),
@@ -419,6 +471,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "log",
     meaning: "khúc gỗ&nbsp;",
+    category: "Household & Objects",
     image: require("./data/4000B2_652.jpg"),
     sound: require("./data/4000B2_log.mp3"),
     exampleSound: require("./data/4000B2_log_example.mp3"),
@@ -427,6 +480,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "military",
     meaning: "quân đội,&nbsp;(thuộc) quân đội",
+    category: "General",
     image: require("./data/4000B2_653.jpg"),
     sound: require("./data/4000B2_military.mp3"),
     exampleSound: require("./data/4000B2_military_example.mp3"),
@@ -435,6 +489,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "obey",
     meaning: "vâng lời, nghe lời, tuân theo, tuân lệnh",
+    category: "Common Actions",
     image: require("./data/4000B2_654.jpg"),
     sound: require("./data/4000B2_obey.mp3"),
     exampleSound: require("./data/4000B2_obey_example.mp3"),
@@ -443,6 +498,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "secure",
     meaning: "chiếm được, tìm được, đạt được",
+    category: "Common Actions",
     image: require("./data/4000B2_655.jpg"),
     sound: require("./data/4000B2_secure.mp3"),
     exampleSound: require("./data/4000B2_secure_example.mp3"),
@@ -451,6 +507,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "steady",
     meaning: "vững vàng, bình tĩnh, điềm tĩnh, vững chắc",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_656.jpg"),
     sound: require("./data/4000B2_steady.mp3"),
     exampleSound: require("./data/4000B2_steady_example.mp3"),
@@ -459,6 +516,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "trust",
     meaning: "tin, tin cậy, tín nhiệm; trông cậy",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_657.jpg"),
     sound: require("./data/4000B2_trust.mp3"),
     exampleSound: require("./data/4000B2_trust_example.mp3"),
@@ -467,6 +525,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "twist",
     meaning: "xoắn, vặn, xe, bện, kết",
+    category: "Common Actions",
     image: require("./data/4000B2_658.jpg"),
     sound: require("./data/4000B2_twist.mp3"),
     exampleSound: require("./data/4000B2_twist_example.mp3"),
@@ -475,6 +534,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "unless",
     meaning: "trừ khi, nếu không",
+    category: "General",
     image: require("./data/4000B2_659.jpg"),
     sound: require("./data/4000B2_unless.mp3"),
     exampleSound: require("./data/4000B2_unless_example.mp3"),
@@ -483,6 +543,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "weapon",
     meaning: "vũ khí",
+    category: "Household & Objects",
     image: require("./data/4000B2_660.jpg"),
     sound: require("./data/4000B2_weapon.mp3"),
     exampleSound: require("./data/4000B2_weapon_example.mp3"),
@@ -491,6 +552,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chest",
     meaning: "ngực",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_661.jpg"),
     sound: require("./data/4000B2_chest.mp3"),
     exampleSound: require("./data/4000B2_chest_example.mp3"),
@@ -499,6 +561,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "confidence",
     meaning: "sự tin chắc, sự quả quyết, sự tự tin",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_662.jpg"),
     sound: require("./data/4000B2_confidence.mp3"),
     exampleSound: require("./data/4000B2_confidence_example.mp3"),
@@ -507,6 +570,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "consequence",
     meaning: "hậu quả, hệ quả, kết quả, tầm quan trọng",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_663.jpg"),
     sound: require("./data/4000B2_consequence.mp3"),
     exampleSound: require("./data/4000B2_consequence_example.mp3"),
@@ -515,6 +579,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "disaster",
     meaning: "tai hoạ, thảm hoạ",
+    category: "General",
     image: require("./data/4000B2_664.jpg"),
     sound: require("./data/4000B2_disaster.mp3"),
     exampleSound: require("./data/4000B2_disaster_example.mp3"),
@@ -523,6 +588,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "disturb",
     meaning: "quấy rầy, làm phiền",
+    category: "General",
     image: require("./data/4000B2_665.jpg"),
     sound: require("./data/4000B2_disturb.mp3"),
     exampleSound: require("./data/4000B2_disturb_example.mp3"),
@@ -531,6 +597,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "estimate",
     meaning: "đánh giá; ước lượng",
+    category: "Common Actions",
     image: require("./data/4000B2_666.jpg"),
     sound: require("./data/4000B2_estimate.mp3"),
     exampleSound: require("./data/4000B2_estimate_example.mp3"),
@@ -539,6 +606,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "honor",
     meaning: "tôn kính, kính trọng",
+    category: "General",
     image: require("./data/4000B2_667.jpg"),
     sound: require("./data/4000B2_honor.mp3"),
     exampleSound: require("./data/4000B2_honor_example.mp3"),
@@ -547,6 +615,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "impress",
     meaning: "gây ấn tượng; làm cảm động, làm cảm kích",
+    category: "Household & Objects",
     image: require("./data/4000B2_668.jpg"),
     sound: require("./data/4000B2_impress.mp3"),
     exampleSound: require("./data/4000B2_impress_example.mp3"),
@@ -555,6 +624,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "marathon",
     meaning: "cuộc chạy đua maratông",
+    category: "Common Actions",
     image: require("./data/4000B2_669.jpg"),
     sound: require("./data/4000B2_marathon.mp3"),
     exampleSound: require("./data/4000B2_marathon_example.mp3"),
@@ -563,6 +633,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "narrow",
     meaning: "hẹp, chật hẹp, eo hẹp",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_670.jpg"),
     sound: require("./data/4000B2_narrow.mp3"),
     exampleSound: require("./data/4000B2_narrow_example.mp3"),
@@ -571,6 +642,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pale",
     meaning: "tái, nhợt nhạt, xanh xám",
+    category: "General",
     image: require("./data/4000B2_671.jpg"),
     sound: require("./data/4000B2_pale.mp3"),
     exampleSound: require("./data/4000B2_pale_example.mp3"),
@@ -579,6 +651,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rough",
     meaning: "ráp, nhám, xù xì, gồ ghề,&nbsp;dữ dội, mạnh, hung dữ",
+    category: "General",
     image: require("./data/4000B2_672.jpg"),
     sound: require("./data/4000B2_rough.mp3"),
     exampleSound: require("./data/4000B2_rough_example.mp3"),
@@ -587,6 +660,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "satisfy",
     meaning: "làm thoả mãn, làm vừa lòng, đáp ứng",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_673.jpg"),
     sound: require("./data/4000B2_satisfy.mp3"),
     exampleSound: require("./data/4000B2_satisfy_example.mp3"),
@@ -595,6 +669,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "scream",
     meaning: "hét lên, kêu thất thanh; kêu inh ỏi, rít lên (còi tàu...)",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_674.jpg"),
     sound: require("./data/4000B2_scream.mp3"),
     exampleSound: require("./data/4000B2_scream_example.mp3"),
@@ -603,6 +678,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sensitive",
     meaning: "nhạy cảm",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_675.jpg"),
     sound: require("./data/4000B2_sensitive.mp3"),
     exampleSound: require("./data/4000B2_sensitive_example.mp3"),
@@ -611,6 +687,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shade",
     meaning: "bóng, bóng tối, bóng râm",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_676.jpg"),
     sound: require("./data/4000B2_shade.mp3"),
     exampleSound: require("./data/4000B2_shade_example.mp3"),
@@ -619,6 +696,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "supplement",
     meaning: "bổ sung, phụ thêm vào",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_677.jpg"),
     sound: require("./data/4000B2_supplement.mp3"),
     exampleSound: require("./data/4000B2_supplement_example.mp3"),
@@ -627,6 +705,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "terror",
     meaning: "sự kinh hãi, sự khiếp sợ",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_678.jpg"),
     sound: require("./data/4000B2_terror.mp3"),
     exampleSound: require("./data/4000B2_terror_example.mp3"),
@@ -635,6 +714,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "threat",
     meaning: "sự đe doạ, lời hăm dọa",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_679.jpg"),
     sound: require("./data/4000B2_threat.mp3"),
     exampleSound: require("./data/4000B2_threat_example.mp3"),
@@ -643,6 +723,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "victim",
     meaning: "nạn nhân",
+    category: "Human Body & Health",
     image: require("./data/4000B2_680.jpg"),
     sound: require("./data/4000B2_victim.mp3"),
     exampleSound: require("./data/4000B2_victim_example.mp3"),
@@ -651,6 +732,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ancestor",
     meaning: "ông bà, tổ tiên",
+    category: "Human Body & Health",
     image: require("./data/4000B2_681.jpg"),
     sound: require("./data/4000B2_ancestor.mp3"),
     exampleSound: require("./data/4000B2_ancestor_example.mp3"),
@@ -659,6 +741,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "angle",
     meaning: "góc,&nbsp;quan điểm, khía cạnh",
+    category: "General",
     image: require("./data/4000B2_682.jpg"),
     sound: require("./data/4000B2_angle.mp3"),
     exampleSound: require("./data/4000B2_angle_example.mp3"),
@@ -667,6 +750,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "boot",
     meaning: "giày ống (bốt)",
+    category: "Household & Objects",
     image: require("./data/4000B2_683.jpg"),
     sound: require("./data/4000B2_boot.mp3"),
     exampleSound: require("./data/4000B2_boot_example.mp3"),
@@ -675,6 +759,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "border",
     meaning: "bờ, mép, vỉa, lề, biên giới, ranh giới",
+    category: "Places & Directions",
     image: require("./data/4000B2_684.jpg"),
     sound: require("./data/4000B2_border.mp3"),
     exampleSound: require("./data/4000B2_border_example.mp3"),
@@ -683,6 +768,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "congratulate",
     meaning: "chúc mừng, khen ngợi",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_685.jpg"),
     sound: require("./data/4000B2_congratulate.mp3"),
     exampleSound: require("./data/4000B2_congratulate_example.mp3"),
@@ -691,6 +777,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "frame",
     meaning: "khung (ảnh, cửa, xe...), sườn (tàu, nhà...)",
+    category: "Household & Objects",
     image: require("./data/4000B2_686.jpg"),
     sound: require("./data/4000B2_frame.mp3"),
     exampleSound: require("./data/4000B2_frame_example.mp3"),
@@ -699,6 +786,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "heaven",
     meaning: "thiên đường&nbsp;",
+    category: "Places & Directions",
     image: require("./data/4000B2_687.jpg"),
     sound: require("./data/4000B2_heaven.mp3"),
     exampleSound: require("./data/4000B2_heaven_example.mp3"),
@@ -707,6 +795,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "incredible",
     meaning: "không thể tin được, lạ thường",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_688.jpg"),
     sound: require("./data/4000B2_incredible.mp3"),
     exampleSound: require("./data/4000B2_incredible_example.mp3"),
@@ -715,6 +804,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "legend",
     meaning: "truyện cổ tích, truyền thuyết, huyền thoại",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_689.jpg"),
     sound: require("./data/4000B2_legend.mp3"),
     exampleSound: require("./data/4000B2_legend_example.mp3"),
@@ -723,6 +813,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "praise",
     meaning: "khen ngợi",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_690.jpg"),
     sound: require("./data/4000B2_praise.mp3"),
     exampleSound: require("./data/4000B2_praise_example.mp3"),
@@ -731,6 +822,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "proceed",
     meaning: "đi đến,&nbsp;làm, hành động",
+    category: "General",
     image: require("./data/4000B2_691.jpg"),
     sound: require("./data/4000B2_proceed.mp3"),
     exampleSound: require("./data/4000B2_proceed_example.mp3"),
@@ -739,6 +831,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pure",
     meaning: "trong sạch, nguyên chất, tinh khiết",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_692.jpg"),
     sound: require("./data/4000B2_pure.mp3"),
     exampleSound: require("./data/4000B2_pure_example.mp3"),
@@ -747,6 +840,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "relative",
     meaning: "bà con thân thuộc,&nbsp;họ hàng",
+    category: "Human Body & Health",
     image: require("./data/4000B2_693.jpg"),
     sound: require("./data/4000B2_relative.mp3"),
     exampleSound: require("./data/4000B2_relative_example.mp3"),
@@ -755,6 +849,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "senior",
     meaning: "nhiều tuổi hơn, cao cấp hơn, lâu năm hơn",
+    category: "General",
     image: require("./data/4000B2_694.jpg"),
     sound: require("./data/4000B2_senior.mp3"),
     exampleSound: require("./data/4000B2_senior_example.mp3"),
@@ -763,6 +858,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "silent",
     meaning: "yên lặng, yên tĩnh, tĩnh mịch, thanh vắng",
+    category: "Common Actions",
     image: require("./data/4000B2_695.jpg"),
     sound: require("./data/4000B2_silent.mp3"),
     exampleSound: require("./data/4000B2_silent_example.mp3"),
@@ -771,6 +867,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sink; sank",
     meaning: "chìm",
+    category: "General",
     image: require("./data/4000B2_696.jpg"),
     sound: require("./data/4000B2_sink.mp3"),
     exampleSound: require("./data/4000B2_sink_example.mp3"),
@@ -779,6 +876,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "superior",
     meaning: "cao, cao cấp,&nbsp;khá hơn, nhiều hơn,&nbsp;tốt, giỏi",
+    category: "General",
     image: require("./data/4000B2_697.jpg"),
     sound: require("./data/4000B2_superior.mp3"),
     exampleSound: require("./data/4000B2_superior_example.mp3"),
@@ -787,6 +885,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "surround",
     meaning: "bao quanh, vây quanh",
+    category: "General",
     image: require("./data/4000B2_698.jpg"),
     sound: require("./data/4000B2_surround.mp3"),
     exampleSound: require("./data/4000B2_surround_example.mp3"),
@@ -795,6 +894,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "thick",
     meaning: "dày, dày đặc, rậm, rậm rạp",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_699.jpg"),
     sound: require("./data/4000B2_thick.mp3"),
     exampleSound: require("./data/4000B2_thick_example.mp3"),
@@ -803,6 +903,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "wrap",
     meaning: "bao phủ, gói, quấn",
+    category: "Common Actions",
     image: require("./data/4000B2_700.jpg"),
     sound: require("./data/4000B2_wrap.mp3"),
     exampleSound: require("./data/4000B2_wrap_example.mp3"),
@@ -811,6 +912,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "abroad",
     meaning: "ở nước ngoài, ra nước ngoài",
+    category: "Places & Directions",
     image: require("./data/4000B2_701.jpg"),
     sound: require("./data/4000B2_abroad.mp3"),
     exampleSound: require("./data/4000B2_abroad_example.mp3"),
@@ -819,6 +921,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "anger",
     meaning: "chọc tức, làm tức giận",
+    category: "General",
     image: require("./data/4000B2_702.jpg"),
     sound: require("./data/4000B2_anger.mp3"),
     exampleSound: require("./data/4000B2_anger_example.mp3"),
@@ -827,6 +930,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bride",
     meaning: "cô dâu",
+    category: "Human Body & Health",
     image: require("./data/4000B2_703.jpg"),
     sound: require("./data/4000B2_bride.mp3"),
     exampleSound: require("./data/4000B2_bride_example.mp3"),
@@ -835,6 +939,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "brief",
     meaning: "ngắn gọn, vắn tắt",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_704.jpg"),
     sound: require("./data/4000B2_brief.mp3"),
     exampleSound: require("./data/4000B2_brief_example.mp3"),
@@ -843,6 +948,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chase",
     meaning: "săn, săn đuổi,&nbsp;đuổi, xua đuổi",
+    category: "Common Actions",
     image: require("./data/4000B2_705.jpg"),
     sound: require("./data/4000B2_chase.mp3"),
     exampleSound: require("./data/4000B2_chase_example.mp3"),
@@ -851,6 +957,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "disappoint",
     meaning: "làm thất vọng,&nbsp;làm hỏng, làm thất bại (kế hoạch của ai)",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_706.jpg"),
     sound: require("./data/4000B2_disappoint.mp3"),
     exampleSound: require("./data/4000B2_disappoint_example.mp3"),
@@ -864,10 +971,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_dive.mp3"),
     exampleSound: require("./data/4000B2_dive_example.mp3"),
     meaningSound: require("./data/4000B2_dive_meaning.mp3"),
+    category: "Common Actions",
   },
   {
     voc: "exchange",
     meaning: "đổi, đổi chác, trao đổi",
+    category: "Common Actions",
     image: require("./data/4000B2_708.jpg"),
     sound: require("./data/4000B2_exchange.mp3"),
     exampleSound: require("./data/4000B2_exchange_example.mp3"),
@@ -881,10 +990,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_favor.mp3"),
     exampleSound: require("./data/4000B2_favor_example.mp3"),
     meaningSound: require("./data/4000B2_favor_meaning.mp3"),
+    category: "Abstract & Qualities",
   },
   {
     voc: "fee",
     meaning: "tiền thù lao, lệ phí",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_710.jpg"),
     sound: require("./data/4000B2_fee.mp3"),
     exampleSound: require("./data/4000B2_fee_example.mp3"),
@@ -893,6 +1004,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "forever",
     meaning: "mãi mãi, vĩnh viễn",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_711.jpg"),
     sound: require("./data/4000B2_forever.mp3"),
     exampleSound: require("./data/4000B2_forever_example.mp3"),
@@ -901,6 +1013,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "guy",
     meaning: "anh chàng, gã",
+    category: "General",
     image: require("./data/4000B2_712.jpg"),
     sound: require("./data/4000B2_guy.mp3"),
     exampleSound: require("./data/4000B2_guy_example.mp3"),
@@ -909,6 +1022,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "lovely",
     meaning: "đẹp đẽ, xinh, đáng yêu, dễ thương",
+    category: "General",
     image: require("./data/4000B2_713.jpg"),
     sound: require("./data/4000B2_lovely.mp3"),
     exampleSound: require("./data/4000B2_lovely_example.mp3"),
@@ -917,6 +1031,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mood",
     meaning: "tâm trạng; tính khí, tâm tính, tính tình",
+    category: "General",
     image: require("./data/4000B2_714.jpg"),
     sound: require("./data/4000B2_mood.mp3"),
     exampleSound: require("./data/4000B2_mood_example.mp3"),
@@ -925,6 +1040,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "palace",
     meaning: "cung điện; lâu đài",
+    category: "Household & Objects",
     image: require("./data/4000B2_715.jpg"),
     sound: require("./data/4000B2_palace.mp3"),
     exampleSound: require("./data/4000B2_palace_example.mp3"),
@@ -933,6 +1049,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "permit",
     meaning: "cho phép,&nbsp;giấy phép",
+    category: "General",
     image: require("./data/4000B2_716.jpg"),
     sound: require("./data/4000B2_permit.mp3"),
     exampleSound: require("./data/4000B2_permit_example.mp3"),
@@ -941,6 +1058,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "protest",
     meaning: "phản đối, kháng nghị, biểu tình",
+    category: "General",
     image: require("./data/4000B2_717.jpg"),
     sound: require("./data/4000B2_protest.mp3"),
     exampleSound: require("./data/4000B2_protest_example.mp3"),
@@ -949,6 +1067,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sculpture",
     meaning: "điêu khắc, chạm trổ;&nbsp;công trình điêu khắc",
+    category: "Common Actions",
     image: require("./data/4000B2_718.jpg"),
     sound: require("./data/4000B2_sculpture.mp3"),
     exampleSound: require("./data/4000B2_sculpture_example.mp3"),
@@ -957,6 +1076,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tribe",
     meaning: "bộ lạc",
+    category: "General",
     image: require("./data/4000B2_719.jpg"),
     sound: require("./data/4000B2_tribe.mp3"),
     exampleSound: require("./data/4000B2_tribe_example.mp3"),
@@ -965,6 +1085,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "youth",
     meaning: "tuổi trẻ, tuổi xuân, tuổi niên thiếu",
+    category: "General",
     image: require("./data/4000B2_720.jpg"),
     sound: require("./data/4000B2_youth.mp3"),
     exampleSound: require("./data/4000B2_youth_example.mp3"),
@@ -973,6 +1094,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "basis",
     meaning: "phương pháp, nền tảng, cơ sở",
+    category: "General",
     image: require("./data/4000B2_721.jpg"),
     sound: require("./data/4000B2_basis.mp3"),
     exampleSound: require("./data/4000B2_basis_example.mp3"),
@@ -981,6 +1103,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "biology",
     meaning: "sinh vật học, sinh học",
+    category: "General",
     image: require("./data/4000B2_722.jpg"),
     sound: require("./data/4000B2_biology.mp3"),
     exampleSound: require("./data/4000B2_biology_example.mp3"),
@@ -989,6 +1112,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cage",
     meaning: "lồng, chuồng, cũi",
+    category: "General",
     image: require("./data/4000B2_723.jpg"),
     sound: require("./data/4000B2_cage.mp3"),
     exampleSound: require("./data/4000B2_cage_example.mp3"),
@@ -997,6 +1121,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "colleague",
     meaning: "đồng nghiệp, bạn&nbsp;đồng nghiệp",
+    category: "General",
     image: require("./data/4000B2_724.jpg"),
     sound: require("./data/4000B2_colleague.mp3"),
     exampleSound: require("./data/4000B2_colleague_example.mp3"),
@@ -1005,6 +1130,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "colony",
     meaning: "thuộc địa,&nbsp;kiều dân; khu kiều dân",
+    category: "General",
     image: require("./data/4000B2_725.jpg"),
     sound: require("./data/4000B2_colony.mp3"),
     exampleSound: require("./data/4000B2_colony_example.mp3"),
@@ -1013,6 +1139,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "debate",
     meaning: "tranh luận, tranh cãi, bàn cãi (một vấn đề...)",
+    category: "General",
     image: require("./data/4000B2_726.jpg"),
     sound: require("./data/4000B2_debate.mp3"),
     exampleSound: require("./data/4000B2_debate_example.mp3"),
@@ -1021,6 +1148,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "depart",
     meaning: "khởi hành,&nbsp;rời khỏi, ra đi",
+    category: "General",
     image: require("./data/4000B2_727.jpg"),
     sound: require("./data/4000B2_depart.mp3"),
     exampleSound: require("./data/4000B2_depart_example.mp3"),
@@ -1029,6 +1157,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "depress",
     meaning: "làm chán nản, làm buồn",
+    category: "General",
     image: require("./data/4000B2_728.jpg"),
     sound: require("./data/4000B2_depress.mp3"),
     exampleSound: require("./data/4000B2_depress_example.mp3"),
@@ -1037,6 +1166,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "factual",
     meaning: "(thuộc) sự thực, có thật",
+    category: "General",
     image: require("./data/4000B2_729.jpg"),
     sound: require("./data/4000B2_factual.mp3"),
     exampleSound: require("./data/4000B2_factual_example.mp3"),
@@ -1045,6 +1175,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fascinate",
     meaning: "mê hoặc, quyến rũ",
+    category: "General",
     image: require("./data/4000B2_730.jpg"),
     sound: require("./data/4000B2_fascinate.mp3"),
     exampleSound: require("./data/4000B2_fascinate_example.mp3"),
@@ -1053,6 +1184,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mission",
     meaning: "sứ mệnh, nhiệm vụ",
+    category: "General",
     image: require("./data/4000B2_731.jpg"),
     sound: require("./data/4000B2_mission.mp3"),
     exampleSound: require("./data/4000B2_mission_example.mp3"),
@@ -1061,6 +1193,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "nevertheless",
     meaning: "tuy nhiên, tuy thế mà",
+    category: "General",
     image: require("./data/4000B2_732.jpg"),
     sound: require("./data/4000B2_nevertheless.mp3"),
     exampleSound: require("./data/4000B2_nevertheless_example.mp3"),
@@ -1069,6 +1202,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "occupation",
     meaning: "sự chiếm, sự giữ,&nbsp;nghề nghiệp; công việc",
+    category: "Common Actions",
     image: require("./data/4000B2_733.jpg"),
     sound: require("./data/4000B2_occupation.mp3"),
     exampleSound: require("./data/4000B2_occupation_example.mp3"),
@@ -1077,6 +1211,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "overseas",
     meaning: "ngoài nước, hải ngoại",
+    category: "General",
     image: require("./data/4000B2_734.jpg"),
     sound: require("./data/4000B2_overseas.mp3"),
     exampleSound: require("./data/4000B2_overseas_example.mp3"),
@@ -1085,6 +1220,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "persuade",
     meaning: "làm cho tin; thuyết phục",
+    category: "Common Actions",
     image: require("./data/4000B2_735.jpg"),
     sound: require("./data/4000B2_persuade.mp3"),
     exampleSound: require("./data/4000B2_persuade_example.mp3"),
@@ -1093,6 +1229,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "route",
     meaning: "tuyến đường, đường đi",
+    category: "General",
     image: require("./data/4000B2_736.jpg"),
     sound: require("./data/4000B2_route.mp3"),
     exampleSound: require("./data/4000B2_route_example.mp3"),
@@ -1101,6 +1238,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ruins",
     meaning: "đổ nát, phế tích",
+    category: "Common Actions",
     image: require("./data/4000B2_737.jpg"),
     sound: require("./data/4000B2_ruins.mp3"),
     exampleSound: require("./data/4000B2_ruins_example.mp3"),
@@ -1114,10 +1252,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_scholar.mp3"),
     exampleSound: require("./data/4000B2_scholar_example.mp3"),
     meaningSound: require("./data/4000B2_scholar_meaning.mp3"),
+    category: "Abstract & Qualities",
   },
   {
     voc: "significant",
     meaning: "quan trọng, trọng đại, đáng chú ý",
+    category: "General",
     image: require("./data/4000B2_739.jpg"),
     sound: require("./data/4000B2_significant.mp3"),
     exampleSound: require("./data/4000B2_significant_example.mp3"),
@@ -1126,6 +1266,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "volcano",
     meaning: "núi lửa",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_740.jpg"),
     sound: require("./data/4000B2_volcano.mp3"),
     exampleSound: require("./data/4000B2_volcano_example.mp3"),
@@ -1134,6 +1275,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "broad",
     meaning: "rộng, gồm nhiều loại",
+    category: "General",
     image: require("./data/4000B2_741.jpg"),
     sound: require("./data/4000B2_broad.mp3"),
     exampleSound: require("./data/4000B2_broad_example.mp3"),
@@ -1142,6 +1284,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bush",
     meaning: "bụi cây, bụi rậm",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_742.jpg"),
     sound: require("./data/4000B2_bush.mp3"),
     exampleSound: require("./data/4000B2_bush_example.mp3"),
@@ -1150,6 +1293,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "capable",
     meaning: "có khả năng,&nbsp;có tài, có năng lực giỏi",
+    category: "General",
     image: require("./data/4000B2_743.jpg"),
     sound: require("./data/4000B2_capable.mp3"),
     exampleSound: require("./data/4000B2_capable_example.mp3"),
@@ -1158,6 +1302,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cheat",
     meaning: "gian lận,&nbsp;lừa, lừa đảo (ai)",
+    category: "General",
     image: require("./data/4000B2_744.jpg"),
     sound: require("./data/4000B2_cheat.mp3"),
     exampleSound: require("./data/4000B2_cheat_example.mp3"),
@@ -1166,6 +1311,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "concentrate",
     meaning: "tập trung",
+    category: "General",
     image: require("./data/4000B2_745.jpg"),
     sound: require("./data/4000B2_concentrate.mp3"),
     exampleSound: require("./data/4000B2_concentrate_example.mp3"),
@@ -1174,6 +1320,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "conclude",
     meaning: "kết luận,&nbsp;giải quyết, dàn xếp",
+    category: "General",
     image: require("./data/4000B2_746.jpg"),
     sound: require("./data/4000B2_conclude.mp3"),
     exampleSound: require("./data/4000B2_conclude_example.mp3"),
@@ -1182,6 +1329,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "confident",
     meaning: "tự tin, tin chắc, tin tưởng, tin cậy",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_747.jpg"),
     sound: require("./data/4000B2_confident.mp3"),
     exampleSound: require("./data/4000B2_confident_example.mp3"),
@@ -1190,6 +1338,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "considerable",
     meaning: "đáng kể, to tát, có vai vế",
+    category: "General",
     image: require("./data/4000B2_748.jpg"),
     sound: require("./data/4000B2_considerable.mp3"),
     exampleSound: require("./data/4000B2_considerable_example.mp3"),
@@ -1203,10 +1352,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_convey.mp3"),
     exampleSound: require("./data/4000B2_convey_example.mp3"),
     meaningSound: require("./data/4000B2_convey_meaning.mp3"),
+    category: "Abstract & Qualities",
   },
   {
     voc: "definite",
     meaning: "rõ ràng,&nbsp;xác định, định rõ, hiển nhiên",
+    category: "General",
     image: require("./data/4000B2_750.jpg"),
     sound: require("./data/4000B2_definite.mp3"),
     exampleSound: require("./data/4000B2_definite_example.mp3"),
@@ -1215,6 +1366,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "delight",
     meaning: "sự vui sướng,&nbsp;điều thích thú",
+    category: "General",
     image: require("./data/4000B2_751.jpg"),
     sound: require("./data/4000B2_delight.mp3"),
     exampleSound: require("./data/4000B2_delight_example.mp3"),
@@ -1223,6 +1375,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "destination",
     meaning: "đích đến,&nbsp;nơi đi tới",
+    category: "General",
     image: require("./data/4000B2_752.jpg"),
     sound: require("./data/4000B2_destination.mp3"),
     exampleSound: require("./data/4000B2_destination_example.mp3"),
@@ -1231,6 +1384,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dictate",
     meaning: "đọc chính tả,&nbsp;ra lệnh",
+    category: "Common Actions",
     image: require("./data/4000B2_753.jpg"),
     sound: require("./data/4000B2_dictate.mp3"),
     exampleSound: require("./data/4000B2_dictate_example.mp3"),
@@ -1239,6 +1393,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "edge",
     meaning: "bờ, gờ, cạnh (hố sâu...); rìa, lề (rừng, cuốn sách...)",
+    category: "General",
     image: require("./data/4000B2_754.jpg"),
     sound: require("./data/4000B2_edge.mp3"),
     exampleSound: require("./data/4000B2_edge_example.mp3"),
@@ -1247,6 +1402,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "path",
     meaning: "đường đi; quỹ đạo",
+    category: "General",
     image: require("./data/4000B2_755.jpg"),
     sound: require("./data/4000B2_path.mp3"),
     exampleSound: require("./data/4000B2_path_example.mp3"),
@@ -1255,6 +1411,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "resort",
     meaning: "dùng đến, cầu đến, nhờ vào",
+    category: "General",
     image: require("./data/4000B2_756.jpg"),
     sound: require("./data/4000B2_resort.mp3"),
     exampleSound: require("./data/4000B2_resort_example.mp3"),
@@ -1268,10 +1425,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_shadow.mp3"),
     exampleSound: require("./data/4000B2_shadow_example.mp3"),
     meaningSound: require("./data/4000B2_shadow_meaning.mp3"),
+    category: "Nature & Landscape",
   },
   {
     voc: "succeed",
     meaning: "thành công,&nbsp;kế nghiệp,&nbsp;kế tiếp",
+    category: "General",
     image: require("./data/4000B2_758.jpg"),
     sound: require("./data/4000B2_succeed.mp3"),
     exampleSound: require("./data/4000B2_succeed_example.mp3"),
@@ -1280,6 +1439,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "suspect",
     meaning: "nghi ngờ, hoài nghi;&nbsp;người khả nghi",
+    category: "General",
     image: require("./data/4000B2_759.jpg"),
     sound: require("./data/4000B2_suspect.mp3"),
     exampleSound: require("./data/4000B2_suspect_example.mp3"),
@@ -1288,6 +1448,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "valley",
     meaning: "thung lũng,&nbsp;&nbsp;(kiến trúc) khe mái",
+    category: "General",
     image: require("./data/4000B2_760.jpg"),
     sound: require("./data/4000B2_valley.mp3"),
     exampleSound: require("./data/4000B2_valley_example.mp3"),
@@ -1296,6 +1457,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "admire",
     meaning: "khâm phục,&nbsp;ngưỡng mộ",
+    category: "Common Actions",
     image: require("./data/4000B2_761.jpg"),
     sound: require("./data/4000B2_admire.mp3"),
     exampleSound: require("./data/4000B2_admire_example.mp3"),
@@ -1304,6 +1466,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "aid",
     meaning: "trợ giúp, thêm vào, phụ vào",
+    category: "General",
     image: require("./data/4000B2_762.jpg"),
     sound: require("./data/4000B2_aid.mp3"),
     exampleSound: require("./data/4000B2_aid_example.mp3"),
@@ -1312,6 +1475,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "attempt",
     meaning: "cố gắng; thử,&nbsp;gắng, chiếm lấy",
+    category: "Common Actions",
     image: require("./data/4000B2_763.jpg"),
     sound: require("./data/4000B2_attempt.mp3"),
     exampleSound: require("./data/4000B2_attempt_example.mp3"),
@@ -1325,10 +1489,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_authority.mp3"),
     exampleSound: require("./data/4000B2_authority_example.mp3"),
     meaningSound: require("./data/4000B2_authority_meaning.mp3"),
+    category: "General",
   },
   {
     voc: "capital",
     meaning: "thủ đô, thủ phủ",
+    category: "General",
     image: require("./data/4000B2_765.jpg"),
     sound: require("./data/4000B2_capital.mp3"),
     exampleSound: require("./data/4000B2_capital_example.mp3"),
@@ -1337,6 +1503,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cooperate",
     meaning: "hợp tác",
+    category: "General",
     image: require("./data/4000B2_766.jpg"),
     sound: require("./data/4000B2_cooperate.mp3"),
     exampleSound: require("./data/4000B2_cooperate_example.mp3"),
@@ -1345,6 +1512,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "defend",
     meaning: "che chở, bảo vệ, phòng thủ, tự vệ",
+    category: "General",
     image: require("./data/4000B2_767.jpg"),
     sound: require("./data/4000B2_defend.mp3"),
     exampleSound: require("./data/4000B2_defend_example.mp3"),
@@ -1353,6 +1521,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "destruction",
     meaning: "sự phá huỷ,&nbsp;tình trạng bị tàn phá",
+    category: "General",
     image: require("./data/4000B2_768.jpg"),
     sound: require("./data/4000B2_destruction.mp3"),
     exampleSound: require("./data/4000B2_destruction_example.mp3"),
@@ -1361,6 +1530,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "disorder",
     meaning: "sự mất trật tự, sự bừa bãi, sự lộn xộn",
+    category: "General",
     image: require("./data/4000B2_769.jpg"),
     sound: require("./data/4000B2_disorder.mp3"),
     exampleSound: require("./data/4000B2_disorder_example.mp3"),
@@ -1369,6 +1539,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "division",
     meaning: "sự chia; sự phân chia",
+    category: "General",
     image: require("./data/4000B2_770.jpg"),
     sound: require("./data/4000B2_division.mp3"),
     exampleSound: require("./data/4000B2_division_example.mp3"),
@@ -1377,6 +1548,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "enable",
     meaning: "làm cho có thể",
+    category: "General",
     image: require("./data/4000B2_771.jpg"),
     sound: require("./data/4000B2_enable.mp3"),
     exampleSound: require("./data/4000B2_enable_example.mp3"),
@@ -1385,6 +1557,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "frustrate",
     meaning: "làm thất bại, làm hỏng,&nbsp;làm thất vọng, làm vỡ mộng",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_772.jpg"),
     sound: require("./data/4000B2_frustrate.mp3"),
     exampleSound: require("./data/4000B2_frustrate_example.mp3"),
@@ -1398,10 +1571,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_govern.mp3"),
     exampleSound: require("./data/4000B2_govern_example.mp3"),
     meaningSound: require("./data/4000B2_govern_meaning.mp3"),
+    category: "General",
   },
   {
     voc: "plenty",
     meaning: "sự phong phú, sự dồi dào, sự có nhiều",
+    category: "General",
     image: require("./data/4000B2_774.jpg"),
     sound: require("./data/4000B2_plenty.mp3"),
     exampleSound: require("./data/4000B2_plenty_example.mp3"),
@@ -1410,6 +1585,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "relieve",
     meaning: "làm dịu,&nbsp;làm nhẹ bớt, giảm bớt",
+    category: "General",
     image: require("./data/4000B2_775.jpg"),
     sound: require("./data/4000B2_relieve.mp3"),
     exampleSound: require("./data/4000B2_relieve_example.mp3"),
@@ -1418,6 +1594,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "reputation",
     meaning: "danh tiếng",
+    category: "General",
     image: require("./data/4000B2_776.jpg"),
     sound: require("./data/4000B2_reputation.mp3"),
     exampleSound: require("./data/4000B2_reputation_example.mp3"),
@@ -1426,6 +1603,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "royal",
     meaning: "(thuộc) hoàng gia",
+    category: "General",
     image: require("./data/4000B2_777.jpg"),
     sound: require("./data/4000B2_royal.mp3"),
     exampleSound: require("./data/4000B2_royal_example.mp3"),
@@ -1434,6 +1612,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "slave",
     meaning: "người nô lệ",
+    category: "General",
     image: require("./data/4000B2_778.jpg"),
     sound: require("./data/4000B2_slave.mp3"),
     exampleSound: require("./data/4000B2_slave_example.mp3"),
@@ -1442,6 +1621,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "struggle",
     meaning: "đấu tranh, chống lại,&nbsp;vật lộn",
+    category: "General",
     image: require("./data/4000B2_779.jpg"),
     sound: require("./data/4000B2_struggle.mp3"),
     exampleSound: require("./data/4000B2_struggle_example.mp3"),
@@ -1450,6 +1630,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "stupid",
     meaning: "ngu dại, ngớ ngẩn",
+    category: "General",
     image: require("./data/4000B2_780.jpg"),
     sound: require("./data/4000B2_stupid.mp3"),
     exampleSound: require("./data/4000B2_stupid_example.mp3"),
@@ -1458,6 +1639,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "citizen",
     meaning: "công dân",
+    category: "General",
     image: require("./data/4000B2_781.jpg"),
     sound: require("./data/4000B2_citizen.mp3"),
     exampleSound: require("./data/4000B2_citizen_example.mp3"),
@@ -1466,6 +1648,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "council",
     meaning: "hội đồng",
+    category: "General",
     image: require("./data/4000B2_782.jpg"),
     sound: require("./data/4000B2_council.mp3"),
     exampleSound: require("./data/4000B2_council_example.mp3"),
@@ -1474,6 +1657,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "declare",
     meaning: "khai báo, bày tỏ",
+    category: "General",
     image: require("./data/4000B2_783.jpg"),
     sound: require("./data/4000B2_declare.mp3"),
     exampleSound: require("./data/4000B2_declare_example.mp3"),
@@ -1482,6 +1666,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "enormous",
     meaning: "to lớn, khổng lồ",
+    category: "General",
     image: require("./data/4000B2_784.jpg"),
     sound: require("./data/4000B2_enormous.mp3"),
     exampleSound: require("./data/4000B2_enormous_example.mp3"),
@@ -1490,6 +1675,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "extraordinary",
     meaning: "lạ thường, khác thường, phi thường",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_785.jpg"),
     sound: require("./data/4000B2_extraordinary.mp3"),
     exampleSound: require("./data/4000B2_extraordinary_example.mp3"),
@@ -1498,6 +1684,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fog",
     meaning: "sương mù",
+    category: "General",
     image: require("./data/4000B2_786.jpg"),
     sound: require("./data/4000B2_fog.mp3"),
     exampleSound: require("./data/4000B2_fog_example.mp3"),
@@ -1506,6 +1693,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "funeral",
     meaning: "lễ tang, đám tang",
+    category: "General",
     image: require("./data/4000B2_787.jpg"),
     sound: require("./data/4000B2_funeral.mp3"),
     exampleSound: require("./data/4000B2_funeral_example.mp3"),
@@ -1514,6 +1702,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "giant",
     meaning: "khổng lồ",
+    category: "General",
     image: require("./data/4000B2_788.jpg"),
     sound: require("./data/4000B2_giant.mp3"),
     exampleSound: require("./data/4000B2_giant_example.mp3"),
@@ -1522,6 +1711,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "impression",
     meaning: "ấn tượng",
+    category: "Household & Objects",
     image: require("./data/4000B2_789.jpg"),
     sound: require("./data/4000B2_impression.mp3"),
     exampleSound: require("./data/4000B2_impression_example.mp3"),
@@ -1530,6 +1720,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "income",
     meaning: "thu nhập",
+    category: "General",
     image: require("./data/4000B2_790.jpg"),
     sound: require("./data/4000B2_income.mp3"),
     exampleSound: require("./data/4000B2_income_example.mp3"),
@@ -1538,6 +1729,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mad",
     meaning: "điên, cuồng, mất trí",
+    category: "General",
     image: require("./data/4000B2_791.jpg"),
     sound: require("./data/4000B2_mad.mp3"),
     exampleSound: require("./data/4000B2_mad_example.mp3"),
@@ -1546,6 +1738,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ought",
     meaning: "phải, nên",
+    category: "General",
     image: require("./data/4000B2_792.jpg"),
     sound: require("./data/4000B2_ought.mp3"),
     exampleSound: require("./data/4000B2_ought_example.mp3"),
@@ -1554,6 +1747,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "resist",
     meaning: "kháng cự, chống lại",
+    category: "General",
     image: require("./data/4000B2_793.jpg"),
     sound: require("./data/4000B2_resist.mp3"),
     exampleSound: require("./data/4000B2_resist_example.mp3"),
@@ -1562,6 +1756,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "reveal",
     meaning: "tiết lộ (điều bí mật), phát giác",
+    category: "General",
     image: require("./data/4000B2_794.jpg"),
     sound: require("./data/4000B2_reveal.mp3"),
     exampleSound: require("./data/4000B2_reveal_example.mp3"),
@@ -1570,6 +1765,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rid",
     meaning: "giải thoát&nbsp;",
+    category: "General",
     image: require("./data/4000B2_795.jpg"),
     sound: require("./data/4000B2_rid.mp3"),
     exampleSound: require("./data/4000B2_rid_example.mp3"),
@@ -1578,6 +1774,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sword",
     meaning: "gươm, kiếm",
+    category: "General",
     image: require("./data/4000B2_796.jpg"),
     sound: require("./data/4000B2_sword.mp3"),
     exampleSound: require("./data/4000B2_sword_example.mp3"),
@@ -1586,6 +1783,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tale",
     meaning: "truyện, truyện ngắn",
+    category: "General",
     image: require("./data/4000B2_797.jpg"),
     sound: require("./data/4000B2_tale.mp3"),
     exampleSound: require("./data/4000B2_tale_example.mp3"),
@@ -1594,6 +1792,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "trap",
     meaning: "bẫy, đặt bẫy",
+    category: "General",
     image: require("./data/4000B2_798.jpg"),
     sound: require("./data/4000B2_trap.mp3"),
     exampleSound: require("./data/4000B2_trap_example.mp3"),
@@ -1602,6 +1801,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "trial",
     meaning: "sự thử,&nbsp;(pháp lý) việc xét xử, sự xử án",
+    category: "General",
     image: require("./data/4000B2_799.jpg"),
     sound: require("./data/4000B2_trial.mp3"),
     exampleSound: require("./data/4000B2_trial_example.mp3"),
@@ -1610,6 +1810,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "violent",
     meaning: "bạo lực,&nbsp;hung bạo, quá khích",
+    category: "General",
     image: require("./data/4000B2_800.jpg"),
     sound: require("./data/4000B2_violent.mp3"),
     exampleSound: require("./data/4000B2_violent_example.mp3"),
@@ -1618,6 +1819,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "admission",
     meaning: "sự cho vào cửa, sự cho vào",
+    category: "General",
     image: require("./data/4000B2_801.jpg"),
     sound: require("./data/4000B2_admission.mp3"),
     exampleSound: require("./data/4000B2_admission_example.mp3"),
@@ -1626,6 +1828,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "astronomy",
     meaning: "thiên văn học",
+    category: "General",
     image: require("./data/4000B2_802.jpg"),
     sound: require("./data/4000B2_astronomy.mp3"),
     exampleSound: require("./data/4000B2_astronomy_example.mp3"),
@@ -1634,6 +1837,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "blame",
     meaning: "khiển trách, trách mắng",
+    category: "General",
     image: require("./data/4000B2_803.jpg"),
     sound: require("./data/4000B2_blame.mp3"),
     exampleSound: require("./data/4000B2_blame_example.mp3"),
@@ -1642,6 +1846,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chemistry",
     meaning: "ngành hoá học; môn hoá học",
+    category: "General",
     image: require("./data/4000B2_804.jpg"),
     sound: require("./data/4000B2_chemistry.mp3"),
     exampleSound: require("./data/4000B2_chemistry_example.mp3"),
@@ -1650,6 +1855,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "despite",
     meaning: "dù, mặc dù, không kể, bất chấp",
+    category: "General",
     image: require("./data/4000B2_805.jpg"),
     sound: require("./data/4000B2_despite.mp3"),
     exampleSound: require("./data/4000B2_despite_example.mp3"),
@@ -1658,6 +1864,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dinosaur",
     meaning: "khủng long",
+    category: "General",
     image: require("./data/4000B2_806.jpg"),
     sound: require("./data/4000B2_dinosaur.mp3"),
     exampleSound: require("./data/4000B2_dinosaur_example.mp3"),
@@ -1666,6 +1873,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "exhibit",
     meaning: "trưng bày, triển lãm,&nbsp;vật trưng bày, vật triển lãm",
+    category: "General",
     image: require("./data/4000B2_807.jpg"),
     sound: require("./data/4000B2_exhibit.mp3"),
     exampleSound: require("./data/4000B2_exhibit_example.mp3"),
@@ -1674,6 +1882,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fame",
     meaning: "tiếng tăm, danh tiếng",
+    category: "General",
     image: require("./data/4000B2_808.jpg"),
     sound: require("./data/4000B2_fame.mp3"),
     exampleSound: require("./data/4000B2_fame_example.mp3"),
@@ -1682,6 +1891,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "forecast",
     meaning: "dự báo",
+    category: "General",
     image: require("./data/4000B2_809.jpg"),
     sound: require("./data/4000B2_forecast.mp3"),
     exampleSound: require("./data/4000B2_forecast_example.mp3"),
@@ -1690,6 +1900,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "genius",
     meaning: "thiên tài",
+    category: "General",
     image: require("./data/4000B2_810.jpg"),
     sound: require("./data/4000B2_genius.mp3"),
     exampleSound: require("./data/4000B2_genius_example.mp3"),
@@ -1698,6 +1909,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "gentle",
     meaning: "hiền lành, dịu dàng, hoà nhã; nhẹ nhàng",
+    category: "General",
     image: require("./data/4000B2_811.jpg"),
     sound: require("./data/4000B2_gentle.mp3"),
     exampleSound: require("./data/4000B2_gentle_example.mp3"),
@@ -1706,6 +1918,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "geography",
     meaning: "địa lý",
+    category: "General",
     image: require("./data/4000B2_812.jpg"),
     sound: require("./data/4000B2_geography.mp3"),
     exampleSound: require("./data/4000B2_geography_example.mp3"),
@@ -1714,6 +1927,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "interfere",
     meaning: "gây trở ngại, quấy rầy",
+    category: "General",
     image: require("./data/4000B2_813.jpg"),
     sound: require("./data/4000B2_interfere.mp3"),
     exampleSound: require("./data/4000B2_interfere_example.mp3"),
@@ -1722,6 +1936,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "lightly",
     meaning: "nhẹ, nhẹ nhàng",
+    category: "General",
     image: require("./data/4000B2_814.jpg"),
     sound: require("./data/4000B2_lightly.mp3"),
     exampleSound: require("./data/4000B2_lightly_example.mp3"),
@@ -1730,6 +1945,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "principal",
     meaning: "hiệu trưởng, người đứng đầu",
+    category: "Human Body & Health",
     image: require("./data/4000B2_815.jpg"),
     sound: require("./data/4000B2_principal.mp3"),
     exampleSound: require("./data/4000B2_principal_example.mp3"),
@@ -1738,6 +1954,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "row",
     meaning: "hàng, dây",
+    category: "General",
     image: require("./data/4000B2_816.jpg"),
     sound: require("./data/4000B2_row.mp3"),
     exampleSound: require("./data/4000B2_row_example.mp3"),
@@ -1746,6 +1963,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shelf",
     meaning: "giá sách, ngăn tủ",
+    category: "General",
     image: require("./data/4000B2_817.jpg"),
     sound: require("./data/4000B2_shelf.mp3"),
     exampleSound: require("./data/4000B2_shelf_example.mp3"),
@@ -1754,6 +1972,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "spite",
     meaning: "sự thù oán; mối hận thù",
+    category: "General",
     image: require("./data/4000B2_818.jpg"),
     sound: require("./data/4000B2_spite.mp3"),
     exampleSound: require("./data/4000B2_spite_example.mp3"),
@@ -1762,6 +1981,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "super",
     meaning: "siêu",
+    category: "General",
     image: require("./data/4000B2_819.jpg"),
     sound: require("./data/4000B2_super.mp3"),
     exampleSound: require("./data/4000B2_super_example.mp3"),
@@ -1770,6 +1990,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "wet",
     meaning: "ẩm; ướt",
+    category: "General",
     image: require("./data/4000B2_820.jpg"),
     sound: require("./data/4000B2_wet.mp3"),
     exampleSound: require("./data/4000B2_wet_example.mp3"),
@@ -1778,6 +1999,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "abuse",
     meaning: "lăng mạ, sỉ nhục, chửi rủa",
+    category: "General",
     image: require("./data/4000B2_821.jpg"),
     sound: require("./data/4000B2_abuse.mp3"),
     exampleSound: require("./data/4000B2_abuse_example.mp3"),
@@ -1786,6 +2008,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "afford",
     meaning: "có đủ sức, có đủ khả năng (làm gì)",
+    category: "General",
     image: require("./data/4000B2_822.jpg"),
     sound: require("./data/4000B2_afford.mp3"),
     exampleSound: require("./data/4000B2_afford_example.mp3"),
@@ -1794,6 +2017,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bake",
     meaning: "nướng (bánh...) bằng lò",
+    category: "General",
     image: require("./data/4000B2_823.jpg"),
     sound: require("./data/4000B2_bake.mp3"),
     exampleSound: require("./data/4000B2_bake_example.mp3"),
@@ -1802,6 +2026,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bean",
     meaning: "đậu",
+    category: "General",
     image: require("./data/4000B2_824.jpg"),
     sound: require("./data/4000B2_bean.mp3"),
     exampleSound: require("./data/4000B2_bean_example.mp3"),
@@ -1810,6 +2035,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "candle",
     meaning: "ngọn nến",
+    category: "General",
     image: require("./data/4000B2_825.jpg"),
     sound: require("./data/4000B2_candle.mp3"),
     exampleSound: require("./data/4000B2_candle_example.mp3"),
@@ -1818,6 +2044,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "convert",
     meaning: "chuyển đổi, biến đổi",
+    category: "Common Actions",
     image: require("./data/4000B2_826.jpg"),
     sound: require("./data/4000B2_convert.mp3"),
     exampleSound: require("./data/4000B2_convert_example.mp3"),
@@ -1826,6 +2053,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "debt",
     meaning: "món nợ",
+    category: "General",
     image: require("./data/4000B2_827.jpg"),
     sound: require("./data/4000B2_debt.mp3"),
     exampleSound: require("./data/4000B2_debt_example.mp3"),
@@ -1834,6 +2062,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "decrease",
     meaning: "giảm, giảm sút, giảm đi",
+    category: "General",
     image: require("./data/4000B2_828.jpg"),
     sound: require("./data/4000B2_decrease.mp3"),
     exampleSound: require("./data/4000B2_decrease_example.mp3"),
@@ -1842,6 +2071,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fault",
     meaning: "sự thiếu sót; khuyết điểm",
+    category: "General",
     image: require("./data/4000B2_829.jpg"),
     sound: require("./data/4000B2_fault.mp3"),
     exampleSound: require("./data/4000B2_fault_example.mp3"),
@@ -1850,6 +2080,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fund",
     meaning: "quỹ",
+    category: "General",
     image: require("./data/4000B2_830.jpg"),
     sound: require("./data/4000B2_fund.mp3"),
     exampleSound: require("./data/4000B2_fund_example.mp3"),
@@ -1858,6 +2089,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "generous",
     meaning: "rộng rãi, hào phóng",
+    category: "General",
     image: require("./data/4000B2_831.jpg"),
     sound: require("./data/4000B2_generous.mp3"),
     exampleSound: require("./data/4000B2_generous_example.mp3"),
@@ -1866,6 +2098,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ingredient",
     meaning: "phần hợp thành, thành phần",
+    category: "General",
     image: require("./data/4000B2_832.jpg"),
     sound: require("./data/4000B2_ingredient.mp3"),
     exampleSound: require("./data/4000B2_ingredient_example.mp3"),
@@ -1874,6 +2107,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "insist",
     meaning: "cố nài, nhấn mạnh",
+    category: "General",
     image: require("./data/4000B2_833.jpg"),
     sound: require("./data/4000B2_insist.mp3"),
     exampleSound: require("./data/4000B2_insist_example.mp3"),
@@ -1882,6 +2116,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mess",
     meaning: "tình trạng lộn xộn, tình trạng bừa bộn",
+    category: "General",
     image: require("./data/4000B2_834.jpg"),
     sound: require("./data/4000B2_mess.mp3"),
     exampleSound: require("./data/4000B2_mess_example.mp3"),
@@ -1890,6 +2125,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "metal",
     meaning: "kim loại",
+    category: "General",
     image: require("./data/4000B2_835.jpg"),
     sound: require("./data/4000B2_metal.mp3"),
     exampleSound: require("./data/4000B2_metal_example.mp3"),
@@ -1898,6 +2134,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "monitor",
     meaning: "giám sát",
+    category: "General",
     image: require("./data/4000B2_836.jpg"),
     sound: require("./data/4000B2_monitor.mp3"),
     exampleSound: require("./data/4000B2_monitor_example.mp3"),
@@ -1906,6 +2143,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "oppose",
     meaning: "chống lại, đối chọi",
+    category: "General",
     image: require("./data/4000B2_837.jpg"),
     sound: require("./data/4000B2_oppose.mp3"),
     exampleSound: require("./data/4000B2_oppose_example.mp3"),
@@ -1914,6 +2152,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "passive",
     meaning: "bị động, thụ động",
+    category: "General",
     image: require("./data/4000B2_838.jpg"),
     sound: require("./data/4000B2_passive.mp3"),
     exampleSound: require("./data/4000B2_passive_example.mp3"),
@@ -1922,6 +2161,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "quantity",
     meaning: "số lượng",
+    category: "General",
     image: require("./data/4000B2_839.jpg"),
     sound: require("./data/4000B2_quantity.mp3"),
     exampleSound: require("./data/4000B2_quantity_example.mp3"),
@@ -1930,6 +2170,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sue",
     meaning: "kiện (ai ra tòa)",
+    category: "General",
     image: require("./data/4000B2_840.jpg"),
     sound: require("./data/4000B2_sue.mp3"),
     exampleSound: require("./data/4000B2_sue_example.mp3"),
@@ -1938,6 +2179,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "anxiety",
     meaning: "mối lo âu, mối băn khoăn; sự lo lắng",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_841.jpg"),
     sound: require("./data/4000B2_anxiety.mp3"),
     exampleSound: require("./data/4000B2_anxiety_example.mp3"),
@@ -1946,6 +2188,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "army",
     meaning: "quân đội",
+    category: "General",
     image: require("./data/4000B2_842.jpg"),
     sound: require("./data/4000B2_army.mp3"),
     exampleSound: require("./data/4000B2_army_example.mp3"),
@@ -1954,6 +2197,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "billion",
     meaning: "tỉ (tiền tệ)",
+    category: "General",
     image: require("./data/4000B2_843.jpg"),
     sound: require("./data/4000B2_billion.mp3"),
     exampleSound: require("./data/4000B2_billion_example.mp3"),
@@ -1962,6 +2206,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "carve",
     meaning: "cắt, lạng (thịt ra từng miếng)",
+    category: "General",
     image: require("./data/4000B2_844.jpg"),
     sound: require("./data/4000B2_carve.mp3"),
     exampleSound: require("./data/4000B2_carve_example.mp3"),
@@ -1970,6 +2215,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "consult",
     meaning: "hỏi ý kiến, tham khảo, tư vấn, hội ý",
+    category: "General",
     image: require("./data/4000B2_845.jpg"),
     sound: require("./data/4000B2_consult.mp3"),
     exampleSound: require("./data/4000B2_consult_example.mp3"),
@@ -1978,6 +2224,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "emergency",
     meaning: "tình trạng khẩn cấp,&nbsp;trường hợp cấp cứu",
+    category: "General",
     image: require("./data/4000B2_846.jpg"),
     sound: require("./data/4000B2_emergency.mp3"),
     exampleSound: require("./data/4000B2_emergency_example.mp3"),
@@ -1986,6 +2233,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fortune",
     meaning: "vận may; sự may mắn",
+    category: "General",
     image: require("./data/4000B2_847.jpg"),
     sound: require("./data/4000B2_fortune.mp3"),
     exampleSound: require("./data/4000B2_fortune_example.mp3"),
@@ -1994,6 +2242,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "guarantee",
     meaning: "bảo đảm, bảo lânh",
+    category: "Common Actions",
     image: require("./data/4000B2_848.jpg"),
     sound: require("./data/4000B2_guarantee.mp3"),
     exampleSound: require("./data/4000B2_guarantee_example.mp3"),
@@ -2002,6 +2251,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "hike",
     meaning: "đi bộ đường dài",
+    category: "General",
     image: require("./data/4000B2_849.jpg"),
     sound: require("./data/4000B2_hike.mp3"),
     exampleSound: require("./data/4000B2_hike_example.mp3"),
@@ -2010,6 +2260,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "initial",
     meaning: "đầu, ban đầu",
+    category: "General",
     image: require("./data/4000B2_850.jpg"),
     sound: require("./data/4000B2_initial.mp3"),
     exampleSound: require("./data/4000B2_initial_example.mp3"),
@@ -2018,6 +2269,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "intense",
     meaning: "mãnh liệt, dữ dội",
+    category: "General",
     image: require("./data/4000B2_851.jpg"),
     sound: require("./data/4000B2_intense.mp3"),
     exampleSound: require("./data/4000B2_intense_example.mp3"),
@@ -2026,6 +2278,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "lend",
     meaning: "cho vay, cho mượn",
+    category: "General",
     image: require("./data/4000B2_852.jpg"),
     sound: require("./data/4000B2_lend.mp3"),
     exampleSound: require("./data/4000B2_lend_example.mp3"),
@@ -2034,6 +2287,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "peak",
     meaning: "đỉnh, chỏm chóp (núi)",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_853.jpg"),
     sound: require("./data/4000B2_peak.mp3"),
     exampleSound: require("./data/4000B2_peak_example.mp3"),
@@ -2042,6 +2296,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "potential",
     meaning: "tiềm tàng",
+    category: "General",
     image: require("./data/4000B2_854.jpg"),
     sound: require("./data/4000B2_potential.mp3"),
     exampleSound: require("./data/4000B2_potential_example.mp3"),
@@ -2050,6 +2305,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pride",
     meaning: "sự kiêu hãnh, sự hãnh diện",
+    category: "General",
     image: require("./data/4000B2_855.jpg"),
     sound: require("./data/4000B2_pride.mp3"),
     exampleSound: require("./data/4000B2_pride_example.mp3"),
@@ -2058,6 +2314,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "proof",
     meaning: "bằng chứng",
+    category: "General",
     image: require("./data/4000B2_856.jpg"),
     sound: require("./data/4000B2_proof.mp3"),
     exampleSound: require("./data/4000B2_proof_example.mp3"),
@@ -2066,6 +2323,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "quit",
     meaning: "thoát, bỏ, rời",
+    category: "General",
     image: require("./data/4000B2_857.jpg"),
     sound: require("./data/4000B2_quit.mp3"),
     exampleSound: require("./data/4000B2_quit_example.mp3"),
@@ -2074,6 +2332,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "spin",
     meaning: "quay, quay tròn",
+    category: "General",
     image: require("./data/4000B2_858.jpg"),
     sound: require("./data/4000B2_spin.mp3"),
     exampleSound: require("./data/4000B2_spin_example.mp3"),
@@ -2082,6 +2341,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tiny",
     meaning: "nhỏ xíu, tí hon",
+    category: "General",
     image: require("./data/4000B2_859.jpg"),
     sound: require("./data/4000B2_tiny.mp3"),
     exampleSound: require("./data/4000B2_tiny_example.mp3"),
@@ -2090,6 +2350,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tutor",
     meaning: "gia sư, giáo viên kèm riêng",
+    category: "General",
     image: require("./data/4000B2_860.jpg"),
     sound: require("./data/4000B2_tutor.mp3"),
     exampleSound: require("./data/4000B2_tutor_example.mp3"),
@@ -2098,6 +2359,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "apparent",
     meaning: "rõ ràng, bày tỏ ra ngoài, thấy rõ ra ngoài",
+    category: "General",
     image: require("./data/4000B2_861.jpg"),
     sound: require("./data/4000B2_apparent.mp3"),
     exampleSound: require("./data/4000B2_apparent_example.mp3"),
@@ -2106,6 +2368,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "blind",
     meaning: "đui mù",
+    category: "General",
     image: require("./data/4000B2_862.jpg"),
     sound: require("./data/4000B2_blind.mp3"),
     exampleSound: require("./data/4000B2_blind_example.mp3"),
@@ -2114,6 +2377,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "calculate",
     meaning: "tính toán",
+    category: "General",
     image: require("./data/4000B2_863.jpg"),
     sound: require("./data/4000B2_calculate.mp3"),
     exampleSound: require("./data/4000B2_calculate_example.mp3"),
@@ -2122,6 +2386,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chat",
     meaning: "nói chuyện phiếm, tán gẫu",
+    category: "General",
     image: require("./data/4000B2_864.jpg"),
     sound: require("./data/4000B2_chat.mp3"),
     exampleSound: require("./data/4000B2_chat_example.mp3"),
@@ -2130,6 +2395,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "commit",
     meaning: "hứa, cam kết,&nbsp;tống giam",
+    category: "General",
     image: require("./data/4000B2_865.jpg"),
     sound: require("./data/4000B2_commit.mp3"),
     exampleSound: require("./data/4000B2_commit_example.mp3"),
@@ -2138,6 +2404,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "compose",
     meaning: "soạn, sáng tác, làm",
+    category: "General",
     image: require("./data/4000B2_866.jpg"),
     sound: require("./data/4000B2_compose.mp3"),
     exampleSound: require("./data/4000B2_compose_example.mp3"),
@@ -2146,6 +2413,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dormitory",
     meaning: "ký túc xá, phòng ngủ tập thể",
+    category: "General",
     image: require("./data/4000B2_867.jpg"),
     sound: require("./data/4000B2_dormitory.mp3"),
     exampleSound: require("./data/4000B2_dormitory_example.mp3"),
@@ -2154,6 +2422,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "exhaust",
     meaning: "làm kiệt quệ, kiệt sức",
+    category: "General",
     image: require("./data/4000B2_868.jpg"),
     sound: require("./data/4000B2_exhaust.mp3"),
     exampleSound: require("./data/4000B2_exhaust_example.mp3"),
@@ -2162,6 +2431,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "greenhouse",
     meaning: "<div>nhà kính (trồng rau, hoa)</div>",
+    category: "General",
     image: require("./data/4000B2_869.jpg"),
     sound: require("./data/4000B2_greenhouse.mp3"),
     exampleSound: require("./data/4000B2_greenhouse_example.mp3"),
@@ -2170,6 +2440,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ignore",
     meaning: "lờ đi, phớt đi, bác bỏ",
+    category: "General",
     image: require("./data/4000B2_870.jpg"),
     sound: require("./data/4000B2_ignore.mp3"),
     exampleSound: require("./data/4000B2_ignore_example.mp3"),
@@ -2178,6 +2449,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "obvious",
     meaning: "rõ ràng, rành mạch",
+    category: "General",
     image: require("./data/4000B2_871.jpg"),
     sound: require("./data/4000B2_obvious.mp3"),
     exampleSound: require("./data/4000B2_obvious_example.mp3"),
@@ -2186,6 +2458,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "physics",
     meaning: "vật lý học",
+    category: "General",
     image: require("./data/4000B2_872.jpg"),
     sound: require("./data/4000B2_physics.mp3"),
     exampleSound: require("./data/4000B2_physics_example.mp3"),
@@ -2194,6 +2467,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "portion",
     meaning: "phần, phần chia",
+    category: "General",
     image: require("./data/4000B2_873.jpg"),
     sound: require("./data/4000B2_portion.mp3"),
     exampleSound: require("./data/4000B2_portion_example.mp3"),
@@ -2202,6 +2476,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "remind",
     meaning: "nhắc nhở, làm nhớ lại (cái gì)",
+    category: "General",
     image: require("./data/4000B2_874.jpg"),
     sound: require("./data/4000B2_remind.mp3"),
     exampleSound: require("./data/4000B2_remind_example.mp3"),
@@ -2210,6 +2485,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "secretary",
     meaning: "thư ký, bí thư",
+    category: "General",
     image: require("./data/4000B2_875.jpg"),
     sound: require("./data/4000B2_secretary.mp3"),
     exampleSound: require("./data/4000B2_secretary_example.mp3"),
@@ -2218,6 +2494,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "severe",
     meaning: "khắt khe (trong thái độ, cách cư xử),&nbsp;khốc liệt, dữ dội",
+    category: "General",
     image: require("./data/4000B2_876.jpg"),
     sound: require("./data/4000B2_severe.mp3"),
     exampleSound: require("./data/4000B2_severe_example.mp3"),
@@ -2226,6 +2503,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "talent",
     meaning: "năng khiếu",
+    category: "General",
     image: require("./data/4000B2_877.jpg"),
     sound: require("./data/4000B2_talent.mp3"),
     exampleSound: require("./data/4000B2_talent_example.mp3"),
@@ -2234,6 +2512,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "thesis",
     meaning: "luận văn, luận án",
+    category: "General",
     image: require("./data/4000B2_878.jpg"),
     sound: require("./data/4000B2_thesis.mp3"),
     exampleSound: require("./data/4000B2_thesis_example.mp3"),
@@ -2242,6 +2521,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "uniform",
     meaning: "đồng phục, quân phục",
+    category: "Common Actions",
     image: require("./data/4000B2_879.jpg"),
     sound: require("./data/4000B2_uniform.mp3"),
     exampleSound: require("./data/4000B2_uniform_example.mp3"),
@@ -2250,6 +2530,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "vision",
     meaning: "sự nhìn; sức nhìn",
+    category: "General",
     image: require("./data/4000B2_880.jpg"),
     sound: require("./data/4000B2_vision.mp3"),
     exampleSound: require("./data/4000B2_vision_example.mp3"),
@@ -2258,6 +2539,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "absorb",
     meaning: "hút nước, thấm nước, hấp thu",
+    category: "General",
     image: require("./data/4000B2_881.jpg"),
     sound: require("./data/4000B2_absorb.mp3"),
     exampleSound: require("./data/4000B2_absorb_example.mp3"),
@@ -2266,6 +2548,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "boss",
     meaning: "ông chủ, thủ trưởng",
+    category: "General",
     image: require("./data/4000B2_882.jpg"),
     sound: require("./data/4000B2_boss.mp3"),
     exampleSound: require("./data/4000B2_boss_example.mp3"),
@@ -2274,6 +2557,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "committee",
     meaning: "uỷ ban",
+    category: "General",
     image: require("./data/4000B2_883.jpg"),
     sound: require("./data/4000B2_committee.mp3"),
     exampleSound: require("./data/4000B2_committee_example.mp3"),
@@ -2282,6 +2566,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "contract",
     meaning: "hợp đồng",
+    category: "General",
     image: require("./data/4000B2_884.jpg"),
     sound: require("./data/4000B2_contract.mp3"),
     exampleSound: require("./data/4000B2_contract_example.mp3"),
@@ -2290,6 +2575,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "crew",
     meaning: "ban nhóm, đội (làm việc...)",
+    category: "General",
     image: require("./data/4000B2_885.jpg"),
     sound: require("./data/4000B2_crew.mp3"),
     exampleSound: require("./data/4000B2_crew_example.mp3"),
@@ -2298,6 +2584,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "devote",
     meaning: "hiến dâng, dành hết cho",
+    category: "General",
     image: require("./data/4000B2_886.jpg"),
     sound: require("./data/4000B2_devote.mp3"),
     exampleSound: require("./data/4000B2_devote_example.mp3"),
@@ -2306,6 +2593,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dig",
     meaning: "đào bới, xới, cuốc (đất...)",
+    category: "General",
     image: require("./data/4000B2_887.jpg"),
     sound: require("./data/4000B2_dig.mp3"),
     exampleSound: require("./data/4000B2_dig_example.mp3"),
@@ -2314,6 +2602,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dine",
     meaning: "ăn cơm (trưa, tối)",
+    category: "General",
     image: require("./data/4000B2_888.jpg"),
     sound: require("./data/4000B2_dine.mp3"),
     exampleSound: require("./data/4000B2_dine_example.mp3"),
@@ -2322,6 +2611,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "donate",
     meaning: "quyên góp, tặng",
+    category: "General",
     image: require("./data/4000B2_889.jpg"),
     sound: require("./data/4000B2_donate.mp3"),
     exampleSound: require("./data/4000B2_donate_example.mp3"),
@@ -2330,6 +2620,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "double",
     meaning: "gấp đôi, hai, kép",
+    category: "General",
     image: require("./data/4000B2_890.jpg"),
     sound: require("./data/4000B2_double.mp3"),
     exampleSound: require("./data/4000B2_double_example.mp3"),
@@ -2338,6 +2629,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "elevate",
     meaning: "nâng lên, đưa lên,&nbsp;nâng cao",
+    category: "General",
     image: require("./data/4000B2_891.jpg"),
     sound: require("./data/4000B2_elevate.mp3"),
     exampleSound: require("./data/4000B2_elevate_example.mp3"),
@@ -2346,6 +2638,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "flavor",
     meaning: "vị ngon, mùi thơm; mùi vị",
+    category: "General",
     image: require("./data/4000B2_892.jpg"),
     sound: require("./data/4000B2_flavor.mp3"),
     exampleSound: require("./data/4000B2_flavor_example.mp3"),
@@ -2354,6 +2647,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "foundation",
     meaning: "quỹ",
+    category: "General",
     image: require("./data/4000B2_893.jpg"),
     sound: require("./data/4000B2_foundation.mp3"),
     exampleSound: require("./data/4000B2_foundation_example.mp3"),
@@ -2362,6 +2656,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "generation",
     meaning: "thế hệ",
+    category: "General",
     image: require("./data/4000B2_894.jpg"),
     sound: require("./data/4000B2_generation.mp3"),
     exampleSound: require("./data/4000B2_generation_example.mp3"),
@@ -2370,6 +2665,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "handle",
     meaning: "tay cầm",
+    category: "General",
     image: require("./data/4000B2_895.jpg"),
     sound: require("./data/4000B2_handle.mp3"),
     exampleSound: require("./data/4000B2_handle_example.mp3"),
@@ -2378,6 +2674,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "layer",
     meaning: "lớp",
+    category: "General",
     image: require("./data/4000B2_896.jpg"),
     sound: require("./data/4000B2_layer.mp3"),
     exampleSound: require("./data/4000B2_layer_example.mp3"),
@@ -2386,6 +2683,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mud",
     meaning: "bùn ((nghĩa đen) &amp; (nghĩa bóng))",
+    category: "General",
     image: require("./data/4000B2_897.jpg"),
     sound: require("./data/4000B2_mud.mp3"),
     exampleSound: require("./data/4000B2_mud_example.mp3"),
@@ -2394,6 +2692,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "smooth",
     meaning: "nhẵn, trơn, mượt",
+    category: "General",
     image: require("./data/4000B2_898.jpg"),
     sound: require("./data/4000B2_smooth.mp3"),
     exampleSound: require("./data/4000B2_smooth_example.mp3"),
@@ -2402,6 +2701,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "soil",
     meaning: "đất",
+    category: "General",
     image: require("./data/4000B2_899.jpg"),
     sound: require("./data/4000B2_soil.mp3"),
     exampleSound: require("./data/4000B2_soil_example.mp3"),
@@ -2410,6 +2710,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "unique",
     meaning: "độc đáo",
+    category: "General",
     image: require("./data/4000B2_900.jpg"),
     sound: require("./data/4000B2_unique.mp3"),
     exampleSound: require("./data/4000B2_unique_example.mp3"),
@@ -2418,6 +2719,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chamber",
     meaning: "phòng ngủ",
+    category: "General",
     image: require("./data/4000B2_901.jpg"),
     sound: require("./data/4000B2_chamber.mp3"),
     exampleSound: require("./data/4000B2_chamber_example.mp3"),
@@ -2426,6 +2728,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "deny",
     meaning: "từ chối, phản đối, phủ nhận",
+    category: "General",
     image: require("./data/4000B2_902.jpg"),
     sound: require("./data/4000B2_deny.mp3"),
     exampleSound: require("./data/4000B2_deny_example.mp3"),
@@ -2434,6 +2737,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "document",
     meaning: "văn bản, tài liệu, tư liệu",
+    category: "General",
     image: require("./data/4000B2_903.jpg"),
     sound: require("./data/4000B2_document.mp3"),
     exampleSound: require("./data/4000B2_document_example.mp3"),
@@ -2442,6 +2746,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "emphasize",
     meaning: "nhấn mạnh, làm nổi bật",
+    category: "Common Actions",
     image: require("./data/4000B2_904.jpg"),
     sound: require("./data/4000B2_emphasize.mp3"),
     exampleSound: require("./data/4000B2_emphasize_example.mp3"),
@@ -2450,6 +2755,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fever",
     meaning: "sốt, bệnh sốt",
+    category: "General",
     image: require("./data/4000B2_905.jpg"),
     sound: require("./data/4000B2_fever.mp3"),
     exampleSound: require("./data/4000B2_fever_example.mp3"),
@@ -2458,6 +2764,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "flu",
     meaning: "cảm cúm, bệnh cúm",
+    category: "General",
     image: require("./data/4000B2_906.jpg"),
     sound: require("./data/4000B2_flu.mp3"),
     exampleSound: require("./data/4000B2_flu_example.mp3"),
@@ -2466,6 +2773,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "freeze",
     meaning: "đóng băng, lạnh cứng",
+    category: "General",
     image: require("./data/4000B2_907.jpg"),
     sound: require("./data/4000B2_freeze.mp3"),
     exampleSound: require("./data/4000B2_freeze_example.mp3"),
@@ -2474,6 +2782,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "gesture",
     meaning: "điệu bộ, cử chỉ, động tác",
+    category: "General",
     image: require("./data/4000B2_908.jpg"),
     sound: require("./data/4000B2_gesture.mp3"),
     exampleSound: require("./data/4000B2_gesture_example.mp3"),
@@ -2482,6 +2791,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "interrupt",
     meaning: "làm gián đoạn,&nbsp;ngắt lời",
+    category: "General",
     image: require("./data/4000B2_909.jpg"),
     sound: require("./data/4000B2_interrupt.mp3"),
     exampleSound: require("./data/4000B2_interrupt_example.mp3"),
@@ -2490,6 +2800,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "last",
     meaning: "tồn tại, kéo dài; giữ lâu bền",
+    category: "General",
     image: require("./data/4000B2_910.jpg"),
     sound: require("./data/4000B2_last.mp3"),
     exampleSound: require("./data/4000B2_last_example.mp3"),
@@ -2498,6 +2809,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "likeness",
     meaning: "tính chất giống; sự giống",
+    category: "General",
     image: require("./data/4000B2_911.jpg"),
     sound: require("./data/4000B2_likeness.mp3"),
     exampleSound: require("./data/4000B2_likeness_example.mp3"),
@@ -2506,6 +2818,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "moreover",
     meaning: "hơn nữa, ngoài ra",
+    category: "General",
     image: require("./data/4000B2_912.jpg"),
     sound: require("./data/4000B2_moreover.mp3"),
     exampleSound: require("./data/4000B2_moreover_example.mp3"),
@@ -2514,6 +2827,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "perspective",
     meaning: "viễn cảnh, triển vọng",
+    category: "General",
     image: require("./data/4000B2_913.jpg"),
     sound: require("./data/4000B2_perspective.mp3"),
     exampleSound: require("./data/4000B2_perspective_example.mp3"),
@@ -2522,6 +2836,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rational",
     meaning: "có lý, vừa phải, có chừng mực",
+    category: "General",
     image: require("./data/4000B2_914.jpg"),
     sound: require("./data/4000B2_rational.mp3"),
     exampleSound: require("./data/4000B2_rational_example.mp3"),
@@ -2530,6 +2845,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "recover",
     meaning: "lấy lại, giành lại, phục hồi, bình phục",
+    category: "Common Actions",
     image: require("./data/4000B2_915.jpg"),
     sound: require("./data/4000B2_recover.mp3"),
     exampleSound: require("./data/4000B2_recover_example.mp3"),
@@ -2538,6 +2854,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rely; relied",
     meaning: "tin cậy, dựa vào",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_916.jpg"),
     sound: require("./data/4000B2_rely.mp3"),
     exampleSound: require("./data/4000B2_rely_example.mp3"),
@@ -2546,6 +2863,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shock",
     meaning: "sốc",
+    category: "General",
     image: require("./data/4000B2_917.jpg"),
     sound: require("./data/4000B2_shock.mp3"),
     exampleSound: require("./data/4000B2_shock_example.mp3"),
@@ -2554,6 +2872,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shy",
     meaning: "ngượng ngùng, nhút nhát, bẽn lẽn, e thẹn",
+    category: "General",
     image: require("./data/4000B2_918.jpg"),
     sound: require("./data/4000B2_shy.mp3"),
     exampleSound: require("./data/4000B2_shy_example.mp3"),
@@ -2562,6 +2881,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "stare",
     meaning: "nhìn chằm chằm",
+    category: "General",
     image: require("./data/4000B2_919.jpg"),
     sound: require("./data/4000B2_stare.mp3"),
     exampleSound: require("./data/4000B2_stare_example.mp3"),
@@ -2570,6 +2890,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "thus",
     meaning: "vì vậy, như vậy",
+    category: "General",
     image: require("./data/4000B2_920.jpg"),
     sound: require("./data/4000B2_thus.mp3"),
     exampleSound: require("./data/4000B2_thus_example.mp3"),
@@ -2578,6 +2899,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "aim",
     meaning: "mục đích, mục tiêu, ý định",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_921.jpg"),
     sound: require("./data/4000B2_aim.mp3"),
     exampleSound: require("./data/4000B2_aim_example.mp3"),
@@ -2586,6 +2908,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "attach",
     meaning: "đính kèm, gắn, dán",
+    category: "General",
     image: require("./data/4000B2_922.jpg"),
     sound: require("./data/4000B2_attach.mp3"),
     exampleSound: require("./data/4000B2_attach_example.mp3"),
@@ -2594,6 +2917,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bet",
     meaning: "đánh cược",
+    category: "Common Actions",
     image: require("./data/4000B2_923.jpg"),
     sound: require("./data/4000B2_bet.mp3"),
     exampleSound: require("./data/4000B2_bet_example.mp3"),
@@ -2602,6 +2926,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "carriage",
     meaning: "xe ngựa,&nbsp;toa hành khách (đường sắt)",
+    category: "General",
     image: require("./data/4000B2_924.jpg"),
     sound: require("./data/4000B2_carriage.mp3"),
     exampleSound: require("./data/4000B2_carriage_example.mp3"),
@@ -2610,6 +2935,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "classic",
     meaning: "kinh điển",
+    category: "General",
     image: require("./data/4000B2_925.jpg"),
     sound: require("./data/4000B2_classic.mp3"),
     exampleSound: require("./data/4000B2_classic_example.mp3"),
@@ -2618,6 +2944,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "commute",
     meaning: "đi lại đều đặn (giữa hai địa điểm)",
+    category: "General",
     image: require("./data/4000B2_926.jpg"),
     sound: require("./data/4000B2_commute.mp3"),
     exampleSound: require("./data/4000B2_commute_example.mp3"),
@@ -2626,6 +2953,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "confirm",
     meaning: "xác nhận; chứng thực",
+    category: "General",
     image: require("./data/4000B2_927.jpg"),
     sound: require("./data/4000B2_confirm.mp3"),
     exampleSound: require("./data/4000B2_confirm_example.mp3"),
@@ -2634,6 +2962,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "criticize",
     meaning: "phê bình, phê phán, bình phẩm, chỉ trích",
+    category: "General",
     image: require("./data/4000B2_928.jpg"),
     sound: require("./data/4000B2_criticize.mp3"),
     exampleSound: require("./data/4000B2_criticize_example.mp3"),
@@ -2642,6 +2971,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "differ",
     meaning: "khác, không giống",
+    category: "General",
     image: require("./data/4000B2_929.jpg"),
     sound: require("./data/4000B2_differ.mp3"),
     exampleSound: require("./data/4000B2_differ_example.mp3"),
@@ -2650,6 +2980,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "expense",
     meaning: "chi phí, phí tổn",
+    category: "General",
     image: require("./data/4000B2_930.jpg"),
     sound: require("./data/4000B2_expense.mp3"),
     exampleSound: require("./data/4000B2_expense_example.mp3"),
@@ -2658,6 +2989,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "formal",
     meaning: "trang trọng",
+    category: "General",
     image: require("./data/4000B2_931.jpg"),
     sound: require("./data/4000B2_formal.mp3"),
     exampleSound: require("./data/4000B2_formal_example.mp3"),
@@ -2666,6 +2998,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "height",
     meaning: "chiều cao, độ cao",
+    category: "General",
     image: require("./data/4000B2_932.jpg"),
     sound: require("./data/4000B2_height.mp3"),
     exampleSound: require("./data/4000B2_height_example.mp3"),
@@ -2674,6 +3007,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "invent",
     meaning: "phát minh, sáng chế",
+    category: "General",
     image: require("./data/4000B2_933.jpg"),
     sound: require("./data/4000B2_invent.mp3"),
     exampleSound: require("./data/4000B2_invent_example.mp3"),
@@ -2682,6 +3016,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "junior",
     meaning: "ít thâm niên hơn; ở cấp dưới",
+    category: "General",
     image: require("./data/4000B2_934.jpg"),
     sound: require("./data/4000B2_junior.mp3"),
     exampleSound: require("./data/4000B2_junior_example.mp3"),
@@ -2690,6 +3025,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "labor",
     meaning: "lao động",
+    category: "General",
     image: require("./data/4000B2_935.jpg"),
     sound: require("./data/4000B2_labor.mp3"),
     exampleSound: require("./data/4000B2_labor_example.mp3"),
@@ -2698,6 +3034,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mechanic",
     meaning: "thợ máy, công nhân cơ khí",
+    category: "General",
     image: require("./data/4000B2_936.jpg"),
     sound: require("./data/4000B2_mechanic.mp3"),
     exampleSound: require("./data/4000B2_mechanic_example.mp3"),
@@ -2706,6 +3043,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "prime",
     meaning: "nguyên nhân chính, thời kỳ đẹp nhất",
+    category: "General",
     image: require("./data/4000B2_937.jpg"),
     sound: require("./data/4000B2_prime.mp3"),
     exampleSound: require("./data/4000B2_prime_example.mp3"),
@@ -2714,6 +3052,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shift",
     meaning: "đổi chỗ, dời chỗ, di chuyển",
+    category: "Common Actions",
     image: require("./data/4000B2_938.jpg"),
     sound: require("./data/4000B2_shift.mp3"),
     exampleSound: require("./data/4000B2_shift_example.mp3"),
@@ -2722,6 +3061,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "signal",
     meaning: "tín hiệu; hiệu lệnh",
+    category: "General",
     image: require("./data/4000B2_939.jpg"),
     sound: require("./data/4000B2_signal.mp3"),
     exampleSound: require("./data/4000B2_signal_example.mp3"),
@@ -2730,6 +3070,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sincere",
     meaning: "thành thật, thật thà",
+    category: "General",
     image: require("./data/4000B2_940.jpg"),
     sound: require("./data/4000B2_sincere.mp3"),
     exampleSound: require("./data/4000B2_sincere_example.mp3"),
@@ -2738,6 +3079,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ability",
     meaning: "năng lực, khả năng",
+    category: "General",
     image: require("./data/4000B2_941.jpg"),
     sound: require("./data/4000B2_ability.mp3"),
     exampleSound: require("./data/4000B2_ability_example.mp3"),
@@ -2746,6 +3088,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "agriculture",
     meaning: "nông nghiệp",
+    category: "General",
     image: require("./data/4000B2_942.jpg"),
     sound: require("./data/4000B2_agriculture.mp3"),
     exampleSound: require("./data/4000B2_agriculture_example.mp3"),
@@ -2754,6 +3097,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cartoon",
     meaning: "tranh đả kích, tranh biếm hoạ",
+    category: "General",
     image: require("./data/4000B2_943.jpg"),
     sound: require("./data/4000B2_cartoon.mp3"),
     exampleSound: require("./data/4000B2_cartoon_example.mp3"),
@@ -2762,6 +3106,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ceiling",
     meaning: "trần (nhà...)",
+    category: "General",
     image: require("./data/4000B2_944.jpg"),
     sound: require("./data/4000B2_ceiling.mp3"),
     exampleSound: require("./data/4000B2_ceiling_example.mp3"),
@@ -2770,6 +3115,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "convince",
     meaning: "làm cho nghe theo, thuyết phục",
+    category: "Common Actions",
     image: require("./data/4000B2_945.jpg"),
     sound: require("./data/4000B2_convince.mp3"),
     exampleSound: require("./data/4000B2_convince_example.mp3"),
@@ -2778,6 +3124,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "curious",
     meaning: "tò mò, hiếu kỳ",
+    category: "General",
     image: require("./data/4000B2_946.jpg"),
     sound: require("./data/4000B2_curious.mp3"),
     exampleSound: require("./data/4000B2_curious_example.mp3"),
@@ -2786,6 +3133,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "delay",
     meaning: "trễ, hoãn",
+    category: "General",
     image: require("./data/4000B2_947.jpg"),
     sound: require("./data/4000B2_delay.mp3"),
     exampleSound: require("./data/4000B2_delay_example.mp3"),
@@ -2794,6 +3142,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "diary",
     meaning: "nhật ký",
+    category: "General",
     image: require("./data/4000B2_948.jpg"),
     sound: require("./data/4000B2_diary.mp3"),
     exampleSound: require("./data/4000B2_diary_example.mp3"),
@@ -2802,6 +3151,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "element",
     meaning: "yếu tố,&nbsp;nguyên tố",
+    category: "General",
     image: require("./data/4000B2_949.jpg"),
     sound: require("./data/4000B2_element.mp3"),
     exampleSound: require("./data/4000B2_element_example.mp3"),
@@ -2810,6 +3160,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "faith",
     meaning: "niềm tin,&nbsp;sự trung thành",
+    category: "General",
     image: require("./data/4000B2_950.jpg"),
     sound: require("./data/4000B2_faith.mp3"),
     exampleSound: require("./data/4000B2_faith_example.mp3"),
@@ -2818,6 +3169,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "grain",
     meaning: "lương thực",
+    category: "General",
     image: require("./data/4000B2_951.jpg"),
     sound: require("./data/4000B2_grain.mp3"),
     exampleSound: require("./data/4000B2_grain_example.mp3"),
@@ -2826,6 +3178,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "greet",
     meaning: "chào mừng,&nbsp;đón chào",
+    category: "General",
     image: require("./data/4000B2_952.jpg"),
     sound: require("./data/4000B2_greet.mp3"),
     exampleSound: require("./data/4000B2_greet_example.mp3"),
@@ -2834,6 +3187,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "investigate",
     meaning: "điều tra, nghiên cứu",
+    category: "General",
     image: require("./data/4000B2_953.jpg"),
     sound: require("./data/4000B2_investigate.mp3"),
     exampleSound: require("./data/4000B2_investigate_example.mp3"),
@@ -2842,6 +3196,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "joy",
     meaning: "niềm vui,&nbsp;sự hân hoan, sự vui sướng",
+    category: "General",
     image: require("./data/4000B2_954.jpg"),
     sound: require("./data/4000B2_joy.mp3"),
     exampleSound: require("./data/4000B2_joy_example.mp3"),
@@ -2850,6 +3205,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "label",
     meaning: "nhãn hàng hóa, nhãn hiệu",
+    category: "General",
     image: require("./data/4000B2_955.jpg"),
     sound: require("./data/4000B2_label.mp3"),
     exampleSound: require("./data/4000B2_label_example.mp3"),
@@ -2858,6 +3214,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "monk",
     meaning: "thầy tu,&nbsp;nhà sư",
+    category: "General",
     image: require("./data/4000B2_956.jpg"),
     sound: require("./data/4000B2_monk.mp3"),
     exampleSound: require("./data/4000B2_monk_example.mp3"),
@@ -2866,6 +3223,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "odd",
     meaning: "kỳ cục, kỳ quặc, lẻ",
+    category: "General",
     image: require("./data/4000B2_957.jpg"),
     sound: require("./data/4000B2_odd.mp3"),
     exampleSound: require("./data/4000B2_odd_example.mp3"),
@@ -2874,6 +3232,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pause",
     meaning: "tạm nghỉ, tạm ngừng",
+    category: "General",
     image: require("./data/4000B2_958.jpg"),
     sound: require("./data/4000B2_pause.mp3"),
     exampleSound: require("./data/4000B2_pause_example.mp3"),
@@ -2882,6 +3241,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "priest",
     meaning: "giáo sĩ, thầy tế",
+    category: "General",
     image: require("./data/4000B2_959.jpg"),
     sound: require("./data/4000B2_priest.mp3"),
     exampleSound: require("./data/4000B2_priest_example.mp3"),
@@ -2890,6 +3250,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "profession",
     meaning: "nghề, nghề nghiệp",
+    category: "General",
     image: require("./data/4000B2_960.jpg"),
     sound: require("./data/4000B2_profession.mp3"),
     exampleSound: require("./data/4000B2_profession_example.mp3"),
@@ -2898,6 +3259,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "adopt",
     meaning: "nhận làm con nuôi",
+    category: "General",
     image: require("./data/4000B2_961.jpg"),
     sound: require("./data/4000B2_adopt.mp3"),
     exampleSound: require("./data/4000B2_adopt_example.mp3"),
@@ -2906,6 +3268,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "beg",
     meaning: "cầu xin,&nbsp;xin trân trọng (trong thư giao dịch)",
+    category: "General",
     image: require("./data/4000B2_962.jpg"),
     sound: require("./data/4000B2_beg.mp3"),
     exampleSound: require("./data/4000B2_beg_example.mp3"),
@@ -2914,6 +3277,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "beyond",
     meaning: "ở xa, ở phía bên kia",
+    category: "General",
     image: require("./data/4000B2_963.jpg"),
     sound: require("./data/4000B2_beyond.mp3"),
     exampleSound: require("./data/4000B2_beyond_example.mp3"),
@@ -2922,6 +3286,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "costume",
     meaning: "quần áo / y phục (hóa trang, giả trang)",
+    category: "Common Actions",
     image: require("./data/4000B2_964.jpg"),
     sound: require("./data/4000B2_costume.mp3"),
     exampleSound: require("./data/4000B2_costume_example.mp3"),
@@ -2930,6 +3295,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "exclaim",
     meaning: "kêu lên, la lên (vì phấn khích)",
+    category: "General",
     image: require("./data/4000B2_965.jpg"),
     sound: require("./data/4000B2_exclaim.mp3"),
     exampleSound: require("./data/4000B2_exclaim_example.mp3"),
@@ -2938,6 +3304,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "extend",
     meaning: "kéo dài, mở rộng, vươn, đưa ra",
+    category: "General",
     image: require("./data/4000B2_966.jpg"),
     sound: require("./data/4000B2_extend.mp3"),
     exampleSound: require("./data/4000B2_extend_example.mp3"),
@@ -2946,6 +3313,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fool",
     meaning: "ngu ngốc",
+    category: "General",
     image: require("./data/4000B2_967.jpg"),
     sound: require("./data/4000B2_fool.mp3"),
     exampleSound: require("./data/4000B2_fool_example.mp3"),
@@ -2954,6 +3322,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "forbid",
     meaning: "cấm, ngăn cấm",
+    category: "General",
     image: require("./data/4000B2_968.jpg"),
     sound: require("./data/4000B2_forbid.mp3"),
     exampleSound: require("./data/4000B2_forbid_example.mp3"),
@@ -2962,6 +3331,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "illustrate",
     meaning: "minh hoạ, làm rõ ý",
+    category: "General",
     image: require("./data/4000B2_969.jpg"),
     sound: require("./data/4000B2_illustrate.mp3"),
     exampleSound: require("./data/4000B2_illustrate_example.mp3"),
@@ -2970,6 +3340,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "indeed",
     meaning: "thực vậy, quả thực",
+    category: "General",
     image: require("./data/4000B2_970.jpg"),
     sound: require("./data/4000B2_indeed.mp3"),
     exampleSound: require("./data/4000B2_indeed_example.mp3"),
@@ -2978,6 +3349,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "interpret",
     meaning: "giải thích, làm sáng tỏ, làm phiên dịch",
+    category: "General",
     image: require("./data/4000B2_971.jpg"),
     sound: require("./data/4000B2_interpret.mp3"),
     exampleSound: require("./data/4000B2_interpret_example.mp3"),
@@ -2986,6 +3358,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "kindly",
     meaning: "tử tế, tốt bụng",
+    category: "General",
     image: require("./data/4000B2_972.jpg"),
     sound: require("./data/4000B2_kindly.mp3"),
     exampleSound: require("./data/4000B2_kindly_example.mp3"),
@@ -2999,10 +3372,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_motive.mp3"),
     exampleSound: require("./data/4000B2_motive_example.mp3"),
     meaningSound: require("./data/4000B2_motive_meaning.mp3"),
+    category: "Abstract & Qualities",
   },
   {
     voc: "nest",
     meaning: "tổ, ổ (chim, chuột...)",
+    category: "General",
     image: require("./data/4000B2_974.jpg"),
     sound: require("./data/4000B2_nest.mp3"),
     exampleSound: require("./data/4000B2_nest_example.mp3"),
@@ -3011,6 +3386,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "origin",
     meaning: "gốc, nguồn gốc",
+    category: "General",
     image: require("./data/4000B2_975.jpg"),
     sound: require("./data/4000B2_origin.mp3"),
     exampleSound: require("./data/4000B2_origin_example.mp3"),
@@ -3019,6 +3395,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "reception",
     meaning: "sự đón tiếp, sự tiếp tân, bữa tiệc chào mừng",
+    category: "General",
     image: require("./data/4000B2_976.jpg"),
     sound: require("./data/4000B2_reception.mp3"),
     exampleSound: require("./data/4000B2_reception_example.mp3"),
@@ -3027,6 +3404,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "reject",
     meaning: "từ chối, loại ra, bác bỏ",
+    category: "General",
     image: require("./data/4000B2_977.jpg"),
     sound: require("./data/4000B2_reject.mp3"),
     exampleSound: require("./data/4000B2_reject_example.mp3"),
@@ -3035,6 +3413,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "silence",
     meaning: "sự yên lặng, sự yên tĩnh, sự tĩnh mịch",
+    category: "Common Actions",
     image: require("./data/4000B2_978.jpg"),
     sound: require("./data/4000B2_silence.mp3"),
     exampleSound: require("./data/4000B2_silence_example.mp3"),
@@ -3043,6 +3422,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "stream",
     meaning: "dòng suối, dòng sông nhỏ",
+    category: "General",
     image: require("./data/4000B2_979.jpg"),
     sound: require("./data/4000B2_stream.mp3"),
     exampleSound: require("./data/4000B2_stream_example.mp3"),
@@ -3051,6 +3431,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tone",
     meaning: "giọng, tông",
+    category: "General",
     image: require("./data/4000B2_980.jpg"),
     sound: require("./data/4000B2_tone.mp3"),
     exampleSound: require("./data/4000B2_tone_example.mp3"),
@@ -3059,6 +3440,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "accomplish",
     meaning: "hoàn thành, làm xong, đạt tới",
+    category: "General",
     image: require("./data/4000B2_981.jpg"),
     sound: require("./data/4000B2_accomplish.mp3"),
     exampleSound: require("./data/4000B2_accomplish_example.mp3"),
@@ -3067,6 +3449,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "approve",
     meaning: "tán thành, bằng lòng, chấp thuận<div>xác nhận, phê chuẩn</div>",
+    category: "General",
     image: require("./data/4000B2_982.jpg"),
     sound: require("./data/4000B2_approve.mp3"),
     exampleSound: require("./data/4000B2_approve_example.mp3"),
@@ -3075,6 +3458,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "approximate",
     meaning: "xấp xỉ, gần đúng",
+    category: "General",
     image: require("./data/4000B2_983.jpg"),
     sound: require("./data/4000B2_approximate.mp3"),
     exampleSound: require("./data/4000B2_approximate_example.mp3"),
@@ -3083,6 +3467,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "barrier",
     meaning: "thanh chắn, hàng rào, ba ri e",
+    category: "General",
     image: require("./data/4000B2_984.jpg"),
     sound: require("./data/4000B2_barrier.mp3"),
     exampleSound: require("./data/4000B2_barrier_example.mp3"),
@@ -3091,6 +3476,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "detect",
     meaning: "dò ra, tìm ra, phát hiện ra",
+    category: "General",
     image: require("./data/4000B2_985.jpg"),
     sound: require("./data/4000B2_detect.mp3"),
     exampleSound: require("./data/4000B2_detect_example.mp3"),
@@ -3099,6 +3485,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "duty",
     meaning: "bổn phận, nhiệm vụ, trách nhiệm",
+    category: "General",
     image: require("./data/4000B2_986.jpg"),
     sound: require("./data/4000B2_duty.mp3"),
     exampleSound: require("./data/4000B2_duty_example.mp3"),
@@ -3107,6 +3494,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "elementary",
     meaning: "cơ bản, cơ sở",
+    category: "General",
     image: require("./data/4000B2_987.jpg"),
     sound: require("./data/4000B2_elementary.mp3"),
     exampleSound: require("./data/4000B2_elementary_example.mp3"),
@@ -3115,6 +3503,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "failure",
     meaning: "sự thất bại; sự hỏng; sự mất (mùa, điện...)",
+    category: "General",
     image: require("./data/4000B2_988.jpg"),
     sound: require("./data/4000B2_failure.mp3"),
     exampleSound: require("./data/4000B2_failure_example.mp3"),
@@ -3123,6 +3512,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "gradual",
     meaning: "dần dần, từ từ",
+    category: "General",
     image: require("./data/4000B2_989.jpg"),
     sound: require("./data/4000B2_gradual.mp3"),
     exampleSound: require("./data/4000B2_gradual_example.mp3"),
@@ -3131,6 +3521,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "immigrant",
     meaning: "dân nhập cư",
+    category: "General",
     image: require("./data/4000B2_990.jpg"),
     sound: require("./data/4000B2_immigrant.mp3"),
     exampleSound: require("./data/4000B2_immigrant_example.mp3"),
@@ -3139,6 +3530,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "insert",
     meaning: "lồng vào, gài vào",
+    category: "General",
     image: require("./data/4000B2_991.jpg"),
     sound: require("./data/4000B2_insert.mp3"),
     exampleSound: require("./data/4000B2_insert_example.mp3"),
@@ -3147,6 +3539,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "instant",
     meaning: "chốc lát,&nbsp;ngay tức khắc",
+    category: "General",
     image: require("./data/4000B2_992.jpg"),
     sound: require("./data/4000B2_instant.mp3"),
     exampleSound: require("./data/4000B2_instant_example.mp3"),
@@ -3155,6 +3548,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "poverty",
     meaning: "sự nghèo đói",
+    category: "General",
     image: require("./data/4000B2_993.jpg"),
     sound: require("./data/4000B2_poverty.mp3"),
     exampleSound: require("./data/4000B2_poverty_example.mp3"),
@@ -3163,6 +3557,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pretend",
     meaning: "giả vờ, giả đò, giả bộ",
+    category: "General",
     image: require("./data/4000B2_994.jpg"),
     sound: require("./data/4000B2_pretend.mp3"),
     exampleSound: require("./data/4000B2_pretend_example.mp3"),
@@ -3171,6 +3566,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rank",
     meaning: "hạng, loại, cấp, bậc",
+    category: "General",
     image: require("./data/4000B2_995.jpg"),
     sound: require("./data/4000B2_rank.mp3"),
     exampleSound: require("./data/4000B2_rank_example.mp3"),
@@ -3179,6 +3575,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "recognition",
     meaning: "sự nhận ra,&nbsp;sự công nhận",
+    category: "General",
     image: require("./data/4000B2_996.jpg"),
     sound: require("./data/4000B2_recognition.mp3"),
     exampleSound: require("./data/4000B2_recognition_example.mp3"),
@@ -3187,6 +3584,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "refrigerate",
     meaning: "làm lạnh; ướp lạnh",
+    category: "General",
     image: require("./data/4000B2_997.jpg"),
     sound: require("./data/4000B2_refrigerate.mp3"),
     exampleSound: require("./data/4000B2_refrigerate_example.mp3"),
@@ -3195,6 +3593,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rent",
     meaning: "tiền thuê (nhà, đất)",
+    category: "General",
     image: require("./data/4000B2_998.jpg"),
     sound: require("./data/4000B2_rent.mp3"),
     exampleSound: require("./data/4000B2_rent_example.mp3"),
@@ -3203,6 +3602,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "retire",
     meaning: "về hưu",
+    category: "General",
     image: require("./data/4000B2_999.jpg"),
     sound: require("./data/4000B2_retire.mp3"),
     exampleSound: require("./data/4000B2_retire_example.mp3"),
@@ -3211,6 +3611,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "statistic",
     meaning: "(bản, số liệu) thống kê&nbsp;",
+    category: "General",
     image: require("./data/4000B2_1000.jpg"),
     sound: require("./data/4000B2_statistic.mp3"),
     exampleSound: require("./data/4000B2_statistic_example.mp3"),
@@ -3219,6 +3620,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "astronaut",
     meaning: "phi hành gia",
+    category: "General",
     image: require("./data/4000B2_1001.jpg"),
     sound: require("./data/4000B2_astronaut.mp3"),
     exampleSound: require("./data/4000B2_astronaut_example.mp3"),
@@ -3227,6 +3629,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "awake",
     meaning: "thức dậy.&nbsp;(nghĩa bóng) thức tỉnh",
+    category: "General",
     image: require("./data/4000B2_1002.jpg"),
     sound: require("./data/4000B2_awake.mp3"),
     exampleSound: require("./data/4000B2_awake_example.mp3"),
@@ -3235,6 +3638,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "courage",
     meaning: "sự can đảm, dũng khí",
+    category: "General",
     image: require("./data/4000B2_1003.jpg"),
     sound: require("./data/4000B2_courage.mp3"),
     exampleSound: require("./data/4000B2_courage_example.mp3"),
@@ -3243,6 +3647,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "float",
     meaning: "nổi, trôi lềnh bềnh",
+    category: "Common Actions",
     image: require("./data/4000B2_1004.jpg"),
     sound: require("./data/4000B2_float.mp3"),
     exampleSound: require("./data/4000B2_float_example.mp3"),
@@ -3251,6 +3656,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "grant",
     meaning: "cho, ban (ơn), cấp",
+    category: "General",
     image: require("./data/4000B2_1005.jpg"),
     sound: require("./data/4000B2_grant.mp3"),
     exampleSound: require("./data/4000B2_grant_example.mp3"),
@@ -3259,6 +3665,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "gravity",
     meaning: "trọng lực; trọng lượng",
+    category: "General",
     image: require("./data/4000B2_1006.jpg"),
     sound: require("./data/4000B2_gravity.mp3"),
     exampleSound: require("./data/4000B2_gravity_example.mp3"),
@@ -3267,6 +3674,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "jewel",
     meaning: "đá quý",
+    category: "General",
     image: require("./data/4000B2_1007.jpg"),
     sound: require("./data/4000B2_jewel.mp3"),
     exampleSound: require("./data/4000B2_jewel_example.mp3"),
@@ -3275,6 +3683,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "miner",
     meaning: "thợ mỏ",
+    category: "General",
     image: require("./data/4000B2_1008.jpg"),
     sound: require("./data/4000B2_miner.mp3"),
     exampleSound: require("./data/4000B2_miner_example.mp3"),
@@ -3283,6 +3692,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mineral",
     meaning: "khoáng vật, khoáng sản",
+    category: "General",
     image: require("./data/4000B2_1009.jpg"),
     sound: require("./data/4000B2_mineral.mp3"),
     exampleSound: require("./data/4000B2_mineral_example.mp3"),
@@ -3291,6 +3701,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "participate",
     meaning: "tham gia, cùng góp phần",
+    category: "General",
     image: require("./data/4000B2_1010.jpg"),
     sound: require("./data/4000B2_participate.mp3"),
     exampleSound: require("./data/4000B2_participate_example.mp3"),
@@ -3299,6 +3710,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "permission",
     meaning: "sự cho phép,&nbsp;giấy phép",
+    category: "General",
     image: require("./data/4000B2_1011.jpg"),
     sound: require("./data/4000B2_permission.mp3"),
     exampleSound: require("./data/4000B2_permission_example.mp3"),
@@ -3307,6 +3719,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pour",
     meaning: "rót, đổ, trút",
+    category: "Common Actions",
     image: require("./data/4000B2_1012.jpg"),
     sound: require("./data/4000B2_pour.mp3"),
     exampleSound: require("./data/4000B2_pour_example.mp3"),
@@ -3315,6 +3728,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "presence",
     meaning: "sự có mặt",
+    category: "General",
     image: require("./data/4000B2_1013.jpg"),
     sound: require("./data/4000B2_presence.mp3"),
     exampleSound: require("./data/4000B2_presence_example.mp3"),
@@ -3323,6 +3737,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "raw",
     meaning: "thô, sống",
+    category: "General",
     image: require("./data/4000B2_1014.jpg"),
     sound: require("./data/4000B2_raw.mp3"),
     exampleSound: require("./data/4000B2_raw_example.mp3"),
@@ -3331,6 +3746,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "satellite",
     meaning: "vệ tinh,&nbsp;chư hầu",
+    category: "General",
     image: require("./data/4000B2_1015.jpg"),
     sound: require("./data/4000B2_satellite.mp3"),
     exampleSound: require("./data/4000B2_satellite_example.mp3"),
@@ -3339,6 +3755,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "scale",
     meaning: "tỷ lệ, quy mô, phạm vi",
+    category: "General",
     image: require("./data/4000B2_1016.jpg"),
     sound: require("./data/4000B2_scale.mp3"),
     exampleSound: require("./data/4000B2_scale_example.mp3"),
@@ -3347,6 +3764,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "skip",
     meaning: "bỏ qua, quên",
+    category: "General",
     image: require("./data/4000B2_1017.jpg"),
     sound: require("./data/4000B2_skip.mp3"),
     exampleSound: require("./data/4000B2_skip_example.mp3"),
@@ -3355,6 +3773,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "stretch",
     meaning: "kéo ra, căng ra, duỗi ra",
+    category: "General",
     image: require("./data/4000B2_1018.jpg"),
     sound: require("./data/4000B2_stretch.mp3"),
     exampleSound: require("./data/4000B2_stretch_example.mp3"),
@@ -3363,6 +3782,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "telescope",
     meaning: "kính thiên văn",
+    category: "General",
     image: require("./data/4000B2_1019.jpg"),
     sound: require("./data/4000B2_telescope.mp3"),
     exampleSound: require("./data/4000B2_telescope_example.mp3"),
@@ -3371,6 +3791,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "underground",
     meaning: "dưới đất, ngầm",
+    category: "General",
     image: require("./data/4000B2_1020.jpg"),
     sound: require("./data/4000B2_underground.mp3"),
     exampleSound: require("./data/4000B2_underground_example.mp3"),
@@ -3379,6 +3800,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "alarm",
     meaning: "sự báo động, sự báo nguy",
+    category: "General",
     image: require("./data/4000B2_1021.jpg"),
     sound: require("./data/4000B2_alarm.mp3"),
     exampleSound: require("./data/4000B2_alarm_example.mp3"),
@@ -3387,6 +3809,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "apart",
     meaning: "riêng ra, xa ra",
+    category: "General",
     image: require("./data/4000B2_1022.jpg"),
     sound: require("./data/4000B2_apart.mp3"),
     exampleSound: require("./data/4000B2_apart_example.mp3"),
@@ -3395,6 +3818,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "arrest",
     meaning: "bắt giữ",
+    category: "General",
     image: require("./data/4000B2_1023.jpg"),
     sound: require("./data/4000B2_arrest.mp3"),
     exampleSound: require("./data/4000B2_arrest_example.mp3"),
@@ -3403,6 +3827,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "award",
     meaning: "phần thưởng, giải thưởng",
+    category: "General",
     image: require("./data/4000B2_1024.jpg"),
     sound: require("./data/4000B2_award.mp3"),
     exampleSound: require("./data/4000B2_award_example.mp3"),
@@ -3411,6 +3836,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "breed",
     meaning: "nòi, giống",
+    category: "General",
     image: require("./data/4000B2_1025.jpg"),
     sound: require("./data/4000B2_breed.mp3"),
     exampleSound: require("./data/4000B2_breed_example.mp3"),
@@ -3419,6 +3845,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bucket",
     meaning: "thùng, xô",
+    category: "General",
     image: require("./data/4000B2_1026.jpg"),
     sound: require("./data/4000B2_bucket.mp3"),
     exampleSound: require("./data/4000B2_bucket_example.mp3"),
@@ -3432,10 +3859,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_contest.mp3"),
     exampleSound: require("./data/4000B2_contest_example.mp3"),
     meaningSound: require("./data/4000B2_contest_meaning.mp3"),
+    category: "General",
   },
   {
     voc: "convict",
     meaning: "kết án, tuyên bố có tội",
+    category: "General",
     image: require("./data/4000B2_1028.jpg"),
     sound: require("./data/4000B2_convict.mp3"),
     exampleSound: require("./data/4000B2_convict_example.mp3"),
@@ -3444,6 +3873,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "garage",
     meaning: "ga ra, nhà để ô tô, nơi chữa ô tô",
+    category: "General",
     image: require("./data/4000B2_1029.jpg"),
     sound: require("./data/4000B2_garage.mp3"),
     exampleSound: require("./data/4000B2_garage_example.mp3"),
@@ -3452,6 +3882,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "journalist",
     meaning: "nhà báo",
+    category: "General",
     image: require("./data/4000B2_1030.jpg"),
     sound: require("./data/4000B2_journalist.mp3"),
     exampleSound: require("./data/4000B2_journalist_example.mp3"),
@@ -3460,6 +3891,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pup",
     meaning: "chó con",
+    category: "General",
     image: require("./data/4000B2_1031.jpg"),
     sound: require("./data/4000B2_pup.mp3"),
     exampleSound: require("./data/4000B2_pup_example.mp3"),
@@ -3468,6 +3900,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "qualify",
     meaning: "đủ khả năng, đủ tiêu chuẩn, đủ tư cách",
+    category: "General",
     image: require("./data/4000B2_1032.jpg"),
     sound: require("./data/4000B2_qualify.mp3"),
     exampleSound: require("./data/4000B2_qualify_example.mp3"),
@@ -3476,6 +3909,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "repair",
     meaning: "sửa chữa",
+    category: "General",
     image: require("./data/4000B2_1033.jpg"),
     sound: require("./data/4000B2_repair.mp3"),
     exampleSound: require("./data/4000B2_repair_example.mp3"),
@@ -3484,6 +3918,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "resume",
     meaning: "lấy lại, hồi phục lại,&nbsp;lại tiếp tục (sau khi nghỉ, dừng)",
+    category: "Common Actions",
     image: require("./data/4000B2_1034.jpg"),
     sound: require("./data/4000B2_resume.mp3"),
     exampleSound: require("./data/4000B2_resume_example.mp3"),
@@ -3492,6 +3927,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rob",
     meaning: "cướp, cướp đoạt",
+    category: "General",
     image: require("./data/4000B2_1035.jpg"),
     sound: require("./data/4000B2_rob.mp3"),
     exampleSound: require("./data/4000B2_rob_example.mp3"),
@@ -3500,6 +3936,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "slip",
     meaning: "trượt; trượt ngã",
+    category: "General",
     image: require("./data/4000B2_1036.jpg"),
     sound: require("./data/4000B2_slip.mp3"),
     exampleSound: require("./data/4000B2_slip_example.mp3"),
@@ -3508,6 +3945,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "somewhat",
     meaning: "hơi, gọi là, một chút",
+    category: "General",
     image: require("./data/4000B2_1037.jpg"),
     sound: require("./data/4000B2_somewhat.mp3"),
     exampleSound: require("./data/4000B2_somewhat_example.mp3"),
@@ -3516,6 +3954,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "stable",
     meaning: "vững vàng; ổn định",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_1038.jpg"),
     sound: require("./data/4000B2_stable.mp3"),
     exampleSound: require("./data/4000B2_stable_example.mp3"),
@@ -3524,6 +3963,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tissue",
     meaning: "giấy vệ sinh, giấy lụa, vải mỏng",
+    category: "General",
     image: require("./data/4000B2_1039.jpg"),
     sound: require("./data/4000B2_tissue.mp3"),
     exampleSound: require("./data/4000B2_tissue_example.mp3"),
@@ -3532,6 +3972,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "yard",
     meaning: "sân (có rào xung quanh)",
+    category: "General",
     image: require("./data/4000B2_1040.jpg"),
     sound: require("./data/4000B2_yard.mp3"),
     exampleSound: require("./data/4000B2_yard_example.mp3"),
@@ -3540,6 +3981,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "alike",
     meaning: "giống nhau,&nbsp;tương tự",
+    category: "General",
     image: require("./data/4000B2_1041.jpg"),
     sound: require("./data/4000B2_alike.mp3"),
     exampleSound: require("./data/4000B2_alike_example.mp3"),
@@ -3548,6 +3990,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "annoy",
     meaning: "làm khó chịu,&nbsp;làm phiền, quấy rầy",
+    category: "General",
     image: require("./data/4000B2_1042.jpg"),
     sound: require("./data/4000B2_annoy.mp3"),
     exampleSound: require("./data/4000B2_annoy_example.mp3"),
@@ -3556,6 +3999,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "architecture",
     meaning: "kiểu kiến trúc",
+    category: "General",
     image: require("./data/4000B2_1043.jpg"),
     sound: require("./data/4000B2_architecture.mp3"),
     exampleSound: require("./data/4000B2_architecture_example.mp3"),
@@ -3564,6 +4008,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "artificial",
     meaning: "nhân tạo",
+    category: "General",
     image: require("./data/4000B2_1044.jpg"),
     sound: require("./data/4000B2_artificial.mp3"),
     exampleSound: require("./data/4000B2_artificial_example.mp3"),
@@ -3572,6 +4017,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chain",
     meaning: "dây, xích",
+    category: "General",
     image: require("./data/4000B2_1045.jpg"),
     sound: require("./data/4000B2_chain.mp3"),
     exampleSound: require("./data/4000B2_chain_example.mp3"),
@@ -3580,6 +4026,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "distinct",
     meaning: "riêng biệt; khác biệt",
+    category: "General",
     image: require("./data/4000B2_1046.jpg"),
     sound: require("./data/4000B2_distinct.mp3"),
     exampleSound: require("./data/4000B2_distinct_example.mp3"),
@@ -3588,6 +4035,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "distinguish",
     meaning: "phân biệt, nhận ra",
+    category: "General",
     image: require("./data/4000B2_1047.jpg"),
     sound: require("./data/4000B2_distinguish.mp3"),
     exampleSound: require("./data/4000B2_distinguish_example.mp3"),
@@ -3596,6 +4044,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dust",
     meaning: "bụi",
+    category: "General",
     image: require("./data/4000B2_1048.jpg"),
     sound: require("./data/4000B2_dust.mp3"),
     exampleSound: require("./data/4000B2_dust_example.mp3"),
@@ -3604,6 +4053,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "excitement",
     meaning: "sự phấn khích",
+    category: "General",
     image: require("./data/4000B2_1049.jpg"),
     sound: require("./data/4000B2_excitement.mp3"),
     exampleSound: require("./data/4000B2_excitement_example.mp3"),
@@ -3617,10 +4067,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_heal.mp3"),
     exampleSound: require("./data/4000B2_heal_example.mp3"),
     meaningSound: require("./data/4000B2_heal_meaning.mp3"),
+    category: "General",
   },
   {
     voc: "inherit",
     meaning: "thừa hưởng, thừa kế",
+    category: "General",
     image: require("./data/4000B2_1051.jpg"),
     sound: require("./data/4000B2_inherit.mp3"),
     exampleSound: require("./data/4000B2_inherit_example.mp3"),
@@ -3629,6 +4081,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "manner",
     meaning: "cách, lối, kiểu",
+    category: "General",
     image: require("./data/4000B2_1052.jpg"),
     sound: require("./data/4000B2_manner.mp3"),
     exampleSound: require("./data/4000B2_manner_example.mp3"),
@@ -3637,6 +4090,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mount",
     meaning: "tăng lên,&nbsp;trèo, leo",
+    category: "General",
     image: require("./data/4000B2_1053.jpg"),
     sound: require("./data/4000B2_mount.mp3"),
     exampleSound: require("./data/4000B2_mount_example.mp3"),
@@ -3645,6 +4099,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "roof",
     meaning: "mái nhà, nóc",
+    category: "General",
     image: require("./data/4000B2_1054.jpg"),
     sound: require("./data/4000B2_roof.mp3"),
     exampleSound: require("./data/4000B2_roof_example.mp3"),
@@ -3653,6 +4108,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shortage",
     meaning: "sự thiếu; số lượng thiếu",
+    category: "General",
     image: require("./data/4000B2_1055.jpg"),
     sound: require("./data/4000B2_shortage.mp3"),
     exampleSound: require("./data/4000B2_shortage_example.mp3"),
@@ -3661,6 +4117,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "solid",
     meaning: "đặc, vững chắc, rắn chắc",
+    category: "General",
     image: require("./data/4000B2_1056.jpg"),
     sound: require("./data/4000B2_solid.mp3"),
     exampleSound: require("./data/4000B2_solid_example.mp3"),
@@ -3669,6 +4126,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "stock",
     meaning: "cổ phiếu, dự trữ",
+    category: "General",
     image: require("./data/4000B2_1057.jpg"),
     sound: require("./data/4000B2_stock.mp3"),
     exampleSound: require("./data/4000B2_stock_example.mp3"),
@@ -3677,6 +4135,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "substance",
     meaning: "chất, vật chất",
+    category: "General",
     image: require("./data/4000B2_1058.jpg"),
     sound: require("./data/4000B2_substance.mp3"),
     exampleSound: require("./data/4000B2_substance_example.mp3"),
@@ -3685,6 +4144,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tomb",
     meaning: "mộ",
+    category: "General",
     image: require("./data/4000B2_1059.jpg"),
     sound: require("./data/4000B2_tomb.mp3"),
     exampleSound: require("./data/4000B2_tomb_example.mp3"),
@@ -3693,6 +4153,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "wound",
     meaning: "vết thương, thương tích",
+    category: "General",
     image: require("./data/4000B2_1060.jpg"),
     sound: require("./data/4000B2_wound.mp3"),
     exampleSound: require("./data/4000B2_wound_example.mp3"),
@@ -3701,6 +4162,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bath",
     meaning: "sự tắm,&nbsp;chậu tắm, bồn tắm",
+    category: "General",
     image: require("./data/4000B2_1061.jpg"),
     sound: require("./data/4000B2_bath.mp3"),
     exampleSound: require("./data/4000B2_bath_example.mp3"),
@@ -3709,6 +4171,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bend",
     meaning: "bẻ cong, uốn cong",
+    category: "General",
     image: require("./data/4000B2_1062.jpg"),
     sound: require("./data/4000B2_bend.mp3"),
     exampleSound: require("./data/4000B2_bend_example.mp3"),
@@ -3717,6 +4180,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "chew",
     meaning: "nhai",
+    category: "General",
     image: require("./data/4000B2_1063.jpg"),
     sound: require("./data/4000B2_chew.mp3"),
     exampleSound: require("./data/4000B2_chew_example.mp3"),
@@ -3725,6 +4189,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "disabled",
     meaning: "tàn tật",
+    category: "General",
     image: require("./data/4000B2_1064.jpg"),
     sound: require("./data/4000B2_disabled.mp3"),
     exampleSound: require("./data/4000B2_disabled_example.mp3"),
@@ -3733,6 +4198,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fantastic",
     meaning: "siêu tốt, lập dị, vô cùng to lớn",
+    category: "General",
     image: require("./data/4000B2_1065.jpg"),
     sound: require("./data/4000B2_fantastic.mp3"),
     exampleSound: require("./data/4000B2_fantastic_example.mp3"),
@@ -3741,6 +4207,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fiction",
     meaning: "tiểu thuyết",
+    category: "General",
     image: require("./data/4000B2_1066.jpg"),
     sound: require("./data/4000B2_fiction.mp3"),
     exampleSound: require("./data/4000B2_fiction_example.mp3"),
@@ -3749,6 +4216,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "flag",
     meaning: "lá cờ",
+    category: "General",
     image: require("./data/4000B2_1067.jpg"),
     sound: require("./data/4000B2_flag.mp3"),
     exampleSound: require("./data/4000B2_flag_example.mp3"),
@@ -3757,6 +4225,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "inspect",
     meaning: "xem xét kỹ, kiểm tra",
+    category: "General",
     image: require("./data/4000B2_1068.jpg"),
     sound: require("./data/4000B2_inspect.mp3"),
     exampleSound: require("./data/4000B2_inspect_example.mp3"),
@@ -3765,6 +4234,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "journal",
     meaning: "tạp chí chuyên ngành",
+    category: "General",
     image: require("./data/4000B2_1069.jpg"),
     sound: require("./data/4000B2_journal.mp3"),
     exampleSound: require("./data/4000B2_journal_example.mp3"),
@@ -3773,6 +4243,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "liquid",
     meaning: "chất lỏng",
+    category: "General",
     image: require("./data/4000B2_1070.jpg"),
     sound: require("./data/4000B2_liquid.mp3"),
     exampleSound: require("./data/4000B2_liquid_example.mp3"),
@@ -3781,6 +4252,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "marvel",
     meaning: "ngạc nhiên, kinh ngạc",
+    category: "General",
     image: require("./data/4000B2_1071.jpg"),
     sound: require("./data/4000B2_marvel.mp3"),
     exampleSound: require("./data/4000B2_marvel_example.mp3"),
@@ -3789,6 +4261,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "nutrient",
     meaning: "chất dinh dưỡng",
+    category: "General",
     image: require("./data/4000B2_1072.jpg"),
     sound: require("./data/4000B2_nutrient.mp3"),
     exampleSound: require("./data/4000B2_nutrient_example.mp3"),
@@ -3797,6 +4270,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "overcome; overcame",
     meaning: "vượt qua, khắc phục (khó khăn...)",
+    category: "Common Actions",
     image: require("./data/4000B2_1073.jpg"),
     sound: require("./data/4000B2_overcome.mp3"),
     exampleSound: require("./data/4000B2_overcome_example.mp3"),
@@ -3805,6 +4279,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "recall",
     meaning: "nhớ lại",
+    category: "General",
     image: require("./data/4000B2_1074.jpg"),
     sound: require("./data/4000B2_recall.mp3"),
     exampleSound: require("./data/4000B2_recall_example.mp3"),
@@ -3813,6 +4288,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "regret",
     meaning: "hối tiếc",
+    category: "General",
     image: require("./data/4000B2_1075.jpg"),
     sound: require("./data/4000B2_regret.mp3"),
     exampleSound: require("./data/4000B2_regret_example.mp3"),
@@ -3821,6 +4297,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "soul",
     meaning: "tâm hồn",
+    category: "General",
     image: require("./data/4000B2_1076.jpg"),
     sound: require("./data/4000B2_soul.mp3"),
     exampleSound: require("./data/4000B2_soul_example.mp3"),
@@ -3829,6 +4306,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sufficient",
     meaning: "đủ",
+    category: "General",
     image: require("./data/4000B2_1077.jpg"),
     sound: require("./data/4000B2_sufficient.mp3"),
     exampleSound: require("./data/4000B2_sufficient_example.mp3"),
@@ -3837,6 +4315,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "surgery",
     meaning: "ca phẫu thuật",
+    category: "General",
     image: require("./data/4000B2_1078.jpg"),
     sound: require("./data/4000B2_surgery.mp3"),
     exampleSound: require("./data/4000B2_surgery_example.mp3"),
@@ -3845,6 +4324,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tough",
     meaning: "khó, hóc búa",
+    category: "General",
     image: require("./data/4000B2_1079.jpg"),
     sound: require("./data/4000B2_tough.mp3"),
     exampleSound: require("./data/4000B2_tough_example.mp3"),
@@ -3853,6 +4333,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tube",
     meaning: "ống, săm",
+    category: "General",
     image: require("./data/4000B2_1080.jpg"),
     sound: require("./data/4000B2_tube.mp3"),
     exampleSound: require("./data/4000B2_tube_example.mp3"),
@@ -3861,6 +4342,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "admit",
     meaning: "thừa nhận, thú nhận,&nbsp;cho vào",
+    category: "General",
     image: require("./data/4000B2_1081.jpg"),
     sound: require("./data/4000B2_admit.mp3"),
     exampleSound: require("./data/4000B2_admit_example.mp3"),
@@ -3869,6 +4351,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bin",
     meaning: "thùng",
+    category: "General",
     image: require("./data/4000B2_1082.jpg"),
     sound: require("./data/4000B2_bin.mp3"),
     exampleSound: require("./data/4000B2_bin_example.mp3"),
@@ -3877,6 +4360,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bowl",
     meaning: "cái bát, cái tô",
+    category: "General",
     image: require("./data/4000B2_1083.jpg"),
     sound: require("./data/4000B2_bowl.mp3"),
     exampleSound: require("./data/4000B2_bowl_example.mp3"),
@@ -3885,6 +4369,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cabin",
     meaning: "nhà gỗ nhỏ, túp lều",
+    category: "Household & Objects",
     image: require("./data/4000B2_1084.jpg"),
     sound: require("./data/4000B2_cabin.mp3"),
     exampleSound: require("./data/4000B2_cabin_example.mp3"),
@@ -3893,6 +4378,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cash",
     meaning: "tiền, tiền mặt",
+    category: "General",
     image: require("./data/4000B2_1085.jpg"),
     sound: require("./data/4000B2_cash.mp3"),
     exampleSound: require("./data/4000B2_cash_example.mp3"),
@@ -3901,6 +4387,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "criminal",
     meaning: "kẻ phạm tội, tội phạm",
+    category: "General",
     image: require("./data/4000B2_1086.jpg"),
     sound: require("./data/4000B2_criminal.mp3"),
     exampleSound: require("./data/4000B2_criminal_example.mp3"),
@@ -3909,6 +4396,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dozen",
     meaning: "một tá (mười hai)",
+    category: "General",
     image: require("./data/4000B2_1087.jpg"),
     sound: require("./data/4000B2_dozen.mp3"),
     exampleSound: require("./data/4000B2_dozen_example.mp3"),
@@ -3917,6 +4405,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "elder",
     meaning: "người nhiều tuổi hơn",
+    category: "General",
     image: require("./data/4000B2_1088.jpg"),
     sound: require("./data/4000B2_elder.mp3"),
     exampleSound: require("./data/4000B2_elder_example.mp3"),
@@ -3925,6 +4414,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "facial",
     meaning: "(thuộc) mặt",
+    category: "General",
     image: require("./data/4000B2_1089.jpg"),
     sound: require("./data/4000B2_facial.mp3"),
     exampleSound: require("./data/4000B2_facial_example.mp3"),
@@ -3933,6 +4423,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fence",
     meaning: "hàng rào",
+    category: "General",
     image: require("./data/4000B2_1090.jpg"),
     sound: require("./data/4000B2_fence.mp3"),
     exampleSound: require("./data/4000B2_fence_example.mp3"),
@@ -3941,6 +4432,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "inspire",
     meaning: "truyền cảm hứng",
+    category: "General",
     image: require("./data/4000B2_1091.jpg"),
     sound: require("./data/4000B2_inspire.mp3"),
     exampleSound: require("./data/4000B2_inspire_example.mp3"),
@@ -3949,6 +4441,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "mere",
     meaning: "chỉ là, suýt soát",
+    category: "General",
     image: require("./data/4000B2_1092.jpg"),
     sound: require("./data/4000B2_mere.mp3"),
     exampleSound: require("./data/4000B2_mere_example.mp3"),
@@ -3957,6 +4450,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "neat",
     meaning: "gọn gàng, ngăn nắp",
+    category: "General",
     image: require("./data/4000B2_1093.jpg"),
     sound: require("./data/4000B2_neat.mp3"),
     exampleSound: require("./data/4000B2_neat_example.mp3"),
@@ -3965,6 +4459,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "occasion",
     meaning: "dịp, cơ hội",
+    category: "General",
     image: require("./data/4000B2_1094.jpg"),
     sound: require("./data/4000B2_occasion.mp3"),
     exampleSound: require("./data/4000B2_occasion_example.mp3"),
@@ -3973,6 +4468,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "penalty",
     meaning: "hình phạt, tiền phạt",
+    category: "General",
     image: require("./data/4000B2_1095.jpg"),
     sound: require("./data/4000B2_penalty.mp3"),
     exampleSound: require("./data/4000B2_penalty_example.mp3"),
@@ -3981,6 +4477,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "rude",
     meaning: "khiếm nhã, bất lịch sự, vô lễ",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_1096.jpg"),
     sound: require("./data/4000B2_rude.mp3"),
     exampleSound: require("./data/4000B2_rude_example.mp3"),
@@ -3989,6 +4486,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "settle",
     meaning: "giải quyết,&nbsp;dàn xếp, hoà giải",
+    category: "General",
     image: require("./data/4000B2_1097.jpg"),
     sound: require("./data/4000B2_settle.mp3"),
     exampleSound: require("./data/4000B2_settle_example.mp3"),
@@ -3997,6 +4495,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "vehicle",
     meaning: "xe cộ",
+    category: "General",
     image: require("./data/4000B2_1098.jpg"),
     sound: require("./data/4000B2_vehicle.mp3"),
     exampleSound: require("./data/4000B2_vehicle_example.mp3"),
@@ -4005,6 +4504,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "wallet",
     meaning: "cái ví (đựng tiền)",
+    category: "General",
     image: require("./data/4000B2_1099.jpg"),
     sound: require("./data/4000B2_wallet.mp3"),
     exampleSound: require("./data/4000B2_wallet_example.mp3"),
@@ -4013,6 +4513,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "yell",
     meaning: "la hét, quát tháo",
+    category: "Feelings & Emotions",
     image: require("./data/4000B2_1100.jpg"),
     sound: require("./data/4000B2_yell.mp3"),
     exampleSound: require("./data/4000B2_yell_example.mp3"),
@@ -4021,6 +4522,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "accuse",
     meaning: "buộc tội, kết tội; tố cáo",
+    category: "General",
     image: require("./data/4000B2_1101.jpg"),
     sound: require("./data/4000B2_accuse.mp3"),
     exampleSound: require("./data/4000B2_accuse_example.mp3"),
@@ -4029,6 +4531,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "adjust",
     meaning: "điều chỉnh",
+    category: "General",
     image: require("./data/4000B2_1102.jpg"),
     sound: require("./data/4000B2_adjust.mp3"),
     exampleSound: require("./data/4000B2_adjust_example.mp3"),
@@ -4037,6 +4540,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "amuse",
     meaning: "làm vui, làm thích thú, làm buồn cười",
+    category: "General",
     image: require("./data/4000B2_1103.jpg"),
     sound: require("./data/4000B2_amuse.mp3"),
     exampleSound: require("./data/4000B2_amuse_example.mp3"),
@@ -4045,6 +4549,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "coral",
     meaning: "san hô",
+    category: "General",
     image: require("./data/4000B2_1104.jpg"),
     sound: require("./data/4000B2_coral.mp3"),
     exampleSound: require("./data/4000B2_coral_example.mp3"),
@@ -4053,6 +4558,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cotton",
     meaning: "bông, cô tông",
+    category: "General",
     image: require("./data/4000B2_1105.jpg"),
     sound: require("./data/4000B2_cotton.mp3"),
     exampleSound: require("./data/4000B2_cotton_example.mp3"),
@@ -4061,6 +4567,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "crash",
     meaning: "đâm, va chạm",
+    category: "Common Actions",
     image: require("./data/4000B2_1106.jpg"),
     sound: require("./data/4000B2_crash.mp3"),
     exampleSound: require("./data/4000B2_crash_example.mp3"),
@@ -4069,6 +4576,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "deck",
     meaning: "boong tàu, sàn tàu",
+    category: "General",
     image: require("./data/4000B2_1107.jpg"),
     sound: require("./data/4000B2_deck.mp3"),
     exampleSound: require("./data/4000B2_deck_example.mp3"),
@@ -4077,6 +4585,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "engage",
     meaning: "làm, tiến hành,&nbsp;hứa hẹn,cam kết, hứa hôn",
+    category: "General",
     image: require("./data/4000B2_1108.jpg"),
     sound: require("./data/4000B2_engage.mp3"),
     exampleSound: require("./data/4000B2_engage_example.mp3"),
@@ -4085,6 +4594,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "firm",
     meaning: "vững chắc; bền vững;&nbsp;hãng, công ty",
+    category: "General",
     image: require("./data/4000B2_1109.jpg"),
     sound: require("./data/4000B2_firm.mp3"),
     exampleSound: require("./data/4000B2_firm_example.mp3"),
@@ -4093,6 +4603,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fuel",
     meaning: "chất đốt, nhiên liệu",
+    category: "General",
     image: require("./data/4000B2_1110.jpg"),
     sound: require("./data/4000B2_fuel.mp3"),
     exampleSound: require("./data/4000B2_fuel_example.mp3"),
@@ -4101,6 +4612,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "grand",
     meaning: "hùng vĩ, rất lớn",
+    category: "General",
     image: require("./data/4000B2_1111.jpg"),
     sound: require("./data/4000B2_grand.mp3"),
     exampleSound: require("./data/4000B2_grand_example.mp3"),
@@ -4109,6 +4621,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "hurricane",
     meaning: "cơn bão tố",
+    category: "General",
     image: require("./data/4000B2_1112.jpg"),
     sound: require("./data/4000B2_hurricane.mp3"),
     exampleSound: require("./data/4000B2_hurricane_example.mp3"),
@@ -4117,6 +4630,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "loss",
     meaning: "sự mất,&nbsp;sự thiệt hại, sự thua",
+    category: "General",
     image: require("./data/4000B2_1113.jpg"),
     sound: require("./data/4000B2_loss.mp3"),
     exampleSound: require("./data/4000B2_loss_example.mp3"),
@@ -4125,6 +4639,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "plain",
     meaning: "đơn giản, mộc mạc, trơn, một màu",
+    category: "General",
     image: require("./data/4000B2_1114.jpg"),
     sound: require("./data/4000B2_plain.mp3"),
     exampleSound: require("./data/4000B2_plain_example.mp3"),
@@ -4133,6 +4648,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "reef",
     meaning: "đá ngầm, rạn đá cạnh biển",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_1115.jpg"),
     sound: require("./data/4000B2_reef.mp3"),
     exampleSound: require("./data/4000B2_reef_example.mp3"),
@@ -4141,6 +4657,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shut",
     meaning: "đóng, khép",
+    category: "General",
     image: require("./data/4000B2_1116.jpg"),
     sound: require("./data/4000B2_shut.mp3"),
     exampleSound: require("./data/4000B2_shut_example.mp3"),
@@ -4149,6 +4666,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "strict",
     meaning: "nghiêm ngặt, nghiêm khắc",
+    category: "General",
     image: require("./data/4000B2_1117.jpg"),
     sound: require("./data/4000B2_strict.mp3"),
     exampleSound: require("./data/4000B2_strict_example.mp3"),
@@ -4157,6 +4675,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "surf",
     meaning: "lướt sóng",
+    category: "General",
     image: require("./data/4000B2_1118.jpg"),
     sound: require("./data/4000B2_surf.mp3"),
     exampleSound: require("./data/4000B2_surf_example.mp3"),
@@ -4165,6 +4684,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "task",
     meaning: "nhiệm vụ, phận sự",
+    category: "General",
     image: require("./data/4000B2_1119.jpg"),
     sound: require("./data/4000B2_task2.mp3"),
     exampleSound: require("./data/4000B2_task2_example.mp3"),
@@ -4173,6 +4693,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "zone",
     meaning: "khu vực, vùng",
+    category: "General",
     image: require("./data/4000B2_1120.jpg"),
     sound: require("./data/4000B2_zone.mp3"),
     exampleSound: require("./data/4000B2_zone_example.mp3"),
@@ -4181,6 +4702,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "apology",
     meaning: "xin lỗi, sự xin lỗi",
+    category: "General",
     image: require("./data/4000B2_1121.jpg"),
     sound: require("./data/4000B2_apology.mp3"),
     exampleSound: require("./data/4000B2_apology_example.mp3"),
@@ -4189,6 +4711,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bold",
     meaning: "dũng cảm, táo bạo",
+    category: "General",
     image: require("./data/4000B2_1122.jpg"),
     sound: require("./data/4000B2_bold.mp3"),
     exampleSound: require("./data/4000B2_bold_example.mp3"),
@@ -4197,6 +4720,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "capture",
     meaning: "bắt giữ, bắt,&nbsp;lấy được, giành được",
+    category: "General",
     image: require("./data/4000B2_1123.jpg"),
     sound: require("./data/4000B2_capture.mp3"),
     exampleSound: require("./data/4000B2_capture_example.mp3"),
@@ -4205,6 +4729,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cardinal",
     meaning: "chính, chủ yếu, cốt yếu",
+    category: "General",
     image: require("./data/4000B2_1124.jpg"),
     sound: require("./data/4000B2_cardinal.mp3"),
     exampleSound: require("./data/4000B2_cardinal_example.mp3"),
@@ -4213,6 +4738,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "duke",
     meaning: "công tước",
+    category: "General",
     image: require("./data/4000B2_1125.jpg"),
     sound: require("./data/4000B2_duke.mp3"),
     exampleSound: require("./data/4000B2_duke_example.mp3"),
@@ -4221,6 +4747,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "expose",
     meaning: "phơi bày, phô ra",
+    category: "General",
     image: require("./data/4000B2_1126.jpg"),
     sound: require("./data/4000B2_expose.mp3"),
     exampleSound: require("./data/4000B2_expose_example.mp3"),
@@ -4229,6 +4756,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "guilty",
     meaning: "có lỗi, có tội",
+    category: "General",
     image: require("./data/4000B2_1127.jpg"),
     sound: require("./data/4000B2_guilty.mp3"),
     exampleSound: require("./data/4000B2_guilty_example.mp3"),
@@ -4237,6 +4765,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "hire",
     meaning: "mướn, thuê (nhân công),&nbsp;cho thuê (nhà...)",
+    category: "General",
     image: require("./data/4000B2_1128.jpg"),
     sound: require("./data/4000B2_hire.mp3"),
     exampleSound: require("./data/4000B2_hire_example.mp3"),
@@ -4245,6 +4774,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "innocent",
     meaning: "vô tội; không có tội",
+    category: "General",
     image: require("./data/4000B2_1129.jpg"),
     sound: require("./data/4000B2_innocent.mp3"),
     exampleSound: require("./data/4000B2_innocent_example.mp3"),
@@ -4253,6 +4783,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "jail",
     meaning: "nhà tù",
+    category: "General",
     image: require("./data/4000B2_1130.jpg"),
     sound: require("./data/4000B2_jail.mp3"),
     exampleSound: require("./data/4000B2_jail_example.mp3"),
@@ -4261,6 +4792,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "minister",
     meaning: "bộ trưởng",
+    category: "General",
     image: require("./data/4000B2_1131.jpg"),
     sound: require("./data/4000B2_minister.mp3"),
     exampleSound: require("./data/4000B2_minister_example.mp3"),
@@ -4269,6 +4801,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ordinary",
     meaning: "thông thường, bình thường",
+    category: "General",
     image: require("./data/4000B2_1132.jpg"),
     sound: require("./data/4000B2_ordinary.mp3"),
     exampleSound: require("./data/4000B2_ordinary_example.mp3"),
@@ -4277,6 +4810,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "permanent",
     meaning: "lâu bền, vĩnh cửu,&nbsp;lâu dài",
+    category: "General",
     image: require("./data/4000B2_1133.jpg"),
     sound: require("./data/4000B2_permanent.mp3"),
     exampleSound: require("./data/4000B2_permanent_example.mp3"),
@@ -4285,6 +4819,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "preserve",
     meaning: "giữ gìn, bảo quản, bảo tồn, duy trì",
+    category: "General",
     image: require("./data/4000B2_1134.jpg"),
     sound: require("./data/4000B2_preserve.mp3"),
     exampleSound: require("./data/4000B2_preserve_example.mp3"),
@@ -4293,6 +4828,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pronounce; pronouncing",
     meaning: "phát âm,&nbsp;tuyên bố",
+    category: "General",
     image: require("./data/4000B2_1135.jpg"),
     sound: require("./data/4000B2_pronounce.mp3"),
     exampleSound: require("./data/4000B2_pronounce_example.mp3"),
@@ -4301,6 +4837,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "resemble",
     meaning: "giống với&nbsp;(người nào, vật gì)",
+    category: "General",
     image: require("./data/4000B2_1136.jpg"),
     sound: require("./data/4000B2_resemble.mp3"),
     exampleSound: require("./data/4000B2_resemble_example.mp3"),
@@ -4309,6 +4846,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "symptom",
     meaning: "triệu chứng",
+    category: "General",
     image: require("./data/4000B2_1137.jpg"),
     sound: require("./data/4000B2_symptom.mp3"),
     exampleSound: require("./data/4000B2_symptom_example.mp3"),
@@ -4317,6 +4855,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tobacco",
     meaning: "thuốc lá",
+    category: "General",
     image: require("./data/4000B2_1138.jpg"),
     sound: require("./data/4000B2_tobacco.mp3"),
     exampleSound: require("./data/4000B2_tobacco_example.mp3"),
@@ -4325,6 +4864,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "twin",
     meaning: "sinh đôi",
+    category: "General",
     image: require("./data/4000B2_1139.jpg"),
     sound: require("./data/4000B2_twin.mp3"),
     exampleSound: require("./data/4000B2_twin_example.mp3"),
@@ -4333,6 +4873,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "witch",
     meaning: "mụ phù thuỷ,&nbsp;người đàn bà quyến rũ",
+    category: "Household & Objects",
     image: require("./data/4000B2_1140.jpg"),
     sound: require("./data/4000B2_witch.mp3"),
     exampleSound: require("./data/4000B2_witch_example.mp3"),
@@ -4341,6 +4882,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "accompany",
     meaning: "đi theo, đi cùng",
+    category: "General",
     image: require("./data/4000B2_1141.jpg"),
     sound: require("./data/4000B2_accompany.mp3"),
     exampleSound: require("./data/4000B2_accompany_example.mp3"),
@@ -4349,6 +4891,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bare",
     meaning: "trần, trọc, trống không",
+    category: "General",
     image: require("./data/4000B2_1142.jpg"),
     sound: require("./data/4000B2_bare.mp3"),
     exampleSound: require("./data/4000B2_bare_example.mp3"),
@@ -4362,10 +4905,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_branch.mp3"),
     exampleSound: require("./data/4000B2_branch_example.mp3"),
     meaningSound: require("./data/4000B2_branch_meaning.mp3"),
+    category: "Nature & Landscape",
   },
   {
     voc: "breath",
     meaning: "hơi thở, sự thở",
+    category: "General",
     image: require("./data/4000B2_1144.jpg"),
     sound: require("./data/4000B2_breath.mp3"),
     exampleSound: require("./data/4000B2_breath_example.mp3"),
@@ -4374,6 +4919,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "bridge",
     meaning: "cây cầu",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_1145.jpg"),
     sound: require("./data/4000B2_bridge.mp3"),
     exampleSound: require("./data/4000B2_bridge_example.mp3"),
@@ -4387,10 +4933,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_cast.mp3"),
     exampleSound: require("./data/4000B2_cast_example.mp3"),
     meaningSound: require("./data/4000B2_cast_meaning.mp3"),
+    category: "General",
   },
   {
     voc: "dare",
     meaning: "dám, thách, dám đương đầu với",
+    category: "General",
     image: require("./data/4000B2_1147.jpg"),
     sound: require("./data/4000B2_dare.mp3"),
     exampleSound: require("./data/4000B2_dare_example.mp3"),
@@ -4399,6 +4947,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "electronic",
     meaning: "(thuộc) điện tử",
+    category: "General",
     image: require("./data/4000B2_1148.jpg"),
     sound: require("./data/4000B2_electronic.mp3"),
     exampleSound: require("./data/4000B2_electronic_example.mp3"),
@@ -4407,6 +4956,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "inn",
     meaning: "quán trọ, khách sạn nhỏ (ở nông thôn, thị trấn)",
+    category: "General",
     image: require("./data/4000B2_1149.jpg"),
     sound: require("./data/4000B2_inn.mp3"),
     exampleSound: require("./data/4000B2_inn_example.mp3"),
@@ -4420,10 +4970,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_net.mp3"),
     exampleSound: require("./data/4000B2_net_example.mp3"),
     meaningSound: require("./data/4000B2_net_meaning.mp3"),
+    category: "General",
   },
   {
     voc: "philosophy",
     meaning: "triết học, triết lý",
+    category: "General",
     image: require("./data/4000B2_1151.jpg"),
     sound: require("./data/4000B2_philosophy.mp3"),
     exampleSound: require("./data/4000B2_philosophy_example.mp3"),
@@ -4432,6 +4984,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "pot",
     meaning: "nồi, ấm, bình, lọ, chậu, hũ",
+    category: "General",
     image: require("./data/4000B2_1152.jpg"),
     sound: require("./data/4000B2_pot.mp3"),
     exampleSound: require("./data/4000B2_pot_example.mp3"),
@@ -4440,6 +4993,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "seed",
     meaning: "hạt giống",
+    category: "General",
     image: require("./data/4000B2_1153.jpg"),
     sound: require("./data/4000B2_seed.mp3"),
     exampleSound: require("./data/4000B2_seed_example.mp3"),
@@ -4448,6 +5002,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sharp",
     meaning: "sắc, nhọn, bén",
+    category: "General",
     image: require("./data/4000B2_1154.jpg"),
     sound: require("./data/4000B2_sharp.mp3"),
     exampleSound: require("./data/4000B2_sharp_example.mp3"),
@@ -4456,6 +5011,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "sort",
     meaning: "thứ, loại, hạng",
+    category: "General",
     image: require("./data/4000B2_1155.jpg"),
     sound: require("./data/4000B2_sort.mp3"),
     exampleSound: require("./data/4000B2_sort_example.mp3"),
@@ -4464,6 +5020,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "subtract",
     meaning: "(toán học) trừ",
+    category: "General",
     image: require("./data/4000B2_1156.jpg"),
     sound: require("./data/4000B2_subtract.mp3"),
     exampleSound: require("./data/4000B2_subtract_example.mp3"),
@@ -4472,6 +5029,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "tight",
     meaning: "chặt, khít",
+    category: "General",
     image: require("./data/4000B2_1157.jpg"),
     sound: require("./data/4000B2_tight.mp3"),
     exampleSound: require("./data/4000B2_tight_example.mp3"),
@@ -4480,6 +5038,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "virtual",
     meaning: "thực sự, thực tế;&nbsp;(vật lý) ảo",
+    category: "General",
     image: require("./data/4000B2_1158.jpg"),
     sound: require("./data/4000B2_virtual.mp3"),
     exampleSound: require("./data/4000B2_virtual_example.mp3"),
@@ -4488,6 +5047,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "weigh",
     meaning: "cân,&nbsp;cân nhấc,&nbsp;nhấc xem nặng nhẹ",
+    category: "General",
     image: require("./data/4000B2_1159.jpg"),
     sound: require("./data/4000B2_weigh.mp3"),
     exampleSound: require("./data/4000B2_weigh_example.mp3"),
@@ -4496,6 +5056,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "whisper",
     meaning: "nói thầm; xì xào",
+    category: "General",
     image: require("./data/4000B2_1160.jpg"),
     sound: require("./data/4000B2_whisper.mp3"),
     exampleSound: require("./data/4000B2_whisper_example.mp3"),
@@ -4509,10 +5070,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_abstract.mp3"),
     exampleSound: require("./data/4000B2_abstract_example.mp3"),
     meaningSound: require("./data/4000B2_abstract_meaning.mp3"),
+    category: "Abstract & Qualities",
   },
   {
     voc: "annual",
     meaning: "hàng năm",
+    category: "General",
     image: require("./data/4000B2_1162.jpg"),
     sound: require("./data/4000B2_annual.mp3"),
     exampleSound: require("./data/4000B2_annual_example.mp3"),
@@ -4521,6 +5084,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "clay",
     meaning: "đất sét",
+    category: "General",
     image: require("./data/4000B2_1163.jpg"),
     sound: require("./data/4000B2_clay.mp3"),
     exampleSound: require("./data/4000B2_clay_example.mp3"),
@@ -4529,6 +5093,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "cloth",
     meaning: "vải,&nbsp;khăn lau; khăn trải (bàn)",
+    category: "General",
     image: require("./data/4000B2_1164.jpg"),
     sound: require("./data/4000B2_cloth.mp3"),
     exampleSound: require("./data/4000B2_cloth_example.mp3"),
@@ -4537,6 +5102,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "curtain",
     meaning: "rèm, màn cửa,&nbsp;màn (ở rạp hát),&nbsp;màn (khói, sương)",
+    category: "General",
     image: require("./data/4000B2_1165.jpg"),
     sound: require("./data/4000B2_curtain.mp3"),
     exampleSound: require("./data/4000B2_curtain_example.mp3"),
@@ -4545,6 +5111,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "deserve",
     meaning: "xứng đáng",
+    category: "General",
     image: require("./data/4000B2_1166.jpg"),
     sound: require("./data/4000B2_deserve.mp3"),
     exampleSound: require("./data/4000B2_deserve_example.mp3"),
@@ -4553,6 +5120,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "feather",
     meaning: "lông (chim)",
+    category: "General",
     image: require("./data/4000B2_1167.jpg"),
     sound: require("./data/4000B2_feather.mp3"),
     exampleSound: require("./data/4000B2_feather_example.mp3"),
@@ -4561,6 +5129,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "fertile",
     meaning: "tốt, màu mỡ (đất)",
+    category: "General",
     image: require("./data/4000B2_1168.jpg"),
     sound: require("./data/4000B2_fertile.mp3"),
     exampleSound: require("./data/4000B2_fertile_example.mp3"),
@@ -4569,6 +5138,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "flood",
     meaning: "lũ, lụt, ngập",
+    category: "General",
     image: require("./data/4000B2_1169.jpg"),
     sound: require("./data/4000B2_flood.mp3"),
     exampleSound: require("./data/4000B2_flood_example.mp3"),
@@ -4577,6 +5147,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "furniture",
     meaning: "đồ nội thất, đồ đạc (trong nhà)",
+    category: "General",
     image: require("./data/4000B2_1170.jpg"),
     sound: require("./data/4000B2_furniture.mp3"),
     exampleSound: require("./data/4000B2_furniture_example.mp3"),
@@ -4585,6 +5156,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "grave",
     meaning: "mộ, phần mộ",
+    category: "General",
     image: require("./data/4000B2_1171.jpg"),
     sound: require("./data/4000B2_grave.mp3"),
     exampleSound: require("./data/4000B2_grave_example.mp3"),
@@ -4593,6 +5165,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "ideal",
     meaning: "lý tưởng",
+    category: "General",
     image: require("./data/4000B2_1172.jpg"),
     sound: require("./data/4000B2_ideal.mp3"),
     exampleSound: require("./data/4000B2_ideal_example.mp3"),
@@ -4601,6 +5174,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "intelligence",
     meaning: "trí thông minh,&nbsp;sự hiểu biết,&nbsp;cơ quan tình báo",
+    category: "General",
     image: require("./data/4000B2_1173.jpg"),
     sound: require("./data/4000B2_intelligence.mp3"),
     exampleSound: require("./data/4000B2_intelligence_example.mp3"),
@@ -4609,6 +5183,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "nowadays",
     meaning: "ngày nay,&nbsp;thời buổi này",
+    category: "General",
     image: require("./data/4000B2_1174.jpg"),
     sound: require("./data/4000B2_nowadays.mp3"),
     exampleSound: require("./data/4000B2_nowadays_example.mp3"),
@@ -4617,6 +5192,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "obtain",
     meaning: "đạt được, giành được, kiếm được",
+    category: "General",
     image: require("./data/4000B2_1175.jpg"),
     sound: require("./data/4000B2_obtain.mp3"),
     exampleSound: require("./data/4000B2_obtain_example.mp3"),
@@ -4625,6 +5201,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "religious",
     meaning: "(thuộc) tôn giáo",
+    category: "General",
     image: require("./data/4000B2_1176.jpg"),
     sound: require("./data/4000B2_religious.mp3"),
     exampleSound: require("./data/4000B2_religious_example.mp3"),
@@ -4633,6 +5210,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "romantic",
     meaning: "lãng mạng",
+    category: "General",
     image: require("./data/4000B2_1177.jpg"),
     sound: require("./data/4000B2_romantic.mp3"),
     exampleSound: require("./data/4000B2_romantic_example.mp3"),
@@ -4641,6 +5219,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shell",
     meaning: "vỏ, mai",
+    category: "General",
     image: require("./data/4000B2_1178.jpg"),
     sound: require("./data/4000B2_shell.mp3"),
     exampleSound: require("./data/4000B2_shell_example.mp3"),
@@ -4649,6 +5228,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "shore",
     meaning: "bờ (biển, hồ lớn)",
+    category: "Nature & Landscape",
     image: require("./data/4000B2_1179.jpg"),
     sound: require("./data/4000B2_shore.mp3"),
     exampleSound: require("./data/4000B2_shore_example.mp3"),
@@ -4657,6 +5237,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "wheel",
     meaning: "bánh (xe)",
+    category: "General",
     image: require("./data/4000B2_1180.jpg"),
     sound: require("./data/4000B2_wheel.mp3"),
     exampleSound: require("./data/4000B2_wheel_example.mp3"),
@@ -4665,6 +5246,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "appeal",
     meaning: "hấp dẫn, lôi cuốn",
+    category: "General",
     image: require("./data/4000B2_1181.jpg"),
     sound: require("./data/4000B2_appeal.mp3"),
     exampleSound: require("./data/4000B2_appeal_example.mp3"),
@@ -4673,6 +5255,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "assume",
     meaning: "cho rằng (là đúng); giả sử (là đúng)",
+    category: "General",
     image: require("./data/4000B2_1182.jpg"),
     sound: require("./data/4000B2_assume.mp3"),
     exampleSound: require("./data/4000B2_assume_example.mp3"),
@@ -4681,6 +5264,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "borrow",
     meaning: "mượn, vay",
+    category: "General",
     image: require("./data/4000B2_1183.jpg"),
     sound: require("./data/4000B2_borrow.mp3"),
     exampleSound: require("./data/4000B2_borrow_example.mp3"),
@@ -4689,6 +5273,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "client",
     meaning: "khách hàng (sử dụng dịch vụ)",
+    category: "General",
     image: require("./data/4000B2_1184.jpg"),
     sound: require("./data/4000B2_client.mp3"),
     exampleSound: require("./data/4000B2_client_example.mp3"),
@@ -4697,6 +5282,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "downtown",
     meaning: "khu trung tâm, khu buôn bán kinh doanh (của một thành phố)",
+    category: "General",
     image: require("./data/4000B2_1185.jpg"),
     sound: require("./data/4000B2_downtown.mp3"),
     exampleSound: require("./data/4000B2_downtown_example.mp3"),
@@ -4705,6 +5291,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "dull",
     meaning: "đều đều, buồn tẻ,&nbsp;uể oải, chậm chạp",
+    category: "General",
     image: require("./data/4000B2_1186.jpg"),
     sound: require("./data/4000B2_dull.mp3"),
     exampleSound: require("./data/4000B2_dull_example.mp3"),
@@ -4718,10 +5305,12 @@ export const new_vocs: Vocabulary[] = [
     sound: require("./data/4000B2_embarrass.mp3"),
     exampleSound: require("./data/4000B2_embarrass_example.mp3"),
     meaningSound: require("./data/4000B2_embarrass_meaning.mp3"),
+    category: "General",
   },
   {
     voc: "fare",
     meaning: "tiền vé (tàu, xe, máy bay...)",
+    category: "Household & Objects",
     image: require("./data/4000B2_1188.jpg"),
     sound: require("./data/4000B2_fare.mp3"),
     exampleSound: require("./data/4000B2_fare_example.mp3"),
@@ -4730,6 +5319,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "former",
     meaning: "cũ, xưa,&nbsp;trước kia",
+    category: "General",
     image: require("./data/4000B2_1189.jpg"),
     sound: require("./data/4000B2_former.mp3"),
     exampleSound: require("./data/4000B2_former_example.mp3"),
@@ -4738,6 +5328,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "formula",
     meaning: "công thức (toán học)",
+    category: "General",
     image: require("./data/4000B2_1190.jpg"),
     sound: require("./data/4000B2_formula.mp3"),
     exampleSound: require("./data/4000B2_formula_example.mp3"),
@@ -4746,6 +5337,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "found",
     meaning: "sáng lập, đặt nền móng",
+    category: "General",
     image: require("./data/4000B2_1191.jpg"),
     sound: require("./data/4000B2_found.mp3"),
     exampleSound: require("./data/4000B2_found_example.mp3"),
@@ -4754,6 +5346,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "invest",
     meaning: "đầu tư",
+    category: "General",
     image: require("./data/4000B2_1192.jpg"),
     sound: require("./data/4000B2_invest.mp3"),
     exampleSound: require("./data/4000B2_invest_example.mp3"),
@@ -4762,6 +5355,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "loan",
     meaning: "khoản vay, sự vay nợ",
+    category: "General",
     image: require("./data/4000B2_1193.jpg"),
     sound: require("./data/4000B2_loan.mp3"),
     exampleSound: require("./data/4000B2_loan_example.mp3"),
@@ -4770,6 +5364,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "practical",
     meaning: "thực tế, thực dụng; có ích",
+    category: "General",
     image: require("./data/4000B2_1194.jpg"),
     sound: require("./data/4000B2_practical.mp3"),
     exampleSound: require("./data/4000B2_practical_example.mp3"),
@@ -4778,6 +5373,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "quarter",
     meaning: "một phần tư đô la (25 cent), giờ (15'), năm (một quý trong năm)",
+    category: "General",
     image: require("./data/4000B2_1195.jpg"),
     sound: require("./data/4000B2_quarter.mp3"),
     exampleSound: require("./data/4000B2_quarter_example.mp3"),
@@ -4786,6 +5382,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "salary",
     meaning: "tiền lương",
+    category: "General",
     image: require("./data/4000B2_1196.jpg"),
     sound: require("./data/4000B2_salary.mp3"),
     exampleSound: require("./data/4000B2_salary_example.mp3"),
@@ -4794,6 +5391,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "scholarship",
     meaning: "học bổng",
+    category: "General",
     image: require("./data/4000B2_1197.jpg"),
     sound: require("./data/4000B2_scholarship.mp3"),
     exampleSound: require("./data/4000B2_scholarship_example.mp3"),
@@ -4802,6 +5400,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "temporary",
     meaning: "tạm thời, nhất thời, lâm thời",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_1198.jpg"),
     sound: require("./data/4000B2_temporary.mp3"),
     exampleSound: require("./data/4000B2_temporary_example.mp3"),
@@ -4810,6 +5409,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "treasure",
     meaning: "châu báu, của cải",
+    category: "Abstract & Qualities",
     image: require("./data/4000B2_1199.jpg"),
     sound: require("./data/4000B2_treasure.mp3"),
     exampleSound: require("./data/4000B2_treasure_example.mp3"),
@@ -4818,6 +5418,7 @@ export const new_vocs: Vocabulary[] = [
   {
     voc: "urge",
     meaning: "thúc giục, nài nỉ",
+    category: "General",
     image: require("./data/4000B2_1200.jpg"),
     sound: require("./data/4000B2_urge.mp3"),
     exampleSound: require("./data/4000B2_urge_example.mp3"),
