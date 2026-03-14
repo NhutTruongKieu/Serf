@@ -215,18 +215,27 @@ export default function HomeScreen() {
     if (activeVocs.length === 0) return;
 
     let newIndex = index;
+
     if (isNext) {
-      newIndex = index < activeVocs.length - 1 ? index + 1 : index;
+      newIndex = index < activeVocs.length - 1 ? index + 1 : 0;
     } else {
-      newIndex = index > 0 ? index - 1 : index;
+      newIndex = index > 0 ? index - 1 : activeVocs.length - 1;
     }
+
 
     if (newIndex !== index) {
       setIndex(newIndex);
       setShowMeaning(false); // Hide meaning when switching words
-      if (isNext) playSound(activeVocs[newIndex].sound, activeVocs[newIndex].voc);
+      playSound(activeVocs[newIndex].sound, activeVocs[newIndex].voc);
     }
     // Snap back to center without animation from user's view (since it instantly changes content)
+    translateX.value = 0;
+  };
+
+  const resetIndex = () => {
+    if (activeVocs.length === 0) return;
+    setIndex(0);
+    playSound(activeVocs[0].sound, activeVocs[0].voc);
     translateX.value = 0;
   };
 
@@ -455,7 +464,7 @@ export default function HomeScreen() {
       </Modal>
       {/* Số thứ tự */}
       <View style={styles.header}>
-        <Text style={styles.counter}>
+        <Text style={styles.counter} onPress={resetIndex}>
           {index + 1} / {activeVocs.length}
         </Text>
       </View>
@@ -467,8 +476,8 @@ export default function HomeScreen() {
 
       {/* Hướng dẫn vuốt */}
       <View style={styles.hintRow}>
-        <Text style={styles.hint}>← Từ trước</Text>
-        <Text style={styles.hint}>Từ tiếp theo →</Text>
+        <Text onPress={() => changeIndex(false)} style={styles.hint}>← Từ trước</Text>
+        <Text onPress={() => changeIndex(true)} style={styles.hint}>Từ tiếp theo →</Text>
       </View>
     </GestureHandlerRootView>
   );
