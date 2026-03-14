@@ -1,7 +1,8 @@
 export type Vocabulary = {
-  category: string;
   voc: string;
+  pos: string;
   meaning: string;
+  category: string;
   sound: any;
   exampleSound: any;
   meaningSound: any;
@@ -11,6 +12,7 @@ export type Vocabulary = {
 export const new_vocs: Vocabulary[] = [
   {
     voc: "anxious",
+    pos: "adj",
     meaning: "lo âu, băn khoăn",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_601.jpg"),
@@ -20,6 +22,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "awful",
+    pos: "adj",
     meaning: "xấu xa, tồi tệ",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_602.jpg"),
@@ -29,6 +32,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "consist",
+    pos: "n",
     meaning: "gồm có",
     category: "Common Actions",
     image: require("./data/4000B2_603.jpg"),
@@ -38,6 +42,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "desire",
+    pos: "n",
     meaning: "thèm muốn, ao ước",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_604.jpg"),
@@ -47,6 +52,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "eager",
+    pos: "n",
     meaning: "háo hức, hăm hở",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_605.jpg"),
@@ -56,6 +62,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "household",
+    pos: "n",
     meaning: "gia đình",
     category: "Human Body & Health",
     image: require("./data/4000B2_606.jpg"),
@@ -65,6 +72,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "intent",
+    pos: "n",
     meaning: "ý định, mục đích",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_607.jpg"),
@@ -74,6 +82,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "landscape",
+    pos: "n",
     meaning: "phong cảnh",
     category: "Nature & Landscape",
     image: require("./data/4000B2_608.jpg"),
@@ -83,6 +92,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "lift",
+    pos: "n",
     meaning: "nâng, nhấc",
     category: "General",
     image: require("./data/4000B2_609.jpg"),
@@ -92,6 +102,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "load",
+    pos: "n",
     meaning: "bốc hàng, chất tải, chở, nạp",
     category: "General",
     image: require("./data/4000B2_610.jpg"),
@@ -101,6 +112,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "lung",
+    pos: "n",
     meaning: "phổi",
     category: "Nature & Landscape",
     image: require("./data/4000B2_611.jpg"),
@@ -110,6 +122,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "motion",
+    pos: "n",
     meaning: "sự chuyển động",
     category: "General",
     image: require("./data/4000B2_612.jpg"),
@@ -119,6 +132,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pace",
+    pos: "n",
     meaning: "tốc độ đi, tốc độ chạy",
     category: "Common Actions",
     image: require("./data/4000B2_613.jpg"),
@@ -128,6 +142,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "polite",
+    pos: "n",
     meaning: "lịch sự, lịch thiệp, lễ độ",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_614.jpg"),
@@ -137,6 +152,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "possess",
+    pos: "n",
     meaning: "chiếm hữu, có, sở hữu",
     category: "Common Actions",
     image: require("./data/4000B2_615.jpg"),
@@ -146,6 +162,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rapidly",
+    pos: "adv",
     meaning: "nhanh chóng, mau lẹ",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_616.jpg"),
@@ -155,6 +172,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "remark",
+    pos: "n",
     meaning: "nhận xét, chú ý, lưu ý",
     category: "Common Actions",
     image: require("./data/4000B2_617.jpg"),
@@ -164,6 +182,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "seek",
+    pos: "n",
     meaning: "đi tìm, tìm kiếm, tìm",
     category: "Common Actions",
     image: require("./data/4000B2_618.jpg"),
@@ -173,6 +192,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shine",
+    pos: "n",
     meaning: "toả sáng, chiếu sáng",
     category: "Nature & Landscape",
     image: require("./data/4000B2_619.jpg"),
@@ -182,6 +202,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "spill",
+    pos: "n",
     meaning: "đổ, trút, làm đổ",
     category: "Common Actions",
     image: require("./data/4000B2_620.jpg"),
@@ -191,6 +212,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bring",
+    pos: "v",
     meaning: "cầm lại, đem lại, mang lại",
     category: "Common Actions",
     image: require("./data/4000B2_621.jpg"),
@@ -200,6 +222,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "castle",
+    pos: "n",
     meaning: "lâu đài",
     category: "Household & Objects",
     image: require("./data/4000B2_622.jpg"),
@@ -209,6 +232,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "command",
+    pos: "n",
     meaning: "ra lệnh, mệnh lệnh",
     category: "Common Actions",
     image: require("./data/4000B2_623.jpg"),
@@ -218,6 +242,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "counsel",
+    pos: "n",
     meaning: "khuyên răn, khuyên bảo, chỉ bảo",
     category: "Common Actions",
     image: require("./data/4000B2_624.jpg"),
@@ -227,6 +252,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ensure",
+    pos: "n",
     meaning: "bảo đảm, chắc chắn",
     category: "Common Actions",
     image: require("./data/4000B2_625.jpg"),
@@ -236,6 +262,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "explosion",
+    pos: "n",
     meaning: "sự nổ, tiếng nổ",
     category: "Common Actions",
     image: require("./data/4000B2_626.jpg"),
@@ -245,6 +272,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "jewelry",
+    pos: "adj",
     meaning: "đồ châu báu; đồ nữ trang, đồ kim hoàn, đồ trang sức",
     category: "Human Body & Health",
     image: require("./data/4000B2_627.jpg"),
@@ -254,6 +282,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "land",
+    pos: "n",
     meaning: "hạ cánh (từ máy bay), lên bờ (từ tàu thủy)",
     category: "Nature & Landscape",
     image: require("./data/4000B2_628.jpg"),
@@ -263,6 +292,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "meteor",
+    pos: "n",
     meaning: "sao sa, sao băng",
     category: "Nature & Landscape",
     image: require("./data/4000B2_629.jpg"),
@@ -272,6 +302,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "monster",
+    pos: "n",
     meaning: "quái vật, yêu quái",
     category: "Human Body & Health",
     image: require("./data/4000B2_630.jpg"),
@@ -281,6 +312,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "northern",
+    pos: "n",
     meaning: "hướng bắc, phương bắc",
     category: "Nature & Landscape",
     image: require("./data/4000B2_631.jpg"),
@@ -290,6 +322,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "remote",
+    pos: "n",
     meaning: "xa, xa xôi, xa xăm, hẻo lánh",
     category: "Places & Directions",
     image: require("./data/4000B2_632.jpg"),
@@ -299,6 +332,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "southern",
+    pos: "n",
     meaning: "hướng Nam, phương Nam",
     category: "General",
     image: require("./data/4000B2_633.jpg"),
@@ -308,6 +342,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "statue",
+    pos: "n",
     meaning: "bức tượng",
     category: "Household & Objects",
     image: require("./data/4000B2_634.jpg"),
@@ -317,6 +352,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "steam",
+    pos: "n",
     meaning: "hơi nước",
     category: "Nature & Landscape",
     image: require("./data/4000B2_635.jpg"),
@@ -326,6 +362,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "submit",
+    pos: "n",
     meaning: "chịu, cam chịu, quy phục, đệ trình",
     category: "Common Actions",
     image: require("./data/4000B2_636.jpg"),
@@ -335,6 +372,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "temple",
+    pos: "n",
     meaning: "đền thờ, miếu, thánh thất, thánh đường",
     category: "Household & Objects",
     image: require("./data/4000B2_637.jpg"),
@@ -344,6 +382,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "upper",
+    pos: "n",
     meaning: "trên, cao, thượng",
     category: "General",
     image: require("./data/4000B2_638.jpg"),
@@ -353,6 +392,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "weed",
+    pos: "n",
     meaning: "cỏ dại",
     category: "Nature & Landscape",
     image: require("./data/4000B2_639.jpg"),
@@ -362,6 +402,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "wing",
+    pos: "n",
     meaning: "cánh (chim, sâu bọ)",
     category: "Nature & Landscape",
     image: require("./data/4000B2_640.jpg"),
@@ -371,6 +412,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "arrow",
+    pos: "n",
     meaning: "mũi tên",
     category: "Nature & Landscape",
     image: require("./data/4000B2_641.jpg"),
@@ -380,6 +422,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "battle",
+    pos: "n",
     meaning: "trận đánh; cuộc chiến đấu",
     category: "Common Actions",
     image: require("./data/4000B2_642.jpg"),
@@ -389,6 +432,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bow",
+    pos: "n",
     meaning: "cái cung (bắn tên)",
     category: "Household & Objects",
     image: require("./data/4000B2_643.jpg"),
@@ -398,6 +442,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "brave",
+    pos: "n",
     meaning: "gan dạ, can đảm, dũng cảm",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_644.jpg"),
@@ -407,6 +452,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chief",
+    pos: "n",
     meaning: "thủ lĩnh, lãnh tụ,&nbsp;người đứng đầu; trưởng",
     category: "Human Body & Health",
     image: require("./data/4000B2_645.jpg"),
@@ -416,6 +462,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "disadvantage",
+    pos: "n",
     meaning: "sự bất lợi; thế bất lợi,&nbsp;sự thiệt hại, mối tổn thất",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_646.jpg"),
@@ -425,6 +472,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "enemy",
+    pos: "adj",
     meaning: "kẻ thù, kẻ địch",
     category: "Human Body & Health",
     image: require("./data/4000B2_647.jpg"),
@@ -434,6 +482,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "entrance",
+    pos: "n",
     meaning: "sự đi vào, lối vào",
     category: "Places & Directions",
     image: require("./data/4000B2_648.jpg"),
@@ -443,6 +492,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "hardly",
+    pos: "adv",
     meaning: "khó khăn, chật vật",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_649.jpg"),
@@ -452,6 +502,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "intend",
+    pos: "n",
     meaning: "định, có ý định, có ý muốn",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_650.jpg"),
@@ -461,6 +512,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "laughter",
+    pos: "n",
     meaning: "sự cười, tiếng cười to",
     category: "General",
     image: require("./data/4000B2_651.jpg"),
@@ -470,6 +522,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "log",
+    pos: "n",
     meaning: "khúc gỗ&nbsp;",
     category: "Household & Objects",
     image: require("./data/4000B2_652.jpg"),
@@ -479,6 +532,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "military",
+    pos: "adj",
     meaning: "quân đội,&nbsp;(thuộc) quân đội",
     category: "General",
     image: require("./data/4000B2_653.jpg"),
@@ -488,6 +542,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "obey",
+    pos: "adj",
     meaning: "vâng lời, nghe lời, tuân theo, tuân lệnh",
     category: "Common Actions",
     image: require("./data/4000B2_654.jpg"),
@@ -497,6 +552,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "secure",
+    pos: "n",
     meaning: "chiếm được, tìm được, đạt được",
     category: "Common Actions",
     image: require("./data/4000B2_655.jpg"),
@@ -506,6 +562,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "steady",
+    pos: "adj",
     meaning: "vững vàng, bình tĩnh, điềm tĩnh, vững chắc",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_656.jpg"),
@@ -515,6 +572,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "trust",
+    pos: "n",
     meaning: "tin, tin cậy, tín nhiệm; trông cậy",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_657.jpg"),
@@ -524,6 +582,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "twist",
+    pos: "n",
     meaning: "xoắn, vặn, xe, bện, kết",
     category: "Common Actions",
     image: require("./data/4000B2_658.jpg"),
@@ -533,6 +592,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "unless",
+    pos: "adj",
     meaning: "trừ khi, nếu không",
     category: "General",
     image: require("./data/4000B2_659.jpg"),
@@ -542,6 +602,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "weapon",
+    pos: "n",
     meaning: "vũ khí",
     category: "Household & Objects",
     image: require("./data/4000B2_660.jpg"),
@@ -551,6 +612,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chest",
+    pos: "n",
     meaning: "ngực",
     category: "Nature & Landscape",
     image: require("./data/4000B2_661.jpg"),
@@ -560,6 +622,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "confidence",
+    pos: "n",
     meaning: "sự tin chắc, sự quả quyết, sự tự tin",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_662.jpg"),
@@ -569,6 +632,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "consequence",
+    pos: "n",
     meaning: "hậu quả, hệ quả, kết quả, tầm quan trọng",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_663.jpg"),
@@ -578,6 +642,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "disaster",
+    pos: "n",
     meaning: "tai hoạ, thảm hoạ",
     category: "General",
     image: require("./data/4000B2_664.jpg"),
@@ -587,6 +652,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "disturb",
+    pos: "n",
     meaning: "quấy rầy, làm phiền",
     category: "General",
     image: require("./data/4000B2_665.jpg"),
@@ -596,6 +662,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "estimate",
+    pos: "v",
     meaning: "đánh giá; ước lượng",
     category: "Common Actions",
     image: require("./data/4000B2_666.jpg"),
@@ -605,6 +672,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "honor",
+    pos: "n",
     meaning: "tôn kính, kính trọng",
     category: "General",
     image: require("./data/4000B2_667.jpg"),
@@ -614,6 +682,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "impress",
+    pos: "n",
     meaning: "gây ấn tượng; làm cảm động, làm cảm kích",
     category: "Household & Objects",
     image: require("./data/4000B2_668.jpg"),
@@ -623,6 +692,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "marathon",
+    pos: "n",
     meaning: "cuộc chạy đua maratông",
     category: "Common Actions",
     image: require("./data/4000B2_669.jpg"),
@@ -632,6 +702,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "narrow",
+    pos: "n",
     meaning: "hẹp, chật hẹp, eo hẹp",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_670.jpg"),
@@ -641,6 +712,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pale",
+    pos: "n",
     meaning: "tái, nhợt nhạt, xanh xám",
     category: "General",
     image: require("./data/4000B2_671.jpg"),
@@ -650,6 +722,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rough",
+    pos: "n",
     meaning: "ráp, nhám, xù xì, gồ ghề,&nbsp;dữ dội, mạnh, hung dữ",
     category: "General",
     image: require("./data/4000B2_672.jpg"),
@@ -659,6 +732,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "satisfy",
+    pos: "adj",
     meaning: "làm thoả mãn, làm vừa lòng, đáp ứng",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_673.jpg"),
@@ -668,6 +742,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "scream",
+    pos: "n",
     meaning: "hét lên, kêu thất thanh; kêu inh ỏi, rít lên (còi tàu...)",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_674.jpg"),
@@ -677,6 +752,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sensitive",
+    pos: "adj",
     meaning: "nhạy cảm",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_675.jpg"),
@@ -686,6 +762,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shade",
+    pos: "n",
     meaning: "bóng, bóng tối, bóng râm",
     category: "Nature & Landscape",
     image: require("./data/4000B2_676.jpg"),
@@ -695,6 +772,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "supplement",
+    pos: "n",
     meaning: "bổ sung, phụ thêm vào",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_677.jpg"),
@@ -704,6 +782,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "terror",
+    pos: "n",
     meaning: "sự kinh hãi, sự khiếp sợ",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_678.jpg"),
@@ -713,6 +792,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "threat",
+    pos: "n",
     meaning: "sự đe doạ, lời hăm dọa",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_679.jpg"),
@@ -722,6 +802,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "victim",
+    pos: "n",
     meaning: "nạn nhân",
     category: "Human Body & Health",
     image: require("./data/4000B2_680.jpg"),
@@ -731,6 +812,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ancestor",
+    pos: "n",
     meaning: "ông bà, tổ tiên",
     category: "Human Body & Health",
     image: require("./data/4000B2_681.jpg"),
@@ -740,6 +822,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "angle",
+    pos: "n",
     meaning: "góc,&nbsp;quan điểm, khía cạnh",
     category: "General",
     image: require("./data/4000B2_682.jpg"),
@@ -749,6 +832,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "boot",
+    pos: "n",
     meaning: "giày ống (bốt)",
     category: "Household & Objects",
     image: require("./data/4000B2_683.jpg"),
@@ -758,6 +842,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "border",
+    pos: "n",
     meaning: "bờ, mép, vỉa, lề, biên giới, ranh giới",
     category: "Places & Directions",
     image: require("./data/4000B2_684.jpg"),
@@ -767,6 +852,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "congratulate",
+    pos: "v",
     meaning: "chúc mừng, khen ngợi",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_685.jpg"),
@@ -776,6 +862,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "frame",
+    pos: "n",
     meaning: "khung (ảnh, cửa, xe...), sườn (tàu, nhà...)",
     category: "Household & Objects",
     image: require("./data/4000B2_686.jpg"),
@@ -785,6 +872,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "heaven",
+    pos: "v",
     meaning: "thiên đường&nbsp;",
     category: "Places & Directions",
     image: require("./data/4000B2_687.jpg"),
@@ -794,6 +882,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "incredible",
+    pos: "adj",
     meaning: "không thể tin được, lạ thường",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_688.jpg"),
@@ -803,6 +892,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "legend",
+    pos: "n",
     meaning: "truyện cổ tích, truyền thuyết, huyền thoại",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_689.jpg"),
@@ -812,6 +902,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "praise",
+    pos: "n",
     meaning: "khen ngợi",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_690.jpg"),
@@ -821,6 +912,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "proceed",
+    pos: "n",
     meaning: "đi đến,&nbsp;làm, hành động",
     category: "General",
     image: require("./data/4000B2_691.jpg"),
@@ -830,6 +922,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pure",
+    pos: "n",
     meaning: "trong sạch, nguyên chất, tinh khiết",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_692.jpg"),
@@ -839,6 +932,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "relative",
+    pos: "adj",
     meaning: "bà con thân thuộc,&nbsp;họ hàng",
     category: "Human Body & Health",
     image: require("./data/4000B2_693.jpg"),
@@ -848,6 +942,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "senior",
+    pos: "n",
     meaning: "nhiều tuổi hơn, cao cấp hơn, lâu năm hơn",
     category: "General",
     image: require("./data/4000B2_694.jpg"),
@@ -857,6 +952,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "silent",
+    pos: "n",
     meaning: "yên lặng, yên tĩnh, tĩnh mịch, thanh vắng",
     category: "Common Actions",
     image: require("./data/4000B2_695.jpg"),
@@ -866,6 +962,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sink; sank",
+    pos: "n",
     meaning: "chìm",
     category: "General",
     image: require("./data/4000B2_696.jpg"),
@@ -875,6 +972,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "superior",
+    pos: "n",
     meaning: "cao, cao cấp,&nbsp;khá hơn, nhiều hơn,&nbsp;tốt, giỏi",
     category: "General",
     image: require("./data/4000B2_697.jpg"),
@@ -884,6 +982,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "surround",
+    pos: "n",
     meaning: "bao quanh, vây quanh",
     category: "General",
     image: require("./data/4000B2_698.jpg"),
@@ -893,6 +992,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "thick",
+    pos: "n",
     meaning: "dày, dày đặc, rậm, rậm rạp",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_699.jpg"),
@@ -902,6 +1002,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "wrap",
+    pos: "n",
     meaning: "bao phủ, gói, quấn",
     category: "Common Actions",
     image: require("./data/4000B2_700.jpg"),
@@ -911,6 +1012,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "abroad",
+    pos: "n",
     meaning: "ở nước ngoài, ra nước ngoài",
     category: "Places & Directions",
     image: require("./data/4000B2_701.jpg"),
@@ -920,6 +1022,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "anger",
+    pos: "n",
     meaning: "chọc tức, làm tức giận",
     category: "General",
     image: require("./data/4000B2_702.jpg"),
@@ -929,6 +1032,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bride",
+    pos: "n",
     meaning: "cô dâu",
     category: "Human Body & Health",
     image: require("./data/4000B2_703.jpg"),
@@ -938,6 +1042,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "brief",
+    pos: "n",
     meaning: "ngắn gọn, vắn tắt",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_704.jpg"),
@@ -947,6 +1052,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chase",
+    pos: "n",
     meaning: "săn, săn đuổi,&nbsp;đuổi, xua đuổi",
     category: "Common Actions",
     image: require("./data/4000B2_705.jpg"),
@@ -956,6 +1062,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "disappoint",
+    pos: "n",
     meaning: "làm thất vọng,&nbsp;làm hỏng, làm thất bại (kế hoạch của ai)",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_706.jpg"),
@@ -965,6 +1072,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dive",
+    pos: "adj",
     meaning:
       "lặn,&nbsp;nhảy lao đầu xuống (nước...),&nbsp;bổ nhào xuống (máy bay)",
     image: require("./data/4000B2_707.jpg"),
@@ -975,6 +1083,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "exchange",
+    pos: "n",
     meaning: "đổi, đổi chác, trao đổi",
     category: "Common Actions",
     image: require("./data/4000B2_708.jpg"),
@@ -984,6 +1093,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "favor",
+    pos: "n",
     meaning:
       "verb: bênh vực, giúp đỡ, ủng hộ<div>noun:&nbsp;thiện ý; sự quý mến,&nbsp;sự đồng ý, sự giúp đỡ</div>",
     image: require("./data/4000B2_709.jpg"),
@@ -994,6 +1104,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fee",
+    pos: "n",
     meaning: "tiền thù lao, lệ phí",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_710.jpg"),
@@ -1003,6 +1114,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "forever",
+    pos: "n",
     meaning: "mãi mãi, vĩnh viễn",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_711.jpg"),
@@ -1012,6 +1124,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "guy",
+    pos: "adj",
     meaning: "anh chàng, gã",
     category: "General",
     image: require("./data/4000B2_712.jpg"),
@@ -1021,6 +1134,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "lovely",
+    pos: "adv",
     meaning: "đẹp đẽ, xinh, đáng yêu, dễ thương",
     category: "General",
     image: require("./data/4000B2_713.jpg"),
@@ -1030,6 +1144,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mood",
+    pos: "n",
     meaning: "tâm trạng; tính khí, tâm tính, tính tình",
     category: "General",
     image: require("./data/4000B2_714.jpg"),
@@ -1039,6 +1154,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "palace",
+    pos: "n",
     meaning: "cung điện; lâu đài",
     category: "Household & Objects",
     image: require("./data/4000B2_715.jpg"),
@@ -1048,6 +1164,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "permit",
+    pos: "n",
     meaning: "cho phép,&nbsp;giấy phép",
     category: "General",
     image: require("./data/4000B2_716.jpg"),
@@ -1057,6 +1174,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "protest",
+    pos: "n",
     meaning: "phản đối, kháng nghị, biểu tình",
     category: "General",
     image: require("./data/4000B2_717.jpg"),
@@ -1066,6 +1184,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sculpture",
+    pos: "n",
     meaning: "điêu khắc, chạm trổ;&nbsp;công trình điêu khắc",
     category: "Common Actions",
     image: require("./data/4000B2_718.jpg"),
@@ -1075,6 +1194,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tribe",
+    pos: "n",
     meaning: "bộ lạc",
     category: "General",
     image: require("./data/4000B2_719.jpg"),
@@ -1084,6 +1204,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "youth",
+    pos: "n",
     meaning: "tuổi trẻ, tuổi xuân, tuổi niên thiếu",
     category: "General",
     image: require("./data/4000B2_720.jpg"),
@@ -1093,6 +1214,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "basis",
+    pos: "n",
     meaning: "phương pháp, nền tảng, cơ sở",
     category: "General",
     image: require("./data/4000B2_721.jpg"),
@@ -1102,6 +1224,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "biology",
+    pos: "adj",
     meaning: "sinh vật học, sinh học",
     category: "General",
     image: require("./data/4000B2_722.jpg"),
@@ -1111,6 +1234,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cage",
+    pos: "n",
     meaning: "lồng, chuồng, cũi",
     category: "General",
     image: require("./data/4000B2_723.jpg"),
@@ -1120,6 +1244,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "colleague",
+    pos: "n",
     meaning: "đồng nghiệp, bạn&nbsp;đồng nghiệp",
     category: "General",
     image: require("./data/4000B2_724.jpg"),
@@ -1129,6 +1254,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "colony",
+    pos: "adj",
     meaning: "thuộc địa,&nbsp;kiều dân; khu kiều dân",
     category: "General",
     image: require("./data/4000B2_725.jpg"),
@@ -1138,6 +1264,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "debate",
+    pos: "v",
     meaning: "tranh luận, tranh cãi, bàn cãi (một vấn đề...)",
     category: "General",
     image: require("./data/4000B2_726.jpg"),
@@ -1147,6 +1274,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "depart",
+    pos: "n",
     meaning: "khởi hành,&nbsp;rời khỏi, ra đi",
     category: "General",
     image: require("./data/4000B2_727.jpg"),
@@ -1156,6 +1284,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "depress",
+    pos: "n",
     meaning: "làm chán nản, làm buồn",
     category: "General",
     image: require("./data/4000B2_728.jpg"),
@@ -1165,6 +1294,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "factual",
+    pos: "adj",
     meaning: "(thuộc) sự thực, có thật",
     category: "General",
     image: require("./data/4000B2_729.jpg"),
@@ -1174,6 +1304,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fascinate",
+    pos: "v",
     meaning: "mê hoặc, quyến rũ",
     category: "General",
     image: require("./data/4000B2_730.jpg"),
@@ -1183,6 +1314,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mission",
+    pos: "n",
     meaning: "sứ mệnh, nhiệm vụ",
     category: "General",
     image: require("./data/4000B2_731.jpg"),
@@ -1192,6 +1324,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "nevertheless",
+    pos: "adj",
     meaning: "tuy nhiên, tuy thế mà",
     category: "General",
     image: require("./data/4000B2_732.jpg"),
@@ -1201,6 +1334,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "occupation",
+    pos: "n",
     meaning: "sự chiếm, sự giữ,&nbsp;nghề nghiệp; công việc",
     category: "Common Actions",
     image: require("./data/4000B2_733.jpg"),
@@ -1210,6 +1344,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "overseas",
+    pos: "n",
     meaning: "ngoài nước, hải ngoại",
     category: "General",
     image: require("./data/4000B2_734.jpg"),
@@ -1219,6 +1354,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "persuade",
+    pos: "n",
     meaning: "làm cho tin; thuyết phục",
     category: "Common Actions",
     image: require("./data/4000B2_735.jpg"),
@@ -1228,6 +1364,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "route",
+    pos: "n",
     meaning: "tuyến đường, đường đi",
     category: "General",
     image: require("./data/4000B2_736.jpg"),
@@ -1237,6 +1374,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ruins",
+    pos: "n",
     meaning: "đổ nát, phế tích",
     category: "Common Actions",
     image: require("./data/4000B2_737.jpg"),
@@ -1246,6 +1384,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "scholar",
+    pos: "n",
     meaning:
       "người có học thức, nhà thông thái;&nbsp;<div>người được cấp học bổng,&nbsp;học bổng</div>",
     image: require("./data/4000B2_738.jpg"),
@@ -1256,6 +1395,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "significant",
+    pos: "n",
     meaning: "quan trọng, trọng đại, đáng chú ý",
     category: "General",
     image: require("./data/4000B2_739.jpg"),
@@ -1265,6 +1405,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "volcano",
+    pos: "n",
     meaning: "núi lửa",
     category: "Nature & Landscape",
     image: require("./data/4000B2_740.jpg"),
@@ -1274,6 +1415,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "broad",
+    pos: "n",
     meaning: "rộng, gồm nhiều loại",
     category: "General",
     image: require("./data/4000B2_741.jpg"),
@@ -1283,6 +1425,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bush",
+    pos: "n",
     meaning: "bụi cây, bụi rậm",
     category: "Nature & Landscape",
     image: require("./data/4000B2_742.jpg"),
@@ -1292,6 +1435,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "capable",
+    pos: "adj",
     meaning: "có khả năng,&nbsp;có tài, có năng lực giỏi",
     category: "General",
     image: require("./data/4000B2_743.jpg"),
@@ -1301,6 +1445,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cheat",
+    pos: "n",
     meaning: "gian lận,&nbsp;lừa, lừa đảo (ai)",
     category: "General",
     image: require("./data/4000B2_744.jpg"),
@@ -1310,6 +1455,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "concentrate",
+    pos: "v",
     meaning: "tập trung",
     category: "General",
     image: require("./data/4000B2_745.jpg"),
@@ -1319,6 +1465,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "conclude",
+    pos: "n",
     meaning: "kết luận,&nbsp;giải quyết, dàn xếp",
     category: "General",
     image: require("./data/4000B2_746.jpg"),
@@ -1328,6 +1475,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "confident",
+    pos: "n",
     meaning: "tự tin, tin chắc, tin tưởng, tin cậy",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_747.jpg"),
@@ -1337,6 +1485,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "considerable",
+    pos: "adj",
     meaning: "đáng kể, to tát, có vai vế",
     category: "General",
     image: require("./data/4000B2_748.jpg"),
@@ -1346,6 +1495,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "convey",
+    pos: "adj",
     meaning:
       "truyền (âm thanh, hương vị, lệnh, tin); truyền đạt, chuyển<div>chở, chuyên chở, vận chuyển</div>",
     image: require("./data/4000B2_749.jpg"),
@@ -1356,6 +1506,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "definite",
+    pos: "n",
     meaning: "rõ ràng,&nbsp;xác định, định rõ, hiển nhiên",
     category: "General",
     image: require("./data/4000B2_750.jpg"),
@@ -1365,6 +1516,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "delight",
+    pos: "n",
     meaning: "sự vui sướng,&nbsp;điều thích thú",
     category: "General",
     image: require("./data/4000B2_751.jpg"),
@@ -1374,6 +1526,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "destination",
+    pos: "n",
     meaning: "đích đến,&nbsp;nơi đi tới",
     category: "General",
     image: require("./data/4000B2_752.jpg"),
@@ -1383,6 +1536,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dictate",
+    pos: "v",
     meaning: "đọc chính tả,&nbsp;ra lệnh",
     category: "Common Actions",
     image: require("./data/4000B2_753.jpg"),
@@ -1392,6 +1546,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "edge",
+    pos: "n",
     meaning: "bờ, gờ, cạnh (hố sâu...); rìa, lề (rừng, cuốn sách...)",
     category: "General",
     image: require("./data/4000B2_754.jpg"),
@@ -1401,6 +1556,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "path",
+    pos: "n",
     meaning: "đường đi; quỹ đạo",
     category: "General",
     image: require("./data/4000B2_755.jpg"),
@@ -1410,6 +1566,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "resort",
+    pos: "n",
     meaning: "dùng đến, cầu đến, nhờ vào",
     category: "General",
     image: require("./data/4000B2_756.jpg"),
@@ -1419,6 +1576,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shadow",
+    pos: "n",
     meaning:
       "bóng (của bức tranh..),&nbsp;chỗ tối (trong gian phòng...),&nbsp;bóng tối, bóng râm, bóng mát",
     image: require("./data/4000B2_757.jpg"),
@@ -1429,6 +1587,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "succeed",
+    pos: "n",
     meaning: "thành công,&nbsp;kế nghiệp,&nbsp;kế tiếp",
     category: "General",
     image: require("./data/4000B2_758.jpg"),
@@ -1438,6 +1597,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "suspect",
+    pos: "n",
     meaning: "nghi ngờ, hoài nghi;&nbsp;người khả nghi",
     category: "General",
     image: require("./data/4000B2_759.jpg"),
@@ -1447,6 +1607,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "valley",
+    pos: "adj",
     meaning: "thung lũng,&nbsp;&nbsp;(kiến trúc) khe mái",
     category: "General",
     image: require("./data/4000B2_760.jpg"),
@@ -1456,6 +1617,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "admire",
+    pos: "n",
     meaning: "khâm phục,&nbsp;ngưỡng mộ",
     category: "Common Actions",
     image: require("./data/4000B2_761.jpg"),
@@ -1465,6 +1627,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "aid",
+    pos: "n",
     meaning: "trợ giúp, thêm vào, phụ vào",
     category: "General",
     image: require("./data/4000B2_762.jpg"),
@@ -1474,6 +1637,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "attempt",
+    pos: "n",
     meaning: "cố gắng; thử,&nbsp;gắng, chiếm lấy",
     category: "Common Actions",
     image: require("./data/4000B2_763.jpg"),
@@ -1483,6 +1647,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "authority",
+    pos: "adj",
     meaning:
       "uy quyền, quyền lực, quyền thế<div>(số nhiều) nhà cầm quyền, nhà chức trách</div>",
     image: require("./data/4000B2_764.jpg"),
@@ -1493,6 +1658,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "capital",
+    pos: "adj",
     meaning: "thủ đô, thủ phủ",
     category: "General",
     image: require("./data/4000B2_765.jpg"),
@@ -1502,6 +1668,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cooperate",
+    pos: "v",
     meaning: "hợp tác",
     category: "General",
     image: require("./data/4000B2_766.jpg"),
@@ -1511,6 +1678,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "defend",
+    pos: "n",
     meaning: "che chở, bảo vệ, phòng thủ, tự vệ",
     category: "General",
     image: require("./data/4000B2_767.jpg"),
@@ -1520,6 +1688,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "destruction",
+    pos: "n",
     meaning: "sự phá huỷ,&nbsp;tình trạng bị tàn phá",
     category: "General",
     image: require("./data/4000B2_768.jpg"),
@@ -1529,6 +1698,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "disorder",
+    pos: "n",
     meaning: "sự mất trật tự, sự bừa bãi, sự lộn xộn",
     category: "General",
     image: require("./data/4000B2_769.jpg"),
@@ -1538,6 +1708,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "division",
+    pos: "n",
     meaning: "sự chia; sự phân chia",
     category: "General",
     image: require("./data/4000B2_770.jpg"),
@@ -1547,6 +1718,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "enable",
+    pos: "adj",
     meaning: "làm cho có thể",
     category: "General",
     image: require("./data/4000B2_771.jpg"),
@@ -1556,6 +1728,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "frustrate",
+    pos: "v",
     meaning: "làm thất bại, làm hỏng,&nbsp;làm thất vọng, làm vỡ mộng",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_772.jpg"),
@@ -1565,6 +1738,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "govern",
+    pos: "n",
     meaning:
       "cai trị, thống trị, cầm quyền (một nước), điều hành (chính quyền)",
     image: require("./data/4000B2_773.jpg"),
@@ -1575,6 +1749,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "plenty",
+    pos: "adj",
     meaning: "sự phong phú, sự dồi dào, sự có nhiều",
     category: "General",
     image: require("./data/4000B2_774.jpg"),
@@ -1584,6 +1759,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "relieve",
+    pos: "n",
     meaning: "làm dịu,&nbsp;làm nhẹ bớt, giảm bớt",
     category: "General",
     image: require("./data/4000B2_775.jpg"),
@@ -1593,6 +1769,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "reputation",
+    pos: "n",
     meaning: "danh tiếng",
     category: "General",
     image: require("./data/4000B2_776.jpg"),
@@ -1602,6 +1779,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "royal",
+    pos: "adj",
     meaning: "(thuộc) hoàng gia",
     category: "General",
     image: require("./data/4000B2_777.jpg"),
@@ -1611,6 +1789,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "slave",
+    pos: "n",
     meaning: "người nô lệ",
     category: "General",
     image: require("./data/4000B2_778.jpg"),
@@ -1620,6 +1799,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "struggle",
+    pos: "n",
     meaning: "đấu tranh, chống lại,&nbsp;vật lộn",
     category: "General",
     image: require("./data/4000B2_779.jpg"),
@@ -1629,6 +1809,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "stupid",
+    pos: "n",
     meaning: "ngu dại, ngớ ngẩn",
     category: "General",
     image: require("./data/4000B2_780.jpg"),
@@ -1638,6 +1819,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "citizen",
+    pos: "v",
     meaning: "công dân",
     category: "General",
     image: require("./data/4000B2_781.jpg"),
@@ -1647,6 +1829,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "council",
+    pos: "n",
     meaning: "hội đồng",
     category: "General",
     image: require("./data/4000B2_782.jpg"),
@@ -1656,6 +1839,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "declare",
+    pos: "n",
     meaning: "khai báo, bày tỏ",
     category: "General",
     image: require("./data/4000B2_783.jpg"),
@@ -1665,6 +1849,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "enormous",
+    pos: "adj",
     meaning: "to lớn, khổng lồ",
     category: "General",
     image: require("./data/4000B2_784.jpg"),
@@ -1674,6 +1859,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "extraordinary",
+    pos: "adj",
     meaning: "lạ thường, khác thường, phi thường",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_785.jpg"),
@@ -1683,6 +1869,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fog",
+    pos: "n",
     meaning: "sương mù",
     category: "General",
     image: require("./data/4000B2_786.jpg"),
@@ -1692,6 +1879,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "funeral",
+    pos: "adj",
     meaning: "lễ tang, đám tang",
     category: "General",
     image: require("./data/4000B2_787.jpg"),
@@ -1701,6 +1889,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "giant",
+    pos: "n",
     meaning: "khổng lồ",
     category: "General",
     image: require("./data/4000B2_788.jpg"),
@@ -1710,6 +1899,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "impression",
+    pos: "n",
     meaning: "ấn tượng",
     category: "Household & Objects",
     image: require("./data/4000B2_789.jpg"),
@@ -1719,6 +1909,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "income",
+    pos: "n",
     meaning: "thu nhập",
     category: "General",
     image: require("./data/4000B2_790.jpg"),
@@ -1728,6 +1919,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mad",
+    pos: "n",
     meaning: "điên, cuồng, mất trí",
     category: "General",
     image: require("./data/4000B2_791.jpg"),
@@ -1737,6 +1929,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ought",
+    pos: "n",
     meaning: "phải, nên",
     category: "General",
     image: require("./data/4000B2_792.jpg"),
@@ -1746,6 +1939,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "resist",
+    pos: "n",
     meaning: "kháng cự, chống lại",
     category: "General",
     image: require("./data/4000B2_793.jpg"),
@@ -1755,6 +1949,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "reveal",
+    pos: "adj",
     meaning: "tiết lộ (điều bí mật), phát giác",
     category: "General",
     image: require("./data/4000B2_794.jpg"),
@@ -1764,6 +1959,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rid",
+    pos: "n",
     meaning: "giải thoát&nbsp;",
     category: "General",
     image: require("./data/4000B2_795.jpg"),
@@ -1773,6 +1969,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sword",
+    pos: "n",
     meaning: "gươm, kiếm",
     category: "General",
     image: require("./data/4000B2_796.jpg"),
@@ -1782,6 +1979,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tale",
+    pos: "n",
     meaning: "truyện, truyện ngắn",
     category: "General",
     image: require("./data/4000B2_797.jpg"),
@@ -1791,6 +1989,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "trap",
+    pos: "n",
     meaning: "bẫy, đặt bẫy",
     category: "General",
     image: require("./data/4000B2_798.jpg"),
@@ -1800,6 +1999,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "trial",
+    pos: "adj",
     meaning: "sự thử,&nbsp;(pháp lý) việc xét xử, sự xử án",
     category: "General",
     image: require("./data/4000B2_799.jpg"),
@@ -1809,6 +2009,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "violent",
+    pos: "n",
     meaning: "bạo lực,&nbsp;hung bạo, quá khích",
     category: "General",
     image: require("./data/4000B2_800.jpg"),
@@ -1818,6 +2019,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "admission",
+    pos: "n",
     meaning: "sự cho vào cửa, sự cho vào",
     category: "General",
     image: require("./data/4000B2_801.jpg"),
@@ -1827,6 +2029,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "astronomy",
+    pos: "adj",
     meaning: "thiên văn học",
     category: "General",
     image: require("./data/4000B2_802.jpg"),
@@ -1836,6 +2039,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "blame",
+    pos: "n",
     meaning: "khiển trách, trách mắng",
     category: "General",
     image: require("./data/4000B2_803.jpg"),
@@ -1845,6 +2049,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chemistry",
+    pos: "adj",
     meaning: "ngành hoá học; môn hoá học",
     category: "General",
     image: require("./data/4000B2_804.jpg"),
@@ -1854,6 +2059,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "despite",
+    pos: "n",
     meaning: "dù, mặc dù, không kể, bất chấp",
     category: "General",
     image: require("./data/4000B2_805.jpg"),
@@ -1863,6 +2069,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dinosaur",
+    pos: "n",
     meaning: "khủng long",
     category: "General",
     image: require("./data/4000B2_806.jpg"),
@@ -1872,6 +2079,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "exhibit",
+    pos: "n",
     meaning: "trưng bày, triển lãm,&nbsp;vật trưng bày, vật triển lãm",
     category: "General",
     image: require("./data/4000B2_807.jpg"),
@@ -1881,6 +2089,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fame",
+    pos: "n",
     meaning: "tiếng tăm, danh tiếng",
     category: "General",
     image: require("./data/4000B2_808.jpg"),
@@ -1890,6 +2099,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "forecast",
+    pos: "n",
     meaning: "dự báo",
     category: "General",
     image: require("./data/4000B2_809.jpg"),
@@ -1899,6 +2109,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "genius",
+    pos: "n",
     meaning: "thiên tài",
     category: "General",
     image: require("./data/4000B2_810.jpg"),
@@ -1908,6 +2119,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "gentle",
+    pos: "n",
     meaning: "hiền lành, dịu dàng, hoà nhã; nhẹ nhàng",
     category: "General",
     image: require("./data/4000B2_811.jpg"),
@@ -1917,6 +2129,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "geography",
+    pos: "adj",
     meaning: "địa lý",
     category: "General",
     image: require("./data/4000B2_812.jpg"),
@@ -1926,6 +2139,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "interfere",
+    pos: "n",
     meaning: "gây trở ngại, quấy rầy",
     category: "General",
     image: require("./data/4000B2_813.jpg"),
@@ -1935,6 +2149,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "lightly",
+    pos: "adv",
     meaning: "nhẹ, nhẹ nhàng",
     category: "General",
     image: require("./data/4000B2_814.jpg"),
@@ -1944,6 +2159,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "principal",
+    pos: "adj",
     meaning: "hiệu trưởng, người đứng đầu",
     category: "Human Body & Health",
     image: require("./data/4000B2_815.jpg"),
@@ -1953,6 +2169,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "row",
+    pos: "n",
     meaning: "hàng, dây",
     category: "General",
     image: require("./data/4000B2_816.jpg"),
@@ -1962,6 +2179,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shelf",
+    pos: "n",
     meaning: "giá sách, ngăn tủ",
     category: "General",
     image: require("./data/4000B2_817.jpg"),
@@ -1971,6 +2189,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "spite",
+    pos: "n",
     meaning: "sự thù oán; mối hận thù",
     category: "General",
     image: require("./data/4000B2_818.jpg"),
@@ -1980,6 +2199,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "super",
+    pos: "n",
     meaning: "siêu",
     category: "General",
     image: require("./data/4000B2_819.jpg"),
@@ -1989,6 +2209,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "wet",
+    pos: "n",
     meaning: "ẩm; ướt",
     category: "General",
     image: require("./data/4000B2_820.jpg"),
@@ -1998,6 +2219,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "abuse",
+    pos: "n",
     meaning: "lăng mạ, sỉ nhục, chửi rủa",
     category: "General",
     image: require("./data/4000B2_821.jpg"),
@@ -2007,6 +2229,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "afford",
+    pos: "n",
     meaning: "có đủ sức, có đủ khả năng (làm gì)",
     category: "General",
     image: require("./data/4000B2_822.jpg"),
@@ -2016,6 +2239,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bake",
+    pos: "n",
     meaning: "nướng (bánh...) bằng lò",
     category: "General",
     image: require("./data/4000B2_823.jpg"),
@@ -2025,6 +2249,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bean",
+    pos: "n",
     meaning: "đậu",
     category: "General",
     image: require("./data/4000B2_824.jpg"),
@@ -2034,6 +2259,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "candle",
+    pos: "n",
     meaning: "ngọn nến",
     category: "General",
     image: require("./data/4000B2_825.jpg"),
@@ -2043,6 +2269,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "convert",
+    pos: "n",
     meaning: "chuyển đổi, biến đổi",
     category: "Common Actions",
     image: require("./data/4000B2_826.jpg"),
@@ -2052,6 +2279,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "debt",
+    pos: "n",
     meaning: "món nợ",
     category: "General",
     image: require("./data/4000B2_827.jpg"),
@@ -2061,6 +2289,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "decrease",
+    pos: "n",
     meaning: "giảm, giảm sút, giảm đi",
     category: "General",
     image: require("./data/4000B2_828.jpg"),
@@ -2070,6 +2299,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fault",
+    pos: "n",
     meaning: "sự thiếu sót; khuyết điểm",
     category: "General",
     image: require("./data/4000B2_829.jpg"),
@@ -2079,6 +2309,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fund",
+    pos: "n",
     meaning: "quỹ",
     category: "General",
     image: require("./data/4000B2_830.jpg"),
@@ -2088,6 +2319,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "generous",
+    pos: "adj",
     meaning: "rộng rãi, hào phóng",
     category: "General",
     image: require("./data/4000B2_831.jpg"),
@@ -2097,6 +2329,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ingredient",
+    pos: "n",
     meaning: "phần hợp thành, thành phần",
     category: "General",
     image: require("./data/4000B2_832.jpg"),
@@ -2106,6 +2339,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "insist",
+    pos: "n",
     meaning: "cố nài, nhấn mạnh",
     category: "General",
     image: require("./data/4000B2_833.jpg"),
@@ -2115,6 +2349,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mess",
+    pos: "n",
     meaning: "tình trạng lộn xộn, tình trạng bừa bộn",
     category: "General",
     image: require("./data/4000B2_834.jpg"),
@@ -2124,6 +2359,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "metal",
+    pos: "adj",
     meaning: "kim loại",
     category: "General",
     image: require("./data/4000B2_835.jpg"),
@@ -2133,6 +2369,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "monitor",
+    pos: "n",
     meaning: "giám sát",
     category: "General",
     image: require("./data/4000B2_836.jpg"),
@@ -2142,6 +2379,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "oppose",
+    pos: "n",
     meaning: "chống lại, đối chọi",
     category: "General",
     image: require("./data/4000B2_837.jpg"),
@@ -2151,6 +2389,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "passive",
+    pos: "adj",
     meaning: "bị động, thụ động",
     category: "General",
     image: require("./data/4000B2_838.jpg"),
@@ -2160,6 +2399,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "quantity",
+    pos: "adj",
     meaning: "số lượng",
     category: "General",
     image: require("./data/4000B2_839.jpg"),
@@ -2169,6 +2409,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sue",
+    pos: "n",
     meaning: "kiện (ai ra tòa)",
     category: "General",
     image: require("./data/4000B2_840.jpg"),
@@ -2178,6 +2419,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "anxiety",
+    pos: "adj",
     meaning: "mối lo âu, mối băn khoăn; sự lo lắng",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_841.jpg"),
@@ -2187,6 +2429,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "army",
+    pos: "adj",
     meaning: "quân đội",
     category: "General",
     image: require("./data/4000B2_842.jpg"),
@@ -2196,6 +2439,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "billion",
+    pos: "n",
     meaning: "tỉ (tiền tệ)",
     category: "General",
     image: require("./data/4000B2_843.jpg"),
@@ -2205,6 +2449,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "carve",
+    pos: "n",
     meaning: "cắt, lạng (thịt ra từng miếng)",
     category: "General",
     image: require("./data/4000B2_844.jpg"),
@@ -2214,6 +2459,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "consult",
+    pos: "n",
     meaning: "hỏi ý kiến, tham khảo, tư vấn, hội ý",
     category: "General",
     image: require("./data/4000B2_845.jpg"),
@@ -2223,6 +2469,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "emergency",
+    pos: "adj",
     meaning: "tình trạng khẩn cấp,&nbsp;trường hợp cấp cứu",
     category: "General",
     image: require("./data/4000B2_846.jpg"),
@@ -2232,6 +2479,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fortune",
+    pos: "n",
     meaning: "vận may; sự may mắn",
     category: "General",
     image: require("./data/4000B2_847.jpg"),
@@ -2241,6 +2489,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "guarantee",
+    pos: "n",
     meaning: "bảo đảm, bảo lânh",
     category: "Common Actions",
     image: require("./data/4000B2_848.jpg"),
@@ -2250,6 +2499,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "hike",
+    pos: "n",
     meaning: "đi bộ đường dài",
     category: "General",
     image: require("./data/4000B2_849.jpg"),
@@ -2259,6 +2509,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "initial",
+    pos: "adj",
     meaning: "đầu, ban đầu",
     category: "General",
     image: require("./data/4000B2_850.jpg"),
@@ -2268,6 +2519,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "intense",
+    pos: "n",
     meaning: "mãnh liệt, dữ dội",
     category: "General",
     image: require("./data/4000B2_851.jpg"),
@@ -2277,6 +2529,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "lend",
+    pos: "n",
     meaning: "cho vay, cho mượn",
     category: "General",
     image: require("./data/4000B2_852.jpg"),
@@ -2286,6 +2539,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "peak",
+    pos: "n",
     meaning: "đỉnh, chỏm chóp (núi)",
     category: "Nature & Landscape",
     image: require("./data/4000B2_853.jpg"),
@@ -2295,6 +2549,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "potential",
+    pos: "adj",
     meaning: "tiềm tàng",
     category: "General",
     image: require("./data/4000B2_854.jpg"),
@@ -2304,6 +2559,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pride",
+    pos: "n",
     meaning: "sự kiêu hãnh, sự hãnh diện",
     category: "General",
     image: require("./data/4000B2_855.jpg"),
@@ -2313,6 +2569,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "proof",
+    pos: "n",
     meaning: "bằng chứng",
     category: "General",
     image: require("./data/4000B2_856.jpg"),
@@ -2322,6 +2579,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "quit",
+    pos: "n",
     meaning: "thoát, bỏ, rời",
     category: "General",
     image: require("./data/4000B2_857.jpg"),
@@ -2331,6 +2589,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "spin",
+    pos: "n",
     meaning: "quay, quay tròn",
     category: "General",
     image: require("./data/4000B2_858.jpg"),
@@ -2340,6 +2599,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tiny",
+    pos: "adj",
     meaning: "nhỏ xíu, tí hon",
     category: "General",
     image: require("./data/4000B2_859.jpg"),
@@ -2349,6 +2609,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tutor",
+    pos: "n",
     meaning: "gia sư, giáo viên kèm riêng",
     category: "General",
     image: require("./data/4000B2_860.jpg"),
@@ -2358,6 +2619,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "apparent",
+    pos: "n",
     meaning: "rõ ràng, bày tỏ ra ngoài, thấy rõ ra ngoài",
     category: "General",
     image: require("./data/4000B2_861.jpg"),
@@ -2367,6 +2629,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "blind",
+    pos: "n",
     meaning: "đui mù",
     category: "General",
     image: require("./data/4000B2_862.jpg"),
@@ -2376,6 +2639,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "calculate",
+    pos: "v",
     meaning: "tính toán",
     category: "General",
     image: require("./data/4000B2_863.jpg"),
@@ -2385,6 +2649,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chat",
+    pos: "n",
     meaning: "nói chuyện phiếm, tán gẫu",
     category: "General",
     image: require("./data/4000B2_864.jpg"),
@@ -2394,6 +2659,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "commit",
+    pos: "n",
     meaning: "hứa, cam kết,&nbsp;tống giam",
     category: "General",
     image: require("./data/4000B2_865.jpg"),
@@ -2403,6 +2669,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "compose",
+    pos: "n",
     meaning: "soạn, sáng tác, làm",
     category: "General",
     image: require("./data/4000B2_866.jpg"),
@@ -2412,6 +2679,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dormitory",
+    pos: "adj",
     meaning: "ký túc xá, phòng ngủ tập thể",
     category: "General",
     image: require("./data/4000B2_867.jpg"),
@@ -2421,6 +2689,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "exhaust",
+    pos: "n",
     meaning: "làm kiệt quệ, kiệt sức",
     category: "General",
     image: require("./data/4000B2_868.jpg"),
@@ -2430,6 +2699,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "greenhouse",
+    pos: "n",
     meaning: "<div>nhà kính (trồng rau, hoa)</div>",
     category: "General",
     image: require("./data/4000B2_869.jpg"),
@@ -2439,6 +2709,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ignore",
+    pos: "n",
     meaning: "lờ đi, phớt đi, bác bỏ",
     category: "General",
     image: require("./data/4000B2_870.jpg"),
@@ -2448,6 +2719,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "obvious",
+    pos: "adj",
     meaning: "rõ ràng, rành mạch",
     category: "General",
     image: require("./data/4000B2_871.jpg"),
@@ -2457,6 +2729,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "physics",
+    pos: "n",
     meaning: "vật lý học",
     category: "General",
     image: require("./data/4000B2_872.jpg"),
@@ -2466,6 +2739,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "portion",
+    pos: "n",
     meaning: "phần, phần chia",
     category: "General",
     image: require("./data/4000B2_873.jpg"),
@@ -2475,6 +2749,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "remind",
+    pos: "n",
     meaning: "nhắc nhở, làm nhớ lại (cái gì)",
     category: "General",
     image: require("./data/4000B2_874.jpg"),
@@ -2484,6 +2759,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "secretary",
+    pos: "adj",
     meaning: "thư ký, bí thư",
     category: "General",
     image: require("./data/4000B2_875.jpg"),
@@ -2493,6 +2769,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "severe",
+    pos: "n",
     meaning: "khắt khe (trong thái độ, cách cư xử),&nbsp;khốc liệt, dữ dội",
     category: "General",
     image: require("./data/4000B2_876.jpg"),
@@ -2502,6 +2779,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "talent",
+    pos: "n",
     meaning: "năng khiếu",
     category: "General",
     image: require("./data/4000B2_877.jpg"),
@@ -2511,6 +2789,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "thesis",
+    pos: "n",
     meaning: "luận văn, luận án",
     category: "General",
     image: require("./data/4000B2_878.jpg"),
@@ -2520,6 +2799,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "uniform",
+    pos: "n",
     meaning: "đồng phục, quân phục",
     category: "Common Actions",
     image: require("./data/4000B2_879.jpg"),
@@ -2529,6 +2809,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "vision",
+    pos: "n",
     meaning: "sự nhìn; sức nhìn",
     category: "General",
     image: require("./data/4000B2_880.jpg"),
@@ -2538,6 +2819,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "absorb",
+    pos: "n",
     meaning: "hút nước, thấm nước, hấp thu",
     category: "General",
     image: require("./data/4000B2_881.jpg"),
@@ -2547,6 +2829,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "boss",
+    pos: "n",
     meaning: "ông chủ, thủ trưởng",
     category: "General",
     image: require("./data/4000B2_882.jpg"),
@@ -2556,6 +2839,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "committee",
+    pos: "n",
     meaning: "uỷ ban",
     category: "General",
     image: require("./data/4000B2_883.jpg"),
@@ -2565,6 +2849,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "contract",
+    pos: "n",
     meaning: "hợp đồng",
     category: "General",
     image: require("./data/4000B2_884.jpg"),
@@ -2574,6 +2859,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "crew",
+    pos: "n",
     meaning: "ban nhóm, đội (làm việc...)",
     category: "General",
     image: require("./data/4000B2_885.jpg"),
@@ -2583,6 +2869,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "devote",
+    pos: "n",
     meaning: "hiến dâng, dành hết cho",
     category: "General",
     image: require("./data/4000B2_886.jpg"),
@@ -2592,6 +2879,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dig",
+    pos: "n",
     meaning: "đào bới, xới, cuốc (đất...)",
     category: "General",
     image: require("./data/4000B2_887.jpg"),
@@ -2601,6 +2889,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dine",
+    pos: "n",
     meaning: "ăn cơm (trưa, tối)",
     category: "General",
     image: require("./data/4000B2_888.jpg"),
@@ -2610,6 +2899,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "donate",
+    pos: "v",
     meaning: "quyên góp, tặng",
     category: "General",
     image: require("./data/4000B2_889.jpg"),
@@ -2619,6 +2909,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "double",
+    pos: "n",
     meaning: "gấp đôi, hai, kép",
     category: "General",
     image: require("./data/4000B2_890.jpg"),
@@ -2628,6 +2919,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "elevate",
+    pos: "v",
     meaning: "nâng lên, đưa lên,&nbsp;nâng cao",
     category: "General",
     image: require("./data/4000B2_891.jpg"),
@@ -2637,6 +2929,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "flavor",
+    pos: "n",
     meaning: "vị ngon, mùi thơm; mùi vị",
     category: "General",
     image: require("./data/4000B2_892.jpg"),
@@ -2646,6 +2939,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "foundation",
+    pos: "n",
     meaning: "quỹ",
     category: "General",
     image: require("./data/4000B2_893.jpg"),
@@ -2655,6 +2949,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "generation",
+    pos: "n",
     meaning: "thế hệ",
     category: "General",
     image: require("./data/4000B2_894.jpg"),
@@ -2664,6 +2959,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "handle",
+    pos: "n",
     meaning: "tay cầm",
     category: "General",
     image: require("./data/4000B2_895.jpg"),
@@ -2673,6 +2969,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "layer",
+    pos: "n",
     meaning: "lớp",
     category: "General",
     image: require("./data/4000B2_896.jpg"),
@@ -2682,6 +2979,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mud",
+    pos: "n",
     meaning: "bùn ((nghĩa đen) &amp; (nghĩa bóng))",
     category: "General",
     image: require("./data/4000B2_897.jpg"),
@@ -2691,6 +2989,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "smooth",
+    pos: "n",
     meaning: "nhẵn, trơn, mượt",
     category: "General",
     image: require("./data/4000B2_898.jpg"),
@@ -2700,6 +2999,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "soil",
+    pos: "n",
     meaning: "đất",
     category: "General",
     image: require("./data/4000B2_899.jpg"),
@@ -2709,6 +3009,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "unique",
+    pos: "n",
     meaning: "độc đáo",
     category: "General",
     image: require("./data/4000B2_900.jpg"),
@@ -2718,6 +3019,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chamber",
+    pos: "n",
     meaning: "phòng ngủ",
     category: "General",
     image: require("./data/4000B2_901.jpg"),
@@ -2727,6 +3029,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "deny",
+    pos: "adj",
     meaning: "từ chối, phản đối, phủ nhận",
     category: "General",
     image: require("./data/4000B2_902.jpg"),
@@ -2736,6 +3039,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "document",
+    pos: "n",
     meaning: "văn bản, tài liệu, tư liệu",
     category: "General",
     image: require("./data/4000B2_903.jpg"),
@@ -2745,6 +3049,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "emphasize",
+    pos: "n",
     meaning: "nhấn mạnh, làm nổi bật",
     category: "Common Actions",
     image: require("./data/4000B2_904.jpg"),
@@ -2754,6 +3059,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fever",
+    pos: "n",
     meaning: "sốt, bệnh sốt",
     category: "General",
     image: require("./data/4000B2_905.jpg"),
@@ -2763,6 +3069,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "flu",
+    pos: "n",
     meaning: "cảm cúm, bệnh cúm",
     category: "General",
     image: require("./data/4000B2_906.jpg"),
@@ -2772,6 +3079,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "freeze",
+    pos: "n",
     meaning: "đóng băng, lạnh cứng",
     category: "General",
     image: require("./data/4000B2_907.jpg"),
@@ -2781,6 +3089,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "gesture",
+    pos: "n",
     meaning: "điệu bộ, cử chỉ, động tác",
     category: "General",
     image: require("./data/4000B2_908.jpg"),
@@ -2790,6 +3099,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "interrupt",
+    pos: "n",
     meaning: "làm gián đoạn,&nbsp;ngắt lời",
     category: "General",
     image: require("./data/4000B2_909.jpg"),
@@ -2799,6 +3109,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "last",
+    pos: "n",
     meaning: "tồn tại, kéo dài; giữ lâu bền",
     category: "General",
     image: require("./data/4000B2_910.jpg"),
@@ -2808,6 +3119,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "likeness",
+    pos: "n",
     meaning: "tính chất giống; sự giống",
     category: "General",
     image: require("./data/4000B2_911.jpg"),
@@ -2817,6 +3129,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "moreover",
+    pos: "n",
     meaning: "hơn nữa, ngoài ra",
     category: "General",
     image: require("./data/4000B2_912.jpg"),
@@ -2826,6 +3139,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "perspective",
+    pos: "adj",
     meaning: "viễn cảnh, triển vọng",
     category: "General",
     image: require("./data/4000B2_913.jpg"),
@@ -2835,6 +3149,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rational",
+    pos: "adj",
     meaning: "có lý, vừa phải, có chừng mực",
     category: "General",
     image: require("./data/4000B2_914.jpg"),
@@ -2844,6 +3159,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "recover",
+    pos: "n",
     meaning: "lấy lại, giành lại, phục hồi, bình phục",
     category: "Common Actions",
     image: require("./data/4000B2_915.jpg"),
@@ -2853,6 +3169,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rely; relied",
+    pos: "n",
     meaning: "tin cậy, dựa vào",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_916.jpg"),
@@ -2862,6 +3179,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shock",
+    pos: "n",
     meaning: "sốc",
     category: "General",
     image: require("./data/4000B2_917.jpg"),
@@ -2871,6 +3189,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shy",
+    pos: "adj",
     meaning: "ngượng ngùng, nhút nhát, bẽn lẽn, e thẹn",
     category: "General",
     image: require("./data/4000B2_918.jpg"),
@@ -2880,6 +3199,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "stare",
+    pos: "n",
     meaning: "nhìn chằm chằm",
     category: "General",
     image: require("./data/4000B2_919.jpg"),
@@ -2889,6 +3209,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "thus",
+    pos: "n",
     meaning: "vì vậy, như vậy",
     category: "General",
     image: require("./data/4000B2_920.jpg"),
@@ -2898,6 +3219,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "aim",
+    pos: "n",
     meaning: "mục đích, mục tiêu, ý định",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_921.jpg"),
@@ -2907,6 +3229,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "attach",
+    pos: "n",
     meaning: "đính kèm, gắn, dán",
     category: "General",
     image: require("./data/4000B2_922.jpg"),
@@ -2916,6 +3239,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bet",
+    pos: "n",
     meaning: "đánh cược",
     category: "Common Actions",
     image: require("./data/4000B2_923.jpg"),
@@ -2925,6 +3249,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "carriage",
+    pos: "n",
     meaning: "xe ngựa,&nbsp;toa hành khách (đường sắt)",
     category: "General",
     image: require("./data/4000B2_924.jpg"),
@@ -2934,6 +3259,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "classic",
+    pos: "adj",
     meaning: "kinh điển",
     category: "General",
     image: require("./data/4000B2_925.jpg"),
@@ -2943,6 +3269,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "commute",
+    pos: "n",
     meaning: "đi lại đều đặn (giữa hai địa điểm)",
     category: "General",
     image: require("./data/4000B2_926.jpg"),
@@ -2952,6 +3279,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "confirm",
+    pos: "n",
     meaning: "xác nhận; chứng thực",
     category: "General",
     image: require("./data/4000B2_927.jpg"),
@@ -2961,6 +3289,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "criticize",
+    pos: "n",
     meaning: "phê bình, phê phán, bình phẩm, chỉ trích",
     category: "General",
     image: require("./data/4000B2_928.jpg"),
@@ -2970,6 +3299,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "differ",
+    pos: "n",
     meaning: "khác, không giống",
     category: "General",
     image: require("./data/4000B2_929.jpg"),
@@ -2979,6 +3309,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "expense",
+    pos: "n",
     meaning: "chi phí, phí tổn",
     category: "General",
     image: require("./data/4000B2_930.jpg"),
@@ -2988,6 +3319,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "formal",
+    pos: "adj",
     meaning: "trang trọng",
     category: "General",
     image: require("./data/4000B2_931.jpg"),
@@ -2997,6 +3329,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "height",
+    pos: "n",
     meaning: "chiều cao, độ cao",
     category: "General",
     image: require("./data/4000B2_932.jpg"),
@@ -3006,6 +3339,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "invent",
+    pos: "n",
     meaning: "phát minh, sáng chế",
     category: "General",
     image: require("./data/4000B2_933.jpg"),
@@ -3015,6 +3349,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "junior",
+    pos: "n",
     meaning: "ít thâm niên hơn; ở cấp dưới",
     category: "General",
     image: require("./data/4000B2_934.jpg"),
@@ -3024,6 +3359,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "labor",
+    pos: "n",
     meaning: "lao động",
     category: "General",
     image: require("./data/4000B2_935.jpg"),
@@ -3033,6 +3369,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mechanic",
+    pos: "adj",
     meaning: "thợ máy, công nhân cơ khí",
     category: "General",
     image: require("./data/4000B2_936.jpg"),
@@ -3042,6 +3379,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "prime",
+    pos: "n",
     meaning: "nguyên nhân chính, thời kỳ đẹp nhất",
     category: "General",
     image: require("./data/4000B2_937.jpg"),
@@ -3051,6 +3389,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shift",
+    pos: "n",
     meaning: "đổi chỗ, dời chỗ, di chuyển",
     category: "Common Actions",
     image: require("./data/4000B2_938.jpg"),
@@ -3060,6 +3399,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "signal",
+    pos: "adj",
     meaning: "tín hiệu; hiệu lệnh",
     category: "General",
     image: require("./data/4000B2_939.jpg"),
@@ -3069,6 +3409,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sincere",
+    pos: "n",
     meaning: "thành thật, thật thà",
     category: "General",
     image: require("./data/4000B2_940.jpg"),
@@ -3078,6 +3419,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ability",
+    pos: "adj",
     meaning: "năng lực, khả năng",
     category: "General",
     image: require("./data/4000B2_941.jpg"),
@@ -3087,6 +3429,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "agriculture",
+    pos: "n",
     meaning: "nông nghiệp",
     category: "General",
     image: require("./data/4000B2_942.jpg"),
@@ -3096,6 +3439,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cartoon",
+    pos: "n",
     meaning: "tranh đả kích, tranh biếm hoạ",
     category: "General",
     image: require("./data/4000B2_943.jpg"),
@@ -3105,6 +3449,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ceiling",
+    pos: "n",
     meaning: "trần (nhà...)",
     category: "General",
     image: require("./data/4000B2_944.jpg"),
@@ -3114,6 +3459,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "convince",
+    pos: "n",
     meaning: "làm cho nghe theo, thuyết phục",
     category: "Common Actions",
     image: require("./data/4000B2_945.jpg"),
@@ -3123,6 +3469,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "curious",
+    pos: "adj",
     meaning: "tò mò, hiếu kỳ",
     category: "General",
     image: require("./data/4000B2_946.jpg"),
@@ -3132,6 +3479,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "delay",
+    pos: "adj",
     meaning: "trễ, hoãn",
     category: "General",
     image: require("./data/4000B2_947.jpg"),
@@ -3141,6 +3489,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "diary",
+    pos: "adj",
     meaning: "nhật ký",
     category: "General",
     image: require("./data/4000B2_948.jpg"),
@@ -3150,6 +3499,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "element",
+    pos: "n",
     meaning: "yếu tố,&nbsp;nguyên tố",
     category: "General",
     image: require("./data/4000B2_949.jpg"),
@@ -3159,6 +3509,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "faith",
+    pos: "n",
     meaning: "niềm tin,&nbsp;sự trung thành",
     category: "General",
     image: require("./data/4000B2_950.jpg"),
@@ -3168,6 +3519,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "grain",
+    pos: "n",
     meaning: "lương thực",
     category: "General",
     image: require("./data/4000B2_951.jpg"),
@@ -3177,6 +3529,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "greet",
+    pos: "n",
     meaning: "chào mừng,&nbsp;đón chào",
     category: "General",
     image: require("./data/4000B2_952.jpg"),
@@ -3186,6 +3539,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "investigate",
+    pos: "v",
     meaning: "điều tra, nghiên cứu",
     category: "General",
     image: require("./data/4000B2_953.jpg"),
@@ -3195,6 +3549,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "joy",
+    pos: "adj",
     meaning: "niềm vui,&nbsp;sự hân hoan, sự vui sướng",
     category: "General",
     image: require("./data/4000B2_954.jpg"),
@@ -3204,6 +3559,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "label",
+    pos: "n",
     meaning: "nhãn hàng hóa, nhãn hiệu",
     category: "General",
     image: require("./data/4000B2_955.jpg"),
@@ -3213,6 +3569,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "monk",
+    pos: "n",
     meaning: "thầy tu,&nbsp;nhà sư",
     category: "General",
     image: require("./data/4000B2_956.jpg"),
@@ -3222,6 +3579,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "odd",
+    pos: "n",
     meaning: "kỳ cục, kỳ quặc, lẻ",
     category: "General",
     image: require("./data/4000B2_957.jpg"),
@@ -3231,6 +3589,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pause",
+    pos: "n",
     meaning: "tạm nghỉ, tạm ngừng",
     category: "General",
     image: require("./data/4000B2_958.jpg"),
@@ -3240,6 +3599,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "priest",
+    pos: "n",
     meaning: "giáo sĩ, thầy tế",
     category: "General",
     image: require("./data/4000B2_959.jpg"),
@@ -3249,6 +3609,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "profession",
+    pos: "n",
     meaning: "nghề, nghề nghiệp",
     category: "General",
     image: require("./data/4000B2_960.jpg"),
@@ -3258,6 +3619,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "adopt",
+    pos: "n",
     meaning: "nhận làm con nuôi",
     category: "General",
     image: require("./data/4000B2_961.jpg"),
@@ -3267,6 +3629,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "beg",
+    pos: "n",
     meaning: "cầu xin,&nbsp;xin trân trọng (trong thư giao dịch)",
     category: "General",
     image: require("./data/4000B2_962.jpg"),
@@ -3276,6 +3639,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "beyond",
+    pos: "n",
     meaning: "ở xa, ở phía bên kia",
     category: "General",
     image: require("./data/4000B2_963.jpg"),
@@ -3285,6 +3649,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "costume",
+    pos: "n",
     meaning: "quần áo / y phục (hóa trang, giả trang)",
     category: "Common Actions",
     image: require("./data/4000B2_964.jpg"),
@@ -3294,6 +3659,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "exclaim",
+    pos: "n",
     meaning: "kêu lên, la lên (vì phấn khích)",
     category: "General",
     image: require("./data/4000B2_965.jpg"),
@@ -3303,6 +3669,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "extend",
+    pos: "n",
     meaning: "kéo dài, mở rộng, vươn, đưa ra",
     category: "General",
     image: require("./data/4000B2_966.jpg"),
@@ -3312,6 +3679,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fool",
+    pos: "n",
     meaning: "ngu ngốc",
     category: "General",
     image: require("./data/4000B2_967.jpg"),
@@ -3321,6 +3689,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "forbid",
+    pos: "n",
     meaning: "cấm, ngăn cấm",
     category: "General",
     image: require("./data/4000B2_968.jpg"),
@@ -3330,6 +3699,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "illustrate",
+    pos: "v",
     meaning: "minh hoạ, làm rõ ý",
     category: "General",
     image: require("./data/4000B2_969.jpg"),
@@ -3339,6 +3709,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "indeed",
+    pos: "n",
     meaning: "thực vậy, quả thực",
     category: "General",
     image: require("./data/4000B2_970.jpg"),
@@ -3348,6 +3719,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "interpret",
+    pos: "n",
     meaning: "giải thích, làm sáng tỏ, làm phiên dịch",
     category: "General",
     image: require("./data/4000B2_971.jpg"),
@@ -3357,6 +3729,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "kindly",
+    pos: "adv",
     meaning: "tử tế, tốt bụng",
     category: "General",
     image: require("./data/4000B2_972.jpg"),
@@ -3366,6 +3739,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "motive",
+    pos: "adj",
     meaning:
       "noun:&nbsp;lý do, động cơ<div>adj:&nbsp;vận động, chuyển động</div>",
     image: require("./data/4000B2_973.jpg"),
@@ -3376,6 +3750,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "nest",
+    pos: "n",
     meaning: "tổ, ổ (chim, chuột...)",
     category: "General",
     image: require("./data/4000B2_974.jpg"),
@@ -3385,6 +3760,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "origin",
+    pos: "n",
     meaning: "gốc, nguồn gốc",
     category: "General",
     image: require("./data/4000B2_975.jpg"),
@@ -3394,6 +3770,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "reception",
+    pos: "n",
     meaning: "sự đón tiếp, sự tiếp tân, bữa tiệc chào mừng",
     category: "General",
     image: require("./data/4000B2_976.jpg"),
@@ -3403,6 +3780,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "reject",
+    pos: "n",
     meaning: "từ chối, loại ra, bác bỏ",
     category: "General",
     image: require("./data/4000B2_977.jpg"),
@@ -3412,6 +3790,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "silence",
+    pos: "n",
     meaning: "sự yên lặng, sự yên tĩnh, sự tĩnh mịch",
     category: "Common Actions",
     image: require("./data/4000B2_978.jpg"),
@@ -3421,6 +3800,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "stream",
+    pos: "n",
     meaning: "dòng suối, dòng sông nhỏ",
     category: "General",
     image: require("./data/4000B2_979.jpg"),
@@ -3430,6 +3810,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tone",
+    pos: "n",
     meaning: "giọng, tông",
     category: "General",
     image: require("./data/4000B2_980.jpg"),
@@ -3439,6 +3820,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "accomplish",
+    pos: "adj",
     meaning: "hoàn thành, làm xong, đạt tới",
     category: "General",
     image: require("./data/4000B2_981.jpg"),
@@ -3448,6 +3830,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "approve",
+    pos: "n",
     meaning: "tán thành, bằng lòng, chấp thuận<div>xác nhận, phê chuẩn</div>",
     category: "General",
     image: require("./data/4000B2_982.jpg"),
@@ -3457,6 +3840,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "approximate",
+    pos: "v",
     meaning: "xấp xỉ, gần đúng",
     category: "General",
     image: require("./data/4000B2_983.jpg"),
@@ -3466,6 +3850,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "barrier",
+    pos: "n",
     meaning: "thanh chắn, hàng rào, ba ri e",
     category: "General",
     image: require("./data/4000B2_984.jpg"),
@@ -3475,6 +3860,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "detect",
+    pos: "n",
     meaning: "dò ra, tìm ra, phát hiện ra",
     category: "General",
     image: require("./data/4000B2_985.jpg"),
@@ -3484,6 +3870,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "duty",
+    pos: "adj",
     meaning: "bổn phận, nhiệm vụ, trách nhiệm",
     category: "General",
     image: require("./data/4000B2_986.jpg"),
@@ -3493,6 +3880,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "elementary",
+    pos: "adj",
     meaning: "cơ bản, cơ sở",
     category: "General",
     image: require("./data/4000B2_987.jpg"),
@@ -3502,6 +3890,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "failure",
+    pos: "n",
     meaning: "sự thất bại; sự hỏng; sự mất (mùa, điện...)",
     category: "General",
     image: require("./data/4000B2_988.jpg"),
@@ -3511,6 +3900,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "gradual",
+    pos: "adj",
     meaning: "dần dần, từ từ",
     category: "General",
     image: require("./data/4000B2_989.jpg"),
@@ -3520,6 +3910,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "immigrant",
+    pos: "n",
     meaning: "dân nhập cư",
     category: "General",
     image: require("./data/4000B2_990.jpg"),
@@ -3529,6 +3920,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "insert",
+    pos: "n",
     meaning: "lồng vào, gài vào",
     category: "General",
     image: require("./data/4000B2_991.jpg"),
@@ -3538,6 +3930,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "instant",
+    pos: "n",
     meaning: "chốc lát,&nbsp;ngay tức khắc",
     category: "General",
     image: require("./data/4000B2_992.jpg"),
@@ -3547,6 +3940,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "poverty",
+    pos: "adj",
     meaning: "sự nghèo đói",
     category: "General",
     image: require("./data/4000B2_993.jpg"),
@@ -3556,6 +3950,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pretend",
+    pos: "n",
     meaning: "giả vờ, giả đò, giả bộ",
     category: "General",
     image: require("./data/4000B2_994.jpg"),
@@ -3565,6 +3960,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rank",
+    pos: "n",
     meaning: "hạng, loại, cấp, bậc",
     category: "General",
     image: require("./data/4000B2_995.jpg"),
@@ -3574,6 +3970,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "recognition",
+    pos: "n",
     meaning: "sự nhận ra,&nbsp;sự công nhận",
     category: "General",
     image: require("./data/4000B2_996.jpg"),
@@ -3583,6 +3980,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "refrigerate",
+    pos: "v",
     meaning: "làm lạnh; ướp lạnh",
     category: "General",
     image: require("./data/4000B2_997.jpg"),
@@ -3592,6 +3990,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rent",
+    pos: "n",
     meaning: "tiền thuê (nhà, đất)",
     category: "General",
     image: require("./data/4000B2_998.jpg"),
@@ -3601,6 +4000,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "retire",
+    pos: "n",
     meaning: "về hưu",
     category: "General",
     image: require("./data/4000B2_999.jpg"),
@@ -3610,6 +4010,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "statistic",
+    pos: "adj",
     meaning: "(bản, số liệu) thống kê&nbsp;",
     category: "General",
     image: require("./data/4000B2_1000.jpg"),
@@ -3619,6 +4020,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "astronaut",
+    pos: "n",
     meaning: "phi hành gia",
     category: "General",
     image: require("./data/4000B2_1001.jpg"),
@@ -3628,6 +4030,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "awake",
+    pos: "n",
     meaning: "thức dậy.&nbsp;(nghĩa bóng) thức tỉnh",
     category: "General",
     image: require("./data/4000B2_1002.jpg"),
@@ -3637,6 +4040,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "courage",
+    pos: "n",
     meaning: "sự can đảm, dũng khí",
     category: "General",
     image: require("./data/4000B2_1003.jpg"),
@@ -3646,6 +4050,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "float",
+    pos: "n",
     meaning: "nổi, trôi lềnh bềnh",
     category: "Common Actions",
     image: require("./data/4000B2_1004.jpg"),
@@ -3655,6 +4060,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "grant",
+    pos: "n",
     meaning: "cho, ban (ơn), cấp",
     category: "General",
     image: require("./data/4000B2_1005.jpg"),
@@ -3664,6 +4070,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "gravity",
+    pos: "adj",
     meaning: "trọng lực; trọng lượng",
     category: "General",
     image: require("./data/4000B2_1006.jpg"),
@@ -3673,6 +4080,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "jewel",
+    pos: "n",
     meaning: "đá quý",
     category: "General",
     image: require("./data/4000B2_1007.jpg"),
@@ -3682,6 +4090,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "miner",
+    pos: "n",
     meaning: "thợ mỏ",
     category: "General",
     image: require("./data/4000B2_1008.jpg"),
@@ -3691,6 +4100,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mineral",
+    pos: "adj",
     meaning: "khoáng vật, khoáng sản",
     category: "General",
     image: require("./data/4000B2_1009.jpg"),
@@ -3700,6 +4110,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "participate",
+    pos: "v",
     meaning: "tham gia, cùng góp phần",
     category: "General",
     image: require("./data/4000B2_1010.jpg"),
@@ -3709,6 +4120,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "permission",
+    pos: "n",
     meaning: "sự cho phép,&nbsp;giấy phép",
     category: "General",
     image: require("./data/4000B2_1011.jpg"),
@@ -3718,6 +4130,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pour",
+    pos: "n",
     meaning: "rót, đổ, trút",
     category: "Common Actions",
     image: require("./data/4000B2_1012.jpg"),
@@ -3727,6 +4140,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "presence",
+    pos: "n",
     meaning: "sự có mặt",
     category: "General",
     image: require("./data/4000B2_1013.jpg"),
@@ -3736,6 +4150,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "raw",
+    pos: "n",
     meaning: "thô, sống",
     category: "General",
     image: require("./data/4000B2_1014.jpg"),
@@ -3745,6 +4160,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "satellite",
+    pos: "n",
     meaning: "vệ tinh,&nbsp;chư hầu",
     category: "General",
     image: require("./data/4000B2_1015.jpg"),
@@ -3754,6 +4170,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "scale",
+    pos: "n",
     meaning: "tỷ lệ, quy mô, phạm vi",
     category: "General",
     image: require("./data/4000B2_1016.jpg"),
@@ -3763,6 +4180,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "skip",
+    pos: "n",
     meaning: "bỏ qua, quên",
     category: "General",
     image: require("./data/4000B2_1017.jpg"),
@@ -3772,6 +4190,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "stretch",
+    pos: "n",
     meaning: "kéo ra, căng ra, duỗi ra",
     category: "General",
     image: require("./data/4000B2_1018.jpg"),
@@ -3781,6 +4200,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "telescope",
+    pos: "n",
     meaning: "kính thiên văn",
     category: "General",
     image: require("./data/4000B2_1019.jpg"),
@@ -3790,6 +4210,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "underground",
+    pos: "n",
     meaning: "dưới đất, ngầm",
     category: "General",
     image: require("./data/4000B2_1020.jpg"),
@@ -3799,6 +4220,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "alarm",
+    pos: "n",
     meaning: "sự báo động, sự báo nguy",
     category: "General",
     image: require("./data/4000B2_1021.jpg"),
@@ -3808,6 +4230,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "apart",
+    pos: "n",
     meaning: "riêng ra, xa ra",
     category: "General",
     image: require("./data/4000B2_1022.jpg"),
@@ -3817,6 +4240,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "arrest",
+    pos: "n",
     meaning: "bắt giữ",
     category: "General",
     image: require("./data/4000B2_1023.jpg"),
@@ -3826,6 +4250,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "award",
+    pos: "n",
     meaning: "phần thưởng, giải thưởng",
     category: "General",
     image: require("./data/4000B2_1024.jpg"),
@@ -3835,6 +4260,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "breed",
+    pos: "n",
     meaning: "nòi, giống",
     category: "General",
     image: require("./data/4000B2_1025.jpg"),
@@ -3844,6 +4270,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bucket",
+    pos: "n",
     meaning: "thùng, xô",
     category: "General",
     image: require("./data/4000B2_1026.jpg"),
@@ -3853,6 +4280,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "contest",
+    pos: "n",
     meaning:
       "cuộc thi, trận đấu<div>đặt vấn đề nghi ngờ, không thừa nhận</div>",
     image: require("./data/4000B2_1027.jpg"),
@@ -3863,6 +4291,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "convict",
+    pos: "n",
     meaning: "kết án, tuyên bố có tội",
     category: "General",
     image: require("./data/4000B2_1028.jpg"),
@@ -3872,6 +4301,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "garage",
+    pos: "n",
     meaning: "ga ra, nhà để ô tô, nơi chữa ô tô",
     category: "General",
     image: require("./data/4000B2_1029.jpg"),
@@ -3881,6 +4311,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "journalist",
+    pos: "n",
     meaning: "nhà báo",
     category: "General",
     image: require("./data/4000B2_1030.jpg"),
@@ -3890,6 +4321,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pup",
+    pos: "n",
     meaning: "chó con",
     category: "General",
     image: require("./data/4000B2_1031.jpg"),
@@ -3899,6 +4331,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "qualify",
+    pos: "adj",
     meaning: "đủ khả năng, đủ tiêu chuẩn, đủ tư cách",
     category: "General",
     image: require("./data/4000B2_1032.jpg"),
@@ -3908,6 +4341,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "repair",
+    pos: "n",
     meaning: "sửa chữa",
     category: "General",
     image: require("./data/4000B2_1033.jpg"),
@@ -3917,6 +4351,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "resume",
+    pos: "n",
     meaning: "lấy lại, hồi phục lại,&nbsp;lại tiếp tục (sau khi nghỉ, dừng)",
     category: "Common Actions",
     image: require("./data/4000B2_1034.jpg"),
@@ -3926,6 +4361,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rob",
+    pos: "n",
     meaning: "cướp, cướp đoạt",
     category: "General",
     image: require("./data/4000B2_1035.jpg"),
@@ -3935,6 +4371,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "slip",
+    pos: "n",
     meaning: "trượt; trượt ngã",
     category: "General",
     image: require("./data/4000B2_1036.jpg"),
@@ -3944,6 +4381,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "somewhat",
+    pos: "n",
     meaning: "hơi, gọi là, một chút",
     category: "General",
     image: require("./data/4000B2_1037.jpg"),
@@ -3953,6 +4391,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "stable",
+    pos: "adj",
     meaning: "vững vàng; ổn định",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_1038.jpg"),
@@ -3962,6 +4401,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tissue",
+    pos: "n",
     meaning: "giấy vệ sinh, giấy lụa, vải mỏng",
     category: "General",
     image: require("./data/4000B2_1039.jpg"),
@@ -3971,6 +4411,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "yard",
+    pos: "n",
     meaning: "sân (có rào xung quanh)",
     category: "General",
     image: require("./data/4000B2_1040.jpg"),
@@ -3980,6 +4421,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "alike",
+    pos: "n",
     meaning: "giống nhau,&nbsp;tương tự",
     category: "General",
     image: require("./data/4000B2_1041.jpg"),
@@ -3989,6 +4431,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "annoy",
+    pos: "adj",
     meaning: "làm khó chịu,&nbsp;làm phiền, quấy rầy",
     category: "General",
     image: require("./data/4000B2_1042.jpg"),
@@ -3998,6 +4441,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "architecture",
+    pos: "n",
     meaning: "kiểu kiến trúc",
     category: "General",
     image: require("./data/4000B2_1043.jpg"),
@@ -4007,6 +4451,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "artificial",
+    pos: "adj",
     meaning: "nhân tạo",
     category: "General",
     image: require("./data/4000B2_1044.jpg"),
@@ -4016,6 +4461,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chain",
+    pos: "n",
     meaning: "dây, xích",
     category: "General",
     image: require("./data/4000B2_1045.jpg"),
@@ -4025,6 +4471,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "distinct",
+    pos: "n",
     meaning: "riêng biệt; khác biệt",
     category: "General",
     image: require("./data/4000B2_1046.jpg"),
@@ -4034,6 +4481,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "distinguish",
+    pos: "adj",
     meaning: "phân biệt, nhận ra",
     category: "General",
     image: require("./data/4000B2_1047.jpg"),
@@ -4043,6 +4491,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dust",
+    pos: "n",
     meaning: "bụi",
     category: "General",
     image: require("./data/4000B2_1048.jpg"),
@@ -4052,6 +4501,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "excitement",
+    pos: "n",
     meaning: "sự phấn khích",
     category: "General",
     image: require("./data/4000B2_1049.jpg"),
@@ -4061,6 +4511,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "heal",
+    pos: "adj",
     meaning:
       "chữa khỏi (bệnh...), làm lành (vết thương...),&nbsp;hàn gắn (mối quan hệ bị nứt rạn)",
     image: require("./data/4000B2_1050.jpg"),
@@ -4071,6 +4522,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "inherit",
+    pos: "n",
     meaning: "thừa hưởng, thừa kế",
     category: "General",
     image: require("./data/4000B2_1051.jpg"),
@@ -4080,6 +4532,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "manner",
+    pos: "n",
     meaning: "cách, lối, kiểu",
     category: "General",
     image: require("./data/4000B2_1052.jpg"),
@@ -4089,6 +4542,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mount",
+    pos: "n",
     meaning: "tăng lên,&nbsp;trèo, leo",
     category: "General",
     image: require("./data/4000B2_1053.jpg"),
@@ -4098,6 +4552,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "roof",
+    pos: "n",
     meaning: "mái nhà, nóc",
     category: "General",
     image: require("./data/4000B2_1054.jpg"),
@@ -4107,6 +4562,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shortage",
+    pos: "n",
     meaning: "sự thiếu; số lượng thiếu",
     category: "General",
     image: require("./data/4000B2_1055.jpg"),
@@ -4116,6 +4572,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "solid",
+    pos: "n",
     meaning: "đặc, vững chắc, rắn chắc",
     category: "General",
     image: require("./data/4000B2_1056.jpg"),
@@ -4125,6 +4582,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "stock",
+    pos: "n",
     meaning: "cổ phiếu, dự trữ",
     category: "General",
     image: require("./data/4000B2_1057.jpg"),
@@ -4134,6 +4592,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "substance",
+    pos: "n",
     meaning: "chất, vật chất",
     category: "General",
     image: require("./data/4000B2_1058.jpg"),
@@ -4143,6 +4602,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tomb",
+    pos: "n",
     meaning: "mộ",
     category: "General",
     image: require("./data/4000B2_1059.jpg"),
@@ -4152,6 +4612,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "wound",
+    pos: "n",
     meaning: "vết thương, thương tích",
     category: "General",
     image: require("./data/4000B2_1060.jpg"),
@@ -4161,6 +4622,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bath",
+    pos: "n",
     meaning: "sự tắm,&nbsp;chậu tắm, bồn tắm",
     category: "General",
     image: require("./data/4000B2_1061.jpg"),
@@ -4170,6 +4632,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bend",
+    pos: "n",
     meaning: "bẻ cong, uốn cong",
     category: "General",
     image: require("./data/4000B2_1062.jpg"),
@@ -4179,6 +4642,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "chew",
+    pos: "n",
     meaning: "nhai",
     category: "General",
     image: require("./data/4000B2_1063.jpg"),
@@ -4188,6 +4652,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "disabled",
+    pos: "n",
     meaning: "tàn tật",
     category: "General",
     image: require("./data/4000B2_1064.jpg"),
@@ -4197,6 +4662,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fantastic",
+    pos: "adj",
     meaning: "siêu tốt, lập dị, vô cùng to lớn",
     category: "General",
     image: require("./data/4000B2_1065.jpg"),
@@ -4206,6 +4672,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fiction",
+    pos: "n",
     meaning: "tiểu thuyết",
     category: "General",
     image: require("./data/4000B2_1066.jpg"),
@@ -4215,6 +4682,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "flag",
+    pos: "n",
     meaning: "lá cờ",
     category: "General",
     image: require("./data/4000B2_1067.jpg"),
@@ -4224,6 +4692,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "inspect",
+    pos: "n",
     meaning: "xem xét kỹ, kiểm tra",
     category: "General",
     image: require("./data/4000B2_1068.jpg"),
@@ -4233,6 +4702,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "journal",
+    pos: "adj",
     meaning: "tạp chí chuyên ngành",
     category: "General",
     image: require("./data/4000B2_1069.jpg"),
@@ -4242,6 +4712,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "liquid",
+    pos: "n",
     meaning: "chất lỏng",
     category: "General",
     image: require("./data/4000B2_1070.jpg"),
@@ -4251,6 +4722,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "marvel",
+    pos: "n",
     meaning: "ngạc nhiên, kinh ngạc",
     category: "General",
     image: require("./data/4000B2_1071.jpg"),
@@ -4260,6 +4732,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "nutrient",
+    pos: "n",
     meaning: "chất dinh dưỡng",
     category: "General",
     image: require("./data/4000B2_1072.jpg"),
@@ -4269,6 +4742,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "overcome; overcame",
+    pos: "n",
     meaning: "vượt qua, khắc phục (khó khăn...)",
     category: "Common Actions",
     image: require("./data/4000B2_1073.jpg"),
@@ -4278,6 +4752,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "recall",
+    pos: "n",
     meaning: "nhớ lại",
     category: "General",
     image: require("./data/4000B2_1074.jpg"),
@@ -4287,6 +4762,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "regret",
+    pos: "n",
     meaning: "hối tiếc",
     category: "General",
     image: require("./data/4000B2_1075.jpg"),
@@ -4296,6 +4772,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "soul",
+    pos: "n",
     meaning: "tâm hồn",
     category: "General",
     image: require("./data/4000B2_1076.jpg"),
@@ -4305,6 +4782,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sufficient",
+    pos: "n",
     meaning: "đủ",
     category: "General",
     image: require("./data/4000B2_1077.jpg"),
@@ -4314,6 +4792,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "surgery",
+    pos: "adj",
     meaning: "ca phẫu thuật",
     category: "General",
     image: require("./data/4000B2_1078.jpg"),
@@ -4323,6 +4802,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tough",
+    pos: "n",
     meaning: "khó, hóc búa",
     category: "General",
     image: require("./data/4000B2_1079.jpg"),
@@ -4332,6 +4812,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tube",
+    pos: "n",
     meaning: "ống, săm",
     category: "General",
     image: require("./data/4000B2_1080.jpg"),
@@ -4341,6 +4822,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "admit",
+    pos: "n",
     meaning: "thừa nhận, thú nhận,&nbsp;cho vào",
     category: "General",
     image: require("./data/4000B2_1081.jpg"),
@@ -4350,6 +4832,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bin",
+    pos: "n",
     meaning: "thùng",
     category: "General",
     image: require("./data/4000B2_1082.jpg"),
@@ -4359,6 +4842,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bowl",
+    pos: "n",
     meaning: "cái bát, cái tô",
     category: "General",
     image: require("./data/4000B2_1083.jpg"),
@@ -4368,6 +4852,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cabin",
+    pos: "n",
     meaning: "nhà gỗ nhỏ, túp lều",
     category: "Household & Objects",
     image: require("./data/4000B2_1084.jpg"),
@@ -4377,6 +4862,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cash",
+    pos: "n",
     meaning: "tiền, tiền mặt",
     category: "General",
     image: require("./data/4000B2_1085.jpg"),
@@ -4386,6 +4872,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "criminal",
+    pos: "adj",
     meaning: "kẻ phạm tội, tội phạm",
     category: "General",
     image: require("./data/4000B2_1086.jpg"),
@@ -4395,6 +4882,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dozen",
+    pos: "v",
     meaning: "một tá (mười hai)",
     category: "General",
     image: require("./data/4000B2_1087.jpg"),
@@ -4404,6 +4892,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "elder",
+    pos: "n",
     meaning: "người nhiều tuổi hơn",
     category: "General",
     image: require("./data/4000B2_1088.jpg"),
@@ -4413,6 +4902,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "facial",
+    pos: "adj",
     meaning: "(thuộc) mặt",
     category: "General",
     image: require("./data/4000B2_1089.jpg"),
@@ -4422,6 +4912,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fence",
+    pos: "n",
     meaning: "hàng rào",
     category: "General",
     image: require("./data/4000B2_1090.jpg"),
@@ -4431,6 +4922,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "inspire",
+    pos: "n",
     meaning: "truyền cảm hứng",
     category: "General",
     image: require("./data/4000B2_1091.jpg"),
@@ -4440,6 +4932,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "mere",
+    pos: "n",
     meaning: "chỉ là, suýt soát",
     category: "General",
     image: require("./data/4000B2_1092.jpg"),
@@ -4449,6 +4942,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "neat",
+    pos: "n",
     meaning: "gọn gàng, ngăn nắp",
     category: "General",
     image: require("./data/4000B2_1093.jpg"),
@@ -4458,6 +4952,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "occasion",
+    pos: "n",
     meaning: "dịp, cơ hội",
     category: "General",
     image: require("./data/4000B2_1094.jpg"),
@@ -4467,6 +4962,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "penalty",
+    pos: "adj",
     meaning: "hình phạt, tiền phạt",
     category: "General",
     image: require("./data/4000B2_1095.jpg"),
@@ -4476,6 +4972,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "rude",
+    pos: "n",
     meaning: "khiếm nhã, bất lịch sự, vô lễ",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_1096.jpg"),
@@ -4485,6 +4982,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "settle",
+    pos: "n",
     meaning: "giải quyết,&nbsp;dàn xếp, hoà giải",
     category: "General",
     image: require("./data/4000B2_1097.jpg"),
@@ -4494,6 +4992,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "vehicle",
+    pos: "n",
     meaning: "xe cộ",
     category: "General",
     image: require("./data/4000B2_1098.jpg"),
@@ -4503,6 +5002,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "wallet",
+    pos: "n",
     meaning: "cái ví (đựng tiền)",
     category: "General",
     image: require("./data/4000B2_1099.jpg"),
@@ -4512,6 +5012,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "yell",
+    pos: "n",
     meaning: "la hét, quát tháo",
     category: "Feelings & Emotions",
     image: require("./data/4000B2_1100.jpg"),
@@ -4521,6 +5022,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "accuse",
+    pos: "n",
     meaning: "buộc tội, kết tội; tố cáo",
     category: "General",
     image: require("./data/4000B2_1101.jpg"),
@@ -4530,6 +5032,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "adjust",
+    pos: "n",
     meaning: "điều chỉnh",
     category: "General",
     image: require("./data/4000B2_1102.jpg"),
@@ -4539,6 +5042,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "amuse",
+    pos: "n",
     meaning: "làm vui, làm thích thú, làm buồn cười",
     category: "General",
     image: require("./data/4000B2_1103.jpg"),
@@ -4548,6 +5052,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "coral",
+    pos: "adj",
     meaning: "san hô",
     category: "General",
     image: require("./data/4000B2_1104.jpg"),
@@ -4557,6 +5062,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cotton",
+    pos: "n",
     meaning: "bông, cô tông",
     category: "General",
     image: require("./data/4000B2_1105.jpg"),
@@ -4566,6 +5072,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "crash",
+    pos: "n",
     meaning: "đâm, va chạm",
     category: "Common Actions",
     image: require("./data/4000B2_1106.jpg"),
@@ -4575,6 +5082,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "deck",
+    pos: "n",
     meaning: "boong tàu, sàn tàu",
     category: "General",
     image: require("./data/4000B2_1107.jpg"),
@@ -4584,6 +5092,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "engage",
+    pos: "n",
     meaning: "làm, tiến hành,&nbsp;hứa hẹn,cam kết, hứa hôn",
     category: "General",
     image: require("./data/4000B2_1108.jpg"),
@@ -4593,6 +5102,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "firm",
+    pos: "n",
     meaning: "vững chắc; bền vững;&nbsp;hãng, công ty",
     category: "General",
     image: require("./data/4000B2_1109.jpg"),
@@ -4602,6 +5112,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fuel",
+    pos: "n",
     meaning: "chất đốt, nhiên liệu",
     category: "General",
     image: require("./data/4000B2_1110.jpg"),
@@ -4611,6 +5122,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "grand",
+    pos: "n",
     meaning: "hùng vĩ, rất lớn",
     category: "General",
     image: require("./data/4000B2_1111.jpg"),
@@ -4620,6 +5132,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "hurricane",
+    pos: "n",
     meaning: "cơn bão tố",
     category: "General",
     image: require("./data/4000B2_1112.jpg"),
@@ -4629,6 +5142,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "loss",
+    pos: "n",
     meaning: "sự mất,&nbsp;sự thiệt hại, sự thua",
     category: "General",
     image: require("./data/4000B2_1113.jpg"),
@@ -4638,6 +5152,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "plain",
+    pos: "n",
     meaning: "đơn giản, mộc mạc, trơn, một màu",
     category: "General",
     image: require("./data/4000B2_1114.jpg"),
@@ -4647,6 +5162,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "reef",
+    pos: "n",
     meaning: "đá ngầm, rạn đá cạnh biển",
     category: "Nature & Landscape",
     image: require("./data/4000B2_1115.jpg"),
@@ -4656,6 +5172,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shut",
+    pos: "n",
     meaning: "đóng, khép",
     category: "General",
     image: require("./data/4000B2_1116.jpg"),
@@ -4665,6 +5182,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "strict",
+    pos: "n",
     meaning: "nghiêm ngặt, nghiêm khắc",
     category: "General",
     image: require("./data/4000B2_1117.jpg"),
@@ -4674,6 +5192,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "surf",
+    pos: "n",
     meaning: "lướt sóng",
     category: "General",
     image: require("./data/4000B2_1118.jpg"),
@@ -4683,6 +5202,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "task",
+    pos: "n",
     meaning: "nhiệm vụ, phận sự",
     category: "General",
     image: require("./data/4000B2_1119.jpg"),
@@ -4692,6 +5212,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "zone",
+    pos: "n",
     meaning: "khu vực, vùng",
     category: "General",
     image: require("./data/4000B2_1120.jpg"),
@@ -4701,6 +5222,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "apology",
+    pos: "adj",
     meaning: "xin lỗi, sự xin lỗi",
     category: "General",
     image: require("./data/4000B2_1121.jpg"),
@@ -4710,6 +5232,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bold",
+    pos: "n",
     meaning: "dũng cảm, táo bạo",
     category: "General",
     image: require("./data/4000B2_1122.jpg"),
@@ -4719,6 +5242,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "capture",
+    pos: "n",
     meaning: "bắt giữ, bắt,&nbsp;lấy được, giành được",
     category: "General",
     image: require("./data/4000B2_1123.jpg"),
@@ -4728,6 +5252,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cardinal",
+    pos: "adj",
     meaning: "chính, chủ yếu, cốt yếu",
     category: "General",
     image: require("./data/4000B2_1124.jpg"),
@@ -4737,6 +5262,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "duke",
+    pos: "n",
     meaning: "công tước",
     category: "General",
     image: require("./data/4000B2_1125.jpg"),
@@ -4746,6 +5272,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "expose",
+    pos: "n",
     meaning: "phơi bày, phô ra",
     category: "General",
     image: require("./data/4000B2_1126.jpg"),
@@ -4755,6 +5282,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "guilty",
+    pos: "adj",
     meaning: "có lỗi, có tội",
     category: "General",
     image: require("./data/4000B2_1127.jpg"),
@@ -4764,6 +5292,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "hire",
+    pos: "n",
     meaning: "mướn, thuê (nhân công),&nbsp;cho thuê (nhà...)",
     category: "General",
     image: require("./data/4000B2_1128.jpg"),
@@ -4773,6 +5302,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "innocent",
+    pos: "n",
     meaning: "vô tội; không có tội",
     category: "General",
     image: require("./data/4000B2_1129.jpg"),
@@ -4782,6 +5312,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "jail",
+    pos: "n",
     meaning: "nhà tù",
     category: "General",
     image: require("./data/4000B2_1130.jpg"),
@@ -4791,6 +5322,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "minister",
+    pos: "n",
     meaning: "bộ trưởng",
     category: "General",
     image: require("./data/4000B2_1131.jpg"),
@@ -4800,6 +5332,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ordinary",
+    pos: "adj",
     meaning: "thông thường, bình thường",
     category: "General",
     image: require("./data/4000B2_1132.jpg"),
@@ -4809,6 +5342,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "permanent",
+    pos: "n",
     meaning: "lâu bền, vĩnh cửu,&nbsp;lâu dài",
     category: "General",
     image: require("./data/4000B2_1133.jpg"),
@@ -4818,6 +5352,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "preserve",
+    pos: "n",
     meaning: "giữ gìn, bảo quản, bảo tồn, duy trì",
     category: "General",
     image: require("./data/4000B2_1134.jpg"),
@@ -4827,6 +5362,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pronounce; pronouncing",
+    pos: "n",
     meaning: "phát âm,&nbsp;tuyên bố",
     category: "General",
     image: require("./data/4000B2_1135.jpg"),
@@ -4836,6 +5372,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "resemble",
+    pos: "n",
     meaning: "giống với&nbsp;(người nào, vật gì)",
     category: "General",
     image: require("./data/4000B2_1136.jpg"),
@@ -4845,6 +5382,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "symptom",
+    pos: "n",
     meaning: "triệu chứng",
     category: "General",
     image: require("./data/4000B2_1137.jpg"),
@@ -4854,6 +5392,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tobacco",
+    pos: "n",
     meaning: "thuốc lá",
     category: "General",
     image: require("./data/4000B2_1138.jpg"),
@@ -4863,6 +5402,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "twin",
+    pos: "n",
     meaning: "sinh đôi",
     category: "General",
     image: require("./data/4000B2_1139.jpg"),
@@ -4872,6 +5412,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "witch",
+    pos: "n",
     meaning: "mụ phù thuỷ,&nbsp;người đàn bà quyến rũ",
     category: "Household & Objects",
     image: require("./data/4000B2_1140.jpg"),
@@ -4881,6 +5422,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "accompany",
+    pos: "adj",
     meaning: "đi theo, đi cùng",
     category: "General",
     image: require("./data/4000B2_1141.jpg"),
@@ -4890,6 +5432,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bare",
+    pos: "n",
     meaning: "trần, trọc, trống không",
     category: "General",
     image: require("./data/4000B2_1142.jpg"),
@@ -4899,6 +5442,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "branch",
+    pos: "n",
     meaning:
       "cành cây,&nbsp;nhánh (sông),&nbsp;chi nhánh (ngân hàng, công ty...)",
     image: require("./data/4000B2_1143.jpg"),
@@ -4909,6 +5453,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "breath",
+    pos: "n",
     meaning: "hơi thở, sự thở",
     category: "General",
     image: require("./data/4000B2_1144.jpg"),
@@ -4918,6 +5463,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "bridge",
+    pos: "n",
     meaning: "cây cầu",
     category: "Nature & Landscape",
     image: require("./data/4000B2_1145.jpg"),
@@ -4927,6 +5473,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cast",
+    pos: "n",
     meaning:
       "quăng, ném, liệng, thả,<div>đúc, nấu chảy, đổ khuôn (để đúc)</div>",
     image: require("./data/4000B2_1146.jpg"),
@@ -4937,6 +5484,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dare",
+    pos: "n",
     meaning: "dám, thách, dám đương đầu với",
     category: "General",
     image: require("./data/4000B2_1147.jpg"),
@@ -4946,6 +5494,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "electronic",
+    pos: "adj",
     meaning: "(thuộc) điện tử",
     category: "General",
     image: require("./data/4000B2_1148.jpg"),
@@ -4955,6 +5504,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "inn",
+    pos: "n",
     meaning: "quán trọ, khách sạn nhỏ (ở nông thôn, thị trấn)",
     category: "General",
     image: require("./data/4000B2_1149.jpg"),
@@ -4964,6 +5514,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "net",
+    pos: "n",
     meaning:
       "lưới, mạng (tóc, nhện...)<div>thực trả, thực lĩnh (sau khi trừ hết chi phí)</div>",
     image: require("./data/4000B2_1150.jpg"),
@@ -4974,6 +5525,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "philosophy",
+    pos: "adj",
     meaning: "triết học, triết lý",
     category: "General",
     image: require("./data/4000B2_1151.jpg"),
@@ -4983,6 +5535,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "pot",
+    pos: "n",
     meaning: "nồi, ấm, bình, lọ, chậu, hũ",
     category: "General",
     image: require("./data/4000B2_1152.jpg"),
@@ -4992,6 +5545,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "seed",
+    pos: "n",
     meaning: "hạt giống",
     category: "General",
     image: require("./data/4000B2_1153.jpg"),
@@ -5001,6 +5555,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sharp",
+    pos: "n",
     meaning: "sắc, nhọn, bén",
     category: "General",
     image: require("./data/4000B2_1154.jpg"),
@@ -5010,6 +5565,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "sort",
+    pos: "n",
     meaning: "thứ, loại, hạng",
     category: "General",
     image: require("./data/4000B2_1155.jpg"),
@@ -5019,6 +5575,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "subtract",
+    pos: "n",
     meaning: "(toán học) trừ",
     category: "General",
     image: require("./data/4000B2_1156.jpg"),
@@ -5028,6 +5585,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "tight",
+    pos: "n",
     meaning: "chặt, khít",
     category: "General",
     image: require("./data/4000B2_1157.jpg"),
@@ -5037,6 +5595,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "virtual",
+    pos: "adj",
     meaning: "thực sự, thực tế;&nbsp;(vật lý) ảo",
     category: "General",
     image: require("./data/4000B2_1158.jpg"),
@@ -5046,6 +5605,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "weigh",
+    pos: "n",
     meaning: "cân,&nbsp;cân nhấc,&nbsp;nhấc xem nặng nhẹ",
     category: "General",
     image: require("./data/4000B2_1159.jpg"),
@@ -5055,6 +5615,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "whisper",
+    pos: "n",
     meaning: "nói thầm; xì xào",
     category: "General",
     image: require("./data/4000B2_1160.jpg"),
@@ -5064,6 +5625,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "abstract",
+    pos: "n",
     meaning:
       "trừu tượng,&nbsp;bản tóm tắt (cuốn sách, luận án, bài diễn văn...)",
     image: require("./data/4000B2_1161.jpg"),
@@ -5074,6 +5636,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "annual",
+    pos: "adj",
     meaning: "hàng năm",
     category: "General",
     image: require("./data/4000B2_1162.jpg"),
@@ -5083,6 +5646,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "clay",
+    pos: "adj",
     meaning: "đất sét",
     category: "General",
     image: require("./data/4000B2_1163.jpg"),
@@ -5092,6 +5656,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "cloth",
+    pos: "n",
     meaning: "vải,&nbsp;khăn lau; khăn trải (bàn)",
     category: "General",
     image: require("./data/4000B2_1164.jpg"),
@@ -5101,6 +5666,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "curtain",
+    pos: "n",
     meaning: "rèm, màn cửa,&nbsp;màn (ở rạp hát),&nbsp;màn (khói, sương)",
     category: "General",
     image: require("./data/4000B2_1165.jpg"),
@@ -5110,6 +5676,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "deserve",
+    pos: "n",
     meaning: "xứng đáng",
     category: "General",
     image: require("./data/4000B2_1166.jpg"),
@@ -5119,6 +5686,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "feather",
+    pos: "n",
     meaning: "lông (chim)",
     category: "General",
     image: require("./data/4000B2_1167.jpg"),
@@ -5128,6 +5696,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fertile",
+    pos: "n",
     meaning: "tốt, màu mỡ (đất)",
     category: "General",
     image: require("./data/4000B2_1168.jpg"),
@@ -5137,6 +5706,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "flood",
+    pos: "n",
     meaning: "lũ, lụt, ngập",
     category: "General",
     image: require("./data/4000B2_1169.jpg"),
@@ -5146,6 +5716,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "furniture",
+    pos: "n",
     meaning: "đồ nội thất, đồ đạc (trong nhà)",
     category: "General",
     image: require("./data/4000B2_1170.jpg"),
@@ -5155,6 +5726,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "grave",
+    pos: "n",
     meaning: "mộ, phần mộ",
     category: "General",
     image: require("./data/4000B2_1171.jpg"),
@@ -5164,6 +5736,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "ideal",
+    pos: "adj",
     meaning: "lý tưởng",
     category: "General",
     image: require("./data/4000B2_1172.jpg"),
@@ -5173,6 +5746,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "intelligence",
+    pos: "n",
     meaning: "trí thông minh,&nbsp;sự hiểu biết,&nbsp;cơ quan tình báo",
     category: "General",
     image: require("./data/4000B2_1173.jpg"),
@@ -5182,6 +5756,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "nowadays",
+    pos: "n",
     meaning: "ngày nay,&nbsp;thời buổi này",
     category: "General",
     image: require("./data/4000B2_1174.jpg"),
@@ -5191,6 +5766,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "obtain",
+    pos: "n",
     meaning: "đạt được, giành được, kiếm được",
     category: "General",
     image: require("./data/4000B2_1175.jpg"),
@@ -5200,6 +5776,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "religious",
+    pos: "adj",
     meaning: "(thuộc) tôn giáo",
     category: "General",
     image: require("./data/4000B2_1176.jpg"),
@@ -5209,6 +5786,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "romantic",
+    pos: "adj",
     meaning: "lãng mạng",
     category: "General",
     image: require("./data/4000B2_1177.jpg"),
@@ -5218,6 +5796,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shell",
+    pos: "n",
     meaning: "vỏ, mai",
     category: "General",
     image: require("./data/4000B2_1178.jpg"),
@@ -5227,6 +5806,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "shore",
+    pos: "n",
     meaning: "bờ (biển, hồ lớn)",
     category: "Nature & Landscape",
     image: require("./data/4000B2_1179.jpg"),
@@ -5236,6 +5816,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "wheel",
+    pos: "n",
     meaning: "bánh (xe)",
     category: "General",
     image: require("./data/4000B2_1180.jpg"),
@@ -5245,6 +5826,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "appeal",
+    pos: "adj",
     meaning: "hấp dẫn, lôi cuốn",
     category: "General",
     image: require("./data/4000B2_1181.jpg"),
@@ -5254,6 +5836,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "assume",
+    pos: "n",
     meaning: "cho rằng (là đúng); giả sử (là đúng)",
     category: "General",
     image: require("./data/4000B2_1182.jpg"),
@@ -5263,6 +5846,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "borrow",
+    pos: "n",
     meaning: "mượn, vay",
     category: "General",
     image: require("./data/4000B2_1183.jpg"),
@@ -5272,6 +5856,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "client",
+    pos: "n",
     meaning: "khách hàng (sử dụng dịch vụ)",
     category: "General",
     image: require("./data/4000B2_1184.jpg"),
@@ -5281,6 +5866,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "downtown",
+    pos: "n",
     meaning: "khu trung tâm, khu buôn bán kinh doanh (của một thành phố)",
     category: "General",
     image: require("./data/4000B2_1185.jpg"),
@@ -5290,6 +5876,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "dull",
+    pos: "n",
     meaning: "đều đều, buồn tẻ,&nbsp;uể oải, chậm chạp",
     category: "General",
     image: require("./data/4000B2_1186.jpg"),
@@ -5299,6 +5886,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "embarrass",
+    pos: "n",
     meaning:
       "làm lúng túng, làm ngượng nghịu,&nbsp;gây khó khăn về kinh tế cho",
     image: require("./data/4000B2_1187.jpg"),
@@ -5309,6 +5897,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "fare",
+    pos: "n",
     meaning: "tiền vé (tàu, xe, máy bay...)",
     category: "Household & Objects",
     image: require("./data/4000B2_1188.jpg"),
@@ -5318,6 +5907,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "former",
+    pos: "n",
     meaning: "cũ, xưa,&nbsp;trước kia",
     category: "General",
     image: require("./data/4000B2_1189.jpg"),
@@ -5327,6 +5917,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "formula",
+    pos: "n",
     meaning: "công thức (toán học)",
     category: "General",
     image: require("./data/4000B2_1190.jpg"),
@@ -5336,6 +5927,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "found",
+    pos: "n",
     meaning: "sáng lập, đặt nền móng",
     category: "General",
     image: require("./data/4000B2_1191.jpg"),
@@ -5345,6 +5937,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "invest",
+    pos: "n",
     meaning: "đầu tư",
     category: "General",
     image: require("./data/4000B2_1192.jpg"),
@@ -5354,6 +5947,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "loan",
+    pos: "n",
     meaning: "khoản vay, sự vay nợ",
     category: "General",
     image: require("./data/4000B2_1193.jpg"),
@@ -5363,6 +5957,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "practical",
+    pos: "adj",
     meaning: "thực tế, thực dụng; có ích",
     category: "General",
     image: require("./data/4000B2_1194.jpg"),
@@ -5372,6 +5967,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "quarter",
+    pos: "n",
     meaning: "một phần tư đô la (25 cent), giờ (15'), năm (một quý trong năm)",
     category: "General",
     image: require("./data/4000B2_1195.jpg"),
@@ -5381,6 +5977,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "salary",
+    pos: "adj",
     meaning: "tiền lương",
     category: "General",
     image: require("./data/4000B2_1196.jpg"),
@@ -5390,6 +5987,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "scholarship",
+    pos: "n",
     meaning: "học bổng",
     category: "General",
     image: require("./data/4000B2_1197.jpg"),
@@ -5399,6 +5997,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "temporary",
+    pos: "adj",
     meaning: "tạm thời, nhất thời, lâm thời",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_1198.jpg"),
@@ -5408,6 +6007,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "treasure",
+    pos: "n",
     meaning: "châu báu, của cải",
     category: "Abstract & Qualities",
     image: require("./data/4000B2_1199.jpg"),
@@ -5417,6 +6017,7 @@ export const new_vocs: Vocabulary[] = [
   },
   {
     voc: "urge",
+    pos: "n",
     meaning: "thúc giục, nài nỉ",
     category: "General",
     image: require("./data/4000B2_1200.jpg"),

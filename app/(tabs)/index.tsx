@@ -7,6 +7,7 @@ import { useEffect, useRef, useState } from "react";
 import {
   Dimensions,
   Modal,
+  Pressable,
   ScrollView,
   StyleSheet,
   Text,
@@ -36,6 +37,7 @@ export default function HomeScreen() {
   const [index, setIndex] = useState(0);
   const [showMeaning, setShowMeaning] = useState(false);
   const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
+  const [isMute, setIsMute] = useState(false);
   const [categoryProgress, setCategoryProgress] = useState<Record<string, { remaining: number; total: number }>>({});
   const soundRef = useRef<Audio.Sound | null>(null);
   // Derived category list with Vietnamese mapping
@@ -190,6 +192,7 @@ export default function HomeScreen() {
   }, []);
 
   const playSound = async (soundSource: any, label?: string) => {
+    if (isMute) return;
     if (!soundSource) {
       console.log("No sound file for", label || "this item");
       return;
@@ -327,10 +330,10 @@ export default function HomeScreen() {
         </View>
 
         <Image source={voc.image} style={styles.image} contentFit="cover" pointerEvents="none" />
-        <View style={{ alignItems: 'center', width: '100%' }}>
-          <Text style={styles.word}
-            onPress={() => playSound(voc.sound, voc.voc)}>{voc.voc}</Text>
-        </View>
+        <Pressable style={{ alignItems: 'center', width: '100%' }} onPress={() => playSound(voc.sound, voc.voc)}>
+          <Text style={styles.word}>{voc.voc}</Text>
+          <Text style={styles.pos}>[{voc.pos}]</Text>
+        </Pressable>
 
         <View style={styles.soundRow}>
           <Ionicons
@@ -477,6 +480,13 @@ export default function HomeScreen() {
       {/* Hướng dẫn vuốt */}
       <View style={styles.hintRow}>
         <Text onPress={() => changeIndex(false)} style={styles.hint}>← Từ trước</Text>
+        <Ionicons
+          name={isMute ? "volume-mute" : "volume-high"}
+          size={32}
+          color={isMute ? "#888" : "#4ade80"}
+          onPress={() => setIsMute(!isMute)}
+          style={styles.learnButton}
+        />
         <Text onPress={() => changeIndex(true)} style={styles.hint}>Từ tiếp theo →</Text>
       </View>
     </GestureHandlerRootView>
@@ -505,6 +515,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     overflow: "hidden",
+    borderRadius: 24,
   },
   card: {
     width: SCREEN_WIDTH - 40,
@@ -537,6 +548,14 @@ const styles = StyleSheet.create({
     fontSize: 32,
     fontWeight: "800",
     color: "#e94560",
+    textAlign: "center",
+    letterSpacing: 1,
+    marginBottom: 4,
+  },
+  pos: {
+    fontSize: 16,
+    fontWeight: "800",
+    color: "#859b5eff",
     textAlign: "center",
     letterSpacing: 1,
     marginBottom: 4,
@@ -578,6 +597,7 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-between",
+    alignItems: "center",
     paddingHorizontal: 32,
   },
   hint: {
