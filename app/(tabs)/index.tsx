@@ -38,6 +38,7 @@ export default function HomeScreen() {
   const [showMeaning, setShowMeaning] = useState(false);
   const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
   const [isMute, setIsMute] = useState(false);
+  const [playingSound, setPlayingSound] = useState(false);
   const [categoryProgress, setCategoryProgress] = useState<Record<string, { remaining: number; total: number }>>({});
   const soundRef = useRef<Audio.Sound | null>(null);
   // Derived category list with Vietnamese mapping
@@ -80,7 +81,7 @@ export default function HomeScreen() {
 
   const translateX = useSharedValue(0);
 
-  const currentVoc = activeVocs[index];
+  const currentVoc = activeVocs[index] || activeVocs[0];
 
   const calculateProgress = async () => {
     const progress: Record<string, { remaining: number; total: number }> = {};
@@ -191,6 +192,16 @@ export default function HomeScreen() {
     };
   }, []);
 
+  useEffect(() => {
+    const trackPlayingSound = async () => {
+      if (!currentVoc || playingSound) return;
+      setPlayingSound(true);
+      await playSound(currentVoc.sound, currentVoc.voc);
+      setPlayingSound(false);
+    }
+    trackPlayingSound();
+  }, [currentVoc]);
+
   const playSound = async (soundSource: any, label?: string) => {
     if (isMute) return;
     if (!soundSource) {
@@ -229,7 +240,6 @@ export default function HomeScreen() {
     if (newIndex !== index) {
       setIndex(newIndex);
       setShowMeaning(false); // Hide meaning when switching words
-      playSound(activeVocs[newIndex].sound, activeVocs[newIndex].voc);
     }
     // Snap back to center without animation from user's view (since it instantly changes content)
     translateX.value = 0;
@@ -238,7 +248,6 @@ export default function HomeScreen() {
   const resetIndex = () => {
     if (activeVocs.length === 0) return;
     setIndex(0);
-    playSound(activeVocs[0].sound, activeVocs[0].voc);
     translateX.value = 0;
   };
 
@@ -271,26 +280,16 @@ export default function HomeScreen() {
   };
 
   const handleSwipeComplete = (velocity: number, dx: number) => {
-    if (activeVocs.length === 0) return;
-
     if (dx < -SWIPE_THRESHOLD) {
       // Swiped Left -> Mở từ tiếp theo
-      if (index < activeVocs.length - 1) {
-        translateX.value = withTiming(-SCREEN_WIDTH, { duration: 150 }, () => {
-          runOnJS(changeIndex)(true);
-        });
-      } else {
-        translateX.value = withSpring(0);
-      }
+      translateX.value = withTiming(-SCREEN_WIDTH, { duration: 150 }, () => {
+        runOnJS(changeIndex)(true);
+      });
     } else if (dx > SWIPE_THRESHOLD) {
       // Swiped Right -> Trở lại từ trước
-      if (index > 0) {
-        translateX.value = withTiming(SCREEN_WIDTH, { duration: 150 }, () => {
-          runOnJS(changeIndex)(false);
-        });
-      } else {
-        translateX.value = withSpring(0);
-      }
+      translateX.value = withTiming(SCREEN_WIDTH, { duration: 150 }, () => {
+        runOnJS(changeIndex)(false);
+      });
     } else {
       translateX.value = withSpring(0);
     }
@@ -518,7 +517,7 @@ const styles = StyleSheet.create({
     borderRadius: 24,
   },
   card: {
-    width: SCREEN_WIDTH - 40,
+    width: SCREEN_WIDTH,
     backgroundColor: "#16213e",
     borderRadius: 24,
     alignItems: "center",
@@ -593,7 +592,7 @@ const styles = StyleSheet.create({
   },
   hintRow: {
     position: "absolute",
-    bottom: 40,
+    bottom: 70,
     flexDirection: "row",
     width: "100%",
     justifyContent: "space-between",
@@ -606,8 +605,8 @@ const styles = StyleSheet.create({
   },
   cardHeader: {
     position: "absolute",
-    top: 16,
-    right: 16,
+    bottom: 'auto',
+    left: 16,
     zIndex: 10,
   },
   learnButton: {
