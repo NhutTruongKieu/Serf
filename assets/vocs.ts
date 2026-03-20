@@ -1,3 +1,5 @@
+import { new_vocs2 } from "./vocs2";
+
 export type Vocabulary = {
   voc: string;
   pos: string;
@@ -7,6 +9,7 @@ export type Vocabulary = {
   exampleSound: any;
   meaningSound: any;
   image: any;
+  ipa?: string;
 };
 
 export const new_vocs: Vocabulary[] = [
@@ -6027,4 +6030,4 @@ export const new_vocs: Vocabulary[] = [
   },
 ];
 
-export const vocs: Vocabulary[] = [...new_vocs];
+export const vocs: Vocabulary[] = [...new_vocs, ...new_vocs2];

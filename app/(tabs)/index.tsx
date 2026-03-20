@@ -27,8 +27,9 @@ import Animated, {
   withTiming,
 } from "react-native-reanimated";
 
-const { width: SCREEN_WIDTH } = Dimensions.get("window");
+const { width: SCREEN_WIDTH, height: SCREEN_HEIGHT } = Dimensions.get("window");
 const SWIPE_THRESHOLD = 80;
+const VERTICAL_SWIPE_THRESHOLD = 100;
 
 export default function HomeScreen() {
   const [currentCategory, setCurrentCategory] = useState("All");
@@ -80,6 +81,7 @@ export default function HomeScreen() {
   const vocSets = getSetsForCategory(currentCategory);
 
   const translateX = useSharedValue(0);
+  const translateY = useSharedValue(0);
 
   const currentVoc = activeVocs[index] || activeVocs[0];
 
@@ -249,6 +251,33 @@ export default function HomeScreen() {
     if (activeVocs.length === 0) return;
     setIndex(0);
     translateX.value = 0;
+    translateY.value = 0;
+  };
+
+  const navigateToSet = (isNext: boolean) => {
+    // Current category index
+    const catIdx = sortedCategories.indexOf(currentCategory);
+
+    if (isNext) {
+      if (currentSet < vocSets.length - 1) {
+        selectSet(currentCategory, currentSet + 1);
+      } else {
+        // Last set of current category, move to next category
+        const nextCatIdx = (catIdx + 1) % sortedCategories.length;
+        const nextCat = sortedCategories[nextCatIdx];
+        selectSet(nextCat, 0);
+      }
+    } else {
+      if (currentSet > 0) {
+        selectSet(currentCategory, currentSet - 1);
+      } else {
+        // First set of current category, move to prev category
+        const prevCatIdx = (catIdx - 1 + sortedCategories.length) % sortedCategories.length;
+        const prevCat = sortedCategories[prevCatIdx];
+        const prevCatSets = getSetsForCategory(prevCat);
+        selectSet(prevCat, Math.max(0, prevCatSets.length - 1));
+      }
+    }
   };
 
   const markAsLearned = async () => {
@@ -277,30 +306,58 @@ export default function HomeScreen() {
 
     // Snap to center
     translateX.value = 0;
+    translateY.value = 0;
   };
 
-  const handleSwipeComplete = (velocity: number, dx: number) => {
-    if (dx < -SWIPE_THRESHOLD) {
-      // Swiped Left -> Mở từ tiếp theo
-      translateX.value = withTiming(-SCREEN_WIDTH, { duration: 150 }, () => {
-        runOnJS(changeIndex)(true);
-      });
-    } else if (dx > SWIPE_THRESHOLD) {
-      // Swiped Right -> Trở lại từ trước
-      translateX.value = withTiming(SCREEN_WIDTH, { duration: 150 }, () => {
-        runOnJS(changeIndex)(false);
-      });
+  const handleSwipeComplete = (vx: number, dx: number, vy: number, dy: number) => {
+    // Determine primary direction
+    if (Math.abs(dx) > Math.abs(dy)) {
+      // Horizontal Primary
+      if (dx < -SWIPE_THRESHOLD) {
+        // Swiped Left -> Mở từ tiếp theo
+        translateX.value = withTiming(-SCREEN_WIDTH, { duration: 150 }, () => {
+          runOnJS(changeIndex)(true);
+        });
+      } else if (dx > SWIPE_THRESHOLD) {
+        // Swiped Right -> Trở lại từ trước
+        translateX.value = withTiming(SCREEN_WIDTH, { duration: 150 }, () => {
+          runOnJS(changeIndex)(false);
+        });
+      } else {
+        translateX.value = withSpring(0);
+      }
     } else {
-      translateX.value = withSpring(0);
+      // Vertical Primary
+      if (dy < -VERTICAL_SWIPE_THRESHOLD) {
+        // Swiped Up -> Next Set
+        translateY.value = withTiming(-SCREEN_HEIGHT, { duration: 200 }, () => {
+          runOnJS(navigateToSet)(true);
+          translateY.value = 0;
+        });
+      } else if (dy > VERTICAL_SWIPE_THRESHOLD) {
+        // Swiped Down -> Prev Set
+        translateY.value = withTiming(SCREEN_HEIGHT, { duration: 200 }, () => {
+          runOnJS(navigateToSet)(false);
+          translateY.value = 0;
+        });
+      } else {
+        translateY.value = withSpring(0);
+      }
     }
   };
 
   const panGesture = Gesture.Pan()
     .onUpdate((e) => {
-      translateX.value = e.translationX;
+      if (Math.abs(e.translationX) > Math.abs(e.translationY)) {
+        translateX.value = e.translationX;
+        translateY.value = 0;
+      } else {
+        translateY.value = e.translationY;
+        translateX.value = 0;
+      }
     })
     .onEnd((e) => {
-      runOnJS(handleSwipeComplete)(e.velocityX, e.translationX);
+      runOnJS(handleSwipeComplete)(e.velocityX, e.translationX, e.velocityY, e.translationY);
     });
 
   const tapGesture = Gesture.Tap().onEnd(() => {
@@ -311,7 +368,10 @@ export default function HomeScreen() {
 
   const animatedCardStyle = useAnimatedStyle(() => {
     return {
-      transform: [{ translateX: translateX.value }],
+      transform: [
+        { translateX: translateX.value },
+        { translateY: translateY.value }
+      ],
     };
   });
 
@@ -331,7 +391,7 @@ export default function HomeScreen() {
         <Image source={voc.image} style={styles.image} contentFit="cover" pointerEvents="none" />
         <Pressable style={{ alignItems: 'center', width: '100%' }} onPress={() => playSound(voc.sound, voc.voc)}>
           <Text style={styles.word}>{voc.voc}</Text>
-          <Text style={styles.pos}>[{voc.pos}]</Text>
+          <Text style={styles.pos}>{voc.ipa}</Text>
         </Pressable>
 
         <View style={styles.soundRow}>
@@ -478,7 +538,7 @@ export default function HomeScreen() {
 
       {/* Hướng dẫn vuốt */}
       <View style={styles.hintRow}>
-        <Text onPress={() => changeIndex(false)} style={styles.hint}>← Từ trước</Text>
+        <Text onPress={() => changeIndex(false)} style={styles.hintLeft}>← Từ trước</Text>
         <Ionicons
           name={isMute ? "volume-mute" : "volume-high"}
           size={32}
@@ -486,7 +546,7 @@ export default function HomeScreen() {
           onPress={() => setIsMute(!isMute)}
           style={styles.learnButton}
         />
-        <Text onPress={() => changeIndex(true)} style={styles.hint}>Từ tiếp theo →</Text>
+        <Text onPress={() => changeIndex(true)} style={styles.hintRight}>Từ tiếp theo →</Text>
       </View>
     </GestureHandlerRootView>
   );
@@ -597,11 +657,25 @@ const styles = StyleSheet.create({
     width: "100%",
     justifyContent: "space-between",
     alignItems: "center",
-    paddingHorizontal: 32,
+    paddingHorizontal: 20,
   },
-  hint: {
-    color: "#444",
-    fontSize: 13,
+  hintLeft: {
+    flex: 1,
+    color: "#888",
+    fontSize: 14,
+    fontWeight: "500",
+    textAlign: "left",
+    height: 50,
+    textAlignVertical: "center",
+  },
+  hintRight: {
+    flex: 1,
+    color: "#888",
+    fontSize: 14,
+    fontWeight: "500",
+    textAlign: "right",
+    height: 50,
+    textAlignVertical: "center",
   },
   cardHeader: {
     position: "absolute",
