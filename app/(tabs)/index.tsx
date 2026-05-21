@@ -39,9 +39,13 @@ export default function HomeScreen() {
   const [showMeaning, setShowMeaning] = useState(false);
   const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
   const [isMute, setIsMute] = useState(false);
-  const [playingSound, setPlayingSound] = useState(false);
+  const autoPlayGenRef = useRef(0);
   const [categoryProgress, setCategoryProgress] = useState<Record<string, { remaining: number; total: number }>>({});
+  const [setProgress, setSetProgress] = useState<Record<string, { learned: number; total: number }>>({});
   const soundRef = useRef<Audio.Sound | null>(null);
+  const modalScrollRef = useRef<ScrollView>(null);
+  const scrollContentRef = useRef<View>(null);
+  const activeSetRef = useRef<View>(null);
   // Derived category list with Vietnamese mapping
   const categoryMap: Record<string, string> = {
     "All": "Tất cả",
@@ -87,6 +91,7 @@ export default function HomeScreen() {
 
   const calculateProgress = async () => {
     const progress: Record<string, { remaining: number; total: number }> = {};
+    const perSet: Record<string, { learned: number; total: number }> = {};
 
     for (const cat of sortedCategories) {
       const sets = getSetsForCategory(cat);
@@ -94,20 +99,23 @@ export default function HomeScreen() {
       let remaining = 0;
 
       for (let i = 0; i < sets.length; i++) {
-        total += sets[i].length;
+        const setTotal = sets[i].length;
+        total += setTotal;
+        let setRemaining = setTotal;
         const storageKey = `LEARNED_VOCS_${cat}_SET_${i}`;
         try {
           const savedData = await AsyncStorage.getItem(storageKey);
           if (savedData) {
-            remaining += (JSON.parse(savedData) as string[]).length;
-          } else {
-            remaining += sets[i].length;
+            setRemaining = (JSON.parse(savedData) as string[]).length;
           }
         } catch (e) { }
+        remaining += setRemaining;
+        perSet[`${cat}_${i}`] = { learned: setTotal - setRemaining, total: setTotal };
       }
       progress[cat] = { remaining, total };
     }
     setCategoryProgress(progress);
+    setSetProgress(perSet);
   };
 
   useEffect(() => {
@@ -151,17 +159,40 @@ export default function HomeScreen() {
     }
   }, [isSetPickerVisible]);
 
+  const scrollToActiveSet = () => {
+    if (!activeSetRef.current || !scrollContentRef.current || !modalScrollRef.current) {
+      return;
+    }
+    activeSetRef.current.measureLayout(
+      scrollContentRef.current,
+      (_x, y) => {
+        modalScrollRef.current?.scrollTo({ y: Math.max(0, y - 32), animated: false });
+      },
+      () => {}
+    );
+  };
+
+  useEffect(() => {
+    if (!isSetPickerVisible) return;
+    const frameId = requestAnimationFrame(() => {
+      setTimeout(scrollToActiveSet, 100);
+    });
+    return () => cancelAnimationFrame(frameId);
+  }, [isSetPickerVisible, currentCategory, currentSet]);
+
   const selectSet = async (cat: string, setIdx: number) => {
-    setCurrentCategory(cat);
-    setCurrentSet(setIdx);
     setIsSetPickerVisible(false);
-    setIndex(0);
     setShowMeaning(false);
 
-    try {
-      await AsyncStorage.setItem("CURRENT_CATEGORY", cat);
-      await AsyncStorage.setItem("CURRENT_SET", setIdx.toString());
+    if (soundRef.current) {
+      try {
+        await soundRef.current.unloadAsync();
+      } catch (_) {}
+      soundRef.current = null;
+    }
 
+    let newVocs: Vocabulary[] = [];
+    try {
       const currentSets = getSetsForCategory(cat);
       const storageKey = `LEARNED_VOCS_${cat}_SET_${setIdx}`;
       const savedData = await AsyncStorage.getItem(storageKey);
@@ -171,13 +202,23 @@ export default function HomeScreen() {
         const filteredVocs = currentSets[setIdx].filter((v) =>
           remainingWords.includes(v.voc)
         );
-        setActiveVocs(filteredVocs.length > 0 ? filteredVocs : []);
+        newVocs = filteredVocs.length > 0 ? filteredVocs : [];
       } else {
-        setActiveVocs(currentSets[setIdx]);
+        newVocs = currentSets[setIdx];
       }
+
+      await AsyncStorage.setItem("CURRENT_CATEGORY", cat);
+      await AsyncStorage.setItem("CURRENT_SET", setIdx.toString());
     } catch (e) {
-      setActiveVocs(getSetsForCategory(cat)[setIdx]);
+      newVocs = getSetsForCategory(cat)[setIdx] ?? [];
     }
+
+    setCurrentCategory(cat);
+    setCurrentSet(setIdx);
+    setActiveVocs(newVocs);
+    setIndex(0);
+    translateX.value = 0;
+    translateY.value = 0;
   };
 
   useEffect(() => {
@@ -195,14 +236,20 @@ export default function HomeScreen() {
   }, []);
 
   useEffect(() => {
-    const trackPlayingSound = async () => {
-      if (!currentVoc || playingSound) return;
-      setPlayingSound(true);
-      await playSound(currentVoc.sound, currentVoc.voc);
-      setPlayingSound(false);
-    }
-    trackPlayingSound();
-  }, [currentVoc]);
+    const voc = activeVocs[index] ?? activeVocs[0];
+    if (!voc) return;
+
+    const gen = ++autoPlayGenRef.current;
+    (async () => {
+      await playSound(voc.sound, voc.voc);
+      if (gen !== autoPlayGenRef.current && soundRef.current) {
+        try {
+          await soundRef.current.unloadAsync();
+        } catch (_) {}
+        soundRef.current = null;
+      }
+    })();
+  }, [activeVocs, index, currentCategory, currentSet, isMute]);
 
   const playSound = async (soundSource: any, label?: string) => {
     if (isMute) return;
@@ -471,8 +518,11 @@ export default function HomeScreen() {
         animationType="fade"
         onRequestClose={() => setIsSetPickerVisible(false)}
       >
-        <View style={styles.modalOverlay}>
-          <View style={styles.modalContent}>
+        <Pressable
+          style={styles.modalOverlay}
+          onPress={() => setIsSetPickerVisible(false)}
+        >
+          <Pressable style={styles.modalContent} onPress={() => {}}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Chọn bộ từ vựng</Text>
               <Ionicons
@@ -482,7 +532,8 @@ export default function HomeScreen() {
                 onPress={() => setIsSetPickerVisible(false)}
               />
             </View>
-            <ScrollView contentContainerStyle={styles.modalScroll}>
+            <ScrollView ref={modalScrollRef} contentContainerStyle={styles.modalScroll}>
+              <View ref={scrollContentRef} collapsable={false}>
               {sortedCategories.map((cat) => {
                 const sets = getSetsForCategory(cat);
                 if (sets.length === 0) return null;
@@ -493,19 +544,23 @@ export default function HomeScreen() {
                       {categoryMap[cat] || cat} {prog ? `(${prog.total - prog.remaining}/${prog.total})` : ""}
                     </Text>
                     <View style={styles.setGrid}>
-                      {sets.map((_, i) => (
+                      {sets.map((_, i) => {
+                        const isActive = currentCategory === cat && currentSet === i;
+                        const setProg = setProgress[`${cat}_${i}`];
+                        return (
                         <TouchableOpacity
                           key={`${cat}-${i}`}
+                          ref={isActive ? activeSetRef : undefined}
                           style={[
                             styles.setCard,
-                            currentCategory === cat && currentSet === i && styles.activeSetCard
+                            isActive && styles.activeSetCard
                           ]}
                           onPress={() => selectSet(cat, i)}
                         >
                           <Text
                             style={[
                               styles.setCardText,
-                              currentCategory === cat && currentSet === i && styles.activeSetCardText
+                              isActive && styles.activeSetCardText
                             ]}
                             numberOfLines={1}
                           >
@@ -513,16 +568,19 @@ export default function HomeScreen() {
                           </Text>
                           <Text style={styles.setCardSubText}>
                             {sets[i].length} từ
+                            {setProg ? ` · ${setProg.learned}/${setProg.total}` : ""}
                           </Text>
                         </TouchableOpacity>
-                      ))}
+                        );
+                      })}
                     </View>
                   </View>
                 );
               })}
+              </View>
             </ScrollView>
-          </View>
-        </View>
+          </Pressable>
+        </Pressable>
       </Modal>
       {/* Số thứ tự */}
       <View style={styles.header}>
@@ -777,8 +835,9 @@ const styles = StyleSheet.create({
     borderColor: "rgba(255,255,255,0.1)",
   },
   activeSetCard: {
-    backgroundColor: "rgba(233, 69, 96, 0.2)",
-    borderColor: "#e94560",
+    borderColor: "green",
+    borderWidth: 2,
+    borderStyle: "dashed",
   },
   setCardText: {
     color: "#fff",
@@ -786,7 +845,7 @@ const styles = StyleSheet.create({
     fontWeight: "600",
   },
   activeSetCardText: {
-    color: "#e94560",
+    color: "green",
   },
   setCardSubText: {
     color: "#888",
