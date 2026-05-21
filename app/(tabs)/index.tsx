@@ -1,9 +1,12 @@
 import { Vocabulary, vocs as initialVocs } from "@/assets/vocs";
+import { useAppSettings } from "@/contexts/app-settings";
+import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio } from "expo-av";
 import { Image } from "expo-image";
-import { useEffect, useRef, useState } from "react";
+import { useFocusEffect, useRouter } from "expo-router";
+import { useCallback, useEffect, useRef, useState } from "react";
 import {
   Dimensions,
   Modal,
@@ -38,7 +41,9 @@ export default function HomeScreen() {
   const [index, setIndex] = useState(0);
   const [showMeaning, setShowMeaning] = useState(false);
   const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
-  const [isMute, setIsMute] = useState(false);
+  const { isMute, setIsMute, soundIconsAlign, progressReloadToken } =
+    useAppSettings();
+  const router = useRouter();
   const autoPlayGenRef = useRef(0);
   const [categoryProgress, setCategoryProgress] = useState<Record<string, { remaining: number; total: number }>>({});
   const [setProgress, setSetProgress] = useState<Record<string, { learned: number; total: number }>>({});
@@ -102,7 +107,7 @@ export default function HomeScreen() {
         const setTotal = sets[i].length;
         total += setTotal;
         let setRemaining = setTotal;
-        const storageKey = `LEARNED_VOCS_${cat}_SET_${i}`;
+        const storageKey = STORAGE_KEYS.learnedVocs(cat, i);
         try {
           const savedData = await AsyncStorage.getItem(storageKey);
           if (savedData) {
@@ -118,40 +123,52 @@ export default function HomeScreen() {
     setSetProgress(perSet);
   };
 
-  useEffect(() => {
-    // Load current category, set and progress
-    const loadState = async () => {
-      try {
-        const savedCat = await AsyncStorage.getItem("CURRENT_CATEGORY") || "All";
-        const savedSet = await AsyncStorage.getItem("CURRENT_SET") || "0";
+  const loadState = useCallback(async () => {
+    try {
+      const savedCat =
+        (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) || "All";
+      const savedSet =
+        (await AsyncStorage.getItem(STORAGE_KEYS.currentSet)) || "0";
 
-        setCurrentCategory(savedCat);
-        const startingSet = parseInt(savedSet);
-        setCurrentSet(startingSet);
+      setCurrentCategory(savedCat);
+      const startingSet = parseInt(savedSet, 10);
+      setCurrentSet(startingSet);
 
-        const currentSets = getSetsForCategory(savedCat);
-        const setIdx = startingSet < currentSets.length ? startingSet : 0;
+      const currentSets = getSetsForCategory(savedCat);
+      const setIdx = startingSet < currentSets.length ? startingSet : 0;
 
-        const storageKey = `LEARNED_VOCS_${savedCat}_SET_${setIdx}`;
-        const savedData = await AsyncStorage.getItem(storageKey);
+      const storageKey = STORAGE_KEYS.learnedVocs(savedCat, setIdx);
+      const savedData = await AsyncStorage.getItem(storageKey);
 
-        if (savedData) {
-          const remainingWords = JSON.parse(savedData) as string[];
-          const filteredVocs = currentSets[setIdx].filter((v) =>
-            remainingWords.includes(v.voc)
-          );
-          setActiveVocs(filteredVocs.length > 0 ? filteredVocs : []);
-        } else {
-          setActiveVocs(currentSets[setIdx]);
-        }
-      } catch (e) {
-        console.log("Failed to load saved state", e);
-        setActiveVocs(getFilteredVocs("All").slice(0, 20));
+      if (savedData) {
+        const remainingWords = JSON.parse(savedData) as string[];
+        const filteredVocs = currentSets[setIdx].filter((v) =>
+          remainingWords.includes(v.voc)
+        );
+        setActiveVocs(filteredVocs.length > 0 ? filteredVocs : []);
+      } else {
+        setActiveVocs(currentSets[setIdx]);
       }
-      calculateProgress();
-    };
-    loadState();
+      setIndex(0);
+      setShowMeaning(false);
+    } catch (e) {
+      console.log("Failed to load saved state", e);
+      setActiveVocs(getFilteredVocs("All").slice(0, 20));
+    }
+    calculateProgress();
   }, []);
+
+  useEffect(() => {
+    loadState();
+  }, [loadState]);
+
+  useFocusEffect(
+    useCallback(() => {
+      if (progressReloadToken > 0) {
+        loadState();
+      }
+    }, [progressReloadToken, loadState])
+  );
 
   useEffect(() => {
     if (isSetPickerVisible) {
@@ -194,7 +211,7 @@ export default function HomeScreen() {
     let newVocs: Vocabulary[] = [];
     try {
       const currentSets = getSetsForCategory(cat);
-      const storageKey = `LEARNED_VOCS_${cat}_SET_${setIdx}`;
+      const storageKey = STORAGE_KEYS.learnedVocs(cat, setIdx);
       const savedData = await AsyncStorage.getItem(storageKey);
 
       if (savedData) {
@@ -207,8 +224,8 @@ export default function HomeScreen() {
         newVocs = currentSets[setIdx];
       }
 
-      await AsyncStorage.setItem("CURRENT_CATEGORY", cat);
-      await AsyncStorage.setItem("CURRENT_SET", setIdx.toString());
+      await AsyncStorage.setItem(STORAGE_KEYS.currentCategory, cat);
+      await AsyncStorage.setItem(STORAGE_KEYS.currentSet, setIdx.toString());
     } catch (e) {
       newVocs = getSetsForCategory(cat)[setIdx] ?? [];
     }
@@ -340,7 +357,10 @@ export default function HomeScreen() {
     // Save to AsyncStorage
     try {
       const remainingTitles = newVocs.map(v => v.voc);
-      await AsyncStorage.setItem(`LEARNED_VOCS_${currentCategory}_SET_${currentSet}`, JSON.stringify(remainingTitles));
+      await AsyncStorage.setItem(
+        STORAGE_KEYS.learnedVocs(currentCategory, currentSet),
+        JSON.stringify(remainingTitles)
+      );
       calculateProgress();
     } catch (e) { }
 
@@ -441,7 +461,14 @@ export default function HomeScreen() {
           <Text style={styles.pos}>{voc.ipa}</Text>
         </Pressable>
 
-        <View style={styles.soundRow}>
+        <View
+          style={[
+            styles.soundRow,
+            soundIconsAlign === "left"
+              ? styles.soundRowLeft
+              : styles.soundRowRight,
+          ]}
+        >
           <Ionicons
             name="book"
             size={32}
@@ -488,7 +515,9 @@ export default function HomeScreen() {
             setActiveVocs(vocSets[currentSet]);
             setIndex(0);
             try {
-              await AsyncStorage.removeItem(`LEARNED_VOCS_${currentCategory}_SET_${currentSet}`);
+              await AsyncStorage.removeItem(
+                STORAGE_KEYS.learnedVocs(currentCategory, currentSet)
+              );
               calculateProgress();
             } catch (e) { }
           }}
@@ -582,8 +611,15 @@ export default function HomeScreen() {
           </Pressable>
         </Pressable>
       </Modal>
-      {/* Số thứ tự */}
+      {/* Header: cài đặt + số thứ tự */}
       <View style={styles.header}>
+        <TouchableOpacity
+          style={styles.settingsBtn}
+          onPress={() => router.push("/settings")}
+          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+        >
+          <Ionicons name="settings-outline" size={26} color="#a8dadc" />
+        </TouchableOpacity>
         <Text style={styles.counter} onPress={resetIndex}>
           {index + 1} / {activeVocs.length}
         </Text>
@@ -619,8 +655,14 @@ const styles = StyleSheet.create({
   },
   header: {
     position: "absolute",
-    top: 56,
-    right: 24,
+    top: 50,
+    right: 20,
+    alignItems: "flex-end",
+    gap: 8,
+    zIndex: 100,
+  },
+  settingsBtn: {
+    padding: 4,
   },
   counter: {
     color: "#888",
@@ -679,9 +721,17 @@ const styles = StyleSheet.create({
   },
   soundRow: {
     flexDirection: "row",
-    justifyContent: "center",
+    alignSelf: "stretch",
+    width: "100%",
     gap: 20,
     marginBottom: 8,
+    paddingHorizontal: 8,
+  },
+  soundRowLeft: {
+    justifyContent: "flex-start",
+  },
+  soundRowRight: {
+    justifyContent: "flex-end",
   },
   soundBtn: {
     padding: 4,
