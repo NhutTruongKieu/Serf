@@ -464,9 +464,9 @@ export default function HomeScreen() {
         <View
           style={[
             styles.soundRow,
-            soundIconsAlign === "left"
-              ? styles.soundRowLeft
-              : styles.soundRowRight,
+            soundIconsAlign === "left" && styles.soundRowLeft,
+            soundIconsAlign === "center" && styles.soundRowCenter,
+            soundIconsAlign === "right" && styles.soundRowRight,
           ]}
         >
           <Ionicons
@@ -729,6 +729,9 @@ const styles = StyleSheet.create({
   },
   soundRowLeft: {
     justifyContent: "flex-start",
+  },
+  soundRowCenter: {
+    justifyContent: "center",
   },
   soundRowRight: {
     justifyContent: "flex-end",

@@ -45,6 +45,11 @@ export default function SettingsScreen() {
   const appVersion =
     Constants.expoConfig?.version ?? Constants.nativeAppVersion ?? "1.0.0";
 
+  const selectSoundIconsAlign = (align: "left" | "center" | "right") => {
+    setSoundIconsAlign(align);
+    router.back();
+  };
+
   const handleResetCurrentSet = () => {
     confirmAction(
       "Đặt lại bộ hiện tại",
@@ -130,13 +135,8 @@ export default function SettingsScreen() {
                   styles.segmentBtnLeft,
                   soundIconsAlign === "left" && styles.segmentBtnActive,
                 ]}
-                onPress={() => setSoundIconsAlign("left")}
+                onPress={() => selectSoundIconsAlign("left")}
               >
-                <Ionicons
-                  name="arrow-back"
-                  size={16}
-                  color={soundIconsAlign === "left" ? "#fff" : "#888"}
-                />
                 <Text
                   style={[
                     styles.segmentText,
@@ -149,10 +149,26 @@ export default function SettingsScreen() {
               <TouchableOpacity
                 style={[
                   styles.segmentBtn,
+                  soundIconsAlign === "center" && styles.segmentBtnActive,
+                ]}
+                onPress={() => selectSoundIconsAlign("center")}
+              >
+                <Text
+                  style={[
+                    styles.segmentText,
+                    soundIconsAlign === "center" && styles.segmentTextActive,
+                  ]}
+                >
+                  Giữa
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[
+                  styles.segmentBtn,
                   styles.segmentBtnRight,
                   soundIconsAlign === "right" && styles.segmentBtnActive,
                 ]}
-                onPress={() => setSoundIconsAlign("right")}
+                onPress={() => selectSoundIconsAlign("right")}
               >
                 <Text
                   style={[
@@ -162,11 +178,6 @@ export default function SettingsScreen() {
                 >
                   Phải
                 </Text>
-                <Ionicons
-                  name="arrow-forward"
-                  size={16}
-                  color={soundIconsAlign === "right" ? "#fff" : "#888"}
-                />
               </TouchableOpacity>
             </View>
           </View>

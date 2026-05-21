@@ -11,7 +11,7 @@ import {
 
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 
-export type SoundIconsAlign = "left" | "right";
+export type SoundIconsAlign = "left" | "center" | "right";
 
 type AppSettingsContextValue = {
   isMute: boolean;
@@ -23,7 +23,8 @@ type AppSettingsContextValue = {
 };
 
 function parseSoundIconsAlign(value: string | null): SoundIconsAlign {
-  return value === "right" ? "right" : "left";
+  if (value === "left" || value === "right") return value;
+  return "center";
 }
 
 const AppSettingsContext = createContext<AppSettingsContextValue | null>(null);
@@ -31,7 +32,7 @@ const AppSettingsContext = createContext<AppSettingsContextValue | null>(null);
 export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [isMute, setIsMuteState] = useState(false);
   const [soundIconsAlign, setSoundIconsAlignState] =
-    useState<SoundIconsAlign>("left");
+    useState<SoundIconsAlign>("center");
   const [progressReloadToken, setProgressReloadToken] = useState(0);
 
   useEffect(() => {
