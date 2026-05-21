@@ -6,13 +6,14 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio } from "expo-av";
 import { Image } from "expo-image";
 import { useFocusEffect, useRouter } from "expo-router";
-import { useCallback, useEffect, useRef, useState } from "react";
+import { useAppTheme } from "@/hooks/use-app-theme";
+import { createHomeStyles } from "@/app/(tabs)/home-styles";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Dimensions,
   Modal,
   Pressable,
   ScrollView,
-  StyleSheet,
   Text,
   TouchableOpacity,
   View,
@@ -43,6 +44,11 @@ export default function HomeScreen() {
   const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
   const { isMute, setIsMute, soundIconsAlign, progressReloadToken } =
     useAppSettings();
+  const { theme } = useAppTheme();
+  const styles = useMemo(
+    () => createHomeStyles(theme, SCREEN_WIDTH),
+    [theme]
+  );
   const router = useRouter();
   const autoPlayGenRef = useRef(0);
   const [categoryProgress, setCategoryProgress] = useState<Record<string, { remaining: number; total: number }>>({});
@@ -449,7 +455,7 @@ export default function HomeScreen() {
           <Ionicons
             name="checkmark-circle-outline"
             size={32}
-            color="#4ade80"
+            color={theme.success}
             onPress={markAsLearned}
             style={styles.learnButton}
           />
@@ -472,14 +478,14 @@ export default function HomeScreen() {
           <Ionicons
             name="book"
             size={32}
-            color="#a8dadc"
+            color={theme.iconTeal}
             onPress={() => playSound(voc.meaningSound, "Meaning")}
             style={styles.soundBtn}
           />
           <Ionicons
             name="chatbox-ellipses"
             size={32}
-            color="#4ade80"
+            color={theme.success}
             onPress={() => playSound(voc.exampleSound, "Example")}
             style={styles.soundBtn}
           />
@@ -511,7 +517,7 @@ export default function HomeScreen() {
         <Ionicons
           name="reload-circle"
           size={64}
-          color="#e94560" onPress={async () => {
+          color={theme.accent} onPress={async () => {
             setActiveVocs(vocSets[currentSet]);
             setIndex(0);
             try {
@@ -534,7 +540,7 @@ export default function HomeScreen() {
         style={styles.floatingButton}
         onPress={() => setIsSetPickerVisible(true)}
       >
-        <Ionicons name="filter" size={24} color="#fff" />
+        <Ionicons name="filter" size={24} color={theme.floatingBtnText} />
         <Text style={styles.floatingButtonText} numberOfLines={1}>
           {currentCategory === "All" ? `Bộ ${currentSet + 1}` : `${categoryMap[currentCategory] || currentCategory}`}
         </Text>
@@ -557,7 +563,7 @@ export default function HomeScreen() {
               <Ionicons
                 name="close"
                 size={28}
-                color="#888"
+                color={theme.iconMuted}
                 onPress={() => setIsSetPickerVisible(false)}
               />
             </View>
@@ -618,7 +624,7 @@ export default function HomeScreen() {
           onPress={() => router.push("/settings")}
           hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
         >
-          <Ionicons name="settings-outline" size={26} color="#a8dadc" />
+          <Ionicons name="settings-outline" size={26} color={theme.iconTeal} />
         </TouchableOpacity>
         <Text style={styles.counter} onPress={resetIndex}>
           {index + 1} / {activeVocs.length}
@@ -636,7 +642,7 @@ export default function HomeScreen() {
         <Ionicons
           name={isMute ? "volume-mute" : "volume-high"}
           size={32}
-          color={isMute ? "#888" : "#4ade80"}
+          color={isMute ? theme.iconMuted : theme.success}
           onPress={() => setIsMute(!isMute)}
           style={styles.learnButton}
         />
@@ -646,263 +652,3 @@ export default function HomeScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#1a1a2e",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-  header: {
-    position: "absolute",
-    top: 50,
-    right: 20,
-    alignItems: "flex-end",
-    gap: 8,
-    zIndex: 100,
-  },
-  settingsBtn: {
-    padding: 4,
-  },
-  counter: {
-    color: "#888",
-    fontSize: 15,
-    fontWeight: "600",
-  },
-  cardArea: {
-    width: SCREEN_WIDTH - 40,
-    alignItems: "center",
-    justifyContent: "center",
-    overflow: "hidden",
-    borderRadius: 24,
-  },
-  card: {
-    width: SCREEN_WIDTH,
-    backgroundColor: "#16213e",
-    borderRadius: 24,
-    alignItems: "center",
-    justifyContent: "center",
-    paddingVertical: 36,
-    paddingHorizontal: 20,
-    gap: 16,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 8 },
-    shadowOpacity: 0.45,
-    shadowRadius: 16,
-    elevation: 12,
-  },
-  image: {
-    width: 280,
-    height: 280,
-    borderRadius: 16,
-    backgroundColor: "#0f3460",
-  },
-  divider: {
-    width: 60,
-    height: 2,
-    backgroundColor: "#e94560",
-    borderRadius: 2,
-  },
-  word: {
-    fontSize: 32,
-    fontWeight: "800",
-    color: "#e94560",
-    textAlign: "center",
-    letterSpacing: 1,
-    marginBottom: 4,
-  },
-  pos: {
-    fontSize: 16,
-    fontWeight: "800",
-    color: "#859b5eff",
-    textAlign: "center",
-    letterSpacing: 1,
-    marginBottom: 4,
-  },
-  soundRow: {
-    flexDirection: "row",
-    alignSelf: "stretch",
-    width: "100%",
-    gap: 20,
-    marginBottom: 8,
-    paddingHorizontal: 8,
-  },
-  soundRowLeft: {
-    justifyContent: "flex-start",
-  },
-  soundRowCenter: {
-    justifyContent: "center",
-  },
-  soundRowRight: {
-    justifyContent: "flex-end",
-  },
-  soundBtn: {
-    padding: 4,
-  },
-  meaningContainer: {
-    alignItems: "center",
-    gap: 12,
-  },
-  meaning: {
-    fontSize: 20,
-    fontWeight: "500",
-    color: "#a8dadc",
-    textAlign: "center",
-  },
-  hiddenMeaningPlaceholder: {
-    marginTop: 8,
-    paddingVertical: 12,
-    paddingHorizontal: 24,
-    backgroundColor: "rgba(255,255,255,0.1)",
-    borderRadius: 20,
-  },
-  tapHint: {
-    color: "#888",
-    fontSize: 14,
-    fontStyle: "italic",
-  },
-  hintRow: {
-    position: "absolute",
-    bottom: 70,
-    flexDirection: "row",
-    width: "100%",
-    justifyContent: "space-between",
-    alignItems: "center",
-    paddingHorizontal: 20,
-  },
-  hintLeft: {
-    flex: 1,
-    color: "#888",
-    fontSize: 14,
-    fontWeight: "500",
-    textAlign: "left",
-    height: 50,
-    textAlignVertical: "center",
-  },
-  hintRight: {
-    flex: 1,
-    color: "#888",
-    fontSize: 14,
-    fontWeight: "500",
-    textAlign: "right",
-    height: 50,
-    textAlignVertical: "center",
-  },
-  cardHeader: {
-    position: "absolute",
-    bottom: 'auto',
-    left: 16,
-    zIndex: 10,
-  },
-  learnButton: {
-    padding: 8,
-  },
-  congratsText: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "#4ade80",
-    marginBottom: 8,
-  },
-  congratsSub: {
-    fontSize: 18,
-    color: "#a8dadc",
-  },
-  floatingButton: {
-    position: "absolute",
-    top: 50,
-    left: 20,
-    backgroundColor: "#e94560",
-    paddingHorizontal: 16,
-    paddingVertical: 10,
-    borderRadius: 25,
-    flexDirection: "row",
-    alignItems: "center",
-    zIndex: 100,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 4 },
-    shadowOpacity: 0.3,
-    shadowRadius: 5,
-    elevation: 8,
-  },
-  floatingButtonText: {
-    color: "#fff",
-    fontWeight: "bold",
-    marginLeft: 8,
-    fontSize: 14,
-  },
-  modalOverlay: {
-    flex: 1,
-    backgroundColor: "rgba(0,0,0,0.8)",
-    justifyContent: "center",
-    alignItems: "center",
-  },
-  modalContent: {
-    width: "85%",
-    maxHeight: "70%",
-    backgroundColor: "#16213e",
-    borderRadius: 24,
-    padding: 24,
-    shadowColor: "#000",
-    shadowOffset: { width: 0, height: 10 },
-    shadowOpacity: 0.5,
-    shadowRadius: 20,
-    elevation: 20,
-  },
-  modalHeader: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    alignItems: "center",
-    marginBottom: 20,
-  },
-  modalTitle: {
-    fontSize: 22,
-    fontWeight: "bold",
-    color: "#e94560",
-  },
-  modalScroll: {
-    paddingBottom: 20,
-  },
-  categorySection: {
-    marginBottom: 20,
-  },
-  categoryLabel: {
-    color: "#a8dadc",
-    fontSize: 16,
-    fontWeight: "bold",
-    marginBottom: 10,
-    marginLeft: 4,
-  },
-  setGrid: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-  },
-  setCard: {
-    width: "47%",
-    backgroundColor: "rgba(255,255,255,0.05)",
-    padding: 16,
-    borderRadius: 16,
-    marginBottom: 16,
-    alignItems: "center",
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.1)",
-  },
-  activeSetCard: {
-    borderColor: "green",
-    borderWidth: 2,
-    borderStyle: "dashed",
-  },
-  setCardText: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  activeSetCardText: {
-    color: "green",
-  },
-  setCardSubText: {
-    color: "#888",
-    fontSize: 12,
-    marginTop: 4,
-  }
-});

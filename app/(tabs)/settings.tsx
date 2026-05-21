@@ -1,12 +1,14 @@
 import { useAppSettings } from "@/contexts/app-settings";
+import { useAppTheme } from "@/hooks/use-app-theme";
 import { clearAllLearnedProgress, clearCurrentSetProgress } from "@/lib/vocab-progress";
+import { createSettingsStyles } from "@/styles/settings-styles";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { useRouter } from "expo-router";
+import { useMemo } from "react";
 import {
   Alert,
   ScrollView,
-  StyleSheet,
   Switch,
   Text,
   TouchableOpacity,
@@ -39,8 +41,12 @@ export default function SettingsScreen() {
     setIsMute,
     soundIconsAlign,
     setSoundIconsAlign,
+    themeMode,
+    setThemeMode,
     bumpProgressReload,
   } = useAppSettings();
+  const { theme } = useAppTheme();
+  const styles = useMemo(() => createSettingsStyles(theme), [theme]);
 
   const appVersion =
     Constants.expoConfig?.version ?? Constants.nativeAppVersion ?? "1.0.0";
@@ -82,7 +88,7 @@ export default function SettingsScreen() {
           onPress={() => router.back()}
           hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
         >
-          <Ionicons name="chevron-back" size={28} color="#a8dadc" />
+          <Ionicons name="chevron-back" size={28} color={theme.iconTeal} />
         </TouchableOpacity>
         <Text style={styles.title}>Cài đặt</Text>
         <View style={styles.backBtn} />
@@ -99,7 +105,7 @@ export default function SettingsScreen() {
         <View style={styles.card}>
           <View style={styles.row}>
             <View style={styles.rowText}>
-              <Ionicons name="volume-mute-outline" size={22} color="#4ade80" />
+              <Ionicons name="volume-mute-outline" size={22} color={theme.success} />
               <View style={styles.rowLabels}>
                 <Text style={styles.rowTitle}>Tắt phát âm tự động</Text>
                 <Text style={styles.rowSubtitle}>
@@ -110,9 +116,64 @@ export default function SettingsScreen() {
             <Switch
               value={isMute}
               onValueChange={setIsMute}
-              trackColor={{ false: "#3a3a5c", true: "#e94560" }}
-              thumbColor="#fff"
+              trackColor={{ false: theme.switchTrackOff, true: theme.accent }}
+              thumbColor={theme.floatingBtnText}
             />
+          </View>
+        </View>
+
+        <Text style={styles.sectionLabel}>Giao diện</Text>
+        <View style={styles.card}>
+          <View style={styles.rowColumn}>
+            <View style={styles.rowText}>
+              <Ionicons
+                name={themeMode === "light" ? "sunny-outline" : "moon-outline"}
+                size={22}
+                color={theme.iconTeal}
+              />
+              <View style={styles.rowLabels}>
+                <Text style={styles.rowTitle}>Chế độ màu</Text>
+                <Text style={styles.rowSubtitle}>
+                  Tối (mặc định) hoặc sáng cho toàn app
+                </Text>
+              </View>
+            </View>
+            <View style={styles.segment}>
+              <TouchableOpacity
+                style={[
+                  styles.segmentBtn,
+                  styles.segmentBtnLeft,
+                  themeMode === "dark" && styles.segmentBtnActive,
+                ]}
+                onPress={() => setThemeMode("dark")}
+              >
+                <Text
+                  style={[
+                    styles.segmentText,
+                    themeMode === "dark" && styles.segmentTextActive,
+                  ]}
+                >
+                  Tối
+                </Text>
+              </TouchableOpacity>
+              <TouchableOpacity
+                style={[
+                  styles.segmentBtn,
+                  styles.segmentBtnRight,
+                  themeMode === "light" && styles.segmentBtnActive,
+                ]}
+                onPress={() => setThemeMode("light")}
+              >
+                <Text
+                  style={[
+                    styles.segmentText,
+                    themeMode === "light" && styles.segmentTextActive,
+                  ]}
+                >
+                  Sáng
+                </Text>
+              </TouchableOpacity>
+            </View>
           </View>
         </View>
 
@@ -120,7 +181,7 @@ export default function SettingsScreen() {
         <View style={styles.card}>
           <View style={styles.rowColumn}>
             <View style={styles.rowText}>
-              <Ionicons name="swap-horizontal-outline" size={22} color="#a8dadc" />
+              <Ionicons name="swap-horizontal-outline" size={22} color={theme.iconTeal} />
               <View style={styles.rowLabels}>
                 <Text style={styles.rowTitle}>Vị trí Meaning & Example</Text>
                 <Text style={styles.rowSubtitle}>
@@ -193,13 +254,13 @@ export default function SettingsScreen() {
                 Học lại từ đầu bộ từ vựng hiện tại
               </Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#666" />
+            <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
           </TouchableOpacity>
 
           <View style={styles.divider} />
 
           <TouchableOpacity style={styles.actionRow} onPress={handleResetAll}>
-            <Ionicons name="trash-outline" size={22} color="#e94560" />
+            <Ionicons name="trash-outline" size={22} color={theme.danger} />
             <View style={styles.rowLabels}>
               <Text style={[styles.rowTitle, styles.dangerText]}>
                 Đặt lại toàn bộ tiến độ
@@ -208,7 +269,7 @@ export default function SettingsScreen() {
                 Xóa tiến độ tất cả chủ đề và bộ từ
               </Text>
             </View>
-            <Ionicons name="chevron-forward" size={20} color="#666" />
+            <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
           </TouchableOpacity>
         </View>
 
@@ -216,7 +277,7 @@ export default function SettingsScreen() {
         <View style={styles.card}>
           <View style={styles.row}>
             <View style={styles.rowText}>
-              <Ionicons name="information-circle-outline" size={22} color="#a8dadc" />
+              <Ionicons name="information-circle-outline" size={22} color={theme.iconTeal} />
               <View style={styles.rowLabels}>
                 <Text style={styles.rowTitle}>Phiên bản</Text>
                 <Text style={styles.rowSubtitle}>Serf · com.truongkieu.Serf</Text>
@@ -230,131 +291,3 @@ export default function SettingsScreen() {
   );
 }
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#1a1a2e",
-  },
-  header: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: 16,
-    paddingBottom: 16,
-  },
-  backBtn: {
-    width: 40,
-    alignItems: "flex-start",
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: "700",
-    color: "#fff",
-  },
-  scroll: {
-    flex: 1,
-  },
-  scrollContent: {
-    paddingHorizontal: 20,
-  },
-  sectionLabel: {
-    color: "#888",
-    fontSize: 13,
-    fontWeight: "600",
-    textTransform: "uppercase",
-    letterSpacing: 0.8,
-    marginBottom: 10,
-    marginTop: 8,
-    marginLeft: 4,
-  },
-  card: {
-    backgroundColor: "#16213e",
-    borderRadius: 16,
-    marginBottom: 20,
-    borderWidth: 1,
-    borderColor: "rgba(255,255,255,0.08)",
-    overflow: "hidden",
-  },
-  row: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    padding: 16,
-    gap: 12,
-  },
-  actionRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    padding: 16,
-    gap: 12,
-  },
-  rowText: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    gap: 12,
-  },
-  rowLabels: {
-    flex: 1,
-  },
-  rowTitle: {
-    color: "#fff",
-    fontSize: 16,
-    fontWeight: "600",
-  },
-  rowSubtitle: {
-    color: "#888",
-    fontSize: 13,
-    marginTop: 2,
-  },
-  dangerText: {
-    color: "#fca5a5",
-  },
-  divider: {
-    height: 1,
-    backgroundColor: "rgba(255,255,255,0.08)",
-    marginHorizontal: 16,
-  },
-  versionBadge: {
-    color: "#4ade80",
-    fontSize: 15,
-    fontWeight: "700",
-  },
-  rowColumn: {
-    padding: 16,
-    gap: 14,
-  },
-  segment: {
-    flexDirection: "row",
-    backgroundColor: "rgba(255,255,255,0.06)",
-    borderRadius: 12,
-    padding: 4,
-  },
-  segmentBtn: {
-    flex: 1,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "center",
-    gap: 6,
-    paddingVertical: 10,
-  },
-  segmentBtnLeft: {
-    borderTopLeftRadius: 8,
-    borderBottomLeftRadius: 8,
-  },
-  segmentBtnRight: {
-    borderTopRightRadius: 8,
-    borderBottomRightRadius: 8,
-  },
-  segmentBtnActive: {
-    backgroundColor: "#e94560",
-  },
-  segmentText: {
-    color: "#888",
-    fontSize: 15,
-    fontWeight: "600",
-  },
-  segmentTextActive: {
-    color: "#fff",
-  },
-});

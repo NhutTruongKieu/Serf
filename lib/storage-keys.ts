@@ -3,6 +3,7 @@ export const STORAGE_KEYS = {
   currentSet: "CURRENT_SET",
   mute: "SETTINGS_MUTE",
   soundIconsAlign: "SETTINGS_SOUND_ICONS_ALIGN",
+  themeMode: "SETTINGS_THEME_MODE",
   learnedVocs: (category: string, setIdx: number) =>
     `LEARNED_VOCS_${category}_SET_${setIdx}`,
 } as const;

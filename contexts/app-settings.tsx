@@ -9,6 +9,7 @@ import {
   type ReactNode,
 } from "react";
 
+import { ThemeMode } from "@/constants/app-theme";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 
 export type SoundIconsAlign = "left" | "center" | "right";
@@ -18,6 +19,8 @@ type AppSettingsContextValue = {
   setIsMute: (value: boolean) => void;
   soundIconsAlign: SoundIconsAlign;
   setSoundIconsAlign: (value: SoundIconsAlign) => void;
+  themeMode: ThemeMode;
+  setThemeMode: (value: ThemeMode) => void;
   progressReloadToken: number;
   bumpProgressReload: () => void;
 };
@@ -27,12 +30,17 @@ function parseSoundIconsAlign(value: string | null): SoundIconsAlign {
   return "center";
 }
 
+function parseThemeMode(value: string | null): ThemeMode {
+  return value === "light" ? "light" : "dark";
+}
+
 const AppSettingsContext = createContext<AppSettingsContextValue | null>(null);
 
 export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [isMute, setIsMuteState] = useState(false);
   const [soundIconsAlign, setSoundIconsAlignState] =
     useState<SoundIconsAlign>("center");
+  const [themeMode, setThemeModeState] = useState<ThemeMode>("dark");
   const [progressReloadToken, setProgressReloadToken] = useState(0);
 
   useEffect(() => {
@@ -41,6 +49,9 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
     });
     AsyncStorage.getItem(STORAGE_KEYS.soundIconsAlign).then((value) => {
       setSoundIconsAlignState(parseSoundIconsAlign(value));
+    });
+    AsyncStorage.getItem(STORAGE_KEYS.themeMode).then((value) => {
+      setThemeModeState(parseThemeMode(value));
     });
   }, []);
 
@@ -54,6 +65,11 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
     AsyncStorage.setItem(STORAGE_KEYS.soundIconsAlign, value);
   }, []);
 
+  const setThemeMode = useCallback((value: ThemeMode) => {
+    setThemeModeState(value);
+    AsyncStorage.setItem(STORAGE_KEYS.themeMode, value);
+  }, []);
+
   const bumpProgressReload = useCallback(() => {
     setProgressReloadToken((t) => t + 1);
   }, []);
@@ -64,6 +80,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setIsMute,
       soundIconsAlign,
       setSoundIconsAlign,
+      themeMode,
+      setThemeMode,
       progressReloadToken,
       bumpProgressReload,
     }),
@@ -72,6 +90,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setIsMute,
       soundIconsAlign,
       setSoundIconsAlign,
+      themeMode,
+      setThemeMode,
       progressReloadToken,
       bumpProgressReload,
     ]
