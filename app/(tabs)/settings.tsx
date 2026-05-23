@@ -1,11 +1,16 @@
 import { useAppSettings } from "@/contexts/app-settings";
 import { useAppTheme } from "@/hooks/use-app-theme";
+import {
+  backupErrorMessage,
+  exportAppData,
+  importAppDataFromPicker,
+} from "@/lib/data-backup";
 import { clearAllLearnedProgress, clearCurrentSetProgress } from "@/lib/vocab-progress";
 import { createSettingsStyles } from "@/styles/settings-styles";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { useRouter } from "expo-router";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 import {
   Alert,
   ScrollView,
@@ -44,9 +49,11 @@ export default function SettingsScreen() {
     themeMode,
     setThemeMode,
     bumpProgressReload,
+    reloadFromStorage,
   } = useAppSettings();
   const { theme } = useAppTheme();
   const styles = useMemo(() => createSettingsStyles(theme), [theme]);
+  const [busyAction, setBusyAction] = useState<"export" | "import" | null>(null);
 
   const appVersion =
     Constants.expoConfig?.version ?? Constants.nativeAppVersion ?? "1.0.0";
@@ -65,6 +72,60 @@ export default function SettingsScreen() {
         bumpProgressReload();
         Alert.alert("Đã xong", "Bộ hiện tại đã được đặt lại.");
       }
+    );
+  };
+
+  const handleExport = async () => {
+    if (busyAction) return;
+    setBusyAction("export");
+    try {
+      const { entryCount } = await exportAppData();
+      Alert.alert(
+        "Xuất thành công",
+        `Đã tạo file sao lưu với ${entryCount} mục dữ liệu (tiến độ học, cài đặt, bộ từ đang chọn).`
+      );
+    } catch (e) {
+      const code = e instanceof Error ? e.message : "";
+      const msg = backupErrorMessage(code);
+      if (msg) Alert.alert("Xuất thất bại", msg);
+    } finally {
+      setBusyAction(null);
+    }
+  };
+
+  const runImport = async (replaceExisting: boolean) => {
+    setBusyAction("import");
+    try {
+      const { entryCount } = await importAppDataFromPicker(replaceExisting);
+      await reloadFromStorage();
+      bumpProgressReload();
+      Alert.alert(
+        "Nhập thành công",
+        `Đã khôi phục ${entryCount} mục dữ liệu. Quay lại màn học để xem tiến độ mới.`
+      );
+    } catch (e) {
+      const code = e instanceof Error ? e.message : "";
+      const msg = backupErrorMessage(code);
+      if (msg) Alert.alert("Nhập thất bại", msg);
+    } finally {
+      setBusyAction(null);
+    }
+  };
+
+  const handleImport = () => {
+    if (busyAction) return;
+    Alert.alert(
+      "Nhập dữ liệu",
+      "Chọn file JSON đã xuất từ Serf. Dữ liệu hiện tại (tiến độ & cài đặt) sẽ được thay thế.",
+      [
+        { text: "Hủy", style: "cancel" },
+        {
+          text: "Chọn file",
+          onPress: () => {
+            void runImport(true);
+          },
+        },
+      ]
     );
   };
 
@@ -267,6 +328,45 @@ export default function SettingsScreen() {
               </Text>
               <Text style={styles.rowSubtitle}>
                 Xóa tiến độ tất cả chủ đề và bộ từ
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
+          </TouchableOpacity>
+        </View>
+
+        <Text style={styles.sectionLabel}>Sao lưu dữ liệu</Text>
+        <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.actionRow}
+            onPress={() => void handleExport()}
+            disabled={busyAction !== null}
+          >
+            <Ionicons name="share-outline" size={22} color={theme.iconTeal} />
+            <View style={styles.rowLabels}>
+              <Text style={styles.rowTitle}>Xuất dữ liệu</Text>
+              <Text style={styles.rowSubtitle}>
+                {busyAction === "export"
+                  ? "Đang tạo file..."
+                  : "Lưu tiến độ học và cài đặt ra file JSON"}
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
+          </TouchableOpacity>
+
+          <View style={styles.divider} />
+
+          <TouchableOpacity
+            style={styles.actionRow}
+            onPress={handleImport}
+            disabled={busyAction !== null}
+          >
+            <Ionicons name="download-outline" size={22} color={theme.success} />
+            <View style={styles.rowLabels}>
+              <Text style={styles.rowTitle}>Nhập dữ liệu</Text>
+              <Text style={styles.rowSubtitle}>
+                {busyAction === "import"
+                  ? "Đang đọc file..."
+                  : "Khôi phục từ file JSON đã xuất trước đó"}
               </Text>
             </View>
             <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />

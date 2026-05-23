@@ -23,6 +23,7 @@ type AppSettingsContextValue = {
   setThemeMode: (value: ThemeMode) => void;
   progressReloadToken: number;
   bumpProgressReload: () => void;
+  reloadFromStorage: () => Promise<void>;
 };
 
 function parseSoundIconsAlign(value: string | null): SoundIconsAlign {
@@ -43,17 +44,20 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [themeMode, setThemeModeState] = useState<ThemeMode>("dark");
   const [progressReloadToken, setProgressReloadToken] = useState(0);
 
-  useEffect(() => {
-    AsyncStorage.getItem(STORAGE_KEYS.mute).then((value) => {
-      if (value === "true") setIsMuteState(true);
-    });
-    AsyncStorage.getItem(STORAGE_KEYS.soundIconsAlign).then((value) => {
-      setSoundIconsAlignState(parseSoundIconsAlign(value));
-    });
-    AsyncStorage.getItem(STORAGE_KEYS.themeMode).then((value) => {
-      setThemeModeState(parseThemeMode(value));
-    });
+  const reloadFromStorage = useCallback(async () => {
+    const [mute, align, theme] = await Promise.all([
+      AsyncStorage.getItem(STORAGE_KEYS.mute),
+      AsyncStorage.getItem(STORAGE_KEYS.soundIconsAlign),
+      AsyncStorage.getItem(STORAGE_KEYS.themeMode),
+    ]);
+    setIsMuteState(mute === "true");
+    setSoundIconsAlignState(parseSoundIconsAlign(align));
+    setThemeModeState(parseThemeMode(theme));
   }, []);
+
+  useEffect(() => {
+    void reloadFromStorage();
+  }, [reloadFromStorage]);
 
   const setIsMute = useCallback((value: boolean) => {
     setIsMuteState(value);
@@ -84,6 +88,7 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setThemeMode,
       progressReloadToken,
       bumpProgressReload,
+      reloadFromStorage,
     }),
     [
       isMute,
@@ -94,6 +99,7 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setThemeMode,
       progressReloadToken,
       bumpProgressReload,
+      reloadFromStorage,
     ]
   );
 
