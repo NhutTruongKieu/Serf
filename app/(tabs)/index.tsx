@@ -1,6 +1,13 @@
 import { Vocabulary, vocs as initialVocs } from "@/assets/vocs";
 import { useAppSettings } from "@/contexts/app-settings";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
+import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
+import {
+  countRemainingInSet,
+  loadActiveVocsForSet,
+  migrateAllProgressToIds,
+  saveRemainingIds,
+} from "@/lib/vocab-storage";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio } from "expo-av";
@@ -82,18 +89,9 @@ export default function HomeScreen() {
     "All"
   ].filter(c => initialVocs.some(v => v.category === c) || c === "All");
 
-  const getFilteredVocs = (cat: string) => {
-    return initialVocs.filter(v => cat === "All" || v.category === cat);
-  };
+  const getSets = (cat: string) => getSetsForCategory(initialVocs, cat);
 
-  const getSetsForCategory = (cat: string) => {
-    const filtered = getFilteredVocs(cat);
-    return Array.from({ length: Math.ceil(filtered.length / 20) }, (_, i) =>
-      filtered.slice(i * 20, i * 20 + 20)
-    );
-  };
-
-  const vocSets = getSetsForCategory(currentCategory);
+  const vocSets = getSets(currentCategory);
 
   const translateX = useSharedValue(0);
   const translateY = useSharedValue(0);
@@ -105,7 +103,7 @@ export default function HomeScreen() {
     const perSet: Record<string, { learned: number; total: number }> = {};
 
     for (const cat of sortedCategories) {
-      const sets = getSetsForCategory(cat);
+      const sets = getSets(cat);
       let total = 0;
       let remaining = 0;
 
@@ -113,13 +111,9 @@ export default function HomeScreen() {
         const setTotal = sets[i].length;
         total += setTotal;
         let setRemaining = setTotal;
-        const storageKey = STORAGE_KEYS.learnedVocs(cat, i);
         try {
-          const savedData = await AsyncStorage.getItem(storageKey);
-          if (savedData) {
-            setRemaining = (JSON.parse(savedData) as string[]).length;
-          }
-        } catch (e) { }
+          setRemaining = await countRemainingInSet(cat, i, sets[i]);
+        } catch (e) {}
         remaining += setRemaining;
         perSet[`${cat}_${i}`] = { learned: setTotal - setRemaining, total: setTotal };
       }
@@ -131,6 +125,8 @@ export default function HomeScreen() {
 
   const loadState = useCallback(async () => {
     try {
+      await migrateAllProgressToIds(initialVocs);
+
       const savedCat =
         (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) || "All";
       const savedSet =
@@ -140,26 +136,20 @@ export default function HomeScreen() {
       const startingSet = parseInt(savedSet, 10);
       setCurrentSet(startingSet);
 
-      const currentSets = getSetsForCategory(savedCat);
+      const currentSets = getSets(savedCat);
       const setIdx = startingSet < currentSets.length ? startingSet : 0;
+      const setVocs = currentSets[setIdx] ?? [];
 
-      const storageKey = STORAGE_KEYS.learnedVocs(savedCat, setIdx);
-      const savedData = await AsyncStorage.getItem(storageKey);
-
-      if (savedData) {
-        const remainingWords = JSON.parse(savedData) as string[];
-        const filteredVocs = currentSets[setIdx].filter((v) =>
-          remainingWords.includes(v.voc)
-        );
-        setActiveVocs(filteredVocs.length > 0 ? filteredVocs : []);
-      } else {
-        setActiveVocs(currentSets[setIdx]);
-      }
+      setActiveVocs(
+        setVocs.length > 0
+          ? await loadActiveVocsForSet(savedCat, setIdx, setVocs)
+          : []
+      );
       setIndex(0);
       setShowMeaning(false);
     } catch (e) {
       console.log("Failed to load saved state", e);
-      setActiveVocs(getFilteredVocs("All").slice(0, 20));
+      setActiveVocs(getFilteredVocs(initialVocs, "All").slice(0, 20));
     }
     calculateProgress();
   }, []);
@@ -216,24 +206,17 @@ export default function HomeScreen() {
 
     let newVocs: Vocabulary[] = [];
     try {
-      const currentSets = getSetsForCategory(cat);
-      const storageKey = STORAGE_KEYS.learnedVocs(cat, setIdx);
-      const savedData = await AsyncStorage.getItem(storageKey);
-
-      if (savedData) {
-        const remainingWords = JSON.parse(savedData) as string[];
-        const filteredVocs = currentSets[setIdx].filter((v) =>
-          remainingWords.includes(v.voc)
-        );
-        newVocs = filteredVocs.length > 0 ? filteredVocs : [];
-      } else {
-        newVocs = currentSets[setIdx];
-      }
+      const currentSets = getSets(cat);
+      const setVocs = currentSets[setIdx] ?? [];
+      newVocs =
+        setVocs.length > 0
+          ? await loadActiveVocsForSet(cat, setIdx, setVocs)
+          : [];
 
       await AsyncStorage.setItem(STORAGE_KEYS.currentCategory, cat);
       await AsyncStorage.setItem(STORAGE_KEYS.currentSet, setIdx.toString());
     } catch (e) {
-      newVocs = getSetsForCategory(cat)[setIdx] ?? [];
+      newVocs = getSets(cat)[setIdx] ?? [];
     }
 
     setCurrentCategory(cat);
@@ -344,7 +327,7 @@ export default function HomeScreen() {
         // First set of current category, move to prev category
         const prevCatIdx = (catIdx - 1 + sortedCategories.length) % sortedCategories.length;
         const prevCat = sortedCategories[prevCatIdx];
-        const prevCatSets = getSetsForCategory(prevCat);
+        const prevCatSets = getSets(prevCat);
         selectSet(prevCat, Math.max(0, prevCatSets.length - 1));
       }
     }
@@ -362,13 +345,9 @@ export default function HomeScreen() {
 
     // Save to AsyncStorage
     try {
-      const remainingTitles = newVocs.map(v => v.voc);
-      await AsyncStorage.setItem(
-        STORAGE_KEYS.learnedVocs(currentCategory, currentSet),
-        JSON.stringify(remainingTitles)
-      );
+      await saveRemainingIds(currentCategory, currentSet, newVocs);
       calculateProgress();
-    } catch (e) { }
+    } catch (e) {}
 
     // Adjust index if we removed the last item
     if (index >= newVocs.length) {
@@ -570,7 +549,7 @@ export default function HomeScreen() {
             <ScrollView ref={modalScrollRef} contentContainerStyle={styles.modalScroll}>
               <View ref={scrollContentRef} collapsable={false}>
               {sortedCategories.map((cat) => {
-                const sets = getSetsForCategory(cat);
+                const sets = getSets(cat);
                 if (sets.length === 0) return null;
                 const prog = categoryProgress[cat];
                 return (

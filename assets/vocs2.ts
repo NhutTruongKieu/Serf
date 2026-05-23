@@ -1,5 +1,6 @@
 export const new_vocs2 = [
     {
+        id: "4000B3_1201",
         voc: "arise",
         pos: "v",
         meaning: "xuất hiện, nảy sinh ra, xảy ra",
@@ -11,6 +12,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_arise_meaning.mp3"),
     },
     {
+        id: "4000B3_1202",
         voc: "benefactor",
         pos: "n",
         meaning: "ân nhân,&nbsp;người làm việc thiện",
@@ -22,6 +24,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_benefactor_meaning.mp3"),
     },
     {
+        id: "4000B3_1203",
         voc: "blacksmith",
         pos: "n",
         meaning: "thợ rèn",
@@ -33,6 +36,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_blacksmith_meaning.mp3"),
     },
     {
+        id: "4000B3_1204",
         voc: "charitable",
         pos: "adj",
         meaning: "nhân đức, có lòng thảo,&nbsp;khoan dung, độ lượng",
@@ -44,6 +48,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_charitable_meaning.mp3"),
     },
     {
+        id: "4000B3_1205",
         voc: "chimney",
         pos: "n",
         meaning: "ống khói",
@@ -55,6 +60,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_chimney_meaning.mp3"),
     },
     {
+        id: "4000B3_1206",
         voc: "compensate",
         pos: "v",
         meaning: "bù, đền bù, bồi thường",
@@ -66,6 +72,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_compensate_meaning.mp3"),
     },
     {
+        id: "4000B3_1207",
         voc: "encounter",
         pos: "n",
         meaning: "bắt gặp, chạm trán",
@@ -77,6 +84,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_encounter_meaning.mp3"),
     },
     {
+        id: "4000B3_1208",
         voc: "exceed",
         pos: "v",
         meaning: "vượt quá, trội hơn",
@@ -88,6 +96,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_exceed_meaning.mp3"),
     },
     {
+        id: "4000B3_1209",
         voc: "forge",
         pos: "v",
         meaning: "rèn, tôi luyện",
@@ -99,6 +108,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_forge_meaning.mp3"),
     },
     {
+        id: "4000B3_1210",
         voc: "humble",
         pos: "n",
         meaning: "khiêm tốn, nhún nhường",
@@ -110,6 +120,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_humble_meaning.mp3"),
     },
     {
+        id: "4000B3_1211",
         voc: "iron",
         pos: "n",
         meaning: "sắt (kim loại)",
@@ -121,6 +132,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_iron_meaning.mp3"),
     },
     {
+        id: "4000B3_1212",
         voc: "ladder",
         pos: "n",
         meaning: "cái thang",
@@ -132,6 +144,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ladder_meaning.mp3"),
     },
     {
+        id: "4000B3_1213",
         voc: "modest",
         pos: "n",
         meaning: "nhũn nhặn,&nbsp;thuỳ mị, nhu mì",
@@ -143,6 +156,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_modest_meaning.mp3"),
     },
     {
+        id: "4000B3_1214",
         voc: "occupy",
         pos: "v",
         meaning: "ở, chiếm giữ, chiếm đóng",
@@ -154,6 +168,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_occupy_meaning.mp3"),
     },
     {
+        id: "4000B3_1215",
         voc: "penny",
         pos: "n",
         meaning: "đồng xu",
@@ -165,6 +180,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_penny_meaning.mp3"),
     },
     {
+        id: "4000B3_1216",
         voc: "preach",
         pos: "v",
         meaning: "thuyết giáo, thuyết pháp, khuyên răn",
@@ -176,6 +192,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_preach_meaning.mp3"),
     },
     {
+        id: "4000B3_1217",
         voc: "prosper",
         pos: "n",
         meaning: "thịnh vượng, phồn vinh, thành công",
@@ -187,6 +204,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_prosper_meaning.mp3"),
     },
     {
+        id: "4000B3_1218",
         voc: "province",
         pos: "n",
         meaning: "tỉnh (đơn vị hành chính)",
@@ -198,6 +216,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_province_meaning.mp3"),
     },
     {
+        id: "4000B3_1219",
         voc: "satisfaction",
         pos: "n",
         meaning: "sự vừa lòng,&nbsp;sự làm cho thoả mãn",
@@ -209,6 +228,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_satisfaction_meaning.mp3"),
     },
     {
+        id: "4000B3_1220",
         voc: "sustain",
         pos: "v",
         meaning: "giữ vững, chống chịu",
@@ -220,6 +240,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sustain_meaning.mp3"),
     },
     {
+        id: "4000B3_1221",
         voc: "acquire",
         pos: "v",
         meaning: "giành được (quyền sở hữu), thu được, đạt được",
@@ -231,6 +252,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_acquire_meaning.mp3"),
     },
     {
+        id: "4000B3_1222",
         voc: "awkward",
         pos: "n",
         meaning: "lúng túng, ngượng ngịu",
@@ -242,6 +264,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_awkward_meaning.mp3"),
     },
     {
+        id: "4000B3_1223",
         voc: "caretaker",
         pos: "n",
         meaning: "bảo mẫu, điều dưỡng, người trông nom",
@@ -253,6 +276,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_caretaker_meaning.mp3"),
     },
     {
+        id: "4000B3_1224",
         voc: "deceive",
         pos: "adj",
         meaning: "lừa dối, đánh lừa, lừa đảo, lừa gạt",
@@ -264,6 +288,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_deceive_meaning.mp3"),
     },
     {
+        id: "4000B3_1225",
         voc: "discourage",
         pos: "n",
         meaning: "làm chán nản, làm nản lòng",
@@ -275,6 +300,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_discourage_meaning.mp3"),
     },
     {
+        id: "4000B3_1226",
         voc: "fake",
         pos: "n",
         meaning: "giả, giả mạo",
@@ -286,6 +312,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fake_meaning.mp3"),
     },
     {
+        id: "4000B3_1227",
         voc: "hatred",
         pos: "n",
         meaning: "sự căm ghét, lòng căm thù",
@@ -297,6 +324,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hatred_meaning.mp3"),
     },
     {
+        id: "4000B3_1228",
         voc: "hut",
         pos: "n",
         meaning: "túp lều",
@@ -308,6 +336,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hut_meaning.mp3"),
     },
     {
+        id: "4000B3_1229",
         voc: "inferior",
         pos: "n",
         meaning: "thấp hơn, kém hơn",
@@ -319,6 +348,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_inferior_meaning.mp3"),
     },
     {
+        id: "4000B3_1230",
         voc: "lodge",
         pos: "n",
         meaning: "nhà nghỉ, túp lều (ở nơi săn bắn, câu cá)",
@@ -330,6 +360,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_lodge_meaning.mp3"),
     },
     {
+        id: "4000B3_1231",
         voc: "neglect",
         pos: "n",
         meaning: "sao lãng,&nbsp;bỏ bê, bỏ mặc",
@@ -341,6 +372,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_neglect_meaning.mp3"),
     },
     {
+        id: "4000B3_1232",
         voc: "newcomer",
         pos: "n",
         meaning: "người mới đến",
@@ -352,6 +384,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_newcomer_meaning.mp3"),
     },
     {
+        id: "4000B3_1233",
         voc: "offense",
         pos: "n",
         meaning: "sự phạm tội; tội, lỗi",
@@ -363,6 +396,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_offense_meaning.mp3"),
     },
     {
+        id: "4000B3_1234",
         voc: "overlook",
         pos: "v",
         meaning: "không nhận thấy, không chú ý tới, coi nhẹ",
@@ -374,6 +408,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_overlook_meaning.mp3"),
     },
     {
+        id: "4000B3_1235",
         voc: "repay; repaid",
         pos: "v",
         meaning:
@@ -386,6 +421,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_repay_meaning.mp3"),
     },
     {
+        id: "4000B3_1236",
         voc: "ridiculous",
         pos: "adj",
         meaning: "buồn cười, tức cười, lố bịch",
@@ -397,6 +433,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ridiculous_meaning.mp3"),
     },
     {
+        id: "4000B3_1237",
         voc: "satisfactory",
         pos: "n",
         meaning: "làm thoả mãn, làm vừa ý; đầy đủ, tốt đẹp",
@@ -408,6 +445,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_satisfactory_meaning.mp3"),
     },
     {
+        id: "4000B3_1238",
         voc: "shepherd",
         pos: "n",
         meaning: "người chăn cừu",
@@ -419,6 +457,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_shepherd_meaning.mp3"),
     },
     {
+        id: "4000B3_1239",
         voc: "venture",
         pos: "v",
         meaning: "liều, mạo hiểm, dám, đánh bạo",
@@ -430,6 +469,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_venture_meaning.mp3"),
     },
     {
+        id: "4000B3_1240",
         voc: "wheat",
         pos: "n",
         meaning: "cây lúa mì",
@@ -441,6 +481,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wheat_meaning.mp3"),
     },
     {
+        id: "4000B3_1241",
         voc: "alley",
         pos: "n",
         meaning: "ngõ, hẻm, lối đi (giữa các dãy nhà)",
@@ -452,6 +493,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_alley_meaning.mp3"),
     },
     {
+        id: "4000B3_1242",
         voc: "ax",
         pos: "n",
         meaning: "cái rìu",
@@ -463,6 +505,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ax_meaning.mp3"),
     },
     {
+        id: "4000B3_1243",
         voc: "bunch",
         pos: "n",
         meaning: "búi, chùm, bó, cụm, buồng",
@@ -474,6 +517,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bunch_meaning.mp3"),
     },
     {
+        id: "4000B3_1244",
         voc: "chore",
         pos: "n",
         meaning: "việc vặt, việc mọn",
@@ -485,6 +529,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_chore_meaning.mp3"),
     },
     {
+        id: "4000B3_1245",
         voc: "decent",
         pos: "adj",
         meaning: "tử tế, tốt,&nbsp;đứng đắn, đoan trang, tề chỉnh",
@@ -496,6 +541,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_decent_meaning.mp3"),
     },
     {
+        id: "4000B3_1246",
         voc: "disgrace",
         pos: "n",
         meaning: "sự hổ thẹn",
@@ -507,6 +553,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_disgrace_meaning.mp3"),
     },
     {
+        id: "4000B3_1247",
         voc: "elbow",
         pos: "n",
         meaning: "khuỷu tay",
@@ -518,6 +565,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_elbow_meaning.mp3"),
     },
     {
+        id: "4000B3_1248",
         voc: "grateful",
         pos: "adj",
         meaning: "dễ chịu, khoan khoái,&nbsp;biết ơn",
@@ -529,6 +577,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_grateful_meaning.mp3"),
     },
     {
+        id: "4000B3_1249",
         voc: "irritate",
         pos: "v",
         meaning: "làm phát cáu, chọc tức",
@@ -540,6 +589,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_irritate_meaning.mp3"),
     },
     {
+        id: "4000B3_1250",
         voc: "kid",
         pos: "v",
         meaning: "đùa, lừa phỉnh, chơi khăm",
@@ -551,6 +601,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_kid_meaning.mp3"),
     },
     {
+        id: "4000B3_1251",
         voc: "loose",
         pos: "n",
         meaning: "lỏng, không chặt, chùng, không căng",
@@ -562,6 +613,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_loose_meaning.mp3"),
     },
     {
+        id: "4000B3_1252",
         voc: "offend",
         pos: "v",
         meaning: "xúc phạm, làm bực mình, làm tổn thương",
@@ -573,6 +625,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_offend_meaning.mp3"),
     },
     {
+        id: "4000B3_1253",
         voc: "overnight",
         pos: "n",
         meaning: "qua đêm",
@@ -584,6 +637,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_overnight_meaning.mp3"),
     },
     {
+        id: "4000B3_1254",
         voc: "persist",
         pos: "n",
         meaning: "bền bỉ, kiên trì,&nbsp;vẫn còn, cứ dai dẳng",
@@ -595,6 +649,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_persist_meaning.mp3"),
     },
     {
+        id: "4000B3_1255",
         voc: "pine",
         pos: "n",
         meaning: "cây thông",
@@ -606,6 +661,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pine_meaning.mp3"),
     },
     {
+        id: "4000B3_1256",
         voc: "scar",
         pos: "n",
         meaning: "sẹo, vết sẹo",
@@ -617,6 +673,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_scar_meaning.mp3"),
     },
     {
+        id: "4000B3_1257",
         voc: "sensation",
         pos: "n",
         meaning: "cảm giác",
@@ -628,6 +685,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sensation_meaning.mp3"),
     },
     {
+        id: "4000B3_1258",
         voc: "sled",
         pos: "n",
         meaning: "xe trượt tuyết",
@@ -639,6 +697,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sled_meaning.mp3"),
     },
     {
+        id: "4000B3_1259",
         voc: "tease",
         pos: "v",
         meaning: "chòng ghẹo, trêu tức, trêu chọc",
@@ -650,6 +709,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tease_meaning.mp3"),
     },
     {
+        id: "4000B3_1260",
         voc: "valentine",
         pos: "n",
         meaning: "người yêu",
@@ -661,6 +721,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_valentine_meaning.mp3"),
     },
     {
+        id: "4000B3_1261",
         voc: "bloom",
         pos: "v",
         meaning: "ra hoa, nở hoa",
@@ -672,6 +733,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bloom_meaning.mp3"),
     },
     {
+        id: "4000B3_1262",
         voc: "compact",
         pos: "n",
         meaning: "gọn, nhỏ gọn, thu gọn",
@@ -683,6 +745,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_compact_meaning.mp3"),
     },
     {
+        id: "4000B3_1263",
         voc: "curl",
         pos: "v",
         meaning:
@@ -695,6 +758,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_curl_meaning.mp3"),
     },
     {
+        id: "4000B3_1264",
         voc: "decay",
         pos: "v",
         meaning:
@@ -707,6 +771,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_decay_meaning.mp3"),
     },
     {
+        id: "4000B3_1265",
         voc: "dessert",
         pos: "n",
         meaning: "món tráng miệng",
@@ -718,6 +783,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dessert_meaning.mp3"),
     },
     {
+        id: "4000B3_1266",
         voc: "dip",
         pos: "v",
         meaning: "nhúng, ngâm, nhận chìm, dìm xuống",
@@ -729,6 +795,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dip_meaning.mp3"),
     },
     {
+        id: "4000B3_1267",
         voc: "distant",
         pos: "adj",
         meaning: "xa, xa cách",
@@ -740,6 +807,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_distant_meaning.mp3"),
     },
     {
+        id: "4000B3_1268",
         voc: "eclipse",
         pos: "n",
         meaning: "nhật thực, nguyệt thực",
@@ -751,6 +819,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_eclipse_meaning.mp3"),
     },
     {
+        id: "4000B3_1269",
         voc: "fairy",
         pos: "n",
         meaning: "nàng tiên",
@@ -762,6 +831,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fairy_meaning.mp3"),
     },
     {
+        id: "4000B3_1270",
         voc: "grace",
         pos: "n",
         meaning: "vẻ duyên dáng, vẻ yêu kiều",
@@ -773,6 +843,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_grace_meaning.mp3"),
     },
     {
+        id: "4000B3_1271",
         voc: "leisure",
         pos: "n",
         meaning: "thì giờ rỗi rãi, lúc thư nhàn",
@@ -784,6 +855,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_leisure_meaning.mp3"),
     },
     {
+        id: "4000B3_1272",
         voc: "mankind",
         pos: "n",
         meaning: "loài người, nhân loại",
@@ -795,6 +867,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_mankind_meaning.mp3"),
     },
     {
+        id: "4000B3_1273",
         voc: "passion",
         pos: "n",
         meaning: "đam mê, sự say mê",
@@ -806,6 +879,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_passion_meaning.mp3"),
     },
     {
+        id: "4000B3_1274",
         voc: "pillow",
         pos: "n",
         meaning: "cái gối (đầu), ổ lót trục, gối đỡ",
@@ -817,6 +891,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pillow_meaning.mp3"),
     },
     {
+        id: "4000B3_1275",
         voc: "pulse",
         pos: "n",
         meaning: "(y học) mạch; (kỹ thuật) : xung",
@@ -828,6 +903,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pulse_meaning.mp3"),
     },
     {
+        id: "4000B3_1276",
         voc: "refresh",
         pos: "v",
         meaning: "làm cho khoẻ khoắn, làm cho khoan khoái, làm cho tươi tỉnh lại",
@@ -839,6 +915,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_refresh_meaning.mp3"),
     },
     {
+        id: "4000B3_1277",
         voc: "sneeze",
         pos: "v",
         meaning: "hắt hơi",
@@ -850,6 +927,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sneeze_meaning.mp3"),
     },
     {
+        id: "4000B3_1278",
         voc: "spice",
         pos: "n",
         meaning: "gia vị",
@@ -861,6 +939,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_spice_meaning.mp3"),
     },
     {
+        id: "4000B3_1279",
         voc: "whistle",
         pos: "v",
         meaning: "huýt sáo",
@@ -872,6 +951,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_whistle_meaning.mp3"),
     },
     {
+        id: "4000B3_1280",
         voc: "wool",
         pos: "n",
         meaning: "lông cừu, len",
@@ -883,6 +963,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wool_meaning.mp3"),
     },
     {
+        id: "4000B3_1281",
         voc: "acquaint",
         pos: "v",
         meaning: "làm quen",
@@ -894,6 +975,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_acquaint_meaning.mp3"),
     },
     {
+        id: "4000B3_1282",
         voc: "cemetery",
         pos: "n",
         meaning: "nghĩa trang",
@@ -905,6 +987,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cemetery_meaning.mp3"),
     },
     {
+        id: "4000B3_1283",
         voc: "curse",
         pos: "v",
         meaning: "nguyền rủa",
@@ -916,6 +999,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_curse_meaning.mp3"),
     },
     {
+        id: "4000B3_1284",
         voc: "disguise",
         pos: "v",
         meaning: "cải trang",
@@ -927,6 +1011,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_disguise_meaning.mp3"),
     },
     {
+        id: "4000B3_1285",
         voc: "fancy",
         pos: "n",
         meaning: "có trang hoàng, có trang trí",
@@ -938,6 +1023,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fancy_meaning.mp3"),
     },
     {
+        id: "4000B3_1286",
         voc: "flashlight",
         pos: "n",
         meaning: "đèn pin, đèn chớp",
@@ -949,6 +1035,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_flashlight_meaning.mp3"),
     },
     {
+        id: "4000B3_1287",
         voc: "hood",
         pos: "n",
         meaning: "mũ trùm đầu",
@@ -960,6 +1047,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hood_meaning.mp3"),
     },
     {
+        id: "4000B3_1288",
         voc: "inhabitant",
         pos: "adj",
         meaning: "người cư trú, dân cư",
@@ -971,6 +1059,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_inhabitant_meaning.mp3"),
     },
     {
+        id: "4000B3_1289",
         voc: "nourish",
         pos: "adj",
         meaning: "nuôi nấng, nuôi dưỡng",
@@ -982,6 +1071,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_nourish_meaning.mp3"),
     },
     {
+        id: "4000B3_1290",
         voc: "pirate",
         pos: "n",
         meaning: "<!--anki-->cướp biển",
@@ -993,6 +1083,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pirate_meaning.mp3"),
     },
     {
+        id: "4000B3_1291",
         voc: "publication",
         pos: "n",
         meaning: "xuất bản phẩm (sách, báo)",
@@ -1004,6 +1095,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_publication_meaning.mp3"),
     },
     {
+        id: "4000B3_1292",
         voc: "riddle",
         pos: "n",
         meaning: "câu đố",
@@ -1015,6 +1107,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_riddle_meaning.mp3"),
     },
     {
+        id: "4000B3_1293",
         voc: "rot",
         pos: "v",
         meaning: "mục nát, thối rữa",
@@ -1026,6 +1119,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rot_meaning.mp3"),
     },
     {
+        id: "4000B3_1294",
         voc: "scare",
         pos: "v",
         meaning: "dọa, làm sợ hãi",
@@ -1037,6 +1131,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_scare3_meaning.mp3"),
     },
     {
+        id: "4000B3_1295",
         voc: "shortly",
         pos: "adv",
         meaning: "không lâu nữa, chẳng mấy chốc",
@@ -1048,6 +1143,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_shortly_meaning.mp3"),
     },
     {
+        id: "4000B3_1296",
         voc: "skeleton",
         pos: "n",
         meaning: "bộ xương",
@@ -1059,6 +1155,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_skeleton_meaning.mp3"),
     },
     {
+        id: "4000B3_1297",
         voc: "spoil",
         pos: "v",
         meaning: "thối, ươn (quả, cá...)",
@@ -1070,6 +1167,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_spoil_meaning.mp3"),
     },
     {
+        id: "4000B3_1298",
         voc: "starve",
         pos: "v",
         meaning: "chết đói, thiếu ăn",
@@ -1081,6 +1179,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_starve_meaning.mp3"),
     },
     {
+        id: "4000B3_1299",
         voc: "thrill",
         pos: "n",
         meaning: "sự rộn ràng,&nbsp;sự run lên",
@@ -1092,6 +1191,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_thrill_meaning.mp3"),
     },
     {
+        id: "4000B3_1300",
         voc: "wicked",
         pos: "n",
         meaning: "xấu, hư, tệ, độc ác",
@@ -1103,6 +1203,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wicked_meaning.mp3"),
     },
     {
+        id: "4000B3_1301",
         voc: "alert",
         pos: "n",
         meaning: "báo động, báo nguy",
@@ -1114,6 +1215,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_alert_meaning.mp3"),
     },
     {
+        id: "4000B3_1302",
         voc: "broadcast",
         pos: "n",
         meaning: "buổi phát thanh, buổi phát hình",
@@ -1125,6 +1227,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_broadcast_meaning.mp3"),
     },
     {
+        id: "4000B3_1303",
         voc: "bulletin",
         pos: "n",
         meaning: "tập san, thông cáo",
@@ -1136,6 +1239,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bulletin_meaning.mp3"),
     },
     {
+        id: "4000B3_1304",
         voc: "bump",
         pos: "n",
         meaning: "chỗ sưng u lên (vì bị va mạnh)",
@@ -1147,6 +1251,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bump_meaning.mp3"),
     },
     {
+        id: "4000B3_1305",
         voc: "chop",
         pos: "v",
         meaning: "chặt, đốn, bổ, chẻ",
@@ -1158,6 +1263,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_chop_meaning.mp3"),
     },
     {
+        id: "4000B3_1306",
         voc: "closet",
         pos: "n",
         meaning: "phòng để đồ; phòng kho",
@@ -1169,6 +1275,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_closet_meaning.mp3"),
     },
     {
+        id: "4000B3_1307",
         voc: "console",
         pos: "v",
         meaning: "an ủi",
@@ -1180,6 +1287,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_console_meaning.mp3"),
     },
     {
+        id: "4000B3_1308",
         voc: "district",
         pos: "n",
         meaning: "quận, huyện",
@@ -1191,6 +1299,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_district_meaning.mp3"),
     },
     {
+        id: "4000B3_1309",
         voc: "drawer",
         pos: "n",
         meaning: "ngăn kéo",
@@ -1202,6 +1311,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_drawer_meaning.mp3"),
     },
     {
+        id: "4000B3_1310",
         voc: "endure",
         pos: "v",
         meaning: "chịu đựng, cam chịu",
@@ -1213,6 +1323,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_endure_meaning.mp3"),
     },
     {
+        id: "4000B3_1311",
         voc: "execute",
         pos: "v",
         meaning: "tử hình, thực hiện, thi hành",
@@ -1224,6 +1335,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_execute_meaning.mp3"),
     },
     {
+        id: "4000B3_1312",
         voc: "grasp",
         pos: "v",
         meaning: "nắm chắc, túm chặt, ôm chặt",
@@ -1235,6 +1347,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_grasp_meaning.mp3"),
     },
     {
+        id: "4000B3_1313",
         voc: "rear",
         pos: "n",
         meaning: "phía sau",
@@ -1246,6 +1359,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rear_meaning.mp3"),
     },
     {
+        id: "4000B3_1314",
         voc: "senator",
         pos: "n",
         meaning: "thượng nghị sĩ",
@@ -1257,6 +1371,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_senator_meaning.mp3"),
     },
     {
+        id: "4000B3_1315",
         voc: "skull",
         pos: "n",
         meaning: "sọ, đầu lâu",
@@ -1268,6 +1383,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_skull_meaning.mp3"),
     },
     {
+        id: "4000B3_1316",
         voc: "stir",
         pos: "n",
         meaning: "khuấy, quấy",
@@ -1279,6 +1395,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stir_meaning.mp3"),
     },
     {
+        id: "4000B3_1317",
         voc: "tap",
         pos: "n",
         meaning: "gõ nhẹ, vỗ nhẹ, đập nhẹ",
@@ -1290,6 +1407,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tap_meaning1.mp3"),
     },
     {
+        id: "4000B3_1318",
         voc: "tremendous",
         pos: "adj",
         meaning: "to lớn, khủng khiếp, dữ dội",
@@ -1301,6 +1419,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tremendous_meaning.mp3"),
     },
     {
+        id: "4000B3_1319",
         voc: "underneath",
         pos: "n",
         meaning: "dưới, bên dưới",
@@ -1312,6 +1431,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_underneath_meaning.mp3"),
     },
     {
+        id: "4000B3_1320",
         voc: "worm",
         pos: "n",
         meaning: "con sâu, con giun",
@@ -1323,6 +1443,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_worm_meaning.mp3"),
     },
     {
+        id: "4000B3_1321",
         voc: "abandon",
         pos: "n",
         meaning: "từ bỏ; bỏ rơi, ruồng bỏ",
@@ -1334,6 +1455,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_abandon_meaning.mp3"),
     },
     {
+        id: "4000B3_1322",
         voc: "ambitious",
         pos: "adj",
         meaning: "có hoài bão, có tham vọng",
@@ -1345,6 +1467,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ambitious_meaning.mp3"),
     },
     {
+        id: "4000B3_1323",
         voc: "bark",
         pos: "n",
         meaning: "sủa, quát tháo",
@@ -1356,6 +1479,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bark_meaning.mp3"),
     },
     {
+        id: "4000B3_1324",
         voc: "bay",
         pos: "n",
         meaning: "(địa lý,địa chất) vịnh",
@@ -1367,6 +1491,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bay_meaning.mp3"),
     },
     {
+        id: "4000B3_1325",
         voc: "brilliant",
         pos: "adj",
         meaning: "tài giỏi,&nbsp;sáng chói, rực rỡ",
@@ -1378,6 +1503,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_brilliant_meaning.mp3"),
     },
     {
+        id: "4000B3_1326",
         voc: "chin",
         pos: "n",
         meaning: "cằm",
@@ -1389,6 +1515,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_chin_meaning.mp3"),
     },
     {
+        id: "4000B3_1327",
         voc: "complaint",
         pos: "n",
         meaning: "lời than phiền, lời phàn nàn<div>than phiền, phàn nàn</div>",
@@ -1400,6 +1527,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_complaint_meaning.mp3"),
     },
     {
+        id: "4000B3_1328",
         voc: "deaf",
         pos: "n",
         meaning: "điếc",
@@ -1411,6 +1539,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_deaf_meaning.mp3"),
     },
     {
+        id: "4000B3_1329",
         voc: "enthusiastic",
         pos: "adj",
         meaning: "hăng hái, nhiệt tình; say mê",
@@ -1422,6 +1551,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_enthusiastic_meaning.mp3"),
     },
     {
+        id: "4000B3_1330",
         voc: "expedition",
         pos: "n",
         meaning: "cuộc viễn chinh,&nbsp;cuộc thám hiểm",
@@ -1433,6 +1563,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_expedition_meaning.mp3"),
     },
     {
+        id: "4000B3_1331",
         voc: "horizon",
         pos: "n",
         meaning: "chân trời",
@@ -1444,6 +1575,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_horizon_meaning.mp3"),
     },
     {
+        id: "4000B3_1332",
         voc: "loyal",
         pos: "adj",
         meaning: "trung thành",
@@ -1455,6 +1587,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_loyal_meaning1.mp3"),
     },
     {
+        id: "4000B3_1333",
         voc: "mayor",
         pos: "n",
         meaning: "thị trưởng",
@@ -1466,6 +1599,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_mayor_meaning.mp3"),
     },
     {
+        id: "4000B3_1334",
         voc: "mutual",
         pos: "adj",
         meaning: "lẫn nhau, qua lại",
@@ -1477,6 +1611,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_mutual_meaning.mp3"),
     },
     {
+        id: "4000B3_1335",
         voc: "overweight",
         pos: "n",
         meaning: "quá cân (quá béo)",
@@ -1488,6 +1623,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_overweight_meaning.mp3"),
     },
     {
+        id: "4000B3_1336",
         voc: "refuge",
         pos: "n",
         meaning: "nơi trú ẩn, nơi nương náu",
@@ -1499,6 +1635,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_refuge_meaning.mp3"),
     },
     {
+        id: "4000B3_1337",
         voc: "restore",
         pos: "n",
         meaning: "phục hồi, dựng lại",
@@ -1510,6 +1647,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_restore_meaning.mp3"),
     },
     {
+        id: "4000B3_1338",
         voc: "rub",
         pos: "n",
         meaning: "xoa bóp, chà xát",
@@ -1521,6 +1659,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rub_meaning.mp3"),
     },
     {
+        id: "4000B3_1339",
         voc: "senses",
         pos: "n",
         meaning: "những giác quan",
@@ -1532,6 +1671,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_senses_meaning.mp3"),
     },
     {
+        id: "4000B3_1340",
         voc: "veterinarian",
         pos: "n",
         meaning: "bác sỹ thú y",
@@ -1543,6 +1683,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_veterinarian_meaning.mp3"),
     },
     {
+        id: "4000B3_1341",
         voc: "anniversary",
         pos: "adj",
         meaning: "ngày kỷ niệm; lễ kỷ niệm",
@@ -1554,6 +1695,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_anniversary_meaning.mp3"),
     },
     {
+        id: "4000B3_1342",
         voc: "arithmetic",
         pos: "adj",
         meaning: "số học",
@@ -1565,6 +1707,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_arithmetic_meaning.mp3"),
     },
     {
+        id: "4000B3_1343",
         voc: "ashamed",
         pos: "n",
         meaning: "xấu hổ, hổ thẹn, ngượng",
@@ -1576,6 +1719,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ashamed_meaning.mp3"),
     },
     {
+        id: "4000B3_1344",
         voc: "burst",
         pos: "n",
         meaning: "nổ, nổ tung (bom, đạn...); vỡ (mụn nhọt)",
@@ -1587,6 +1731,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_burst_meaning.mp3"),
     },
     {
+        id: "4000B3_1345",
         voc: "carpenter",
         pos: "n",
         meaning: "thợ mộc",
@@ -1598,6 +1743,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_carpenter_meaning.mp3"),
     },
     {
+        id: "4000B3_1346",
         voc: "coal",
         pos: "adj",
         meaning: "than đá",
@@ -1609,6 +1755,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_coal_meaning.mp3"),
     },
     {
+        id: "4000B3_1347",
         voc: "couch",
         pos: "n",
         meaning: "trường kỷ, đi văng",
@@ -1620,6 +1767,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_couch_meaning.mp3"),
     },
     {
+        id: "4000B3_1348",
         voc: "drip",
         pos: "n",
         meaning: "nhỏ giọt",
@@ -1631,6 +1779,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_drip_meaning.mp3"),
     },
     {
+        id: "4000B3_1349",
         voc: "elegant",
         pos: "adj",
         meaning: "thanh lịch, tao nhã",
@@ -1642,6 +1791,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_elegant_meaning.mp3"),
     },
     {
+        id: "4000B3_1350",
         voc: "fabric",
         pos: "adj",
         meaning: "vải",
@@ -1653,6 +1803,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fabric_meaning.mp3"),
     },
     {
+        id: "4000B3_1351",
         voc: "highlands",
         pos: "n",
         meaning: "cao nguyên",
@@ -1664,6 +1815,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_highlands_meaning.mp3"),
     },
     {
+        id: "4000B3_1352",
         voc: "ivory",
         pos: "n",
         meaning: "ngà (voi...)",
@@ -1675,6 +1827,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ivory_meaning.mp3"),
     },
     {
+        id: "4000B3_1353",
         voc: "mill",
         pos: "n",
         meaning: "cối xay, máy xay",
@@ -1686,6 +1839,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_mill_meaning.mp3"),
     },
     {
+        id: "4000B3_1354",
         voc: "needle",
         pos: "n",
         meaning: "cái kim, kim (la bàn...),&nbsp;chỏm núi nhọn",
@@ -1697,6 +1851,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_needle_meaning.mp3"),
     },
     {
+        id: "4000B3_1355",
         voc: "polish",
         pos: "adj",
         meaning: "đánh bóng",
@@ -1708,6 +1863,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_polish_meaning.mp3"),
     },
     {
+        id: "4000B3_1356",
         voc: "sew",
         pos: "n",
         meaning: "khâu, may",
@@ -1719,6 +1875,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sew_meaning.mp3"),
     },
     {
+        id: "4000B3_1357",
         voc: "shed",
         pos: "n",
         meaning: "lán, túp lều (để hàng hoá, dụng cụ)",
@@ -1730,6 +1887,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_shed_meaning.mp3"),
     },
     {
+        id: "4000B3_1358",
         voc: "thread",
         pos: "n",
         meaning: "sợi chỉ,&nbsp;dòng, mạch, luồng",
@@ -1741,6 +1899,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_thread_meaning.mp3"),
     },
     {
+        id: "4000B3_1359",
         voc: "trim",
         pos: "n",
         meaning: "xén, tỉa (tóc, cành lá...)",
@@ -1752,6 +1911,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_trim_meaning.mp3"),
     },
     {
+        id: "4000B3_1360",
         voc: "upwards",
         pos: "n",
         meaning: "đi lên, hướng lên",
@@ -1763,6 +1923,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_upwards_meaning.mp3"),
     },
     {
+        id: "4000B3_1361",
         voc: "ail",
         pos: "n",
         meaning: "làm đau đớn, làm đau khổ",
@@ -1774,6 +1935,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ail_meaning.mp3"),
     },
     {
+        id: "4000B3_1362",
         voc: "ally",
         pos: "adv",
         meaning: "bạn đồng minh;&nbsp;liên kết, liên minh",
@@ -1785,6 +1947,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ally_meaning.mp3"),
     },
     {
+        id: "4000B3_1363",
         voc: "boast",
         pos: "n",
         meaning: "khoe khoang, khoác lác",
@@ -1796,6 +1959,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_boast_meaning.mp3"),
     },
     {
+        id: "4000B3_1364",
         voc: "bounce",
         pos: "n",
         meaning: "nảy lên",
@@ -1807,6 +1971,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bounce_meaning.mp3"),
     },
     {
+        id: "4000B3_1365",
         voc: "bully",
         pos: "adv",
         meaning: "kẻ hay bắt nạt (ở trường học), du côn",
@@ -1818,6 +1983,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bully_meaning.mp3"),
     },
     {
+        id: "4000B3_1366",
         voc: "carbohydrate",
         pos: "n",
         meaning: "hyđrat-cacbon",
@@ -1829,6 +1995,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_carbohydrate_meaning.mp3"),
     },
     {
+        id: "4000B3_1367",
         voc: "crawl",
         pos: "n",
         meaning: "bò, trườn",
@@ -1840,6 +2007,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_crawl_meaning.mp3"),
     },
     {
+        id: "4000B3_1368",
         voc: "defeat",
         pos: "n",
         meaning: "đánh thắng, đánh bại",
@@ -1851,6 +2019,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_defeat_meaning.mp3"),
     },
     {
+        id: "4000B3_1369",
         voc: "dial",
         pos: "adj",
         meaning: "mặt đồng hồ, đĩa số (máy điện thoại)",
@@ -1862,6 +2031,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dial_meaning.mp3"),
     },
     {
+        id: "4000B3_1370",
         voc: "dominant",
         pos: "adj",
         meaning: "vượt trội, có ưu thế hơn, thống trị",
@@ -1873,6 +2043,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dominant_meaning.mp3"),
     },
     {
+        id: "4000B3_1371",
         voc: "mercy",
         pos: "n",
         meaning: "lòng khoan dung",
@@ -1884,6 +2055,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_mercy_meaning.mp3"),
     },
     {
+        id: "4000B3_1372",
         voc: "nod",
         pos: "n",
         meaning: "lắc lư đầu, gật đầu",
@@ -1895,6 +2067,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_nod_meaning.mp3"),
     },
     {
+        id: "4000B3_1373",
         voc: "opponent",
         pos: "adj",
         meaning: "địch thủ, đối thủ",
@@ -1906,6 +2079,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_opponent_meaning.mp3"),
     },
     {
+        id: "4000B3_1374",
         voc: "rival",
         pos: "adj",
         meaning: "đối thủ, người cạnh tranh",
@@ -1917,6 +2091,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rival_meaning.mp3"),
     },
     {
+        id: "4000B3_1375",
         voc: "sore",
         pos: "n",
         meaning: "đau, đau đớn",
@@ -1928,6 +2103,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sore_meaning.mp3"),
     },
     {
+        id: "4000B3_1376",
         voc: "sting",
         pos: "n",
         meaning: "châm, chích, đốt",
@@ -1939,6 +2115,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sting_meaning.mp3"),
     },
     {
+        id: "4000B3_1377",
         voc: "strain",
         pos: "n",
         meaning: "ra sức, cố sức, gắng sức",
@@ -1950,6 +2127,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_strain_meaning.mp3"),
     },
     {
+        id: "4000B3_1378",
         voc: "torture",
         pos: "n",
         meaning: "sự tra tấn",
@@ -1961,6 +2139,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_torture_meaning.mp3"),
     },
     {
+        id: "4000B3_1379",
         voc: "wrestle",
         pos: "n",
         meaning: "(thể dục,thể thao) vật, đấu vật",
@@ -1972,6 +2151,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wrestle_meaning.mp3"),
     },
     {
+        id: "4000B3_1380",
         voc: "quarrel",
         pos: "n",
         meaning: "cãi nhau",
@@ -1983,6 +2163,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_quarrel_meaning.mp3"),
     },
     {
+        id: "4000B3_1381",
         voc: "absence",
         pos: "n",
         meaning: "sự vắng mặt,&nbsp;sự thiếu, sự không có",
@@ -1994,6 +2175,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_absence_meaning.mp3"),
     },
     {
+        id: "4000B3_1382",
         voc: "aloud",
         pos: "n",
         meaning: "lớn tiếng, to",
@@ -2005,6 +2187,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_aloud_meaning.mp3"),
     },
     {
+        id: "4000B3_1383",
         voc: "bald",
         pos: "n",
         meaning: "hói (đầu),&nbsp;trọc, trụi",
@@ -2016,6 +2199,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bald_meaning.mp3"),
     },
     {
+        id: "4000B3_1384",
         voc: "blanket",
         pos: "n",
         meaning: "mền, chăn",
@@ -2027,6 +2211,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_blanket_meaning.mp3"),
     },
     {
+        id: "4000B3_1385",
         voc: "creep",
         pos: "n",
         meaning: "bò, trườn, đi rón rén",
@@ -2038,6 +2223,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_creep_meaning.mp3"),
     },
     {
+        id: "4000B3_1386",
         voc: "divorce",
         pos: "n",
         meaning: "ly hôn, ly dị",
@@ -2049,6 +2235,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_divorce_meaning.mp3"),
     },
     {
+        id: "4000B3_1387",
         voc: "imitate",
         pos: "n",
         meaning: "bắt chước, làm theo, noi gương",
@@ -2060,6 +2247,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_imitate_meaning.mp3"),
     },
     {
+        id: "4000B3_1388",
         voc: "infant",
         pos: "adj",
         meaning: "đứa bé còn ãm ngửa, đứa bé (dưới 7 tuổi)",
@@ -2071,6 +2259,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_infant_meaning.mp3"),
     },
     {
+        id: "4000B3_1389",
         voc: "kidnap",
         pos: "n",
         meaning: "bắt cóc (thường để tống tiền)",
@@ -2082,6 +2271,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_kidnap_meaning.mp3"),
     },
     {
+        id: "4000B3_1390",
         voc: "nap",
         pos: "n",
         meaning: "giấc ngủ chợp, giấc trưa",
@@ -2093,6 +2283,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_nap_meaning.mp3"),
     },
     {
+        id: "4000B3_1391",
         voc: "nowhere",
         pos: "n",
         meaning: "không nơi nào, không ở đâu",
@@ -2104,6 +2295,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_nowhere_meaning.mp3"),
     },
     {
+        id: "4000B3_1392",
         voc: "pat",
         pos: "n",
         meaning: "vỗ nhẹ, vỗ về, chạm nhẹ",
@@ -2115,6 +2307,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pat_meaning.mp3"),
     },
     {
+        id: "4000B3_1393",
         voc: "relief",
         pos: "n",
         meaning: "sự giảm nhẹ, sự làm khuây (đau đớn, buồn rầu)",
@@ -2126,6 +2319,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_relief_meaning.mp3"),
     },
     {
+        id: "4000B3_1394",
         voc: "reproduce",
         pos: "n",
         meaning: "sao chép, mô phỏng,&nbsp;tái sinh, mọc lại",
@@ -2137,6 +2331,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_reproduce_meaning.mp3"),
     },
     {
+        id: "4000B3_1395",
         voc: "rhyme",
         pos: "n",
         meaning: "(thơ ca) vần, gieo vần",
@@ -2148,6 +2343,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rhyme_meaning.mp3"),
     },
     {
+        id: "4000B3_1396",
         voc: "suck",
         pos: "n",
         meaning: "mút, bú, hút",
@@ -2159,6 +2355,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_suck_meaning.mp3"),
     },
     {
+        id: "4000B3_1397",
         voc: "urgent",
         pos: "adj",
         meaning: "gấp, khẩn cấp",
@@ -2170,6 +2367,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_urgent_meaning.mp3"),
     },
     {
+        id: "4000B3_1398",
         voc: "vanish",
         pos: "adj",
         meaning: "biến mất, tiêu tan",
@@ -2181,6 +2379,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_vanish_meaning.mp3"),
     },
     {
+        id: "4000B3_1399",
         voc: "wagon",
         pos: "n",
         meaning:
@@ -2193,6 +2392,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wagon_meaning.mp3"),
     },
     {
+        id: "4000B3_1400",
         voc: "wrinkle",
         pos: "n",
         meaning: "vết nhăn (da),&nbsp;gợn sóng (trên mặt nước)",
@@ -2204,6 +2404,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wrinkle_meaning.mp3"),
     },
     {
+        id: "4000B3_1401",
         voc: "abnormal",
         pos: "adj",
         meaning: "không bình thường, khác thường",
@@ -2215,6 +2416,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_abnormal_meaning.mp3"),
     },
     {
+        id: "4000B3_1402",
         voc: "bamboo",
         pos: "n",
         meaning: "cây tre",
@@ -2226,6 +2428,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bamboo_meaning.mp3"),
     },
     {
+        id: "4000B3_1403",
         voc: "blossom",
         pos: "n",
         meaning: "hoa (của cây ăn quả)",
@@ -2237,6 +2440,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_blossom_meaning.mp3"),
     },
     {
+        id: "4000B3_1404",
         voc: "compass",
         pos: "n",
         meaning: "la bàn, com-pa",
@@ -2248,6 +2452,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_compass_meaning.mp3"),
     },
     {
+        id: "4000B3_1405",
         voc: "dialect",
         pos: "n",
         meaning: "tiếng địa phương, phương ngữ",
@@ -2259,6 +2464,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dialect_meaning.mp3"),
     },
     {
+        id: "4000B3_1406",
         voc: "dishonest",
         pos: "n",
         meaning: "không thành thật, không trung thực",
@@ -2270,6 +2476,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dishonest_meaning.mp3"),
     },
     {
+        id: "4000B3_1407",
         voc: "dwarf",
         pos: "n",
         meaning: "người lùn, chú lùn",
@@ -2281,6 +2488,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dwarf_meaning.mp3"),
     },
     {
+        id: "4000B3_1408",
         voc: "ecosystem",
         pos: "n",
         meaning: "hệ sinh thái",
@@ -2292,6 +2500,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ecosystem_meaning.mp3"),
     },
     {
+        id: "4000B3_1409",
         voc: "fatal",
         pos: "adj",
         meaning: "tai hại, làm nguy hiểm đến tính mạng",
@@ -2303,6 +2512,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fatal_meaning.mp3"),
     },
     {
+        id: "4000B3_1410",
         voc: "impatient",
         pos: "adj",
         meaning: "thiếu kiên nhẫn, nóng vội",
@@ -2314,6 +2524,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_impatient_meaning.mp3"),
     },
     {
+        id: "4000B3_1411",
         voc: "leaf",
         pos: "n",
         meaning: "lá cây",
@@ -2325,6 +2536,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_leaf_meaning.mp3"),
     },
     {
+        id: "4000B3_1412",
         voc: "manuscript",
         pos: "n",
         meaning: "bản viết tay; bản thảo, bản đưa in (của tác giả)",
@@ -2336,6 +2548,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_manuscript_meaning.mp3"),
     },
     {
+        id: "4000B3_1413",
         voc: "marsh",
         pos: "n",
         meaning: "đầm lầy",
@@ -2347,6 +2560,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_marsh_meaning.mp3"),
     },
     {
+        id: "4000B3_1414",
         voc: "patience",
         pos: "n",
         meaning: "tính kiên nhẫn, sự nhẫn nại",
@@ -2358,6 +2572,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_patience_meaning.mp3"),
     },
     {
+        id: "4000B3_1415",
         voc: "perfume",
         pos: "n",
         meaning: "nước hoa; dầu thơm",
@@ -2369,6 +2584,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_perfume_meaning.mp3"),
     },
     {
+        id: "4000B3_1416",
         voc: "pond",
         pos: "n",
         meaning: "cái ao",
@@ -2380,6 +2596,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pond_meaning.mp3"),
     },
     {
+        id: "4000B3_1417",
         voc: "proverb",
         pos: "n",
         meaning: "tục ngữ, cách ngôn",
@@ -2391,6 +2608,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_proverb_meaning.mp3"),
     },
     {
+        id: "4000B3_1418",
         voc: "pursuit",
         pos: "n",
         meaning: "sự đuổi theo, sự đuổi bắt",
@@ -2402,6 +2620,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pursuit_meaning.mp3"),
     },
     {
+        id: "4000B3_1419",
         voc: "recite",
         pos: "n",
         meaning: "kể chuyện (thuộc lòng, trước thính giả)",
@@ -2413,6 +2632,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_recite_meaning.mp3"),
     },
     {
+        id: "4000B3_1420",
         voc: "wilderness",
         pos: "n",
         meaning: "vùng hoang vu",
@@ -2424,6 +2644,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wilderness_meaning.mp3"),
     },
     {
+        id: "4000B3_1421",
         voc: "anticipate",
         pos: "n",
         meaning: "thấy trước, biết trước, lường trước",
@@ -2435,6 +2656,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_anticipate_meaning.mp3"),
     },
     {
+        id: "4000B3_1422",
         voc: "barrel",
         pos: "n",
         meaning: "thùng tròn, thùng rượu",
@@ -2446,6 +2668,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_barrel_meaning.mp3"),
     },
     {
+        id: "4000B3_1423",
         voc: "beam",
         pos: "n",
         meaning: "(kiến trúc) xà, rầm",
@@ -2457,6 +2680,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_beam_meaning.mp3"),
     },
     {
+        id: "4000B3_1424",
         voc: "casual",
         pos: "adj",
         meaning: "không trịnh trọng, bình thường",
@@ -2468,6 +2692,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_casual_meaning.mp3"),
     },
     {
+        id: "4000B3_1425",
         voc: "caution",
         pos: "n",
         meaning: "sự thận trọng, sự cẩn thận",
@@ -2479,6 +2704,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_caution_meaning.mp3"),
     },
     {
+        id: "4000B3_1426",
         voc: "contrary",
         pos: "adj",
         meaning: "trái ngược",
@@ -2490,6 +2716,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_contrary_meaning.mp3"),
     },
     {
+        id: "4000B3_1427",
         voc: "deliberate",
         pos: "n",
         meaning: "có tính toán, cố ý, chủ tâm",
@@ -2501,6 +2728,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_deliberate_meaning.mp3"),
     },
     {
+        id: "4000B3_1428",
         voc: "dissolve",
         pos: "n",
         meaning: "hoà tan",
@@ -2512,6 +2740,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dissolve_meaning.mp3"),
     },
     {
+        id: "4000B3_1429",
         voc: "explode",
         pos: "n",
         meaning: "nổ tung",
@@ -2523,6 +2752,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_explode_meaning.mp3"),
     },
     {
+        id: "4000B3_1430",
         voc: "fasten",
         pos: "v",
         meaning: "buộc chặt, thắt chặt",
@@ -2534,6 +2764,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fasten_meaning.mp3"),
     },
     {
+        id: "4000B3_1431",
         voc: "germ",
         pos: "n",
         meaning: "vi trùng, mầm bệnh",
@@ -2545,6 +2776,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_germ_meaning.mp3"),
     },
     {
+        id: "4000B3_1432",
         voc: "kit",
         pos: "n",
         meaning: "bộ đồ nghề",
@@ -2556,6 +2788,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_kit_meaning.mp3"),
     },
     {
+        id: "4000B3_1433",
         voc: "puff",
         pos: "n",
         meaning: "làn khói, làn hơi",
@@ -2567,6 +2800,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_puff_meaning.mp3"),
     },
     {
+        id: "4000B3_1434",
         voc: "rag",
         pos: "n",
         meaning: "mảnh vải, mảnh buồm, miếng giẻ",
@@ -2578,6 +2812,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rag_meaning.mp3"),
     },
     {
+        id: "4000B3_1435",
         voc: "scatter",
         pos: "n",
         meaning: "tung, rải, rắc, gieo",
@@ -2589,6 +2824,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_scatter_meaning.mp3"),
     },
     {
+        id: "4000B3_1436",
         voc: "scent",
         pos: "adj",
         meaning: "mùi thơm, hương thơm",
@@ -2600,6 +2836,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_scent_meaning.mp3"),
     },
     {
+        id: "4000B3_1437",
         voc: "steel",
         pos: "n",
         meaning: "thép",
@@ -2611,6 +2848,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_steel_meaning.mp3"),
     },
     {
+        id: "4000B3_1438",
         voc: "swift",
         pos: "n",
         meaning: "mau, nhanh",
@@ -2622,6 +2860,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_swift_meaning.mp3"),
     },
     {
+        id: "4000B3_1439",
         voc: "toss",
         pos: "n",
         meaning: "tung lên",
@@ -2633,6 +2872,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_toss_meaning.mp3"),
     },
     {
+        id: "4000B3_1440",
         voc: "triumph",
         pos: "n",
         meaning: "chiến thắng lớn, thành công lớn,&nbsp;niềm vui chiến thắng",
@@ -2644,6 +2884,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_triumph_meaning.mp3"),
     },
     {
+        id: "4000B3_1441",
         voc: "aboard",
         pos: "n",
         meaning: "lên trên (tàu thuỷ, xe lửa, máy bay...)",
@@ -2655,6 +2896,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_aboard_meaning.mp3"),
     },
     {
+        id: "4000B3_1442",
         voc: "bitter",
         pos: "n",
         meaning: "đau khổ, cay đắng",
@@ -2666,6 +2908,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bitter_meaning.mp3"),
     },
     {
+        id: "4000B3_1443",
         voc: "bullet",
         pos: "n",
         meaning: "viên đạn (súng trường, súng lục)",
@@ -2677,6 +2920,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bullet_meaning.mp3"),
     },
     {
+        id: "4000B3_1444",
         voc: "devil",
         pos: "n",
         meaning: "quỷ, điều quái gở",
@@ -2688,6 +2932,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_devil_meaning.mp3"),
     },
     {
+        id: "4000B3_1445",
         voc: "drift",
         pos: "n",
         meaning: "trôi giạt, bị (gió, dòng nước...) cuốn đi",
@@ -2699,6 +2944,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_drift_meaning.mp3"),
     },
     {
+        id: "4000B3_1446",
         voc: "enforce",
         pos: "n",
         meaning: "làm cho có hiệu lực,&nbsp;bắt tuân theo; đem thi hành (luật lệ)",
@@ -2710,6 +2956,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_enforce_meaning.mp3"),
     },
     {
+        id: "4000B3_1447",
         voc: "fountain",
         pos: "n",
         meaning: "đài phun nước",
@@ -2721,6 +2968,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fountain_meaning.mp3"),
     },
     {
+        id: "4000B3_1448",
         voc: "harbor",
         pos: "n",
         meaning: "bến tàu, cảng",
@@ -2732,6 +2980,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_harbor_meaning.mp3"),
     },
     {
+        id: "4000B3_1449",
         voc: "inhabit",
         pos: "n",
         meaning: "ở, sống ở (nơi nào)&nbsp;",
@@ -2743,6 +2992,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_inhabit_meaning.mp3"),
     },
     {
+        id: "4000B3_1450",
         voc: "march",
         pos: "n",
         meaning: "bước đều; diễu hành, tháng Ba",
@@ -2754,6 +3004,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_march_meaning.mp3"),
     },
     {
+        id: "4000B3_1451",
         voc: "millionaire",
         pos: "n",
         meaning: "triệu phú",
@@ -2765,6 +3016,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_millionaire_meaning.mp3"),
     },
     {
+        id: "4000B3_1452",
         voc: "port",
         pos: "n",
         meaning: "bến cảng, cảng",
@@ -2776,6 +3028,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_port_meaning.mp3"),
     },
     {
+        id: "4000B3_1453",
         voc: "sheriff",
         pos: "n",
         meaning: "cảnh sát trưởng",
@@ -2787,6 +3040,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sheriff_meaning.mp3"),
     },
     {
+        id: "4000B3_1454",
         voc: "startle",
         pos: "n",
         meaning: "làm giật mình, làm hoảng hốt",
@@ -2798,6 +3052,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_startle_meaning.mp3"),
     },
     {
+        id: "4000B3_1455",
         voc: "sweat",
         pos: "n",
         meaning: "đổ mồ hôi",
@@ -2809,6 +3064,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sweat_meaning.mp3"),
     },
     {
+        id: "4000B3_1456",
         voc: "trigger",
         pos: "n",
         meaning: "cò súng; gây ra, gây nên",
@@ -2820,6 +3076,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_trigger_meaning.mp3"),
     },
     {
+        id: "4000B3_1457",
         voc: "unify",
         pos: "v",
         meaning: "thống nhất, hợp nhất",
@@ -2831,6 +3088,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_unify_meaning.mp3"),
     },
     {
+        id: "4000B3_1458",
         voc: "vessel",
         pos: "n",
         meaning: "(hàng hải) thuyền lớn, tàu thuỷ",
@@ -2842,6 +3100,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_vessel_meaning.mp3"),
     },
     {
+        id: "4000B3_1459",
         voc: "voyage",
         pos: "n",
         meaning: "chuyến đi xa",
@@ -2853,6 +3112,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_voyage_meaning.mp3"),
     },
     {
+        id: "4000B3_1460",
         voc: "worship",
         pos: "n",
         meaning: "thờ phụng, cúng bái",
@@ -2864,6 +3124,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_worship_meaning.mp3"),
     },
     {
+        id: "4000B3_1461",
         voc: "apprentice",
         pos: "n",
         meaning: "người học việc,&nbsp;người mới tập sự",
@@ -2875,6 +3136,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_apprentice_meaning.mp3"),
     },
     {
+        id: "4000B3_1462",
         voc: "assure",
         pos: "n",
         meaning: "đảm bảo, bảo hiểm",
@@ -2886,6 +3148,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_assure_meaning.mp3"),
     },
     {
+        id: "4000B3_1463",
         voc: "bandage",
         pos: "n",
         meaning: "băng (để băng vết thương, bịt mắt...)",
@@ -2897,6 +3160,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bandage_meaning.mp3"),
     },
     {
+        id: "4000B3_1464",
         voc: "bleed",
         pos: "n",
         meaning: "chảy máu",
@@ -2908,6 +3172,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bleed_meaning.mp3"),
     },
     {
+        id: "4000B3_1465",
         voc: "bond",
         pos: "n",
         meaning: "kết bạn, làm quen",
@@ -2919,6 +3184,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bond_meaning.mp3"),
     },
     {
+        id: "4000B3_1466",
         voc: "chef",
         pos: "n",
         meaning: "đầu bếp",
@@ -2930,6 +3196,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_chef_meaning.mp3"),
     },
     {
+        id: "4000B3_1467",
         voc: "crown",
         pos: "n",
         meaning: "vương miện",
@@ -2941,6 +3208,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_crown_meaning.mp3"),
     },
     {
+        id: "4000B3_1468",
         voc: "departure",
         pos: "n",
         meaning: "sự khởi hành",
@@ -2952,6 +3220,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_departure_meaning.mp3"),
     },
     {
+        id: "4000B3_1469",
         voc: "diligent",
         pos: "adj",
         meaning: "siêng năng, chuyên cần",
@@ -2963,6 +3232,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_diligent_meaning.mp3"),
     },
     {
+        id: "4000B3_1470",
         voc: "emperor",
         pos: "n",
         meaning: "hoàng đế",
@@ -2974,6 +3244,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_emperor_meaning.mp3"),
     },
     {
+        id: "4000B3_1471",
         voc: "fiber",
         pos: "n",
         meaning: "sợi, thớ",
@@ -2985,6 +3256,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fiber_meaning.mp3"),
     },
     {
+        id: "4000B3_1472",
         voc: "horrible",
         pos: "adj",
         meaning: "kinh khủng, kinh&nbsp;tởm",
@@ -2996,6 +3268,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_horrible_meaning.mp3"),
     },
     {
+        id: "4000B3_1473",
         voc: "impolite",
         pos: "n",
         meaning: "bất lịch sự, vô lễ",
@@ -3007,6 +3280,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_impolite_meaning.mp3"),
     },
     {
+        id: "4000B3_1474",
         voc: "kneel; knee",
         pos: "n",
         meaning: "quỳ, đầu gối",
@@ -3018,6 +3292,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_kneel_meaning.mp3"),
     },
     {
+        id: "4000B3_1475",
         voc: "luxury",
         pos: "n",
         meaning: "xa hoa, sang trọng",
@@ -3029,6 +3304,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_luxury_meaning.mp3"),
     },
     {
+        id: "4000B3_1476",
         voc: "massive",
         pos: "adj",
         meaning: "to lớn, đồ sộ",
@@ -3040,6 +3316,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_massive_meaning.mp3"),
     },
     {
+        id: "4000B3_1477",
         voc: "panic",
         pos: "adj",
         meaning: "hoảng sợ, hoang mang, sợ hãi",
@@ -3051,6 +3328,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_panic_meaning.mp3"),
     },
     {
+        id: "4000B3_1478",
         voc: "priority",
         pos: "n",
         meaning: "sự ưu tiên",
@@ -3062,6 +3340,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_priority_meaning.mp3"),
     },
     {
+        id: "4000B3_1479",
         voc: "robe",
         pos: "n",
         meaning: "áo choàng",
@@ -3073,6 +3352,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_robe_meaning.mp3"),
     },
     {
+        id: "4000B3_1480",
         voc: "scold",
         pos: "n",
         meaning: "trách mắng, mắng mỏ",
@@ -3084,6 +3364,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_scold_meaning.mp3"),
     },
     {
+        id: "4000B3_1481",
         voc: "affair",
         pos: "n",
         meaning: "việc buôn bán; việc giao thiệp, hẹn hò",
@@ -3095,6 +3376,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_affair_meaning.mp3"),
     },
     {
+        id: "4000B3_1482",
         voc: "assembly",
         pos: "adv",
         meaning: "cuộc họp, sự lắp ráp",
@@ -3106,6 +3388,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_assembly_meaning.mp3"),
     },
     {
+        id: "4000B3_1483",
         voc: "bless",
         pos: "adj",
         meaning: "giáng phúc, ban phúc",
@@ -3117,6 +3400,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bless_meaning.mp3"),
     },
     {
+        id: "4000B3_1484",
         voc: "cereal",
         pos: "adj",
         meaning: "món ăn (bằng) ngũ cốc",
@@ -3128,6 +3412,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cereal_meaning.mp3"),
     },
     {
+        id: "4000B3_1485",
         voc: "cheerful",
         pos: "adj",
         meaning: "vui mừng, phấn khởi; hớn hở",
@@ -3139,6 +3424,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cheerful_meaning.mp3"),
     },
     {
+        id: "4000B3_1486",
         voc: "diameter",
         pos: "n",
         meaning: "(toán học) đường kính",
@@ -3150,6 +3436,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_diameter_meaning.mp3"),
     },
     {
+        id: "4000B3_1487",
         voc: "exploit",
         pos: "n",
         meaning: "khai thác, bóc lột, lợi dụng",
@@ -3161,6 +3448,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_exploit_meaning.mp3"),
     },
     {
+        id: "4000B3_1488",
         voc: "famine",
         pos: "n",
         meaning: "nạn đói",
@@ -3172,6 +3460,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_famine_meaning.mp3"),
     },
     {
+        id: "4000B3_1489",
         voc: "harvest",
         pos: "n",
         meaning: "thu hoạch, vụ gặt",
@@ -3183,6 +3472,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_harvest_meaning.mp3"),
     },
     {
+        id: "4000B3_1490",
         voc: "merry",
         pos: "n",
         meaning: "vui, vui vẻ",
@@ -3194,6 +3484,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_merry_meaning.mp3"),
     },
     {
+        id: "4000B3_1491",
         voc: "nut",
         pos: "n",
         meaning: "hạt (cây, quả), đai ốc&nbsp;",
@@ -3205,6 +3496,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_nut_meaning.mp3"),
     },
     {
+        id: "4000B3_1492",
         voc: "pardon",
         pos: "n",
         meaning: "tha thứ, tha lỗi (lịch sự)",
@@ -3216,6 +3508,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pardon_meaning.mp3"),
     },
     {
+        id: "4000B3_1493",
         voc: "pharaoh",
         pos: "n",
         meaning: "Faraon, vua Ai Cập",
@@ -3227,6 +3520,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pharaoh_meaning.mp3"),
     },
     {
+        id: "4000B3_1494",
         voc: "ripe",
         pos: "n",
         meaning: "chín, chín muồi",
@@ -3238,6 +3532,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ripe_meaning.mp3"),
     },
     {
+        id: "4000B3_1495",
         voc: "roast",
         pos: "n",
         meaning: "quay, nướng (thịt)",
@@ -3249,6 +3544,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_roast_meaning.mp3"),
     },
     {
+        id: "4000B3_1496",
         voc: "routine",
         pos: "n",
         meaning: "thủ tục,&nbsp;công việc thường làm hằng ngày",
@@ -3260,6 +3556,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_routine_meaning.mp3"),
     },
     {
+        id: "4000B3_1497",
         voc: "scheme",
         pos: "n",
         meaning: "kế hoạch,&nbsp;sơ đồ",
@@ -3271,6 +3568,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_scheme_meaning.mp3"),
     },
     {
+        id: "4000B3_1498",
         voc: "slim",
         pos: "n",
         meaning: "mỏng, thon, mảnh khảnh",
@@ -3282,6 +3580,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_slim_meaning.mp3"),
     },
     {
+        id: "4000B3_1499",
         voc: "stove",
         pos: "n",
         meaning: "cái lò, bếp lò",
@@ -3293,6 +3592,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stove_meaning.mp3"),
     },
     {
+        id: "4000B3_1500",
         voc: "theft",
         pos: "n",
         meaning: "tên trộm,&nbsp;sự ăn trộm, sự trộm cắp",
@@ -3304,6 +3604,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_theft_meaning.mp3"),
     },
     {
+        id: "4000B3_1501",
         voc: "adolescent",
         pos: "adj",
         meaning: "người thanh niên, chàng trai trẻ",
@@ -3315,6 +3616,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_adolescent_meaning.mp3"),
     },
     {
+        id: "4000B3_1502",
         voc: "aptitude",
         pos: "n",
         meaning: "năng khiếu",
@@ -3326,6 +3628,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_aptitude_meaning.mp3"),
     },
     {
+        id: "4000B3_1503",
         voc: "compliment",
         pos: "n",
         meaning: "khen ngợi,&nbsp;lời khen",
@@ -3337,6 +3640,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_compliment_meaning.mp3"),
     },
     {
+        id: "4000B3_1504",
         voc: "hinder",
         pos: "n",
         meaning: "cản trở, gây trở ngại",
@@ -3348,6 +3652,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hinder_meaning.mp3"),
     },
     {
+        id: "4000B3_1505",
         voc: "journalism",
         pos: "n",
         meaning: "nghề báo chí",
@@ -3359,6 +3664,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_journalism_meaning.mp3"),
     },
     {
+        id: "4000B3_1506",
         voc: "jury",
         pos: "n",
         meaning: "(pháp lý) ban hội thẩm, ban bồi thẩm",
@@ -3370,6 +3676,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_jury_meaning.mp3"),
     },
     {
+        id: "4000B3_1507",
         voc: "justice",
         pos: "n",
         meaning: "sự công bằng",
@@ -3381,6 +3688,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_justice_meaning.mp3"),
     },
     {
+        id: "4000B3_1508",
         voc: "liberty",
         pos: "n",
         meaning: "tự do, quyền tự do",
@@ -3392,6 +3700,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_liberty_meaning.mp3"),
     },
     {
+        id: "4000B3_1509",
         voc: "literary",
         pos: "adj",
         meaning: "(thuộc) văn chương, (thuộc) văn học",
@@ -3403,6 +3712,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_literary_meaning.mp3"),
     },
     {
+        id: "4000B3_1510",
         voc: "pharmacy",
         pos: "n",
         meaning: "hiệu thuốc",
@@ -3414,6 +3724,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pharmacy_meaning.mp3"),
     },
     {
+        id: "4000B3_1511",
         voc: "pill",
         pos: "n",
         meaning: "viên thuốc",
@@ -3425,6 +3736,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pill_meaning.mp3"),
     },
     {
+        id: "4000B3_1512",
         voc: "presume",
         pos: "n",
         meaning: "cho là, coi như là",
@@ -3436,6 +3748,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_presume_meaning.mp3"),
     },
     {
+        id: "4000B3_1513",
         voc: "privacy",
         pos: "n",
         meaning: "sự riêng tư",
@@ -3447,6 +3760,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_privacy_meaning.mp3"),
     },
     {
+        id: "4000B3_1514",
         voc: "punishment",
         pos: "n",
         meaning: "sự phạt, sự trừng phạt",
@@ -3458,6 +3772,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_punishment_meaning.mp3"),
     },
     {
+        id: "4000B3_1515",
         voc: "sensible",
         pos: "adj",
         meaning: "khôn ngoan, hợp lý, đúng đắn",
@@ -3469,6 +3784,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sensible_meaning.mp3"),
     },
     {
+        id: "4000B3_1516",
         voc: "slice",
         pos: "n",
         meaning: "miếng mỏng, lát mỏng",
@@ -3480,6 +3796,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_slice_meaning.mp3"),
     },
     {
+        id: "4000B3_1517",
         voc: "sorrow",
         pos: "n",
         meaning: "nỗi đau đớn; sự buồn rầu",
@@ -3491,6 +3808,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sorrow_meaning.mp3"),
     },
     {
+        id: "4000B3_1518",
         voc: "straw",
         pos: "n",
         meaning: "ống hút (nhỏ và mỏng, để hút nước ngọt), cọng rơm",
@@ -3502,6 +3820,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_straw_meaning.mp3"),
     },
     {
+        id: "4000B3_1519",
         voc: "swell",
         pos: "n",
         meaning: "phồng lên, to lên, căng ra",
@@ -3513,6 +3832,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_swell_meaning.mp3"),
     },
     {
+        id: "4000B3_1520",
         voc: "tidy",
         pos: "n",
         meaning: "sạch sẽ, ngăn nắp, gọn gàng",
@@ -3524,6 +3844,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tidy_meaning.mp3"),
     },
     {
+        id: "4000B3_1521",
         voc: "affection",
         pos: "n",
         meaning: "tình cảm, cảm xúc",
@@ -3535,6 +3856,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_affection_meaning.mp3"),
     },
     {
+        id: "4000B3_1522",
         voc: "agency",
         pos: "n",
         meaning: "đại lý, sự môi giới, hãng thông tấn",
@@ -3546,6 +3868,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_agency_meaning.mp3"),
     },
     {
+        id: "4000B3_1523",
         voc: "ash",
         pos: "n",
         meaning: "tro; tàn (thuốc lá)",
@@ -3557,6 +3880,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ash_meaning.mp3"),
     },
     {
+        id: "4000B3_1524",
         voc: "confine",
         pos: "n",
         meaning: "giam hãm, giam cầm, nhốt giữ lại",
@@ -3568,6 +3892,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_confine_meaning.mp3"),
     },
     {
+        id: "4000B3_1525",
         voc: "dismiss",
         pos: "n",
         meaning:
@@ -3580,6 +3905,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dismiss_meaning.mp3"),
     },
     {
+        id: "4000B3_1526",
         voc: "erupt",
         pos: "n",
         meaning: "phun (núi lửa), nổ ra (chiến tranh)",
@@ -3591,6 +3917,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_erupt_meaning.mp3"),
     },
     {
+        id: "4000B3_1527",
         voc: "fate",
         pos: "n",
         meaning: "số mệnh, số phận",
@@ -3602,6 +3929,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fate_meaning.mp3"),
     },
     {
+        id: "4000B3_1528",
         voc: "lava",
         pos: "n",
         meaning: "dung nham (núi lửa)",
@@ -3613,6 +3941,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_lava_meaning.mp3"),
     },
     {
+        id: "4000B3_1529",
         voc: "miserable",
         pos: "adj",
         meaning: "khổ sở,&nbsp;đáng thương",
@@ -3624,6 +3953,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_miserable_meaning.mp3"),
     },
     {
+        id: "4000B3_1530",
         voc: "navigate",
         pos: "n",
         meaning: "lái (tàu, thuyền, máy bay...)",
@@ -3635,6 +3965,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_navigate_meaning.mp3"),
     },
     {
+        id: "4000B3_1531",
         voc: "originate",
         pos: "n",
         meaning: "bắt đầu, khởi đầu, khởi nguồn",
@@ -3646,6 +3977,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_originate_meaning.mp3"),
     },
     {
+        id: "4000B3_1532",
         voc: "remainder",
         pos: "n",
         meaning: "phần còn lại, chỗ còn lại",
@@ -3657,6 +3989,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_remainder_meaning.mp3"),
     },
     {
+        id: "4000B3_1533",
         voc: "retrieve",
         pos: "n",
         meaning: "lấy lại, tìm lại (vật đã mất)",
@@ -3668,6 +4001,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_retrieve_meaning.mp3"),
     },
     {
+        id: "4000B3_1534",
         voc: "shallow",
         pos: "n",
         meaning: "nông, cạn",
@@ -3679,6 +4013,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_shallow_meaning.mp3"),
     },
     {
+        id: "4000B3_1535",
         voc: "slope",
         pos: "n",
         meaning: "dốc, đường dốc, chỗ dốc; độ dốc",
@@ -3690,6 +4025,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_slope_meaning.mp3"),
     },
     {
+        id: "4000B3_1536",
         voc: "span",
         pos: "n",
         meaning: "kéo dài, nối (từ giai đoạn này sang giai đoạn khác)",
@@ -3701,6 +4037,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_span_meaning.mp3"),
     },
     {
+        id: "4000B3_1537",
         voc: "superstition",
         pos: "n",
         meaning: "sự mê tín",
@@ -3712,6 +4049,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_superstition_meaning.mp3"),
     },
     {
+        id: "4000B3_1538",
         voc: "sympathy",
         pos: "n",
         meaning: "sự thương cảm, sự thông cảm",
@@ -3723,6 +4061,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sympathy_meaning.mp3"),
     },
     {
+        id: "4000B3_1539",
         voc: "vibrate",
         pos: "n",
         meaning: "rung, rung lắc",
@@ -3734,6 +4073,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_vibrate_meaning.mp3"),
     },
     {
+        id: "4000B3_1540",
         voc: "wander",
         pos: "n",
         meaning: "đi thơ thẩn, đi lang thang",
@@ -3745,6 +4085,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wander_meaning.mp3"),
     },
     {
+        id: "4000B3_1541",
         voc: "armor",
         pos: "n",
         meaning: "áo giáp",
@@ -3756,6 +4097,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_armor_meaning.mp3"),
     },
     {
+        id: "4000B3_1542",
         voc: "blaze",
         pos: "n",
         meaning: "bùng cháy, bốc cháy",
@@ -3767,6 +4109,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_blaze_meaning.mp3"),
     },
     {
+        id: "4000B3_1543",
         voc: "boom",
         pos: "n",
         meaning: "bùng nổ",
@@ -3778,6 +4121,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_boom_meaning.mp3"),
     },
     {
+        id: "4000B3_1544",
         voc: "cliff",
         pos: "n",
         meaning: "vách đá (phiến đá nhô ra ở trên cao)",
@@ -3789,6 +4133,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cliff_meaning.mp3"),
     },
     {
+        id: "4000B3_1545",
         voc: "flame",
         pos: "n",
         meaning: "ngọn lửa",
@@ -3800,6 +4145,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_flame_meaning.mp3"),
     },
     {
+        id: "4000B3_1546",
         voc: "independence",
         pos: "n",
         meaning: "sự độc lập; nền độc lập",
@@ -3811,6 +4157,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_independence_meaning.mp3"),
     },
     {
+        id: "4000B3_1547",
         voc: "invasion",
         pos: "n",
         meaning: "sự xâm lược",
@@ -3822,6 +4169,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_invasion_meaning.mp3"),
     },
     {
+        id: "4000B3_1548",
         voc: "knight",
         pos: "n",
         meaning: "hiệp sĩ",
@@ -3833,6 +4181,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_knight_meaning.mp3"),
     },
     {
+        id: "4000B3_1549",
         voc: "lightning",
         pos: "n",
         meaning: "chớp, tia chớp",
@@ -3844,6 +4193,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_lightning_meaning.mp3"),
     },
     {
+        id: "4000B3_1550",
         voc: "rebel",
         pos: "n",
         meaning: "người nổi loạn, người phiến loạn",
@@ -3855,6 +4205,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rebel_meaning.mp3"),
     },
     {
+        id: "4000B3_1551",
         voc: "retreat",
         pos: "n",
         meaning: "(quân sự) rút lui",
@@ -3866,6 +4217,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_retreat_meaning.mp3"),
     },
     {
+        id: "4000B3_1552",
         voc: "revolution",
         pos: "n",
         meaning: "cuộc cách mạng",
@@ -3877,6 +4229,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_revolution_meaning.mp3"),
     },
     {
+        id: "4000B3_1553",
         voc: "spear",
         pos: "n",
         meaning: "cái giáo, cái mác, cái thương",
@@ -3888,6 +4241,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_spear_meaning.mp3"),
     },
     {
+        id: "4000B3_1554",
         voc: "steep",
         pos: "n",
         meaning: "dốc",
@@ -3899,6 +4253,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_steep_meaning.mp3"),
     },
     {
+        id: "4000B3_1555",
         voc: "summit",
         pos: "n",
         meaning: "đỉnh, chỏm, chóp",
@@ -3910,6 +4265,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_summit_meaning.mp3"),
     },
     {
+        id: "4000B3_1556",
         voc: "thunder",
         pos: "n",
         meaning: "sấm, sét",
@@ -3921,6 +4277,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_thunder_meaning.mp3"),
     },
     {
+        id: "4000B3_1557",
         voc: "troops",
         pos: "n",
         meaning: "quân, bộ đội; lính",
@@ -3932,6 +4289,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_troops_meaning.mp3"),
     },
     {
+        id: "4000B3_1558",
         voc: "warrior",
         pos: "n",
         meaning: "chiến binh",
@@ -3943,6 +4301,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_warrior_meaning.mp3"),
     },
     {
+        id: "4000B3_1559",
         voc: "withdraw",
         pos: "n",
         meaning: "(quân sự) rút quân, rút lui",
@@ -3954,6 +4313,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_withdraw_meaning.mp3"),
     },
     {
+        id: "4000B3_1560",
         voc: "yield",
         pos: "n",
         meaning: "chịu thua, chịu nhường",
@@ -3965,6 +4325,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_yield_meaning.mp3"),
     },
     {
+        id: "4000B3_1561",
         voc: "bench",
         pos: "n",
         meaning: "ghế dài",
@@ -3976,6 +4337,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bench_meaning.mp3"),
     },
     {
+        id: "4000B3_1562",
         voc: "confront",
         pos: "n",
         meaning: "đối chất, đương đầu",
@@ -3987,6 +4349,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_confront_meaning.mp3"),
     },
     {
+        id: "4000B3_1563",
         voc: "daisy",
         pos: "n",
         meaning: "(thực vật học) cây cúc, hoa cúc",
@@ -3998,6 +4361,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_daisy_meaning.mp3"),
     },
     {
+        id: "4000B3_1564",
         voc: "dispute",
         pos: "n",
         meaning: "sự bất hoà, sự bất đồng ý kiến;&nbsp;bàn cãi, tranh luận",
@@ -4009,6 +4373,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dispute_meaning.mp3"),
     },
     {
+        id: "4000B3_1565",
         voc: "horror",
         pos: "n",
         meaning: "kinh dị, sự khiếp, sự ghê rợn",
@@ -4020,6 +4385,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_horror_meaning.mp3"),
     },
     {
+        id: "4000B3_1566",
         voc: "incident",
         pos: "adj",
         meaning: "việc xảy ra bất ngờ",
@@ -4031,6 +4397,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_incident_meaning.mp3"),
     },
     {
+        id: "4000B3_1567",
         voc: "mist",
         pos: "n",
         meaning: "sương mù, giọt sương",
@@ -4042,6 +4409,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_mist_meaning.mp3"),
     },
     {
+        id: "4000B3_1568",
         voc: "object",
         pos: "n",
         meaning: "đồ vật, vật thể",
@@ -4053,6 +4421,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_object_meaning.mp3"),
     },
     {
+        id: "4000B3_1569",
         voc: "orphan",
         pos: "n",
         meaning: "đứa trẻ mồ côi",
@@ -4064,6 +4433,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_orphan_meaning.mp3"),
     },
     {
+        id: "4000B3_1570",
         voc: "plot",
         pos: "n",
         meaning: "âm mưu, mưu tính, bày mưu",
@@ -4075,6 +4445,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_plot_meaning.mp3"),
     },
     {
+        id: "4000B3_1571",
         voc: "pregnant",
         pos: "adj",
         meaning: "có thai, có mang thai, có chửa",
@@ -4086,6 +4457,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pregnant_meaning.mp3"),
     },
     {
+        id: "4000B3_1572",
         voc: "rage",
         pos: "n",
         meaning: "cơn thịnh nộ, cơn giận dữ",
@@ -4097,6 +4469,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rage_meaning.mp3"),
     },
     {
+        id: "4000B3_1573",
         voc: "revenge",
         pos: "n",
         meaning: "sự trả thù; hành động trả thù",
@@ -4108,6 +4481,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_revenge_meaning.mp3"),
     },
     {
+        id: "4000B3_1574",
         voc: "shame",
         pos: "n",
         meaning: "sự ngượng; sự hổ thẹn",
@@ -4119,6 +4493,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_shame_meaning.mp3"),
     },
     {
+        id: "4000B3_1575",
         voc: "sigh",
         pos: "n",
         meaning: "thở dài",
@@ -4130,6 +4505,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sigh_meaning.mp3"),
     },
     {
+        id: "4000B3_1576",
         voc: "sneak",
         pos: "n",
         meaning: "trốn, lẻn (ra khỏi)",
@@ -4141,6 +4517,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sneak_meaning.mp3"),
     },
     {
+        id: "4000B3_1577",
         voc: "spare",
         pos: "n",
         meaning: "có thừa, dữ trữ, dự phòng",
@@ -4152,6 +4529,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_spare_meaning.mp3"),
     },
     {
+        id: "4000B3_1578",
         voc: "stem",
         pos: "n",
         meaning: "(thực vật học) thân (cây)",
@@ -4163,6 +4541,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stem_meaning.mp3"),
     },
     {
+        id: "4000B3_1579",
         voc: "supper",
         pos: "n",
         meaning: "bữa cơm tối",
@@ -4174,6 +4553,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_supper_meaning.mp3"),
     },
     {
+        id: "4000B3_1580",
         voc: "tender",
         pos: "n",
         meaning: "mềm, non",
@@ -4185,6 +4565,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tender_meaning.mp3"),
     },
     {
+        id: "4000B3_1581",
         voc: "beneath",
         pos: "n",
         meaning: "ở dưới",
@@ -4196,6 +4577,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_beneath_meaning.mp3"),
     },
     {
+        id: "4000B3_1582",
         voc: "cub",
         pos: "n",
         meaning: "con thú con (hổ, sư tử, sói, gấu, cáo...)",
@@ -4207,6 +4589,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cub_meaning.mp3"),
     },
     {
+        id: "4000B3_1583",
         voc: "dawn",
         pos: "n",
         meaning: "bình minh, rạng đông, lúc sáng tinh mơ",
@@ -4218,6 +4601,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dawn_meaning.mp3"),
     },
     {
+        id: "4000B3_1584",
         voc: "dissatisfied",
         pos: "n",
         meaning: "không hài lòng, bất mãn",
@@ -4229,6 +4613,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dissatisfied_meaning.mp3"),
     },
     {
+        id: "4000B3_1585",
         voc: "ease",
         pos: "n",
         meaning: "sự dễ dàng",
@@ -4240,6 +4625,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ease_meaning.mp3"),
     },
     {
+        id: "4000B3_1586",
         voc: "evident",
         pos: "adj",
         meaning: "rõ rệt,&nbsp;hiển nhiên",
@@ -4251,6 +4637,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_evident_meaning.mp3"),
     },
     {
+        id: "4000B3_1587",
         voc: "hail",
         pos: "n",
         meaning: "mưa đá",
@@ -4262,6 +4649,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hail_meaning.mp3"),
     },
     {
+        id: "4000B3_1588",
         voc: "howl",
         pos: "n",
         meaning: "tru lên, hú lên; gào lên; la hét",
@@ -4273,6 +4661,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_howl_meaning.mp3"),
     },
     {
+        id: "4000B3_1589",
         voc: "leap",
         pos: "n",
         meaning: "nhảy qua, vượt qua",
@@ -4284,6 +4673,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_leap_meaning.mp3"),
     },
     {
+        id: "4000B3_1590",
         voc: "magnificent",
         pos: "adj",
         meaning: "tráng lệ, nguy nga, lộng lẫy",
@@ -4295,6 +4685,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_magnificent_meaning.mp3"),
     },
     {
+        id: "4000B3_1591",
         voc: "necessity",
         pos: "n",
         meaning: "sự cần thiết",
@@ -4306,6 +4697,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_necessity_meaning.mp3"),
     },
     {
+        id: "4000B3_1592",
         voc: "outcome",
         pos: "n",
         meaning: "kết quả, hậu quả",
@@ -4317,6 +4709,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_outcome_meaning.mp3"),
     },
     {
+        id: "4000B3_1593",
         voc: "pile",
         pos: "n",
         meaning: "chồng, đống",
@@ -4328,6 +4721,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pile_meaning.mp3"),
     },
     {
+        id: "4000B3_1594",
         voc: "profound",
         pos: "n",
         meaning: "sâu sắc, uyên thâm, thâm thuý",
@@ -4339,6 +4733,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_profound_meaning.mp3"),
     },
     {
+        id: "4000B3_1595",
         voc: "seize",
         pos: "v",
         meaning: "chiếm đoạt, cướp lấy, nắm lấy",
@@ -4350,6 +4745,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_seize_meaning.mp3"),
     },
     {
+        id: "4000B3_1596",
         voc: "squeeze",
         pos: "n",
         meaning: "siết chặt",
@@ -4361,6 +4757,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_squeeze_meaning.mp3"),
     },
     {
+        id: "4000B3_1597",
         voc: "supreme",
         pos: "n",
         meaning: "tối cao,&nbsp;lớn nhất, quan trọng nhất",
@@ -4372,6 +4769,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_supreme_meaning.mp3"),
     },
     {
+        id: "4000B3_1598",
         voc: "terrific",
         pos: "adj",
         meaning: "rất giỏi",
@@ -4383,6 +4781,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_terrific_meaning.mp3"),
     },
     {
+        id: "4000B3_1599",
         voc: "trait",
         pos: "n",
         meaning: "nét, điểm",
@@ -4394,6 +4793,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_trait_meaning.mp3"),
     },
     {
+        id: "4000B3_1600",
         voc: "vital",
         pos: "adj",
         meaning: "sống còn, quan trọng",
@@ -4405,6 +4805,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_vital_meaning.mp3"),
     },
     {
+        id: "4000B3_1601",
         voc: "accustomed",
         pos: "n",
         meaning: "quen với; thành thói quen",
@@ -4416,6 +4817,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_accustomed_meaning.mp3"),
     },
     {
+        id: "4000B3_1602",
         voc: "affirm",
         pos: "n",
         meaning: "khẳng định, quả quyết",
@@ -4427,6 +4829,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_affirm_meaning.mp3"),
     },
     {
+        id: "4000B3_1603",
         voc: "astonished",
         pos: "n",
         meaning: "ngạc nhiên, kinh ngạc",
@@ -4438,6 +4841,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_astonished_meaning.mp3"),
     },
     {
+        id: "4000B3_1604",
         voc: "bang",
         pos: "n",
         meaning: "đánh mạnh, đập mạnh",
@@ -4449,6 +4853,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bang_meaning.mp3"),
     },
     {
+        id: "4000B3_1605",
         voc: "clan",
         pos: "n",
         meaning: "nhóm bạn, nhóm họ hàng",
@@ -4460,6 +4865,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_clan_meaning.mp3"),
     },
     {
+        id: "4000B3_1606",
         voc: "dim",
         pos: "n",
         meaning: "mờ, lờ mờ, tối mờ mờ",
@@ -4471,6 +4877,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dim_meaning.mp3"),
     },
     {
+        id: "4000B3_1607",
         voc: "emphasis",
         pos: "n",
         meaning: "sự nhấn mạnh,&nbsp;tầm quan trọng",
@@ -4482,6 +4889,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_emphasis_meaning.mp3"),
     },
     {
+        id: "4000B3_1608",
         voc: "fable",
         pos: "adj",
         meaning: "truyện ngụ ngôn",
@@ -4493,6 +4901,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fable_meaning.mp3"),
     },
     {
+        id: "4000B3_1609",
         voc: "feast",
         pos: "n",
         meaning: "bữa tiệc, yến tiệc",
@@ -4504,6 +4913,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_feast_meaning.mp3"),
     },
     {
+        id: "4000B3_1610",
         voc: "glow",
         pos: "n",
         meaning: "rực sáng, bừng sáng",
@@ -4515,6 +4925,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_glow_meaning.mp3"),
     },
     {
+        id: "4000B3_1611",
         voc: "hollow",
         pos: "n",
         meaning: "rỗng, trống rỗng",
@@ -4526,6 +4937,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hollow_meaning.mp3"),
     },
     {
+        id: "4000B3_1612",
         voc: "instinct",
         pos: "n",
         meaning: "bản năng",
@@ -4537,6 +4949,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_instinct_meaning.mp3"),
     },
     {
+        id: "4000B3_1613",
         voc: "joint",
         pos: "n",
         meaning: "(giải phẫu) khớp (xương)",
@@ -4548,6 +4961,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_joint_meaning.mp3"),
     },
     {
+        id: "4000B3_1614",
         voc: "leak",
         pos: "n",
         meaning: "rò, rò rỉ, lộ ra",
@@ -4559,6 +4973,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_leak_meaning.mp3"),
     },
     {
+        id: "4000B3_1615",
         voc: "physician",
         pos: "n",
         meaning: "thầy thuốc",
@@ -4570,6 +4985,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_physician_meaning.mp3"),
     },
     {
+        id: "4000B3_1616",
         voc: "sacrifice",
         pos: "n",
         meaning: "hy sinh, cúng, cúng tế",
@@ -4581,6 +4997,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sacrifice_meaning.mp3"),
     },
     {
+        id: "4000B3_1617",
         voc: "stiff",
         pos: "n",
         meaning: "cứng, cứng đơ,&nbsp;cứng rắn",
@@ -4592,6 +5009,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stiff_meaning.mp3"),
     },
     {
+        id: "4000B3_1618",
         voc: "stroke",
         pos: "n",
         meaning: "vuốt ve",
@@ -4603,6 +5021,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stroke_meaning.mp3"),
     },
     {
+        id: "4000B3_1619",
         voc: "tragic",
         pos: "adj",
         meaning: "(thuộc) bi kịch",
@@ -4614,6 +5033,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tragic_meaning.mp3"),
     },
     {
+        id: "4000B3_1620",
         voc: "tune",
         pos: "n",
         meaning: "điệu (hát...), giai điệu",
@@ -4625,6 +5045,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tune_meaning.mp3"),
     },
     {
+        id: "4000B3_1621",
         voc: "accommodate",
         pos: "n",
         meaning: "chứa được,&nbsp;đáp ứng",
@@ -4636,6 +5057,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_accommodate_meaning.mp3"),
     },
     {
+        id: "4000B3_1622",
         voc: "circus",
         pos: "n",
         meaning: "rạp xiếc, gánh xiếc",
@@ -4647,6 +5069,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_circus_meaning.mp3"),
     },
     {
+        id: "4000B3_1623",
         voc: "coincide",
         pos: "n",
         meaning: "xảy ra đồng thời; trùng với",
@@ -4658,6 +5081,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_coincide_meaning.mp3"),
     },
     {
+        id: "4000B3_1624",
         voc: "commission",
         pos: "n",
         meaning:
@@ -4670,6 +5094,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_commission_meaning.mp3"),
     },
     {
+        id: "4000B3_1625",
         voc: "dose",
         pos: "n",
         meaning: "liều lượng, liều thuốc",
@@ -4681,6 +5106,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dose_meaning.mp3"),
     },
     {
+        id: "4000B3_1626",
         voc: "dye",
         pos: "n",
         meaning:
@@ -4693,6 +5119,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dye_meaning.mp3"),
     },
     {
+        id: "4000B3_1627",
         voc: "extent",
         pos: "adj",
         meaning: "khoảng rộng,&nbsp;quy mô, phạm vi",
@@ -4704,6 +5131,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_extent_meaning.mp3"),
     },
     {
+        id: "4000B3_1628",
         voc: "gender",
         pos: "n",
         meaning: "giới tính",
@@ -4715,6 +5143,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_gender_meaning.mp3"),
     },
     {
+        id: "4000B3_1629",
         voc: "headline",
         pos: "n",
         meaning: "tiêu đề, đầu đề",
@@ -4726,6 +5155,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_headline_meaning.mp3"),
     },
     {
+        id: "4000B3_1630",
         voc: "informal",
         pos: "adj",
         meaning: "không chính thức",
@@ -4737,6 +5167,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_informal_meaning.mp3"),
     },
     {
+        id: "4000B3_1631",
         voc: "inquire",
         pos: "n",
         meaning: "hỏi thăm, hỏi han,&nbsp;hỏi mua, hỏi xin",
@@ -4748,6 +5179,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_inquire_meaning.mp3"),
     },
     {
+        id: "4000B3_1632",
         voc: "messenger",
         pos: "n",
         meaning: "người đưa tin, sứ giả",
@@ -4759,6 +5191,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_messenger_meaning.mp3"),
     },
     {
+        id: "4000B3_1633",
         voc: "peer",
         pos: "n",
         meaning: "nhìn chăm chú, nhìn kỹ, nhòm, ngó",
@@ -4770,6 +5203,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_peer_meaning.mp3"),
     },
     {
+        id: "4000B3_1634",
         voc: "portrait",
         pos: "n",
         meaning: "chân dung, ảnh",
@@ -4781,6 +5215,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_portrait_meaning.mp3"),
     },
     {
+        id: "4000B3_1635",
         voc: "pose",
         pos: "n",
         meaning: "đứng (ở tư thế), ngồi ở tư thế (chụp ảnh, làm mẫu vẽ...)",
@@ -4792,6 +5227,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pose_meaning.mp3"),
     },
     {
+        id: "4000B3_1636",
         voc: "ranch",
         pos: "n",
         meaning: "trại nuôi súc vật (ở Mỹ, Ca-na-đa)",
@@ -4803,6 +5239,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ranch_meaning.mp3"),
     },
     {
+        id: "4000B3_1637",
         voc: "steer",
         pos: "n",
         meaning: "lái (tàu thuỷ, ô tô), bẻ lái",
@@ -4814,6 +5251,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_steer_meaning.mp3"),
     },
     {
+        id: "4000B3_1638",
         voc: "stripe",
         pos: "n",
         meaning: "sọc, vằn (lớn)",
@@ -4825,6 +5263,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stripe_meaning.mp3"),
     },
     {
+        id: "4000B3_1639",
         voc: "tame",
         pos: "n",
         meaning: "đã thuần hoá",
@@ -4836,6 +5275,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tame_meaning.mp3"),
     },
     {
+        id: "4000B3_1640",
         voc: "tempt",
         pos: "n",
         meaning: "cám dỗ, quyến rũ, nhử, làm thèm",
@@ -4847,6 +5287,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tempt_meaning.mp3"),
     },
     {
+        id: "4000B3_1641",
         voc: "aborigine",
         pos: "n",
         meaning: "thổ dân (Úc)",
@@ -4858,6 +5299,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_Aborigine_meaning.mp3"),
     },
     {
+        id: "4000B3_1642",
         voc: "ban",
         pos: "n",
         meaning: "cấm, cấm chỉ",
@@ -4869,6 +5311,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ban_meaning.mp3"),
     },
     {
+        id: "4000B3_1643",
         voc: "cautious",
         pos: "adj",
         meaning: "thận trọng, cẩn thận",
@@ -4880,6 +5323,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cautious_meaning.mp3"),
     },
     {
+        id: "4000B3_1644",
         voc: "confess",
         pos: "n",
         meaning: "thú nhận",
@@ -4891,6 +5335,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_confess_meaning.mp3"),
     },
     {
+        id: "4000B3_1645",
         voc: "cottage",
         pos: "n",
         meaning: "nhà tranh,&nbsp;nhà riêng ở nông thôn",
@@ -4902,6 +5347,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cottage_meaning.mp3"),
     },
     {
+        id: "4000B3_1646",
         voc: "daytime",
         pos: "n",
         meaning: "ban ngày",
@@ -4913,6 +5359,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_daytime_meaning.mp3"),
     },
     {
+        id: "4000B3_1647",
         voc: "desperate",
         pos: "n",
         meaning: "liều mạng, liều lĩnh",
@@ -4924,6 +5371,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_desperate_meaning.mp3"),
     },
     {
+        id: "4000B3_1648",
         voc: "fade",
         pos: "n",
         meaning: "phai màu, bạc màu",
@@ -4935,6 +5383,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fade_meaning.mp3"),
     },
     {
+        id: "4000B3_1649",
         voc: "fierce",
         pos: "n",
         meaning: "hung dữ, dữ tợn, hung tợn",
@@ -4946,6 +5395,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fierce_meaning.mp3"),
     },
     {
+        id: "4000B3_1650",
         voc: "gamble",
         pos: "n",
         meaning: "đánh bạc,&nbsp;đầu cơ (ở thị trường chứng khoán)",
@@ -4957,6 +5407,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_gamble_meaning.mp3"),
     },
     {
+        id: "4000B3_1651",
         voc: "lawn",
         pos: "n",
         meaning: "bãi cỏ",
@@ -4968,6 +5419,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_lawn_meaning.mp3"),
     },
     {
+        id: "4000B3_1652",
         voc: "mow",
         pos: "n",
         meaning: "cắt, gặt&nbsp;",
@@ -4979,6 +5431,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_mow_meaning.mp3"),
     },
     {
+        id: "4000B3_1653",
         voc: "outlaw",
         pos: "n",
         meaning: "đối tượng truy nã,&nbsp;người sống ngoài vòng pháp luật",
@@ -4990,6 +5443,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_outlaw_meaning.mp3"),
     },
     {
+        id: "4000B3_1654",
         voc: "prospect",
         pos: "n",
         meaning: "viễn cảnh,&nbsp;hy vọng ở tương lai",
@@ -5001,6 +5455,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_prospect_meaning.mp3"),
     },
     {
+        id: "4000B3_1655",
         voc: "purse",
         pos: "n",
         meaning: "ví tay, túi cầm tay (phụ nữ)",
@@ -5012,6 +5467,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_purse_meaning.mp3"),
     },
     {
+        id: "4000B3_1656",
         voc: "rod",
         pos: "n",
         meaning: "cái cần (câu), cái que, cái gậy",
@@ -5023,6 +5479,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rod_meaning.mp3"),
     },
     {
+        id: "4000B3_1657",
         voc: "seldom",
         pos: "n",
         meaning: "ít khi, hiếm khi",
@@ -5034,6 +5491,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_seldom_meaning.mp3"),
     },
     {
+        id: "4000B3_1658",
         voc: "shave",
         pos: "n",
         meaning: "cạo râu, cạo mặt",
@@ -5045,6 +5503,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_shave_meaning.mp3"),
     },
     {
+        id: "4000B3_1659",
         voc: "terrified",
         pos: "n",
         meaning: "khiếp sợ, kinh hãi",
@@ -5056,6 +5515,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_terrified_meaning.mp3"),
     },
     {
+        id: "4000B3_1660",
         voc: "wizard",
         pos: "n",
         meaning: "thầy phù thuỷ",
@@ -5067,6 +5527,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wizard_meaning.mp3"),
     },
     {
+        id: "4000B3_1661",
         voc: "baggage",
         pos: "n",
         meaning: "hành lý",
@@ -5078,6 +5539,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_baggage_meaning.mp3"),
     },
     {
+        id: "4000B3_1662",
         voc: "bulb",
         pos: "n",
         meaning: "bóng đèn",
@@ -5089,6 +5551,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bulb_meaning.mp3"),
     },
     {
+        id: "4000B3_1663",
         voc: "bundle",
         pos: "n",
         meaning: "bó,&nbsp;bọc, gói",
@@ -5100,6 +5563,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bundle_meaning.mp3"),
     },
     {
+        id: "4000B3_1664",
         voc: "cattle",
         pos: "n",
         meaning: "thú nuôi, gia súc",
@@ -5111,6 +5575,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cattle_meaning.mp3"),
     },
     {
+        id: "4000B3_1665",
         voc: "flee",
         pos: "n",
         meaning: "bỏ chạy,&nbsp;vội vã rời bỏ",
@@ -5122,6 +5587,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_flee_meaning.mp3"),
     },
     {
+        id: "4000B3_1666",
         voc: "graze",
         pos: "n",
         meaning: "ăn cỏ, gặm cỏ",
@@ -5133,6 +5599,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_graze_meaning.mp3"),
     },
     {
+        id: "4000B3_1667",
         voc: "greed",
         pos: "n",
         meaning: "tính tham lam,&nbsp;tính tham ăn",
@@ -5144,6 +5611,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_greed_meaning.mp3"),
     },
     {
+        id: "4000B3_1668",
         voc: "herd",
         pos: "n",
         meaning: "bầy, đàn (vật nuôi)",
@@ -5155,6 +5623,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_herd_meaning.mp3"),
     },
     {
+        id: "4000B3_1669",
         voc: "initiate",
         pos: "n",
         meaning: "khởi độn, khởi đầu, đề xướng",
@@ -5166,6 +5635,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_initiate_meaning.mp3"),
     },
     {
+        id: "4000B3_1670",
         voc: "lane",
         pos: "n",
         meaning: "đường hẻm, ngõ hẻm (ở thành phố)",
@@ -5177,6 +5647,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_lane_meaning.mp3"),
     },
     {
+        id: "4000B3_1671",
         voc: "nerve",
         pos: "n",
         meaning: "can đảm, nghị lực",
@@ -5188,6 +5659,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_nerve_meaning.mp3"),
     },
     {
+        id: "4000B3_1672",
         voc: "optimist",
         pos: "n",
         meaning: "người lạc quan",
@@ -5199,6 +5671,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_optimist_meaning.mp3"),
     },
     {
+        id: "4000B3_1673",
         voc: "parade",
         pos: "n",
         meaning: "cuộc diễu hành, cuộc duyệt binh",
@@ -5210,6 +5683,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_parade_meaning.mp3"),
     },
     {
+        id: "4000B3_1674",
         voc: "pave",
         pos: "n",
         meaning: "lát (đường, sàn...), trải (bê tông, át phan)",
@@ -5221,6 +5695,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pave_meaning.mp3"),
     },
     {
+        id: "4000B3_1675",
         voc: "phantom",
         pos: "n",
         meaning: "ma, bóng ma, ảo ảnh",
@@ -5232,6 +5707,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_phantom_meaning.mp3"),
     },
     {
+        id: "4000B3_1676",
         voc: "portable",
         pos: "adj",
         meaning: "có thể mang theo, xách tay, di động",
@@ -5243,6 +5719,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_portable_meaning.mp3"),
     },
     {
+        id: "4000B3_1677",
         voc: "poster",
         pos: "n",
         meaning: "áp phích quảng cáo",
@@ -5254,6 +5731,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_poster_meaning.mp3"),
     },
     {
+        id: "4000B3_1678",
         voc: "scratch",
         pos: "n",
         meaning: "cào, gãi",
@@ -5265,6 +5743,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_scratch_meaning.mp3"),
     },
     {
+        id: "4000B3_1679",
         voc: "symphony",
         pos: "n",
         meaning: "bản nhạc giao hưởng",
@@ -5276,6 +5755,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_symphony_meaning.mp3"),
     },
     {
+        id: "4000B3_1680",
         voc: "widow",
         pos: "n",
         meaning: "người đàn bà goá, góa phụ",
@@ -5287,6 +5767,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_widow_meaning.mp3"),
     },
     {
+        id: "4000B3_1681",
         voc: "alter",
         pos: "n",
         meaning: "thay đổi; sửa đổi",
@@ -5298,6 +5779,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_alter_meaning.mp3"),
     },
     {
+        id: "4000B3_1682",
         voc: "aside",
         pos: "n",
         meaning: "sang một bên,&nbsp;về một bên",
@@ -5309,6 +5791,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_aside_meaning.mp3"),
     },
     {
+        id: "4000B3_1683",
         voc: "autumn",
         pos: "n",
         meaning: "mùa thu",
@@ -5320,6 +5803,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_autumn_meaning.mp3"),
     },
     {
+        id: "4000B3_1684",
         voc: "blend",
         pos: "n",
         meaning: "trộn lẫn, pha trộn",
@@ -5331,6 +5815,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_blend_meaning.mp3"),
     },
     {
+        id: "4000B3_1685",
         voc: "collapse",
         pos: "n",
         meaning: "đổ, sập, sụp, đổ sập",
@@ -5342,6 +5827,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_collapse_meaning.mp3"),
     },
     {
+        id: "4000B3_1686",
         voc: "crush",
         pos: "n",
         meaning: "đè nát, đè bẹp,&nbsp;(từ lóng) sự phải lòng, sự mê",
@@ -5353,6 +5839,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_crush_meaning.mp3"),
     },
     {
+        id: "4000B3_1687",
         voc: "curve",
         pos: "n",
         meaning: "cong, uốn cong, bẻ cong, đường cong",
@@ -5364,6 +5851,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_curve_meaning.mp3"),
     },
     {
+        id: "4000B3_1688",
         voc: "disgusting",
         pos: "n",
         meaning: "ghê tởm, kinh tởm",
@@ -5375,6 +5863,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_disgusting_meaning.mp3"),
     },
     {
+        id: "4000B3_1689",
         voc: "drain",
         pos: "n",
         meaning: "ống dẫn (nước...), ống xả",
@@ -5386,6 +5875,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_drain_meaning.mp3"),
     },
     {
+        id: "4000B3_1690",
         voc: "embrace",
         pos: "n",
         meaning: "ôm, ôm chặt, ghì chặt",
@@ -5397,6 +5887,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_embrace_meaning.mp3"),
     },
     {
+        id: "4000B3_1691",
         voc: "envy",
         pos: "n",
         meaning: "thèm muốn, ghen tị",
@@ -5408,6 +5899,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_envy_meaning.mp3"),
     },
     {
+        id: "4000B3_1692",
         voc: "fireworks",
         pos: "n",
         meaning: "pháo hoa, pháo bông",
@@ -5419,6 +5911,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fireworks_meaning.mp3"),
     },
     {
+        id: "4000B3_1693",
         voc: "flour",
         pos: "n",
         meaning: "bột, bột mì",
@@ -5430,6 +5923,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_flour_meaning.mp3"),
     },
     {
+        id: "4000B3_1694",
         voc: "fuse",
         pos: "n",
         meaning: "ngòi, kíp, mồi nổ (bom, mìn...), cầu chì",
@@ -5441,6 +5935,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fuse_meaning.mp3"),
     },
     {
+        id: "4000B3_1695",
         voc: "ginger",
         pos: "n",
         meaning: "củ gừng",
@@ -5452,6 +5947,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ginger_meaning.mp3"),
     },
     {
+        id: "4000B3_1696",
         voc: "jealous",
         pos: "adj",
         meaning: "ghen tị, đố kỵ",
@@ -5463,6 +5959,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_jealous_meaning.mp3"),
     },
     {
+        id: "4000B3_1697",
         voc: "paste",
         pos: "n",
         meaning: "hồ bột (để dán),&nbsp;bột nhồi",
@@ -5474,6 +5971,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_paste_meaning.mp3"),
     },
     {
+        id: "4000B3_1698",
         voc: "receipt",
         pos: "n",
         meaning:
@@ -5486,6 +5984,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_receipt_meaning.mp3"),
     },
     {
+        id: "4000B3_1699",
         voc: "wipe",
         pos: "n",
         meaning: "lau, chùi",
@@ -5497,6 +5996,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wipe_meaning.mp3"),
     },
     {
+        id: "4000B3_1700",
         voc: "wire",
         pos: "n",
         meaning: "dây điện",
@@ -5508,6 +6008,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_wire_meaning.mp3"),
     },
     {
+        id: "4000B3_1701",
         voc: "acknowledge",
         pos: "n",
         meaning: "thừa nhận, công nhận",
@@ -5519,6 +6020,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_acknowledge_meaning.mp3"),
     },
     {
+        id: "4000B3_1702",
         voc: "ambassador",
         pos: "n",
         meaning: "đại sứ",
@@ -5530,6 +6032,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ambassador_meaning.mp3"),
     },
     {
+        id: "4000B3_1703",
         voc: "blonde",
         pos: "n",
         meaning: "(thuộc) tóc vàng hoe",
@@ -5541,6 +6044,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_blonde_meaning.mp3"),
     },
     {
+        id: "4000B3_1704",
         voc: "conquer",
         pos: "n",
         meaning: "xâm chiếm, chinh phục, chế ngự",
@@ -5552,6 +6056,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_conquer_meaning.mp3"),
     },
     {
+        id: "4000B3_1705",
         voc: "drag",
         pos: "n",
         meaning: "kéo, kéo lê, lôi kéo",
@@ -5563,6 +6068,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_drag_meaning.mp3"),
     },
     {
+        id: "4000B3_1706",
         voc: "exaggerate",
         pos: "n",
         meaning: "thổi phồng, phóng đại",
@@ -5574,6 +6080,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_exaggerate_meaning.mp3"),
     },
     {
+        id: "4000B3_1707",
         voc: "heritage",
         pos: "n",
         meaning: "di sản",
@@ -5585,6 +6092,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_heritage_meaning.mp3"),
     },
     {
+        id: "4000B3_1708",
         voc: "insult",
         pos: "n",
         meaning: "lăng mạ, sỉ nhục",
@@ -5596,6 +6104,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_insult_meaning.mp3"),
     },
     {
+        id: "4000B3_1709",
         voc: "meanwhile",
         pos: "n",
         meaning: "trong lúc ấy, trong khi ấy",
@@ -5607,6 +6116,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_meanwhile_meaning.mp3"),
     },
     {
+        id: "4000B3_1710",
         voc: "necklace",
         pos: "n",
         meaning: "dây chuyền",
@@ -5618,6 +6128,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_necklace_meaning.mp3"),
     },
     {
+        id: "4000B3_1711",
         voc: "noble",
         pos: "n",
         meaning: "người quý tộc, người quý phái",
@@ -5629,6 +6140,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_noble_meaning.mp3"),
     },
     {
+        id: "4000B3_1712",
         voc: "precious",
         pos: "adj",
         meaning: "quý, quý giá, quý báu",
@@ -5640,6 +6152,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_precious_meaning.mp3"),
     },
     {
+        id: "4000B3_1713",
         voc: "prejudice",
         pos: "n",
         meaning: "định kiến, thành kiến",
@@ -5651,6 +6164,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_prejudice_meaning.mp3"),
     },
     {
+        id: "4000B3_1714",
         voc: "rumor",
         pos: "n",
         meaning: "tin đồn, tiếng đồn",
@@ -5662,6 +6176,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rumor_meaning.mp3"),
     },
     {
+        id: "4000B3_1715",
         voc: "sin",
         pos: "n",
         meaning: "tội lỗi, tội ác",
@@ -5673,6 +6188,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sin_meaning.mp3"),
     },
     {
+        id: "4000B3_1716",
         voc: "spectacle",
         pos: "n",
         meaning: "cảnh tượng kinh ngạc, quang cảnh hùng vĩ",
@@ -5684,6 +6200,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_spectacle_meaning.mp3"),
     },
     {
+        id: "4000B3_1717",
         voc: "stack",
         pos: "n",
         meaning: "đống, chất đống, xếp chồng, hàng đợi",
@@ -5695,6 +6212,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stack_meaning.mp3"),
     },
     {
+        id: "4000B3_1718",
         voc: "suspicious",
         pos: "adj",
         meaning: "nghi ngờ, đáng ngờ",
@@ -5706,6 +6224,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_suspicious_meaning.mp3"),
     },
     {
+        id: "4000B3_1719",
         voc: "tin",
         pos: "n",
         meaning: "thiếc,&nbsp;sắt tây",
@@ -5717,6 +6236,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tin_meaning.mp3"),
     },
     {
+        id: "4000B3_1720",
         voc: "vase",
         pos: "n",
         meaning: "bình hoa, lọ hoa",
@@ -5728,6 +6248,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_vase_meaning.mp3"),
     },
     {
+        id: "4000B3_1721",
         voc: "circulate",
         pos: "n",
         meaning: "lưu thông, luân chuyển, lan truyền",
@@ -5739,6 +6260,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_circulate_meaning.mp3"),
     },
     {
+        id: "4000B3_1722",
         voc: "consequent",
         pos: "adj",
         meaning: "hậu quả, hệ quả",
@@ -5750,6 +6272,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_consequent_meaning.mp3"),
     },
     {
+        id: "4000B3_1723",
         voc: "derive",
         pos: "adj",
         meaning: "từ (đâu mà ra), bắt nguồn từ",
@@ -5761,6 +6284,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_derive_meaning.mp3"),
     },
     {
+        id: "4000B3_1724",
         voc: "drown",
         pos: "n",
         meaning: "chết đuối",
@@ -5772,6 +6296,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_drown_meaning.mp3"),
     },
     {
+        id: "4000B3_1725",
         voc: "dynasty",
         pos: "n",
         meaning: "triều đại",
@@ -5783,6 +6308,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dynasty_meaning.mp3"),
     },
     {
+        id: "4000B3_1726",
         voc: "fraction",
         pos: "n",
         meaning: "phần nhỏ, miếng nhỏ,&nbsp;(toán học) phân số",
@@ -5794,6 +6320,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_fraction_meaning.mp3"),
     },
     {
+        id: "4000B3_1727",
         voc: "frost",
         pos: "n",
         meaning: "băng giá (trong suốt hoặc trắng đục)",
@@ -5805,6 +6332,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_frost_meaning.mp3"),
     },
     {
+        id: "4000B3_1728",
         voc: "illusion",
         pos: "n",
         meaning: "ảo giác, ảo ảnh, ảo tưởng",
@@ -5816,6 +6344,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_illusion_meaning.mp3"),
     },
     {
+        id: "4000B3_1729",
         voc: "invade",
         pos: "n",
         meaning: "xâm lược, xâm chiếm, xâm lấn",
@@ -5827,6 +6356,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_invade_meaning.mp3"),
     },
     {
+        id: "4000B3_1730",
         voc: "lieutenant",
         pos: "adj",
         meaning: "(quân sự) trung uý",
@@ -5838,6 +6368,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_lieutenant_meaning.mp3"),
     },
     {
+        id: "4000B3_1731",
         voc: "marine",
         pos: "n",
         meaning: "(thuộc) biển,&nbsp;(thuộc) ngành hàng hải",
@@ -5849,6 +6380,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_marine_meaning.mp3"),
     },
     {
+        id: "4000B3_1732",
         voc: "merit",
         pos: "n",
         meaning: "công lao, công trạng",
@@ -5860,6 +6392,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_merit_meaning.mp3"),
     },
     {
+        id: "4000B3_1733",
         voc: "navy",
         pos: "n",
         meaning: "hải quân",
@@ -5871,6 +6404,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_navy_meaning.mp3"),
     },
     {
+        id: "4000B3_1734",
         voc: "polar",
         pos: "n",
         meaning: "(thuộc) địa cực, ở địa cực",
@@ -5882,6 +6416,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_polar_meaning.mp3"),
     },
     {
+        id: "4000B3_1735",
         voc: "ray",
         pos: "n",
         meaning: "tia ((nghĩa đen) &amp; (nghĩa bóng))",
@@ -5893,6 +6428,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ray_meaning.mp3"),
     },
     {
+        id: "4000B3_1736",
         voc: "resign",
         pos: "n",
         meaning: "nghỉ việc, từ chức, xin thôi",
@@ -5904,6 +6440,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_resign_meaning.mp3"),
     },
     {
+        id: "4000B3_1737",
         voc: "suicide",
         pos: "n",
         meaning: "sự tự tử, sự tự vẫn",
@@ -5915,6 +6452,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_suicide_meaning.mp3"),
     },
     {
+        id: "4000B3_1738",
         voc: "tremble",
         pos: "n",
         meaning: "run,&nbsp;run sợ, lo sợ",
@@ -5926,6 +6464,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tremble_meaning.mp3"),
     },
     {
+        id: "4000B3_1739",
         voc: "underlying",
         pos: "n",
         meaning: "nằm dưới, dưới",
@@ -5937,6 +6476,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_underlying_meaning.mp3"),
     },
     {
+        id: "4000B3_1740",
         voc: "via",
         pos: "n",
         meaning: "qua, theo đường",
@@ -5948,6 +6488,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_via_meaning.mp3"),
     },
     {
+        id: "4000B3_1741",
         voc: "ache",
         pos: "n",
         meaning: "đau, nhức",
@@ -5959,6 +6500,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_ache_meaning.mp3"),
     },
     {
+        id: "4000B3_1742",
         voc: "arctic",
         pos: "adj",
         meaning: "(thuộc) bắc cực",
@@ -5970,6 +6512,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_arctic_meaning.mp3"),
     },
     {
+        id: "4000B3_1743",
         voc: "canal",
         pos: "adj",
         meaning: "kênh, sông đào",
@@ -5981,6 +6524,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_canal_meaning.mp3"),
     },
     {
+        id: "4000B3_1744",
         voc: "chemist",
         pos: "n",
         meaning: "nhà hoá học",
@@ -5992,6 +6536,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_chemist_meaning.mp3"),
     },
     {
+        id: "4000B3_1745",
         voc: "chill",
         pos: "n",
         meaning: "sự lạnh lẽo, sự giá lạnh,&nbsp;sự lạnh lùng, sự lạnh nhạt",
@@ -6003,6 +6548,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_chill_meaning.mp3"),
     },
     {
+        id: "4000B3_1746",
         voc: "congress",
         pos: "n",
         meaning: "quốc hội, nghị viện&nbsp;",
@@ -6014,6 +6560,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_congress_meaning.mp3"),
     },
     {
+        id: "4000B3_1747",
         voc: "dairy",
         pos: "n",
         meaning: "(thuộc) sữa",
@@ -6025,6 +6572,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_dairy_meaning.mp3"),
     },
     {
+        id: "4000B3_1748",
         voc: "descend",
         pos: "n",
         meaning: "xuống (cầu thang...)",
@@ -6036,6 +6584,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_descend_meaning.mp3"),
     },
     {
+        id: "4000B3_1749",
         voc: "grocer",
         pos: "n",
         meaning: "người bán tạp phẩm",
@@ -6047,6 +6596,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_grocer_meaning.mp3"),
     },
     {
+        id: "4000B3_1750",
         voc: "hesitate",
         pos: "n",
         meaning: "do dự, ngập ngừng, lưỡng lự",
@@ -6058,6 +6608,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hesitate_meaning.mp3"),
     },
     {
+        id: "4000B3_1751",
         voc: "institution",
         pos: "n",
         meaning: "cơ quan, cơ sở, định chế (kinh tế)",
@@ -6069,6 +6620,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_institution_meaning.mp3"),
     },
     {
+        id: "4000B3_1752",
         voc: "jog",
         pos: "n",
         meaning: "đi bộ, bước đi thong thả",
@@ -6080,6 +6632,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_jog_meaning.mp3"),
     },
     {
+        id: "4000B3_1753",
         voc: "merchant",
         pos: "adj",
         meaning: "nhà buôn, lái buôn",
@@ -6091,6 +6644,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_merchant_meaning.mp3"),
     },
     {
+        id: "4000B3_1754",
         voc: "poke",
         pos: "n",
         meaning: "chọc, thúc, ấn, ẩy, di (bằng ngón tay, đầu gậy)",
@@ -6102,6 +6656,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_poke_meaning.mp3"),
     },
     {
+        id: "4000B3_1755",
         voc: "postpone",
         pos: "n",
         meaning: "hoãn lại",
@@ -6113,6 +6668,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_postpone_meaning.mp3"),
     },
     {
+        id: "4000B3_1756",
         voc: "splash",
         pos: "n",
         meaning: "bắn tung tóe, văng lên",
@@ -6124,6 +6680,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_splash_meaning.mp3"),
     },
     {
+        id: "4000B3_1757",
         voc: "stubborn",
         pos: "n",
         meaning: "ngoan cố, bướng bỉnh, bảo thủ",
@@ -6135,6 +6692,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stubborn_meaning.mp3"),
     },
     {
+        id: "4000B3_1758",
         voc: "suburb",
         pos: "n",
         meaning: "ngoại ô",
@@ -6146,6 +6704,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_suburb_meaning.mp3"),
     },
     {
+        id: "4000B3_1759",
         voc: "tide",
         pos: "n",
         meaning: "thuỷ triều, con nước",
@@ -6157,6 +6716,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tide_meaning.mp3"),
     },
     {
+        id: "4000B3_1760",
         voc: "tragedy",
         pos: "n",
         meaning: "bi kịch",
@@ -6168,6 +6728,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_tragedy_meaning.mp3"),
     },
     {
+        id: "4000B3_1761",
         voc: "bomb",
         pos: "n",
         meaning: "quả bom",
@@ -6179,6 +6740,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_bomb_meaning.mp3"),
     },
     {
+        id: "4000B3_1762",
         voc: "certificate",
         pos: "n",
         meaning: "giấy chứng nhận; bằng cấp",
@@ -6190,6 +6752,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_certificate_meaning.mp3"),
     },
     {
+        id: "4000B3_1763",
         voc: "circumstance",
         pos: "n",
         meaning: "sự việc, chi tiết,&nbsp;tình huống",
@@ -6201,6 +6764,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_circumstance_meaning.mp3"),
     },
     {
+        id: "4000B3_1764",
         voc: "coffin",
         pos: "n",
         meaning: "áo quan, quan tài",
@@ -6212,6 +6776,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_coffin_meaning.mp3"),
     },
     {
+        id: "4000B3_1765",
         voc: "cope",
         pos: "n",
         meaning: "đối phó, đương đầu",
@@ -6223,6 +6788,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cope_meaning.mp3"),
     },
     {
+        id: "4000B3_1766",
         voc: "criticism",
         pos: "n",
         meaning: "sự phê bình, sự phê phán,&nbsp;lời phê bình",
@@ -6234,6 +6800,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_criticism_meaning.mp3"),
     },
     {
+        id: "4000B3_1767",
         voc: "devastate",
         pos: "n",
         meaning: "tàn phá, phá huỷ",
@@ -6245,6 +6812,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_devastate_meaning.mp3"),
     },
     {
+        id: "4000B3_1768",
         voc: "frown",
         pos: "n",
         meaning: "sự cau mày",
@@ -6256,6 +6824,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_frown_meaning.mp3"),
     },
     {
+        id: "4000B3_1769",
         voc: "gaze",
         pos: "n",
         meaning: "nhìn chằm chằm, quan sát (thiên văn)",
@@ -6267,6 +6836,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_gaze_meaning.mp3"),
     },
     {
+        id: "4000B3_1770",
         voc: "glance",
         pos: "n",
         meaning: "liếc nhìn",
@@ -6278,6 +6848,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_glance_meaning.mp3"),
     },
     {
+        id: "4000B3_1771",
         voc: "grief",
         pos: "n",
         meaning: "nỗi đau buồn, nỗi thương tiếc",
@@ -6289,6 +6860,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_grief_meaning.mp3"),
     },
     {
+        id: "4000B3_1772",
         voc: "groom",
         pos: "n",
         meaning: "chú rể",
@@ -6300,6 +6872,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_groom_meaning.mp3"),
     },
     {
+        id: "4000B3_1773",
         voc: "license",
         pos: "n",
         meaning: "giấy phép",
@@ -6311,6 +6884,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_license_meaning.mp3"),
     },
     {
+        id: "4000B3_1774",
         voc: "microscope",
         pos: "n",
         meaning: "kính hiển vi",
@@ -6322,6 +6896,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_microscope_meaning.mp3"),
     },
     {
+        id: "4000B3_1775",
         voc: "nuclear",
         pos: "n",
         meaning: "(vật lý) (thuộc) hạt nhân",
@@ -6333,6 +6908,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_nuclear_meaning.mp3"),
     },
     {
+        id: "4000B3_1776",
         voc: "portray",
         pos: "n",
         meaning: "vẽ chân dung,&nbsp;miêu tả sinh động",
@@ -6344,6 +6920,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_portray_meaning.mp3"),
     },
     {
+        id: "4000B3_1777",
         voc: "rotate",
         pos: "n",
         meaning: "quay, xoay quanh",
@@ -6355,6 +6932,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_rotate_meaning.mp3"),
     },
     {
+        id: "4000B3_1778",
         voc: "souvenir",
         pos: "n",
         meaning: "quà lưu niệm, vật kỉ niệm",
@@ -6366,6 +6944,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_souvenir_meaning.mp3"),
     },
     {
+        id: "4000B3_1779",
         voc: "submarine",
         pos: "n",
         meaning: "(hàng hải) tàu ngầm",
@@ -6377,6 +6956,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_submarine_meaning.mp3"),
     },
     {
+        id: "4000B3_1780",
         voc: "trace",
         pos: "n",
         meaning: "chỉ theo đường, theo, vạch, đi theo dấu vết",
@@ -6388,6 +6968,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_trace_meaning.mp3"),
     },
     {
+        id: "4000B3_1781",
         voc: "appliance",
         pos: "n",
         meaning: "đồ điện gia dụng",
@@ -6399,6 +6980,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_appliance_meaning.mp3"),
     },
     {
+        id: "4000B3_1782",
         voc: "basin",
         pos: "n",
         meaning: "bồn rửa mặt, cái chậu",
@@ -6410,6 +6992,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_basin_meaning.mp3"),
     },
     {
+        id: "4000B3_1783",
         voc: "broom",
         pos: "n",
         meaning: "chổi cán dài",
@@ -6421,6 +7004,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_broom_meaning.mp3"),
     },
     {
+        id: "4000B3_1784",
         voc: "caterpillar",
         pos: "n",
         meaning: "con sâu bướm,&nbsp;&nbsp;xe dây xích",
@@ -6432,6 +7016,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_caterpillar_meaning.mp3"),
     },
     {
+        id: "4000B3_1785",
         voc: "cupboard",
         pos: "n",
         meaning: "tủ có ngăn",
@@ -6443,6 +7028,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_cupboard_meaning.mp3"),
     },
     {
+        id: "4000B3_1786",
         voc: "delicate",
         pos: "n",
         meaning: "mỏng manh,&nbsp;dễ vỡ (đồ thuỷ tinh...)",
@@ -6454,6 +7040,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_delicate_meaning.mp3"),
     },
     {
+        id: "4000B3_1787",
         voc: "emerge",
         pos: "n",
         meaning: "nổi lên, hiện ra, lòi ra, trồi lên",
@@ -6465,6 +7052,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_emerge_meaning.mp3"),
     },
     {
+        id: "4000B3_1788",
         voc: "handicap",
         pos: "n",
         meaning: "tật nguyền, kém năng lực, thiểu năng",
@@ -6476,6 +7064,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_handicap_meaning.mp3"),
     },
     {
+        id: "4000B3_1789",
         voc: "hook",
         pos: "n",
         meaning: "cái lưỡi câu, cái móc, cái liềm",
@@ -6487,6 +7076,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hook_meaning.mp3"),
     },
     {
+        id: "4000B3_1790",
         voc: "hop",
         pos: "n",
         meaning: "nhảy lò cò, nhảy bước ngắn, nhảy qua hố",
@@ -6498,6 +7088,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_hop_meaning.mp3"),
     },
     {
+        id: "4000B3_1791",
         voc: "laundry",
         pos: "n",
         meaning: "hiệu giặt là; quần áo đã giặt xong hoặc quần áo đưa đi giặt",
@@ -6509,6 +7100,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_laundry_meaning.mp3"),
     },
     {
+        id: "4000B3_1792",
         voc: "pursue",
         pos: "n",
         meaning: "theo, đuổi theo, đi theo",
@@ -6520,6 +7112,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_pursue_meaning.mp3"),
     },
     {
+        id: "4000B3_1793",
         voc: "reluctant",
         pos: "adj",
         meaning: "miễn cưỡng, bất đắc dĩ",
@@ -6531,6 +7124,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_reluctant_meaning.mp3"),
     },
     {
+        id: "4000B3_1794",
         voc: "sleeve",
         pos: "n",
         meaning: "tay áo",
@@ -6542,6 +7136,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_sleeve_meaning.mp3"),
     },
     {
+        id: "4000B3_1795",
         voc: "spine",
         pos: "n",
         meaning: "xương sống, cột sống",
@@ -6554,6 +7149,7 @@ export const new_vocs2 = [
 
     },
     {
+        id: "4000B3_1796",
         voc: "stain",
         pos: "n",
         meaning: "vết bẩn, vết nhơ",
@@ -6565,6 +7161,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_stain_meaning.mp3"),
     },
     {
+        id: "4000B3_1797",
         voc: "strip",
         pos: "n",
         meaning: "mảnh, dải, cởi quần áo",
@@ -6576,6 +7173,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_strip_meaning.mp3"),
     },
     {
+        id: "4000B3_1798",
         voc: "swear",
         pos: "n",
         meaning: "thề, thề nguyền, tuyên thệ",
@@ -6587,6 +7185,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_swear_meaning.mp3"),
     },
     {
+        id: "4000B3_1799",
         voc: "swing",
         pos: "n",
         meaning: "đánh đu, ngoặt&nbsp;(xe, tàu...), vung vẩy, lắc&nbsp;&nbsp;",
@@ -6598,6 +7197,7 @@ export const new_vocs2 = [
         meaningSound: require("./data2/4000B3_swing_meaning.mp3"),
     },
     {
+        id: "4000B3_1800",
         voc: "utilize",
         pos: "v",
         meaning: "dùng, sử dụng",
