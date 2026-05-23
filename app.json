@@ -25,7 +25,7 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "package": "com.truongkieu.Serf",
-      "versionCode": 3
+      "versionCode": 4
     },
     "web": {
       "output": "static",
