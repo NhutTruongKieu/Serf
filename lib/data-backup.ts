@@ -119,10 +119,29 @@ function backupFileName(): string {
   return `serf-backup-${stamp}.json`;
 }
 
-export async function exportAppData(): Promise<{ entryCount: number }> {
+export async function buildBackupJson(): Promise<{
+  json: string;
+  entryCount: number;
+}> {
   const data = await collectBackupData();
   const payload = createBackupPayload(data);
-  const json = JSON.stringify(payload, null, 2);
+  return {
+    json: JSON.stringify(payload, null, 2),
+    entryCount: Object.keys(data).length,
+  };
+}
+
+export async function importAppDataFromJson(
+  raw: string,
+  replaceExisting: boolean
+): Promise<{ entryCount: number }> {
+  const backup = parseBackupJson(raw);
+  await applyBackupData(backup.data, replaceExisting);
+  return { entryCount: Object.keys(backup.data).length };
+}
+
+export async function exportAppData(): Promise<{ entryCount: number }> {
+  const { json, entryCount } = await buildBackupJson();
 
   const fileUri = `${FileSystem.cacheDirectory}${backupFileName()}`;
   await FileSystem.writeAsStringAsync(fileUri, json, {
@@ -140,7 +159,7 @@ export async function exportAppData(): Promise<{ entryCount: number }> {
     UTI: "public.json",
   });
 
-  return { entryCount: Object.keys(data).length };
+  return { entryCount };
 }
 
 export async function importAppDataFromPicker(
@@ -159,10 +178,7 @@ export async function importAppDataFromPicker(
     encoding: FileSystem.EncodingType.UTF8,
   });
 
-  const backup = parseBackupJson(raw);
-  await applyBackupData(backup.data, replaceExisting);
-
-  return { entryCount: Object.keys(backup.data).length };
+  return importAppDataFromJson(raw, replaceExisting);
 }
 
 export function backupErrorMessage(code: string): string {
@@ -179,6 +195,17 @@ export function backupErrorMessage(code: string): string {
       return "Thiết bị không hỗ trợ chia sẻ file.";
     case "CANCELLED":
       return "";
+    case "NOT_SIGNED_IN":
+      return "Bạn cần đăng nhập Google trước.";
+    case "DRIVE_LIST_FAILED":
+    case "DRIVE_UPLOAD_FAILED":
+    case "DRIVE_DOWNLOAD_FAILED":
+    case "DRIVE_NO_BACKUP":
+      return "Không thể đồng bộ với Google Drive. Thử đăng nhập lại.";
+    case "GOOGLE_AUTH_EXPIRED":
+      return "Phiên Google đã hết hạn. Đăng xuất rồi đăng nhập lại.";
+    case "DRIVE_API_DISABLED":
+      return "Bật Google Drive API trong Google Cloud Console (cùng project OAuth).";
     default:
       return "Đã xảy ra lỗi. Vui lòng thử lại.";
   }

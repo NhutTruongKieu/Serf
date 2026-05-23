@@ -1,17 +1,25 @@
 import { useAppSettings } from "@/contexts/app-settings";
+import { useAuth } from "@/contexts/auth-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import {
   backupErrorMessage,
   exportAppData,
   importAppDataFromPicker,
 } from "@/lib/data-backup";
+import {
+  downloadBackupFromGoogleDrive,
+  getGoogleBackupTimestamp,
+  uploadBackupToGoogleDrive,
+} from "@/lib/google-drive-backup";
 import { clearAllLearnedProgress, clearCurrentSetProgress } from "@/lib/vocab-progress";
 import { createSettingsStyles } from "@/styles/settings-styles";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
+import { Image } from "expo-image";
 import { useRouter } from "expo-router";
-import { useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useState } from "react";
 import {
+  ActivityIndicator,
   Alert,
   ScrollView,
   Switch,
@@ -42,6 +50,14 @@ export default function SettingsScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const {
+    user,
+    isSigningIn,
+    isGoogleConfigured,
+    signInWithGoogle,
+    signOut,
+    getAccessToken,
+  } = useAuth();
+  const {
     isMute,
     setIsMute,
     soundIconsAlign,
@@ -53,7 +69,28 @@ export default function SettingsScreen() {
   } = useAppSettings();
   const { theme } = useAppTheme();
   const styles = useMemo(() => createSettingsStyles(theme), [theme]);
-  const [busyAction, setBusyAction] = useState<"export" | "import" | null>(null);
+  const [busyAction, setBusyAction] = useState<
+    "export" | "import" | "google-up" | "google-down" | null
+  >(null);
+  const [googleBackupAt, setGoogleBackupAt] = useState<string | null>(null);
+
+  const refreshGoogleBackupTime = useCallback(async () => {
+    setGoogleBackupAt(await getGoogleBackupTimestamp());
+  }, []);
+
+  useEffect(() => {
+    if (user) void refreshGoogleBackupTime();
+    else setGoogleBackupAt(null);
+  }, [user, refreshGoogleBackupTime]);
+
+  const formatBackupTime = (iso: string | null) => {
+    if (!iso) return "Chưa có bản sao lưu trên Google";
+    try {
+      return new Date(iso).toLocaleString("vi-VN");
+    } catch {
+      return iso;
+    }
+  };
 
   const appVersion =
     Constants.expoConfig?.version ?? Constants.nativeAppVersion ?? "1.0.0";
@@ -72,6 +109,68 @@ export default function SettingsScreen() {
         bumpProgressReload();
         Alert.alert("Đã xong", "Bộ hiện tại đã được đặt lại.");
       }
+    );
+  };
+
+  const handleGoogleUpload = async () => {
+    if (busyAction) return;
+    setBusyAction("google-up");
+    try {
+      const token = await getAccessToken();
+      if (!token) throw new Error("NOT_SIGNED_IN");
+      const { entryCount, backedUpAt } = await uploadBackupToGoogleDrive(token);
+      setGoogleBackupAt(backedUpAt);
+      Alert.alert(
+        "Đã sao lưu lên Google",
+        `Đã lưu ${entryCount} mục (tiến độ & cài đặt) vào tài khoản Google của bạn.`
+      );
+    } catch (e) {
+      const code = e instanceof Error ? e.message : "";
+      const msg = backupErrorMessage(code);
+      if (msg) Alert.alert("Sao lưu Google thất bại", msg);
+    } finally {
+      setBusyAction(null);
+    }
+  };
+
+  const runGoogleRestore = async () => {
+    setBusyAction("google-down");
+    try {
+      const token = await getAccessToken();
+      if (!token) throw new Error("NOT_SIGNED_IN");
+      const { entryCount, backedUpAt } = await downloadBackupFromGoogleDrive(
+        token,
+        true
+      );
+      if (backedUpAt) setGoogleBackupAt(backedUpAt);
+      await reloadFromStorage();
+      bumpProgressReload();
+      Alert.alert(
+        "Khôi phục thành công",
+        `Đã tải ${entryCount} mục từ Google Drive. Quay lại màn học để xem tiến độ.`
+      );
+    } catch (e) {
+      const code = e instanceof Error ? e.message : "";
+      const msg = backupErrorMessage(code);
+      if (msg) Alert.alert("Khôi phục thất bại", msg);
+    } finally {
+      setBusyAction(null);
+    }
+  };
+
+  const handleGoogleRestore = () => {
+    if (busyAction) return;
+    Alert.alert(
+      "Khôi phục từ Google",
+      "Dữ liệu trên thiết bị (tiến độ & cài đặt) sẽ được thay bằng bản sao lưu trên Google.",
+      [
+        { text: "Hủy", style: "cancel" },
+        {
+          text: "Khôi phục",
+          style: "destructive",
+          onPress: () => void runGoogleRestore(),
+        },
+      ]
     );
   };
 
@@ -129,6 +228,16 @@ export default function SettingsScreen() {
     );
   };
 
+  const handleSignOut = () => {
+    confirmAction(
+      "Đăng xuất",
+      "Bạn có chắc muốn đăng xuất khỏi Google trên thiết bị này?",
+      async () => {
+        await signOut();
+      }
+    );
+  };
+
   const handleResetAll = () => {
     confirmAction(
       "Đặt lại toàn bộ",
@@ -162,6 +271,61 @@ export default function SettingsScreen() {
           { paddingBottom: insets.bottom + 24 },
         ]}
       >
+        <Text style={styles.sectionLabel}>Tài khoản</Text>
+        <View style={styles.card}>
+          {user ? (
+            <>
+              <View style={styles.accountRow}>
+                {user.photoUrl ? (
+                  <Image
+                    source={{ uri: user.photoUrl }}
+                    style={styles.avatar}
+                    accessibilityLabel="Ảnh đại diện"
+                  />
+                ) : (
+                  <View style={styles.avatarPlaceholder}>
+                    <Ionicons name="person" size={26} color={theme.iconTeal} />
+                  </View>
+                )}
+                <View style={styles.rowLabels}>
+                  <Text style={styles.rowTitle}>{user.name}</Text>
+                  <Text style={styles.rowSubtitle}>{user.email}</Text>
+                </View>
+              </View>
+              <TouchableOpacity style={styles.signOutBtn} onPress={handleSignOut}>
+                <Text style={styles.signOutText}>Đăng xuất</Text>
+              </TouchableOpacity>
+            </>
+          ) : (
+            <>
+              {!isGoogleConfigured ? (
+                <Text style={styles.configHint}>
+                  Đăng nhập Google cần OAuth Client ID. Tạo file .env từ
+                  .env.example, thêm ID từ Google Cloud Console, rồi chạy lại
+                  app (npx expo run:android).
+                </Text>
+              ) : null}
+              <TouchableOpacity
+                style={[
+                  styles.googleBtn,
+                  isSigningIn && styles.googleBtnDisabled,
+                ]}
+                onPress={() => void signInWithGoogle()}
+                disabled={isSigningIn}
+              >
+                {isSigningIn ? (
+                  <ActivityIndicator color="#1f1f1f" />
+                ) : (
+                  <Ionicons name="logo-google" size={22} color="#4285F4" />
+                )}
+                <Text style={styles.googleBtnText}>
+                  {isSigningIn ? "Đang đăng nhập..." : "Đăng nhập với Google"}
+                </Text>
+              </TouchableOpacity>
+            </>
+          )}
+        </View>
+
         <Text style={styles.sectionLabel}>Âm thanh</Text>
         <View style={styles.card}>
           <View style={styles.row}>
@@ -336,6 +500,55 @@ export default function SettingsScreen() {
 
         <Text style={styles.sectionLabel}>Sao lưu dữ liệu</Text>
         <View style={styles.card}>
+          {user ? (
+            <>
+              <View style={[styles.actionRow, { opacity: busyAction ? 0.7 : 1 }]}>
+                <Ionicons name="cloud-outline" size={22} color={theme.iconTeal} />
+                <View style={styles.rowLabels}>
+                  <Text style={styles.rowTitle}>Google Drive</Text>
+                  <Text style={styles.rowSubtitle}>
+                    {formatBackupTime(googleBackupAt)}
+                    {"\n"}
+                    Lưu ẩn theo tài khoản Google (sau khi đăng nhập tự sao lưu 1 lần)
+                  </Text>
+                </View>
+              </View>
+              <TouchableOpacity
+                style={styles.actionRow}
+                onPress={() => void handleGoogleUpload()}
+                disabled={busyAction !== null}
+              >
+                <Ionicons name="cloud-upload-outline" size={22} color={theme.success} />
+                <View style={styles.rowLabels}>
+                  <Text style={styles.rowTitle}>Sao lưu lên Google</Text>
+                  <Text style={styles.rowSubtitle}>
+                    {busyAction === "google-up"
+                      ? "Đang tải lên..."
+                      : "Cập nhật tiến độ học & cài đặt lên Drive"}
+                  </Text>
+                </View>
+                <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
+              </TouchableOpacity>
+              <View style={styles.divider} />
+              <TouchableOpacity
+                style={styles.actionRow}
+                onPress={handleGoogleRestore}
+                disabled={busyAction !== null}
+              >
+                <Ionicons name="cloud-download-outline" size={22} color={theme.iconTeal} />
+                <View style={styles.rowLabels}>
+                  <Text style={styles.rowTitle}>Khôi phục từ Google</Text>
+                  <Text style={styles.rowSubtitle}>
+                    {busyAction === "google-down"
+                      ? "Đang tải xuống..."
+                      : "Thay dữ liệu máy bằng bản trên Drive"}
+                  </Text>
+                </View>
+                <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
+              </TouchableOpacity>
+              <View style={styles.divider} />
+            </>
+          ) : null}
           <TouchableOpacity
             style={styles.actionRow}
             onPress={() => void handleExport()}

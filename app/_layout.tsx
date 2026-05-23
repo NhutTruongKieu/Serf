@@ -1,4 +1,5 @@
 import { AppSettingsProvider, useAppSettings } from '@/contexts/app-settings';
+import { AuthProvider } from '@/contexts/auth-context';
 import { DarkTheme, DefaultTheme, ThemeProvider } from '@react-navigation/native';
 import { Stack } from 'expo-router';
 import { StatusBar } from 'expo-status-bar';
@@ -29,8 +30,10 @@ function RootLayoutInner() {
 
 export default function RootLayout() {
   return (
-    <AppSettingsProvider>
-      <RootLayoutInner />
-    </AppSettingsProvider>
+    <AuthProvider>
+      <AppSettingsProvider>
+        <RootLayoutInner />
+      </AppSettingsProvider>
+    </AuthProvider>
   );
 }

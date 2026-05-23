@@ -129,5 +129,64 @@ export function createSettingsStyles(theme: AppTheme) {
     segmentTextActive: {
       color: theme.floatingBtnText,
     },
+    accountRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      padding: 16,
+      gap: 14,
+    },
+    avatar: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      backgroundColor: theme.segmentBg,
+    },
+    avatarPlaceholder: {
+      width: 48,
+      height: 48,
+      borderRadius: 24,
+      backgroundColor: theme.segmentBg,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    googleBtn: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 10,
+      marginHorizontal: 16,
+      marginBottom: 16,
+      paddingVertical: 12,
+      borderRadius: 12,
+      backgroundColor: "#ffffff",
+      borderWidth: 1,
+      borderColor: theme.borderSubtle,
+    },
+    googleBtnDisabled: {
+      opacity: 0.55,
+    },
+    googleBtnText: {
+      color: "#1f1f1f",
+      fontSize: 16,
+      fontWeight: "600",
+    },
+    signOutBtn: {
+      alignItems: "center",
+      paddingVertical: 14,
+      marginHorizontal: 16,
+      marginBottom: 16,
+    },
+    signOutText: {
+      color: theme.dangerText,
+      fontSize: 15,
+      fontWeight: "600",
+    },
+    configHint: {
+      color: theme.textMuted,
+      fontSize: 12,
+      lineHeight: 18,
+      marginHorizontal: 16,
+      marginBottom: 14,
+    },
   });
 }

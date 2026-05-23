@@ -1,4 +1,6 @@
 export const STORAGE_KEYS = {
+  authSession: "AUTH_SESSION",
+  googleBackupAt: "GOOGLE_BACKUP_AT",
   currentCategory: "CURRENT_CATEGORY",
   currentSet: "CURRENT_SET",
   mute: "SETTINGS_MUTE",
