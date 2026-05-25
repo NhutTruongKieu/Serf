@@ -1,5 +1,8 @@
 import Constants from "expo-constants";
 
+/** Set true to show "Đăng nhập với Google" in Settings. */
+export const GOOGLE_LOGIN_ENABLED = false;
+
 export type GoogleAuthClientIds = {
   expoClientId?: string;
   iosClientId?: string;
@@ -46,5 +49,26 @@ export function isGoogleAuthConfigured(ids: GoogleAuthClientIds): boolean {
       ids.iosClientId ||
       ids.androidClientId ||
       ids.webClientId
+  );
+}
+
+/** Android standalone: Google expects this redirect, not package name. */
+export function getGoogleAndroidRedirectUri(
+  androidClientId: string | undefined
+): string | undefined {
+  if (!androidClientId?.includes(".apps.googleusercontent.com")) {
+    return undefined;
+  }
+  const id = androidClientId.replace(".apps.googleusercontent.com", "");
+  // Google Android OAuth uses oauth2redirect (not oauthredirect).
+  return `com.googleusercontent.apps.${id}:/oauth2redirect`;
+}
+
+/** True when Android release/debug APK can complete the OAuth redirect. */
+export function isGoogleAndroidAuthReady(ids: GoogleAuthClientIds): boolean {
+  return Boolean(
+    ids.androidClientId &&
+      ids.webClientId &&
+      getGoogleAndroidRedirectUri(ids.androidClientId)
   );
 }

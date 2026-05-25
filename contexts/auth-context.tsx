@@ -1,3 +1,4 @@
+import { makeRedirectUri } from "expo-auth-session";
 import * as Google from "expo-auth-session/providers/google";
 import * as WebBrowser from "expo-web-browser";
 import {
@@ -9,11 +10,13 @@ import {
   useState,
   type ReactNode,
 } from "react";
-import { Alert } from "react-native";
+import { Alert, Platform } from "react-native";
 
 import {
+  getGoogleAndroidRedirectUri,
   getGoogleAuthClientIds,
   isGoogleAuthConfigured,
+  isGoogleAndroidAuthReady,
 } from "@/lib/google-auth-config";
 import {
   clearAuthSession,
@@ -50,6 +53,17 @@ const AuthContext = createContext<AuthContextValue | null>(null);
 export function AuthProvider({ children }: { children: ReactNode }) {
   const clientIds = useMemo(() => getGoogleAuthClientIds(), []);
   const isGoogleConfigured = isGoogleAuthConfigured(clientIds);
+  const isAndroidAuthReady = isGoogleAndroidAuthReady(clientIds);
+
+  const googleRedirectUri = useMemo(() => {
+    if (Platform.OS === "android") {
+      // Always use Google's Android redirect URI. makeRedirectUri({ native }) is
+      // skipped in dev/development builds and becomes …://expo-development-client/…
+      const uri = getGoogleAndroidRedirectUri(clientIds.androidClientId);
+      if (uri) return uri;
+    }
+    return makeRedirectUri({ scheme: "serf", path: "oauthredirect" });
+  }, [clientIds.androidClientId]);
 
   const [user, setUser] = useState<AuthUser | null>(null);
   const [accessToken, setAccessToken] = useState<string | null>(null);
@@ -60,6 +74,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     iosClientId: clientIds.iosClientId,
     androidClientId: clientIds.androidClientId,
     webClientId: clientIds.webClientId ?? clientIds.expoClientId,
+    redirectUri: googleRedirectUri,
     scopes: GOOGLE_SCOPES,
   });
 
@@ -161,6 +176,14 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       return;
     }
 
+    if (Platform.OS === "android" && !isAndroidAuthReady) {
+      Alert.alert(
+        "Cấu hình Google chưa đủ",
+        "Trên Android cần cả EXPO_PUBLIC_GOOGLE_ANDROID_CLIENT_ID và EXPO_PUBLIC_GOOGLE_WEB_CLIENT_ID, rồi build lại APK (npm run build:apk)."
+      );
+      return;
+    }
+
     if (!request) {
       Alert.alert(
         "Chưa sẵn sàng",
@@ -176,7 +199,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       setIsSigningIn(false);
       Alert.alert("Đăng nhập thất bại", "Không mở được cửa sổ đăng nhập Google.");
     }
-  }, [isGoogleConfigured, request, promptAsync]);
+  }, [isGoogleConfigured, isAndroidAuthReady, request, promptAsync]);
 
   const value = useMemo(
     () => ({

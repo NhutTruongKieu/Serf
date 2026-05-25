@@ -6,6 +6,7 @@ import {
   exportAppData,
   importAppDataFromPicker,
 } from "@/lib/data-backup";
+import { GOOGLE_LOGIN_ENABLED } from "@/lib/google-auth-config";
 import {
   downloadBackupFromGoogleDrive,
   getGoogleBackupTimestamp,
@@ -19,7 +20,6 @@ import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
-  ActivityIndicator,
   Alert,
   ScrollView,
   Switch,
@@ -49,14 +49,7 @@ function confirmAction(
 export default function SettingsScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const {
-    user,
-    isSigningIn,
-    isGoogleConfigured,
-    signInWithGoogle,
-    signOut,
-    getAccessToken,
-  } = useAuth();
+  const { user, signOut, signInWithGoogle, getAccessToken } = useAuth();
   const {
     isMute,
     setIsMute,
@@ -271,60 +264,52 @@ export default function SettingsScreen() {
           { paddingBottom: insets.bottom + 24 },
         ]}
       >
-        <Text style={styles.sectionLabel}>Tài khoản</Text>
-        <View style={styles.card}>
-          {user ? (
-            <>
-              <View style={styles.accountRow}>
-                {user.photoUrl ? (
-                  <Image
-                    source={{ uri: user.photoUrl }}
-                    style={styles.avatar}
-                    accessibilityLabel="Ảnh đại diện"
-                  />
-                ) : (
-                  <View style={styles.avatarPlaceholder}>
-                    <Ionicons name="person" size={26} color={theme.iconTeal} />
+        {user || GOOGLE_LOGIN_ENABLED ? (
+          <>
+            <Text style={styles.sectionLabel}>Tài khoản</Text>
+            <View style={styles.card}>
+              {user ? (
+                <>
+                  <View style={styles.accountRow}>
+                    {user.photoUrl ? (
+                      <Image
+                        source={{ uri: user.photoUrl }}
+                        style={styles.avatar}
+                        accessibilityLabel="Ảnh đại diện"
+                      />
+                    ) : (
+                      <View style={styles.avatarPlaceholder}>
+                        <Ionicons
+                          name="person"
+                          size={26}
+                          color={theme.iconTeal}
+                        />
+                      </View>
+                    )}
+                    <View style={styles.rowLabels}>
+                      <Text style={styles.rowTitle}>{user.name}</Text>
+                      <Text style={styles.rowSubtitle}>{user.email}</Text>
+                    </View>
                   </View>
-                )}
-                <View style={styles.rowLabels}>
-                  <Text style={styles.rowTitle}>{user.name}</Text>
-                  <Text style={styles.rowSubtitle}>{user.email}</Text>
-                </View>
-              </View>
-              <TouchableOpacity style={styles.signOutBtn} onPress={handleSignOut}>
-                <Text style={styles.signOutText}>Đăng xuất</Text>
-              </TouchableOpacity>
-            </>
-          ) : (
-            <>
-              {!isGoogleConfigured ? (
-                <Text style={styles.configHint}>
-                  Đăng nhập Google cần OAuth Client ID. Tạo file .env từ
-                  .env.example, thêm ID từ Google Cloud Console, rồi chạy lại
-                  app (npx expo run:android).
-                </Text>
-              ) : null}
-              <TouchableOpacity
-                style={[
-                  styles.googleBtn,
-                  isSigningIn && styles.googleBtnDisabled,
-                ]}
-                onPress={() => void signInWithGoogle()}
-                disabled={isSigningIn}
-              >
-                {isSigningIn ? (
-                  <ActivityIndicator color="#1f1f1f" />
-                ) : (
+                  <TouchableOpacity
+                    style={styles.signOutBtn}
+                    onPress={handleSignOut}
+                  >
+                    <Text style={styles.signOutText}>Đăng xuất</Text>
+                  </TouchableOpacity>
+                </>
+              ) : GOOGLE_LOGIN_ENABLED ? (
+                <TouchableOpacity
+                  style={styles.googleBtn}
+                  onPress={() => void signInWithGoogle()}
+                >
                   <Ionicons name="logo-google" size={22} color="#4285F4" />
-                )}
-                <Text style={styles.googleBtnText}>
-                  {isSigningIn ? "Đang đăng nhập..." : "Đăng nhập với Google"}
-                </Text>
-              </TouchableOpacity>
-            </>
-          )}
-        </View>
+                  <Text style={styles.googleBtnText}>Đăng nhập với Google</Text>
+                </TouchableOpacity>
+              ) : null}
+            </View>
+          </>
+        ) : null}
 
         <Text style={styles.sectionLabel}>Âm thanh</Text>
         <View style={styles.card}>

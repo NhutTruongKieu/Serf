@@ -77,8 +77,8 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
     },
     soundRow: {
       flexDirection: "row",
-      alignSelf: "stretch",
-      width: "100%",
+      width: "80%",
+      alignSelf: "center",
       gap: 20,
       marginBottom: 8,
       paddingHorizontal: 8,
