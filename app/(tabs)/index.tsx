@@ -654,13 +654,22 @@ export default function HomeScreen() {
       </Modal>
       {/* Header: cài đặt + số thứ tự */}
       <View style={styles.header}>
-        <TouchableOpacity
-          style={styles.settingsBtn}
-          onPress={() => router.push("/settings")}
-          hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
-        >
-          <Ionicons name="settings-outline" size={26} color={theme.iconTeal} />
-        </TouchableOpacity>
+        <View style={styles.headerActions}>
+          <TouchableOpacity
+            style={styles.settingsBtn}
+            onPress={() => router.push("/review")}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          >
+            <Ionicons name="shuffle" size={24} color={theme.iconTeal} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.settingsBtn}
+            onPress={() => router.push("/settings")}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          >
+            <Ionicons name="settings-outline" size={26} color={theme.iconTeal} />
+          </TouchableOpacity>
+        </View>
         <Text style={styles.counter} onPress={resetIndex}>
           {index + 1} / {activeVocs.length}
         </Text>

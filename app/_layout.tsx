@@ -22,6 +22,7 @@ function RootLayoutInner() {
     <ThemeProvider value={themeMode === 'light' ? DefaultTheme : DarkTheme}>
       <Stack>
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
+        <Stack.Screen name="review" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style={themeMode === 'light' ? 'dark' : 'light'} />
     </ThemeProvider>

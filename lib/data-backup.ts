@@ -25,7 +25,8 @@ export function isBackupKey(key: string): boolean {
     key === STORAGE_KEYS.mute ||
     key === STORAGE_KEYS.soundIconsAlign ||
     key === STORAGE_KEYS.themeMode ||
-    key === STORAGE_KEYS.progressUsesIds
+    key === STORAGE_KEYS.progressUsesIds ||
+    key === STORAGE_KEYS.reviewMasteredIds
   );
 }
 

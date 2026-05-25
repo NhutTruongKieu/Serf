@@ -17,6 +17,11 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       gap: 8,
       zIndex: 100,
     },
+    headerActions: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
+    },
     settingsBtn: {
       padding: 4,
     },
