@@ -225,8 +225,7 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       color: theme.textSecondary,
       fontSize: 16,
       fontWeight: "bold",
-      marginBottom: 10,
-      marginLeft: 4,
+      flex: 1,
     },
     setGrid: {
       flexDirection: "row",
@@ -260,6 +259,30 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       color: theme.textMuted,
       fontSize: 12,
       marginTop: 4,
+    },
+    lockedCategorySection: {
+      opacity: 0.55,
+    },
+    lockedSetCard: {
+      opacity: 0.7,
+      backgroundColor: theme.placeholderBg,
+    },
+    lockedSetCardText: {
+      color: theme.textMuted,
+    },
+    categoryLabelRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      marginBottom: 10,
+      marginLeft: 4,
+      gap: 6,
+    },
+    lockHint: {
+      color: theme.textMuted,
+      fontSize: 12,
+      marginLeft: 4,
+      marginBottom: 8,
+      fontStyle: "italic",
     },
   });
 }

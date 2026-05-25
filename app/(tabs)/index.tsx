@@ -1,5 +1,12 @@
 import { Vocabulary, vocs as initialVocs } from "@/assets/vocs";
 import { useAppSettings } from "@/contexts/app-settings";
+import {
+  CATEGORY_LABELS_VI,
+  getCategoryUnlockHint,
+  getHighestUnlockedCategory,
+  isCategoryUnlocked,
+  VOCAB_CATEGORY_ORDER,
+} from "@/lib/category-unlock";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
 import {
@@ -17,6 +24,7 @@ import { useAppTheme } from "@/hooks/use-app-theme";
 import { createHomeStyles } from "@/app/(tabs)/home-styles";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
+  Alert,
   Dimensions,
   Modal,
   Pressable,
@@ -64,30 +72,28 @@ export default function HomeScreen() {
   const modalScrollRef = useRef<ScrollView>(null);
   const scrollContentRef = useRef<View>(null);
   const activeSetRef = useRef<View>(null);
-  // Derived category list with Vietnamese mapping
-  const categoryMap: Record<string, string> = {
-    "All": "Tất cả",
-    "Feelings & Emotions": "Cảm xúc & Tâm trạng",
-    "Nature & Landscape": "Thiên nhiên & Phong cảnh",
-    "Human Body & Health": "Cơ thể & Sức khỏe",
-    "Household & Objects": "Đồ dùng & Đồ vật",
-    "Common Actions": "Hành động thông thường",
-    "Places & Directions": "Địa điểm & Hướng",
-    "Abstract & Qualities": "Khái niệm & Phẩm chất",
-    "General": "Từ vựng chung",
-  };
+  const categoryMap = CATEGORY_LABELS_VI;
 
   const sortedCategories = [
-    "Feelings & Emotions",
-    "Nature & Landscape",
-    "Human Body & Health",
-    "Household & Objects",
-    "Common Actions",
-    "Places & Directions",
-    "Abstract & Qualities",
-    "General",
-    "All"
-  ].filter(c => initialVocs.some(v => v.category === c) || c === "All");
+    ...VOCAB_CATEGORY_ORDER.filter((c) =>
+      initialVocs.some((v) => v.category === c)
+    ),
+    "All",
+  ];
+
+  const categoryUnlockMap = useMemo(() => {
+    const map: Record<string, boolean> = {};
+    for (const cat of sortedCategories) {
+      map[cat] = isCategoryUnlocked(cat, categoryProgress);
+    }
+    return map;
+  }, [categoryProgress, sortedCategories]);
+
+  const showCategoryLockedAlert = (cat: string) => {
+    const hint = getCategoryUnlockHint(cat, categoryProgress);
+    if (!hint) return;
+    Alert.alert("Chưa mở khóa", hint);
+  };
 
   const getSets = (cat: string) => getSetsForCategory(initialVocs, cat);
 
@@ -98,7 +104,7 @@ export default function HomeScreen() {
 
   const currentVoc = activeVocs[index] || activeVocs[0];
 
-  const calculateProgress = async () => {
+  const fetchProgressData = async () => {
     const progress: Record<string, { remaining: number; total: number }> = {};
     const perSet: Record<string, { learned: number; total: number }> = {};
 
@@ -119,6 +125,11 @@ export default function HomeScreen() {
       }
       progress[cat] = { remaining, total };
     }
+    return { progress, perSet };
+  };
+
+  const calculateProgress = async () => {
+    const { progress, perSet } = await fetchProgressData();
     setCategoryProgress(progress);
     setSetProgress(perSet);
   };
@@ -127,13 +138,24 @@ export default function HomeScreen() {
     try {
       await migrateAllProgressToIds(initialVocs);
 
-      const savedCat =
+      let savedCat =
         (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) || "All";
       const savedSet =
         (await AsyncStorage.getItem(STORAGE_KEYS.currentSet)) || "0";
 
+      const { progress: progressSnapshot } = await fetchProgressData();
+      setCategoryProgress(progressSnapshot);
+
+      let startingSet = parseInt(savedSet, 10);
+
+      if (!isCategoryUnlocked(savedCat, progressSnapshot)) {
+        savedCat = getHighestUnlockedCategory(progressSnapshot, sortedCategories);
+        startingSet = 0;
+        await AsyncStorage.setItem(STORAGE_KEYS.currentCategory, savedCat);
+        await AsyncStorage.setItem(STORAGE_KEYS.currentSet, "0");
+      }
+
       setCurrentCategory(savedCat);
-      const startingSet = parseInt(savedSet, 10);
       setCurrentSet(startingSet);
 
       const currentSets = getSets(savedCat);
@@ -194,6 +216,11 @@ export default function HomeScreen() {
   }, [isSetPickerVisible, currentCategory, currentSet]);
 
   const selectSet = async (cat: string, setIdx: number) => {
+    if (!categoryUnlockMap[cat]) {
+      showCategoryLockedAlert(cat);
+      return;
+    }
+
     setIsSetPickerVisible(false);
     setShowMeaning(false);
 
@@ -315,9 +342,16 @@ export default function HomeScreen() {
       if (currentSet < vocSets.length - 1) {
         selectSet(currentCategory, currentSet + 1);
       } else {
-        // Last set of current category, move to next category
-        const nextCatIdx = (catIdx + 1) % sortedCategories.length;
+        const nextCatIdx = catIdx + 1;
+        if (nextCatIdx >= sortedCategories.length) {
+          translateY.value = withSpring(0);
+          return;
+        }
         const nextCat = sortedCategories[nextCatIdx];
+        if (!categoryUnlockMap[nextCat]) {
+          showCategoryLockedAlert(nextCat);
+          return;
+        }
         selectSet(nextCat, 0);
       }
     } else {
@@ -552,11 +586,30 @@ export default function HomeScreen() {
                 const sets = getSets(cat);
                 if (sets.length === 0) return null;
                 const prog = categoryProgress[cat];
+                const isUnlocked = categoryUnlockMap[cat] ?? true;
+                const lockHint = !isUnlocked
+                  ? getCategoryUnlockHint(cat, categoryProgress)
+                  : null;
                 return (
-                  <View key={cat} style={styles.categorySection}>
-                    <Text style={styles.categoryLabel}>
-                      {categoryMap[cat] || cat} {prog ? `(${prog.total - prog.remaining}/${prog.total})` : ""}
-                    </Text>
+                  <View
+                    key={cat}
+                    style={[
+                      styles.categorySection,
+                      !isUnlocked && styles.lockedCategorySection,
+                    ]}
+                  >
+                    <View style={styles.categoryLabelRow}>
+                      {!isUnlocked && (
+                        <Ionicons name="lock-closed" size={16} color={theme.textMuted} />
+                      )}
+                      <Text style={styles.categoryLabel}>
+                        {categoryMap[cat] || cat}{" "}
+                        {prog ? `(${prog.total - prog.remaining}/${prog.total})` : ""}
+                      </Text>
+                    </View>
+                    {lockHint ? (
+                      <Text style={styles.lockHint}>{lockHint}</Text>
+                    ) : null}
                     <View style={styles.setGrid}>
                       {sets.map((_, i) => {
                         const isActive = currentCategory === cat && currentSet === i;
@@ -567,14 +620,17 @@ export default function HomeScreen() {
                           ref={isActive ? activeSetRef : undefined}
                           style={[
                             styles.setCard,
-                            isActive && styles.activeSetCard
+                            isActive && styles.activeSetCard,
+                            !isUnlocked && styles.lockedSetCard,
                           ]}
                           onPress={() => selectSet(cat, i)}
+                          disabled={!isUnlocked}
                         >
                           <Text
                             style={[
                               styles.setCardText,
-                              isActive && styles.activeSetCardText
+                              isActive && styles.activeSetCardText,
+                              !isUnlocked && styles.lockedSetCardText,
                             ]}
                             numberOfLines={1}
                           >
