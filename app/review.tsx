@@ -1,18 +1,14 @@
 import { vocs as allVocs } from "@/assets/vocs";
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
-import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
 import { useAppSettings } from "@/contexts/app-settings";
 import { useAppTheme } from "@/hooks/use-app-theme";
-import {
-  buildReviewSessionPool,
-  getReviewPool,
-  markReviewMastered,
-  pickRandomReviewVoc,
-  REVIEW_SESSION_WORD_LIMIT,
-} from "@/lib/vocab-review";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
+import { STORAGE_KEYS } from "@/lib/storage-keys";
+import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
+import { getSetsForCategory } from "@/lib/vocab-sets";
 import { createReviewStyles } from "@/styles/review-styles";
 import { Ionicons } from "@expo/vector-icons";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio } from "expo-av";
 import { Image } from "expo-image";
 import { useFocusEffect, useRouter } from "expo-router";
@@ -39,33 +35,45 @@ export default function ReviewScreen() {
     [theme]
   );
 
-  const [pool, setPool] = useState<typeof allVocs>([]);
-  const [sessionSize, setSessionSize] = useState(0);
-  const [current, setCurrent] = useState<(typeof allVocs)[0] | null>(null);
+  const [setVocs, setSetVocs] = useState<typeof allVocs>([]);
+  const [setLabel, setSetLabel] = useState<string>("");
+  const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const soundRef = useRef<Audio.Sound | null>(null);
   const autoPlayGenRef = useRef(0);
 
-  const loadPoolAndPick = useCallback(
-    async (excludeId?: string) => {
-      setLoading(true);
-      try {
-        const reviewPool = await getReviewPool(allVocs);
-        const sessionPool = buildReviewSessionPool(reviewPool);
-        setSessionSize(sessionPool.length);
-        setPool(sessionPool);
-        setCurrent(pickRandomReviewVoc(sessionPool, excludeId));
-      } finally {
-        setLoading(false);
-      }
-    },
-    []
-  );
+  const shuffleArray = useCallback(<T,>(items: T[]): T[] => {
+    const copy = [...items];
+    for (let i = copy.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [copy[i], copy[j]] = [copy[j], copy[i]];
+    }
+    return copy;
+  }, []);
+
+  const loadSetAndShuffle = useCallback(async () => {
+    setLoading(true);
+    try {
+      const savedCat = (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) ?? "All";
+      const savedSetRaw = (await AsyncStorage.getItem(STORAGE_KEYS.currentSet)) ?? "0";
+      const savedSetIdx = Math.max(0, parseInt(savedSetRaw, 10) || 0);
+
+      const sets = getSetsForCategory(allVocs, savedCat);
+      const chosenSet = sets[savedSetIdx] ?? sets[0] ?? [];
+      const shuffled = shuffleArray(chosenSet);
+
+      setSetVocs(shuffled);
+      setIndex(0);
+      setSetLabel(`${savedCat} · Bộ ${Math.min(savedSetIdx, Math.max(0, sets.length - 1)) + 1}`);
+    } finally {
+      setLoading(false);
+    }
+  }, [shuffleArray]);
 
   useFocusEffect(
     useCallback(() => {
-      void loadPoolAndPick();
-    }, [loadPoolAndPick])
+      void loadSetAndShuffle();
+    }, [loadSetAndShuffle])
   );
 
   useEffect(() => {
@@ -82,7 +90,12 @@ export default function ReviewScreen() {
     };
   }, []);
 
-  const playSound = async (voc: (typeof allVocs)[0]) => {
+  const current = setVocs[index] ?? null;
+  const total = setVocs.length;
+  const reviewNumberValue = current ? getLearnNumberDigit(current) : null;
+
+  const playSound = async (voc: (typeof allVocs)[0] | null) => {
+    if (!voc) return;
     if (isMute) return;
     await playVocabularyMode(voc, "word", { isMute, soundRef });
   };
@@ -107,18 +120,15 @@ export default function ReviewScreen() {
     })();
   }, [current?.id, isMute]);
 
-  const handleMastered = async () => {
-    if (!current) return;
-    const id = current.id;
-    await markReviewMastered(id);
-    const nextPool = pool.filter((v) => v.id !== id);
-    setPool(nextPool);
-    setCurrent(pickRandomReviewVoc(nextPool, id));
+  const handleNext = () => {
+    if (total === 0) return;
+    setIndex((prev) => Math.min(prev + 1, total));
   };
 
-  const handleNextRandom = () => {
-    if (pool.length === 0) return;
-    setCurrent(pickRandomReviewVoc(pool, current?.id));
+  const handleReshuffle = () => {
+    if (total === 0) return;
+    setSetVocs((prev) => shuffleArray(prev));
+    setIndex(0);
   };
 
   if (loading) {
@@ -129,7 +139,7 @@ export default function ReviewScreen() {
     );
   }
 
-  if (pool.length === 0 || !current) {
+  if (total === 0) {
     return (
       <View style={[styles.container, { paddingTop: insets.top }]}>
         <View style={styles.header}>
@@ -140,27 +150,45 @@ export default function ReviewScreen() {
           >
             <Ionicons name="chevron-back" size={28} color={theme.iconTeal} />
           </TouchableOpacity>
-          <Text style={styles.headerTitle}>Kiểm tra ngẫu nhiên</Text>
+          <Text style={styles.headerTitle}>Bộ trộn</Text>
           <View style={styles.headerSide} />
         </View>
         <View style={styles.emptyWrap}>
-          <Ionicons name="checkmark-done-circle" size={72} color={theme.success} />
-          <Text style={styles.emptyTitle}>
-            {sessionSize === 0
-              ? "Chưa có từ để kiểm tra"
-              : "Hoàn thành phiên kiểm tra"}
-          </Text>
-          <Text style={styles.emptySub}>
-            {sessionSize === 0
-              ? "Hãy đánh dấu từ đã học thuộc khi luyện flashcard trước."
-              : `Bạn đã xử lý xong ${sessionSize} từ trong phiên (tối đa ${REVIEW_SESSION_WORD_LIMIT} từ). Vào lại để kiểm tra thêm.`}
-          </Text>
+          <Ionicons name="shuffle" size={72} color={theme.success} />
+          <Text style={styles.emptyTitle}>Không có từ trong bộ này</Text>
+          <Text style={styles.emptySub}>Hãy chọn một bộ từ trong màn hình học rồi vào lại.</Text>
         </View>
       </View>
     );
   }
 
-  const reviewNumberValue = getLearnNumberDigit(current);
+  if (!current) {
+    return (
+      <View style={[styles.container, { paddingTop: insets.top }]}>
+        <View style={styles.header}>
+          <TouchableOpacity
+            style={styles.headerSide}
+            onPress={() => router.back()}
+            hitSlop={{ top: 12, bottom: 12, left: 12, right: 12 }}
+          >
+            <Ionicons name="chevron-back" size={28} color={theme.iconTeal} />
+          </TouchableOpacity>
+          <Text style={styles.headerTitle}>Bộ trộn</Text>
+          <View style={styles.headerSide} />
+        </View>
+        <View style={styles.emptyWrap}>
+          <Ionicons name="shuffle" size={72} color={theme.success} />
+          <Text style={styles.emptyTitle}>Hoàn thành</Text>
+          <Text style={styles.emptySub}>Bạn đã đi hết các từ trong bộ. Bấm “Trộn lại” để học tiếp.</Text>
+        </View>
+        <View style={[styles.footer, { paddingBottom: insets.bottom + 24 }]}>
+          <TouchableOpacity style={styles.nextBtn} onPress={handleReshuffle}>
+            <Text style={styles.nextBtnText}>Trộn lại ↻</Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    );
+  }
 
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
@@ -172,12 +200,12 @@ export default function ReviewScreen() {
         >
           <Ionicons name="chevron-back" size={28} color={theme.iconTeal} />
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>Kiểm tra ngẫu nhiên</Text>
+        <Text style={styles.headerTitle}>Bộ trộn</Text>
         <View style={styles.headerSide} />
       </View>
 
       <Text style={styles.poolCount}>
-        Phiên kiểm tra: {sessionSize - pool.length + 1}/{sessionSize} · Còn {pool.length} từ
+        {setLabel} · {Math.min(index + 1, total)}/{total}
       </Text>
 
       <View style={styles.cardArea}>
@@ -210,17 +238,13 @@ export default function ReviewScreen() {
             <Text style={styles.playBtnText}>Nghe lại từ</Text>
           </TouchableOpacity>
 
-          <Text style={styles.hint}>Nhớ nghĩa từ qua hình ảnh và âm thanh</Text>
+          <Text style={styles.hint}>Trộn toàn bộ từ trong 1 bộ để luyện</Text>
         </View>
       </View>
 
       <View style={[styles.footer, { paddingBottom: insets.bottom + 24 }]}>
-        <TouchableOpacity style={styles.masteredBtn} onPress={() => void handleMastered()}>
-          <Ionicons name="shield-checkmark" size={24} color="#ffffff" />
-          <Text style={styles.masteredBtnText}>Đã thuộc hoàn toàn</Text>
-        </TouchableOpacity>
-        <TouchableOpacity style={styles.nextBtn} onPress={handleNextRandom}>
-          <Text style={styles.nextBtnText}>Từ khác →</Text>
+        <TouchableOpacity style={styles.masteredBtn} onPress={handleNext}>
+          <Text style={styles.masteredBtnText}>Tiếp →</Text>
         </TouchableOpacity>
       </View>
     </View>
