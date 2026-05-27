@@ -8,7 +8,7 @@ import { vocs } from "@/assets/vocs";
 import { migrateBackupProgressToIds } from "@/lib/vocab-storage";
 import { LEARNED_VOCS_PREFIX, STORAGE_KEYS } from "@/lib/storage-keys";
 
-export const BACKUP_VERSION = 2;
+export const BACKUP_VERSION = 3;
 
 export type SerfBackup = {
   version: number;
@@ -26,7 +26,9 @@ export function isBackupKey(key: string): boolean {
     key === STORAGE_KEYS.soundIconsAlign ||
     key === STORAGE_KEYS.themeMode ||
     key === STORAGE_KEYS.progressUsesIds ||
-    key === STORAGE_KEYS.reviewMasteredIds
+    key === STORAGE_KEYS.reviewMasteredIds ||
+    key === STORAGE_KEYS.srsCardStates ||
+    key === STORAGE_KEYS.quizSessions
   );
 }
 

@@ -1,7 +1,8 @@
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-import { clearReviewMasteredIds } from "@/lib/vocab-review";
+import { clearQuizSessions } from "@/lib/vocab-quiz-history";
 import { LEARNED_VOCS_PREFIX, STORAGE_KEYS } from "@/lib/storage-keys";
+import { clearSrsAndLegacyReview } from "@/lib/vocab-srs";
 
 export async function clearCurrentSetProgress(): Promise<void> {
   const cat = (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) || "All";
@@ -15,5 +16,6 @@ export async function clearAllLearnedProgress(): Promise<void> {
   if (learnedKeys.length > 0) {
     await AsyncStorage.multiRemove(learnedKeys);
   }
-  await clearReviewMasteredIds();
+  await clearSrsAndLegacyReview();
+  await clearQuizSessions();
 }

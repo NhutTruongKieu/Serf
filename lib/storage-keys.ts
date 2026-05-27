@@ -7,7 +7,10 @@ export const STORAGE_KEYS = {
   soundIconsAlign: "SETTINGS_SOUND_ICONS_ALIGN",
   themeMode: "SETTINGS_THEME_MODE",
   progressUsesIds: "PROGRESS_STORAGE_V2",
+  /** Legacy — chỉ đọc khi migrate sang SRS. */
   reviewMasteredIds: "REVIEW_MASTERED_IDS",
+  srsCardStates: "SRS_CARD_STATES_V1",
+  quizSessions: "QUIZ_SESSIONS_V1",
   learnedVocs: (category: string, setIdx: number) =>
     `LEARNED_VOCS_${category}_SET_${setIdx}`,
 } as const;
