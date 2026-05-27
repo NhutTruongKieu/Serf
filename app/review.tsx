@@ -1,4 +1,6 @@
 import { vocs as allVocs } from "@/assets/vocs";
+import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
+import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
 import { useAppSettings } from "@/contexts/app-settings";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import {
@@ -8,6 +10,7 @@ import {
   pickRandomReviewVoc,
   REVIEW_SESSION_WORD_LIMIT,
 } from "@/lib/vocab-review";
+import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { createReviewStyles } from "@/styles/review-styles";
 import { Ionicons } from "@expo/vector-icons";
 import { Audio } from "expo-av";
@@ -72,41 +75,34 @@ export default function ReviewScreen() {
       shouldDuckAndroid: true,
     });
     return () => {
+      stopDeviceTts();
       if (soundRef.current) {
         soundRef.current.unloadAsync();
       }
     };
   }, []);
 
-  const playSound = async (soundSource: unknown) => {
-    if (isMute || !soundSource) return;
-    try {
-      if (soundRef.current) {
-        await soundRef.current.unloadAsync();
-        soundRef.current = null;
-      }
-      const { sound } = await Audio.Sound.createAsync(
-        soundSource as Parameters<typeof Audio.Sound.createAsync>[0],
-        { shouldPlay: true }
-      );
-      soundRef.current = sound;
-    } catch {
-      // ignore playback errors
-    }
+  const playSound = async (voc: (typeof allVocs)[0]) => {
+    if (isMute) return;
+    await playVocabularyMode(voc, "word", { isMute, soundRef });
   };
 
   useEffect(() => {
-    if (!current?.sound) return;
+    if (!current) return;
+    if (!current.sound && !current.useDeviceTts) return;
     const gen = ++autoPlayGenRef.current;
     void (async () => {
-      await playSound(current.sound);
-      if (gen !== autoPlayGenRef.current && soundRef.current) {
-        try {
-          await soundRef.current.unloadAsync();
-        } catch {
-          /* empty */
+      await playSound(current);
+      if (gen !== autoPlayGenRef.current) {
+        stopDeviceTts();
+        if (soundRef.current) {
+          try {
+            await soundRef.current.unloadAsync();
+          } catch {
+            /* empty */
+          }
+          soundRef.current = null;
         }
-        soundRef.current = null;
       }
     })();
   }, [current?.id, isMute]);
@@ -164,6 +160,8 @@ export default function ReviewScreen() {
     );
   }
 
+  const reviewNumberValue = getLearnNumberDigit(current);
+
   return (
     <View style={[styles.container, { paddingTop: insets.top }]}>
       <View style={styles.header}>
@@ -184,17 +182,25 @@ export default function ReviewScreen() {
 
       <View style={styles.cardArea}>
         <View style={styles.card}>
-          <Pressable onPress={() => playSound(current.sound)}>
-            <Image
-              source={current.image}
-              style={styles.image}
-              contentFit="cover"
-            />
+          <Pressable onPress={() => void playSound(current)}>
+            {reviewNumberValue != null ? (
+              <VocabularyNumberGraphic
+                value={reviewNumberValue}
+                theme={theme}
+                style={styles.image}
+              />
+            ) : (
+              <Image
+                source={current.image}
+                style={styles.image}
+                contentFit="cover"
+              />
+            )}
           </Pressable>
 
           <TouchableOpacity
             style={styles.playBtn}
-            onPress={() => playSound(current.sound)}
+            onPress={() => void playSound(current)}
           >
             <Ionicons
               name={isMute ? "volume-mute" : "volume-high"}

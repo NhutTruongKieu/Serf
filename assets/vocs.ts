@@ -1,17 +1,8 @@
+import type { Vocabulary } from "@/lib/vocab-types";
+import { learningExtraVocs } from "./vocs-learning-extra";
 import { new_vocs2 } from "./vocs2";
 
-export type Vocabulary = {
-  id: string;
-  voc: string;
-  pos: string;
-  meaning: string;
-  category: string;
-  sound: any;
-  exampleSound: any;
-  meaningSound: any;
-  image: any;
-  ipa?: string;
-};
+export type { Vocabulary } from "@/lib/vocab-types";
 
 export const new_vocs: Vocabulary[] = [
   {
@@ -7216,4 +7207,8 @@ export const new_vocs: Vocabulary[] = [
   },
 ];
 
-export const vocs: Vocabulary[] = [...new_vocs, ...new_vocs2];
+export const vocs: Vocabulary[] = [
+  ...new_vocs,
+  ...new_vocs2,
+  ...learningExtraVocs,
+];

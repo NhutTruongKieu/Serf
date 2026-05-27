@@ -1,7 +1,12 @@
 export type CategoryProgress = { remaining: number; total: number };
 
+/** Ba loại đầu luôn mở khóa cùng lúc; loại thứ 4 mở khi đã học hết cả ba. */
+export const INITIAL_UNLOCKED_CATEGORY_COUNT = 3;
+
 /** Thứ tự học các loại từ vựng (không gồm "All"). */
 export const VOCAB_CATEGORY_ORDER = [
+  "Numbers & big units",
+  "Phonics (CVC)",
   "Feelings & Emotions",
   "Nature & Landscape",
   "Human Body & Health",
@@ -24,6 +29,8 @@ export const CATEGORY_LABELS_VI: Record<string, string> = {
   "Places & Directions": "Địa điểm & Hướng",
   "Abstract & Qualities": "Khái niệm & Phẩm chất",
   General: "Từ vựng chung",
+  "Numbers & big units": "Số cơ bản & đơn vị lớn",
+  "Phonics (CVC)": "Đánh vần (CVC)",
 };
 
 export function isCategoryComplete(
@@ -35,7 +42,12 @@ export function isCategoryComplete(
   return prog.remaining === 0;
 }
 
-/** Loại đầu tiên luôn mở; loại sau mở khi đã học hết loại trước. "All" mở khi học hết mọi loại. */
+/**
+ * Ba loại đầu (số, đánh vần, cảm xúc) luôn mở cùng lúc.
+ * Từ loại thứ tư trở đi: mở khi đã học hết cả ba loại đầu (đối với loại thứ 4),
+ * sau đó mỗi loại mở khi học hết loại ngay trước.
+ * "All" mở khi học hết mọi loại.
+ */
 export function isCategoryUnlocked(
   category: string,
   progress: Record<string, CategoryProgress>
@@ -46,7 +58,13 @@ export function isCategoryUnlocked(
 
   const idx = VOCAB_CATEGORY_ORDER.indexOf(category as VocabCategory);
   if (idx === -1) return true;
-  if (idx === 0) return true;
+  if (idx < INITIAL_UNLOCKED_CATEGORY_COUNT) return true;
+
+  if (idx === INITIAL_UNLOCKED_CATEGORY_COUNT) {
+    return VOCAB_CATEGORY_ORDER.slice(0, INITIAL_UNLOCKED_CATEGORY_COUNT).every((cat) =>
+      isCategoryComplete(progress, cat)
+    );
+  }
 
   const previous = VOCAB_CATEGORY_ORDER[idx - 1];
   return isCategoryComplete(progress, previous);
@@ -63,7 +81,14 @@ export function getCategoryUnlockHint(
   }
 
   const idx = VOCAB_CATEGORY_ORDER.indexOf(category as VocabCategory);
-  if (idx <= 0) return null;
+  if (idx < INITIAL_UNLOCKED_CATEGORY_COUNT) return null;
+
+  if (idx === INITIAL_UNLOCKED_CATEGORY_COUNT) {
+    const labels = VOCAB_CATEGORY_ORDER.slice(0, INITIAL_UNLOCKED_CATEGORY_COUNT)
+      .map((c) => `"${CATEGORY_LABELS_VI[c] ?? c}"`)
+      .join(", ");
+    return `Học thuộc hết cả ba loại ${labels} để mở khóa loại này.`;
+  }
 
   const previous = VOCAB_CATEGORY_ORDER[idx - 1];
   const prevLabel = CATEGORY_LABELS_VI[previous] ?? previous;

@@ -1,4 +1,5 @@
 import { Vocabulary, vocs as initialVocs } from "@/assets/vocs";
+import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { useAppSettings } from "@/contexts/app-settings";
 import {
   CATEGORY_LABELS_VI,
@@ -8,6 +9,8 @@ import {
   VOCAB_CATEGORY_ORDER,
 } from "@/lib/category-unlock";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
+import { getLearnNumberDigit } from "@/lib/number-voc-display";
+import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
 import {
   countRemainingInSet,
@@ -263,6 +266,7 @@ export default function HomeScreen() {
       shouldDuckAndroid: true,
     });
     return () => {
+      stopDeviceTts();
       if (soundRef.current) {
         soundRef.current.unloadAsync();
       }
@@ -275,38 +279,18 @@ export default function HomeScreen() {
 
     const gen = ++autoPlayGenRef.current;
     (async () => {
-      await playSound(voc.sound, voc.voc);
-      if (gen !== autoPlayGenRef.current && soundRef.current) {
-        try {
-          await soundRef.current.unloadAsync();
-        } catch (_) {}
-        soundRef.current = null;
+      await playVocabularyMode(voc, "word", { isMute, soundRef });
+      if (gen !== autoPlayGenRef.current) {
+        stopDeviceTts();
+        if (soundRef.current) {
+          try {
+            await soundRef.current.unloadAsync();
+          } catch (_) {}
+          soundRef.current = null;
+        }
       }
     })();
   }, [activeVocs, index, currentCategory, currentSet, isMute]);
-
-  const playSound = async (soundSource: any, label?: string) => {
-    if (isMute) return;
-    if (!soundSource) {
-      console.log("No sound file for", label || "this item");
-      return;
-    }
-    try {
-      if (soundRef.current) {
-        await soundRef.current.unloadAsync();
-        soundRef.current = null;
-      }
-      console.log("Loading sound...");
-      const { sound } = await Audio.Sound.createAsync(
-        soundSource,
-        { shouldPlay: true }
-      );
-      soundRef.current = sound;
-      console.log("Sound played successfully!");
-    } catch (e) {
-      console.log("Sound error:", e);
-    }
-  };
 
   const changeIndex = (isNext: boolean) => {
     if (activeVocs.length === 0) return;
@@ -462,7 +446,9 @@ export default function HomeScreen() {
     };
   });
 
-  const renderCard = (voc: Vocabulary) => (
+  const renderCard = (voc: Vocabulary) => {
+    const numberValue = getLearnNumberDigit(voc);
+    return (
     <Animated.View style={[styles.cardArea, animatedCardStyle]}>
       <Animated.View style={styles.card}>
         <View style={styles.cardHeader}>
@@ -475,8 +461,19 @@ export default function HomeScreen() {
           />
         </View>
 
-        <Image source={voc.image} style={styles.image} contentFit="cover" pointerEvents="none" />
-        <Pressable style={{ alignItems: 'center', width: '100%' }} onPress={() => playSound(voc.sound, voc.voc)}>
+        {numberValue != null ? (
+          <VocabularyNumberGraphic
+            value={numberValue}
+            theme={theme}
+            style={styles.image}
+          />
+        ) : (
+          <Image source={voc.image} style={styles.image} contentFit="cover" pointerEvents="none" />
+        )}
+        <Pressable
+          style={{ alignItems: 'center', width: '100%' }}
+          onPress={() => void playVocabularyMode(voc, "word", { isMute, soundRef })}
+        >
           <Text style={styles.word}>{voc.voc}</Text>
           <Text style={styles.pos}>{voc.ipa}</Text>
         </Pressable>
@@ -493,14 +490,14 @@ export default function HomeScreen() {
             name="book"
             size={32}
             color={theme.iconTeal}
-            onPress={() => playSound(voc.meaningSound, "Meaning")}
+            onPress={() => void playVocabularyMode(voc, "meaning", { isMute, soundRef })}
             style={styles.soundBtn}
           />
           <Ionicons
             name="chatbox-ellipses"
             size={32}
             color={theme.success}
-            onPress={() => playSound(voc.exampleSound, "Example")}
+            onPress={() => void playVocabularyMode(voc, "example", { isMute, soundRef })}
             style={styles.soundBtn}
           />
         </View>
@@ -522,6 +519,7 @@ export default function HomeScreen() {
       </Animated.View>
     </Animated.View>
   );
+  };
 
   if (activeVocs.length === 0) {
     return (
