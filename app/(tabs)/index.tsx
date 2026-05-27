@@ -29,6 +29,7 @@ import {
   Modal,
   Pressable,
   ScrollView,
+  StyleSheet,
   Text,
   TouchableOpacity,
   View,
@@ -566,11 +567,12 @@ export default function HomeScreen() {
         animationType="fade"
         onRequestClose={() => setIsSetPickerVisible(false)}
       >
-        <Pressable
-          style={styles.modalOverlay}
-          onPress={() => setIsSetPickerVisible(false)}
-        >
-          <Pressable style={styles.modalContent} onPress={() => {}}>
+        <View style={styles.modalOverlay}>
+          <Pressable
+            style={StyleSheet.absoluteFillObject}
+            onPress={() => setIsSetPickerVisible(false)}
+          />
+          <View style={styles.modalContent}>
             <View style={styles.modalHeader}>
               <Text style={styles.modalTitle}>Chọn bộ từ vựng</Text>
               <Ionicons
@@ -580,7 +582,11 @@ export default function HomeScreen() {
                 onPress={() => setIsSetPickerVisible(false)}
               />
             </View>
-            <ScrollView ref={modalScrollRef} contentContainerStyle={styles.modalScroll}>
+            <ScrollView
+              ref={modalScrollRef}
+              contentContainerStyle={styles.modalScroll}
+              keyboardShouldPersistTaps="handled"
+            >
               <View ref={scrollContentRef} collapsable={false}>
               {sortedCategories.map((cat) => {
                 const sets = getSets(cat);
@@ -649,8 +655,8 @@ export default function HomeScreen() {
               })}
               </View>
             </ScrollView>
-          </Pressable>
-        </Pressable>
+          </View>
+        </View>
       </Modal>
       {/* Header: cài đặt + số thứ tự */}
       <View style={styles.header}>

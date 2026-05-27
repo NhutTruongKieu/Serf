@@ -200,6 +200,7 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
     modalContent: {
       width: "85%",
       maxHeight: "70%",
+      zIndex: 1,
       backgroundColor: theme.card,
       borderRadius: 24,
       padding: 24,
