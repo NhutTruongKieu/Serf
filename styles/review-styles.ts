@@ -1,6 +1,7 @@
 import { AppTheme } from "@/constants/app-theme";
 import { StyleSheet } from "react-native";
 
+/** Styles cho màn shuffle / review từ vựng (có scope picker: bộ/loại/tất cả). */
 export function createReviewStyles(theme: AppTheme, screenWidth: number) {
   return StyleSheet.create({
     container: {
@@ -34,6 +35,32 @@ export function createReviewStyles(theme: AppTheme, screenWidth: number) {
       fontSize: 14,
       marginBottom: 8,
     },
+    scopeRow: {
+      flexDirection: "row",
+      alignSelf: "center",
+      backgroundColor: theme.placeholderBg,
+      borderRadius: 999,
+      padding: 4,
+      marginBottom: 10,
+    },
+    scopeBtn: {
+      paddingVertical: 6,
+      paddingHorizontal: 18,
+      borderRadius: 999,
+    },
+    scopeBtnLeft: {},
+    scopeBtnRight: {},
+    scopeBtnActive: {
+      backgroundColor: theme.accent,
+    },
+    scopeBtnText: {
+      color: theme.textSecondary,
+      fontSize: 14,
+      fontWeight: "600",
+    },
+    scopeBtnTextActive: {
+      color: theme.floatingBtnText,
+    },
     cardArea: {
       flex: 1,
       width: screenWidth - 40,
@@ -55,8 +82,8 @@ export function createReviewStyles(theme: AppTheme, screenWidth: number) {
       elevation: 12,
     },
     image: {
-      width: 280,
-      height: 280,
+      width: 336,
+      height: 336,
       borderRadius: 16,
       backgroundColor: theme.cardImageBg,
     },

@@ -4,6 +4,12 @@ export type Vocabulary = {
   pos: string;
   meaning: string;
   category: string;
+  /**
+   * Nhóm con trong cùng category — items khác `setGroup` sẽ không bị gộp
+   * chung set. Items không khai báo (undefined) tạo thành nhóm "main"
+   * mặc định. Dùng để cách ly các bộ phụ (ví dụ: CVC trong Numbers).
+   */
+  setGroup?: string;
   sound?: any;
   exampleSound?: any;
   meaningSound?: any;

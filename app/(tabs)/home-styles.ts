@@ -53,8 +53,8 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       elevation: 12,
     },
     image: {
-      width: 280,
-      height: 280,
+      width: 336,
+      height: 336,
       borderRadius: 16,
       backgroundColor: theme.cardImageBg,
     },

@@ -16,6 +16,7 @@ import {
   countRemainingInSet,
   loadActiveVocsForSet,
   migrateAllProgressToIds,
+  migrateMergeCvcIntoNumbers,
   saveRemainingIds,
 } from "@/lib/vocab-storage";
 import { Ionicons } from "@expo/vector-icons";
@@ -163,6 +164,7 @@ export default function HomeScreen() {
   const loadState = useCallback(async () => {
     try {
       await migrateAllProgressToIds(initialVocs);
+      await migrateMergeCvcIntoNumbers(initialVocs);
 
       let savedCat =
         (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) || "All";

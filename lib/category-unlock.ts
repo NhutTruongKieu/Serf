@@ -6,7 +6,6 @@ export const INITIAL_UNLOCKED_CATEGORY_COUNT = 3;
 /** Thứ tự học các loại từ vựng (không gồm "All"). */
 export const VOCAB_CATEGORY_ORDER = [
   "Numbers & big units",
-  "Phonics (CVC)",
   "Feelings & Emotions",
   "Nature & Landscape",
   "Human Body & Health",
@@ -29,8 +28,7 @@ export const CATEGORY_LABELS_VI: Record<string, string> = {
   "Places & Directions": "Địa điểm & Hướng",
   "Abstract & Qualities": "Khái niệm & Phẩm chất",
   General: "Từ vựng chung",
-  "Numbers & big units": "Số cơ bản & đơn vị lớn",
-  "Phonics (CVC)": "Đánh vần (CVC)",
+  "Numbers & big units": "Số & Đánh vần (CVC)",
 };
 
 export function isCategoryComplete(
@@ -43,7 +41,7 @@ export function isCategoryComplete(
 }
 
 /**
- * Ba loại đầu (số, đánh vần, cảm xúc) luôn mở cùng lúc.
+ * Ba loại đầu (số & đánh vần, cảm xúc, thiên nhiên) luôn mở cùng lúc.
  * Từ loại thứ tư trở đi: mở khi đã học hết cả ba loại đầu (đối với loại thứ 4),
  * sau đó mỗi loại mở khi học hết loại ngay trước.
  * "All" mở khi học hết mọi loại.

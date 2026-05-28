@@ -2,10 +2,16 @@ import { vocs as allVocs } from "@/assets/vocs";
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { useAppSettings } from "@/contexts/app-settings";
 import { useAppTheme } from "@/hooks/use-app-theme";
+import {
+  CATEGORY_LABELS_VI,
+  isCategoryUnlocked,
+  VOCAB_CATEGORY_ORDER,
+} from "@/lib/category-unlock";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
-import { getSetsForCategory } from "@/lib/vocab-sets";
+import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
+import { countRemainingInSet } from "@/lib/vocab-storage";
 import { createReviewStyles } from "@/styles/review-styles";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -25,6 +31,44 @@ import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
 
+type ReviewScope = "set" | "category" | "all";
+const REVIEW_SCOPES: ReviewScope[] = ["set", "category", "all"];
+const SCOPE_LABEL_SHORT: Record<ReviewScope, string> = {
+  set: "Bộ",
+  category: "Loại",
+  all: "Tất cả",
+};
+const ALL_SCOPE_LIMIT = 20;
+
+async function getUnlockedCategorySet(): Promise<Set<string>> {
+  const progress: Record<string, { remaining: number; total: number }> = {};
+  for (const cat of VOCAB_CATEGORY_ORDER) {
+    const sets = getSetsForCategory(allVocs, cat);
+    let total = 0;
+    let remaining = 0;
+    for (let i = 0; i < sets.length; i++) {
+      const setTotal = sets[i].length;
+      total += setTotal;
+      try {
+        remaining += await countRemainingInSet(cat, i, sets[i]);
+      } catch {
+        remaining += setTotal;
+      }
+    }
+    progress[cat] = { remaining, total };
+  }
+  const unlocked = new Set<string>();
+  for (const cat of VOCAB_CATEGORY_ORDER) {
+    if (isCategoryUnlocked(cat, progress)) unlocked.add(cat);
+  }
+  return unlocked;
+}
+
+function parseReviewScope(value: string | null): ReviewScope {
+  if (value === "category" || value === "all") return value;
+  return "set";
+}
+
 export default function ReviewScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
@@ -37,6 +81,7 @@ export default function ReviewScreen() {
 
   const [setVocs, setSetVocs] = useState<typeof allVocs>([]);
   const [setLabel, setSetLabel] = useState<string>("");
+  const [scope, setScope] = useState<ReviewScope>("set");
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const soundRef = useRef<Audio.Sound | null>(null);
@@ -51,30 +96,67 @@ export default function ReviewScreen() {
     return copy;
   }, []);
 
-  const loadSetAndShuffle = useCallback(async () => {
-    setLoading(true);
-    try {
-      const savedCat = (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) ?? "All";
-      const savedSetRaw = (await AsyncStorage.getItem(STORAGE_KEYS.currentSet)) ?? "0";
-      const savedSetIdx = Math.max(0, parseInt(savedSetRaw, 10) || 0);
+  const loadAndShuffle = useCallback(
+    async (chosenScope: ReviewScope) => {
+      setLoading(true);
+      try {
+        const savedCat =
+          (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) ?? "All";
+        const savedSetRaw =
+          (await AsyncStorage.getItem(STORAGE_KEYS.currentSet)) ?? "0";
+        const savedSetIdx = Math.max(0, parseInt(savedSetRaw, 10) || 0);
 
-      const sets = getSetsForCategory(allVocs, savedCat);
-      const chosenSet = sets[savedSetIdx] ?? sets[0] ?? [];
-      const shuffled = shuffleArray(chosenSet);
+        let pool: typeof allVocs = [];
+        let label = "";
 
-      setSetVocs(shuffled);
-      setIndex(0);
-      setSetLabel(`${savedCat} · Bộ ${Math.min(savedSetIdx, Math.max(0, sets.length - 1)) + 1}`);
-    } finally {
-      setLoading(false);
-    }
-  }, [shuffleArray]);
+        if (chosenScope === "all") {
+          const unlocked = await getUnlockedCategorySet();
+          pool = allVocs.filter((v) => unlocked.has(v.category));
+          label = `Tất cả · ${ALL_SCOPE_LIMIT} từ ngẫu nhiên`;
+        } else if (chosenScope === "category") {
+          pool = getFilteredVocs(allVocs, savedCat);
+          const catLabel = CATEGORY_LABELS_VI[savedCat] ?? savedCat;
+          label = `${catLabel} · ${ALL_SCOPE_LIMIT} từ ngẫu nhiên`;
+        } else {
+          const sets = getSetsForCategory(allVocs, savedCat);
+          pool = sets[savedSetIdx] ?? sets[0] ?? [];
+          const catLabel = CATEGORY_LABELS_VI[savedCat] ?? savedCat;
+          label = `${catLabel} · Bộ ${
+            Math.min(savedSetIdx, Math.max(0, sets.length - 1)) + 1
+          }`;
+        }
+
+        const shuffled = shuffleArray(pool);
+        const limited =
+          chosenScope === "set" ? shuffled : shuffled.slice(0, ALL_SCOPE_LIMIT);
+        setSetVocs(limited);
+        setIndex(0);
+        setSetLabel(label);
+      } finally {
+        setLoading(false);
+      }
+    },
+    [shuffleArray]
+  );
 
   useFocusEffect(
     useCallback(() => {
-      void loadSetAndShuffle();
-    }, [loadSetAndShuffle])
+      void (async () => {
+        const savedScope = parseReviewScope(
+          await AsyncStorage.getItem(STORAGE_KEYS.reviewScope)
+        );
+        setScope(savedScope);
+        await loadAndShuffle(savedScope);
+      })();
+    }, [loadAndShuffle])
   );
+
+  const selectScope = (next: ReviewScope) => {
+    if (next === scope) return;
+    setScope(next);
+    void AsyncStorage.setItem(STORAGE_KEYS.reviewScope, next);
+    void loadAndShuffle(next);
+  };
 
   useEffect(() => {
     Audio.setAudioModeAsync({
@@ -126,6 +208,10 @@ export default function ReviewScreen() {
   };
 
   const handleReshuffle = () => {
+    if (scope !== "set") {
+      void loadAndShuffle(scope);
+      return;
+    }
     if (total === 0) return;
     setSetVocs((prev) => shuffleArray(prev));
     setIndex(0);
@@ -204,6 +290,33 @@ export default function ReviewScreen() {
         <View style={styles.headerSide} />
       </View>
 
+      <View style={styles.scopeRow}>
+        {REVIEW_SCOPES.map((s, i) => {
+          const isActive = s === scope;
+          return (
+            <TouchableOpacity
+              key={s}
+              style={[
+                styles.scopeBtn,
+                i === 0 && styles.scopeBtnLeft,
+                i === REVIEW_SCOPES.length - 1 && styles.scopeBtnRight,
+                isActive && styles.scopeBtnActive,
+              ]}
+              onPress={() => selectScope(s)}
+            >
+              <Text
+                style={[
+                  styles.scopeBtnText,
+                  isActive && styles.scopeBtnTextActive,
+                ]}
+              >
+                {SCOPE_LABEL_SHORT[s]}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
       <Text style={styles.poolCount}>
         {setLabel} · {Math.min(index + 1, total)}/{total}
       </Text>
@@ -238,7 +351,13 @@ export default function ReviewScreen() {
             <Text style={styles.playBtnText}>Nghe lại từ</Text>
           </TouchableOpacity>
 
-          <Text style={styles.hint}>Trộn toàn bộ từ trong 1 bộ để luyện</Text>
+          <Text style={styles.hint}>
+            {scope === "set"
+              ? "Trộn toàn bộ từ trong 1 bộ để luyện"
+              : scope === "category"
+                ? `Bốc ngẫu nhiên ${ALL_SCOPE_LIMIT} từ trong loại đang chọn`
+                : `Bốc ngẫu nhiên ${ALL_SCOPE_LIMIT} từ trong các loại đã mở khóa`}
+          </Text>
         </View>
       </View>
 

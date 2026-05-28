@@ -147,3 +147,34 @@ export async function migrateBackupProgressToIds(
 ): Promise<void> {
   await migrateAllProgressToIds(allVocs, true);
 }
+
+/**
+ * One-time: chuyển progress của category cũ "Phonics (CVC)" thành set
+ * riêng thuộc "Numbers & big units" (CVC giờ là `setGroup: "cvc"`).
+ * Set CVC nằm sau các set Numbers theo thứ tự getSetsForCategory.
+ */
+export async function migrateMergeCvcIntoNumbers(
+  allVocs: Vocabulary[]
+): Promise<void> {
+  const OLD_CVC_CATEGORY = "Phonics (CVC)";
+  const NEW_CATEGORY = "Numbers & big units";
+
+  const oldCvcKey = STORAGE_KEYS.learnedVocs(OLD_CVC_CATEGORY, 0);
+  const oldRaw = await AsyncStorage.getItem(oldCvcKey);
+  if (oldRaw == null) return;
+
+  const sets = getSetsForCategory(allVocs, NEW_CATEGORY);
+  const cvcSetIdx = sets.findIndex((set) =>
+    set.some((v) => v.setGroup === "cvc")
+  );
+
+  if (cvcSetIdx >= 0) {
+    const newKey = STORAGE_KEYS.learnedVocs(NEW_CATEGORY, cvcSetIdx);
+    const existing = await AsyncStorage.getItem(newKey);
+    if (existing == null) {
+      await AsyncStorage.setItem(newKey, oldRaw);
+    }
+  }
+
+  await AsyncStorage.removeItem(oldCvcKey);
+}

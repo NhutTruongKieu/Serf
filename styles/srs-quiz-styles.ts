@@ -50,8 +50,8 @@ export function createSrsQuizStyles(theme: AppTheme, screenWidth: number) {
       elevation: 10,
     },
     image: {
-      width: 260,
-      height: 260,
+      width: 312,
+      height: 312,
       borderRadius: 16,
       backgroundColor: theme.cardImageBg,
     },
