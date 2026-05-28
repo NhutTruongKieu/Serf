@@ -4,8 +4,10 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { collectLearnedVocs } from "@/lib/vocab-learned";
 
-/** 0 = mới vào SRS; 5 = ổn định, ôn hàng tháng. */
-export type SrsStep = 0 | 1 | 2 | 3 | 4 | 5;
+/** 0 = mới vào SRS; 6 = ổn định, ôn hàng tháng. */
+export type SrsStep = 0 | 1 | 2 | 3 | 4 | 5 | 6;
+
+export const MAX_SRS_STEP: SrsStep = 6;
 
 export type SrsCardState = {
   step: SrsStep;
@@ -14,6 +16,10 @@ export type SrsCardState = {
 };
 
 export type SrsMap = Record<string, SrsCardState>;
+
+function addLocalHours(from: Date, hours: number): Date {
+  return new Date(from.getTime() + hours * 60 * 60 * 1000);
+}
 
 function addLocalDays(from: Date, days: number): Date {
   const d = new Date(from.getTime());
@@ -32,14 +38,16 @@ export function addLocalCalendarMonths(from: Date, months: number): Date {
 export function nextReviewAfterCorrect(from: Date, newStep: SrsStep): Date {
   switch (newStep) {
     case 1:
-      return addLocalDays(from, 1);
+      return addLocalHours(from, 6);
     case 2:
-      return addLocalDays(from, 2);
+      return addLocalDays(from, 1);
     case 3:
-      return addLocalDays(from, 3);
+      return addLocalDays(from, 2);
     case 4:
-      return addLocalDays(from, 7);
+      return addLocalDays(from, 3);
     case 5:
+      return addLocalDays(from, 7);
+    case 6:
       return addLocalCalendarMonths(from, 1);
     default:
       return from;
@@ -64,7 +72,7 @@ export async function saveSrsMap(map: SrsMap): Promise<void> {
   await AsyncStorage.setItem(STORAGE_KEYS.srsCardStates, JSON.stringify(map));
 }
 
-/** Đọc legacy REVIEW_MASTERED_IDS → bước 5, ôn sau 1 tháng (local); xóa key cũ. */
+/** Đọc legacy REVIEW_MASTERED_IDS → bước max, ôn sau 1 tháng (local); xóa key cũ. */
 export async function migrateReviewMasteredToSrs(): Promise<void> {
   let map = await loadSrsMap();
   if (Object.keys(map).length > 0) {
@@ -82,7 +90,7 @@ export async function migrateReviewMasteredToSrs(): Promise<void> {
     const next = addLocalCalendarMonths(now, 1).toISOString();
     for (const id of ids) {
       if (typeof id !== "string") continue;
-      map[id] = { step: 5, nextReviewAt: next };
+      map[id] = { step: MAX_SRS_STEP, nextReviewAt: next };
     }
     await saveSrsMap(map);
   } finally {
@@ -126,7 +134,7 @@ export async function applySrsQuizAnswer(
   const step = (prev?.step ?? 0) as SrsStep;
 
   if (correct) {
-    const newStep = Math.min(5, step + 1) as SrsStep;
+    const newStep = Math.min(MAX_SRS_STEP, step + 1) as SrsStep;
     const nextAt = nextReviewAfterCorrect(now, newStep);
     map[vocabId] = { step: newStep, nextReviewAt: nextAt.toISOString() };
   } else {
