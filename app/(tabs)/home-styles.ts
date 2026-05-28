@@ -84,7 +84,6 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       flexDirection: "row",
       width: "80%",
       alignSelf: "center",
-      gap: 20,
       marginBottom: 8,
       paddingHorizontal: 8,
     },
@@ -96,6 +95,28 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
     },
     soundRowRight: {
       justifyContent: "flex-end",
+    },
+    soundZone: {
+      flex: 1,
+      minHeight: 48,
+      justifyContent: "center",
+    },
+    soundZoneLeft: {
+      alignItems: "flex-start",
+    },
+    soundZoneCenter: {
+      alignItems: "center",
+    },
+    soundZoneRight: {
+      alignItems: "flex-end",
+    },
+    soundIconsGroup: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 20,
+    },
+    soundIconsGhost: {
+      opacity: 0.6,
     },
     soundBtn: {
       padding: 4,

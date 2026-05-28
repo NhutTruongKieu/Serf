@@ -5,6 +5,7 @@ export const STORAGE_KEYS = {
   currentSet: "CURRENT_SET",
   mute: "SETTINGS_MUTE",
   soundIconsAlign: "SETTINGS_SOUND_ICONS_ALIGN",
+  soundIconsInlinePicker: "SETTINGS_SOUND_ICONS_INLINE_PICKER",
   themeMode: "SETTINGS_THEME_MODE",
   progressUsesIds: "PROGRESS_STORAGE_V2",
   /** Legacy — chỉ đọc khi migrate sang SRS. */

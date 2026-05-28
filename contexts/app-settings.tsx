@@ -19,6 +19,8 @@ type AppSettingsContextValue = {
   setIsMute: (value: boolean) => void;
   soundIconsAlign: SoundIconsAlign;
   setSoundIconsAlign: (value: SoundIconsAlign) => void;
+  soundIconsInlinePicker: boolean;
+  setSoundIconsInlinePicker: (value: boolean) => void;
   themeMode: ThemeMode;
   setThemeMode: (value: ThemeMode) => void;
   progressReloadToken: number;
@@ -41,17 +43,21 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [isMute, setIsMuteState] = useState(false);
   const [soundIconsAlign, setSoundIconsAlignState] =
     useState<SoundIconsAlign>("center");
+  const [soundIconsInlinePicker, setSoundIconsInlinePickerState] =
+    useState<boolean>(true);
   const [themeMode, setThemeModeState] = useState<ThemeMode>("dark");
   const [progressReloadToken, setProgressReloadToken] = useState(0);
 
   const reloadFromStorage = useCallback(async () => {
-    const [mute, align, theme] = await Promise.all([
+    const [mute, align, inlinePicker, theme] = await Promise.all([
       AsyncStorage.getItem(STORAGE_KEYS.mute),
       AsyncStorage.getItem(STORAGE_KEYS.soundIconsAlign),
+      AsyncStorage.getItem(STORAGE_KEYS.soundIconsInlinePicker),
       AsyncStorage.getItem(STORAGE_KEYS.themeMode),
     ]);
     setIsMuteState(mute === "true");
     setSoundIconsAlignState(parseSoundIconsAlign(align));
+    setSoundIconsInlinePickerState(inlinePicker !== "false");
     setThemeModeState(parseThemeMode(theme));
   }, []);
 
@@ -69,6 +75,14 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
     AsyncStorage.setItem(STORAGE_KEYS.soundIconsAlign, value);
   }, []);
 
+  const setSoundIconsInlinePicker = useCallback((value: boolean) => {
+    setSoundIconsInlinePickerState(value);
+    AsyncStorage.setItem(
+      STORAGE_KEYS.soundIconsInlinePicker,
+      value ? "true" : "false"
+    );
+  }, []);
+
   const setThemeMode = useCallback((value: ThemeMode) => {
     setThemeModeState(value);
     AsyncStorage.setItem(STORAGE_KEYS.themeMode, value);
@@ -84,6 +98,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setIsMute,
       soundIconsAlign,
       setSoundIconsAlign,
+      soundIconsInlinePicker,
+      setSoundIconsInlinePicker,
       themeMode,
       setThemeMode,
       progressReloadToken,
@@ -95,6 +111,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setIsMute,
       soundIconsAlign,
       setSoundIconsAlign,
+      soundIconsInlinePicker,
+      setSoundIconsInlinePicker,
       themeMode,
       setThemeMode,
       progressReloadToken,

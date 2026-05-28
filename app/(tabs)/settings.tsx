@@ -55,6 +55,8 @@ export default function SettingsScreen() {
     setIsMute,
     soundIconsAlign,
     setSoundIconsAlign,
+    soundIconsInlinePicker,
+    setSoundIconsInlinePicker,
     themeMode,
     setThemeMode,
     bumpProgressReload,
@@ -90,7 +92,6 @@ export default function SettingsScreen() {
 
   const selectSoundIconsAlign = (align: "left" | "center" | "right") => {
     setSoundIconsAlign(align);
-    router.back();
   };
 
   const handleResetCurrentSet = () => {
@@ -451,6 +452,30 @@ export default function SettingsScreen() {
                 </Text>
               </TouchableOpacity>
             </View>
+          </View>
+
+          <View style={styles.divider} />
+
+          <View style={styles.row}>
+            <View style={styles.rowText}>
+              <Ionicons
+                name="radio-button-on-outline"
+                size={22}
+                color={theme.iconTeal}
+              />
+              <View style={styles.rowLabels}>
+                <Text style={styles.rowTitle}>Chọn vị trí trên thẻ từ</Text>
+                <Text style={styles.rowSubtitle}>
+                  Hiện ô chọn ở 2 vị trí còn lại để chạm đổi nhanh ngoài thẻ từ
+                </Text>
+              </View>
+            </View>
+            <Switch
+              value={soundIconsInlinePicker}
+              onValueChange={setSoundIconsInlinePicker}
+              trackColor={{ false: theme.switchTrackOff, true: theme.accent }}
+              thumbColor={theme.floatingBtnText}
+            />
           </View>
         </View>
 

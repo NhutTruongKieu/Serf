@@ -61,8 +61,30 @@ export default function HomeScreen() {
   const [index, setIndex] = useState(0);
   const [showMeaning, setShowMeaning] = useState(false);
   const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
-  const { isMute, setIsMute, soundIconsAlign, progressReloadToken } =
-    useAppSettings();
+  const {
+    isMute,
+    setIsMute,
+    soundIconsAlign,
+    setSoundIconsAlign,
+    soundIconsInlinePicker,
+    setSoundIconsInlinePicker,
+    progressReloadToken,
+  } = useAppSettings();
+  const SOUND_ALIGNS = ["left", "center", "right"] as const;
+  const DOUBLE_TAP_WINDOW_MS = 300;
+  const lastRadioTapRef = useRef<{ align: string; time: number } | null>(null);
+
+  const handleRadioTap = (align: "left" | "center" | "right") => {
+    const now = Date.now();
+    const last = lastRadioTapRef.current;
+    if (last && last.align === align && now - last.time < DOUBLE_TAP_WINDOW_MS) {
+      lastRadioTapRef.current = null;
+      setSoundIconsInlinePicker(false);
+      return;
+    }
+    lastRadioTapRef.current = { align, time: now };
+    setSoundIconsAlign(align);
+  };
   const { theme } = useAppTheme();
   const styles = useMemo(
     () => createHomeStyles(theme, SCREEN_WIDTH),
@@ -478,29 +500,91 @@ export default function HomeScreen() {
           <Text style={styles.pos}>{voc.ipa}</Text>
         </Pressable>
 
-        <View
-          style={[
-            styles.soundRow,
-            soundIconsAlign === "left" && styles.soundRowLeft,
-            soundIconsAlign === "center" && styles.soundRowCenter,
-            soundIconsAlign === "right" && styles.soundRowRight,
-          ]}
-        >
-          <Ionicons
-            name="book"
-            size={32}
-            color={theme.iconTeal}
-            onPress={() => void playVocabularyMode(voc, "meaning", { isMute, soundRef })}
-            style={styles.soundBtn}
-          />
-          <Ionicons
-            name="chatbox-ellipses"
-            size={32}
-            color={theme.success}
-            onPress={() => void playVocabularyMode(voc, "example", { isMute, soundRef })}
-            style={styles.soundBtn}
-          />
-        </View>
+        {soundIconsInlinePicker ? (
+          <View style={styles.soundRow}>
+            {SOUND_ALIGNS.map((align) => {
+              const isActive = soundIconsAlign === align;
+              return (
+                <View
+                  key={align}
+                  style={[
+                    styles.soundZone,
+                    align === "left" && styles.soundZoneLeft,
+                    align === "center" && styles.soundZoneCenter,
+                    align === "right" && styles.soundZoneRight,
+                  ]}
+                >
+                  {isActive ? (
+                    <View style={styles.soundIconsGroup}>
+                      <Ionicons
+                        name="book"
+                        size={32}
+                        color={theme.iconTeal}
+                        onPress={() =>
+                          void playVocabularyMode(voc, "meaning", {
+                            isMute,
+                            soundRef,
+                          })
+                        }
+                        style={styles.soundBtn}
+                      />
+                      <Ionicons
+                        name="chatbox-ellipses"
+                        size={32}
+                        color={theme.success}
+                        onPress={() =>
+                          void playVocabularyMode(voc, "example", {
+                            isMute,
+                            soundRef,
+                          })
+                        }
+                        style={styles.soundBtn}
+                      />
+                    </View>
+                  ) : (
+                    <Ionicons
+                      name="radio-button-off"
+                      size={22}
+                      color={theme.iconMuted}
+                      onPress={() => handleRadioTap(align)}
+                      style={[styles.soundBtn, styles.soundIconsGhost]}
+                    />
+                  )}
+                </View>
+              );
+            })}
+          </View>
+        ) : (
+          <View
+            style={[
+              styles.soundRow,
+              soundIconsAlign === "left" && styles.soundRowLeft,
+              soundIconsAlign === "center" && styles.soundRowCenter,
+              soundIconsAlign === "right" && styles.soundRowRight,
+            ]}
+          >
+            <View style={styles.soundIconsGroup}>
+              <Ionicons
+                name="book"
+                size={32}
+                color={theme.iconTeal}
+                onPress={() =>
+                  void playVocabularyMode(voc, "meaning", { isMute, soundRef })
+                }
+                style={styles.soundBtn}
+              />
+              <Ionicons
+                name="chatbox-ellipses"
+                size={32}
+                color={theme.success}
+                onPress={() =>
+                  void playVocabularyMode(voc, "example", { isMute, soundRef })
+                }
+                style={styles.soundBtn}
+              />
+            </View>
+          </View>
+        )}
 
         {showMeaning && (
           <View style={styles.meaningContainer}>
