@@ -761,6 +761,13 @@ export default function HomeScreen() {
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.settingsBtn}
+            onPress={() => router.push("/passage")}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          >
+            <Ionicons name="document-text-outline" size={24} color={theme.iconTeal} />
+          </TouchableOpacity>
+          <TouchableOpacity
+            style={styles.settingsBtn}
             onPress={() => router.push("/settings")}
             hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
           >

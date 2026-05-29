@@ -1,7 +1,7 @@
 export type CategoryProgress = { remaining: number; total: number };
 
-/** Ba loại đầu luôn mở khóa cùng lúc; loại thứ 4 mở khi đã học hết cả ba. */
-export const INITIAL_UNLOCKED_CATEGORY_COUNT = 3;
+/** Hai loại đầu luôn mở khóa cùng lúc; loại thứ 3 mở khi đã học hết cả hai. */
+export const INITIAL_UNLOCKED_CATEGORY_COUNT = 2;
 
 /** Thứ tự học các loại từ vựng (không gồm "All"). */
 export const VOCAB_CATEGORY_ORDER = [
@@ -41,8 +41,8 @@ export function isCategoryComplete(
 }
 
 /**
- * Ba loại đầu (số & đánh vần, cảm xúc, thiên nhiên) luôn mở cùng lúc.
- * Từ loại thứ tư trở đi: mở khi đã học hết cả ba loại đầu (đối với loại thứ 4),
+ * Hai loại đầu (số & đánh vần, cảm xúc) luôn mở cùng lúc.
+ * Loại thứ 3 trở đi: mở khi đã học hết các loại đầu (đối với loại ngay sau nhóm mở sẵn),
  * sau đó mỗi loại mở khi học hết loại ngay trước.
  * "All" mở khi học hết mọi loại.
  */
@@ -85,7 +85,7 @@ export function getCategoryUnlockHint(
     const labels = VOCAB_CATEGORY_ORDER.slice(0, INITIAL_UNLOCKED_CATEGORY_COUNT)
       .map((c) => `"${CATEGORY_LABELS_VI[c] ?? c}"`)
       .join(", ");
-    return `Học thuộc hết cả ba loại ${labels} để mở khóa loại này.`;
+    return `Học thuộc hết các loại ${labels} để mở khóa loại này.`;
   }
 
   const previous = VOCAB_CATEGORY_ORDER[idx - 1];

@@ -24,6 +24,7 @@ function RootLayoutInner() {
         <Stack.Screen name="(tabs)" options={{ headerShown: false }} />
         <Stack.Screen name="review" options={{ headerShown: false }} />
         <Stack.Screen name="srs-quiz" options={{ headerShown: false }} />
+        <Stack.Screen name="passage" options={{ headerShown: false }} />
       </Stack>
       <StatusBar style={themeMode === 'light' ? 'dark' : 'light'} />
     </ThemeProvider>

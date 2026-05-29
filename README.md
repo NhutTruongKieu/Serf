@@ -34,7 +34,7 @@
   10. **Tất cả** — mở khoá khi học hết mọi loại.
 - Mỗi category chia thành **bộ 20 từ**.
 - **Sub-group** (`setGroup`): bộ phụ trong cùng category được chunk độc lập (vd CVC trong Numbers tạo set riêng, không trộn lẫn).
-- **Unlock progressive**: 3 category đầu mở sẵn; từ category thứ 4 trở đi, mở khi học hết category liền trước.
+- **Unlock progressive**: 2 category đầu mở sẵn (Số & Đánh vần, Cảm xúc); từ category thứ 3 trở đi, mở khi học hết các category trước đó.
 
 ### 3. Hệ thống SRS (Spaced Repetition)
 
@@ -69,14 +69,24 @@ Nút "Trộn lại" sau khi đi hết queue:
 - Scope `set`: trộn lại đúng các từ cũ với order mới.
 - Scope `category` / `all`: bốc 20 từ **ngẫu nhiên mới**.
 
-### 6. Tuỳ chỉnh vị trí icon Meaning & Example
+### 6. Học từ trong đoạn văn (icon 📄)
+
+- Dán / gõ một đoạn văn tiếng Anh bất kỳ vào ô nhập (giới hạn 20.000 ký tự).
+- App **quét toàn bộ kho từ vựng**, tìm những từ xuất hiện trong đoạn:
+  - Tokenize đoạn văn, lenient stem các hậu tố phổ biến: `-s, -es, -ies, -ed, -ied, -ing` → bắt được dạng số nhiều / quá khứ / -ing.
+  - Voc có nhiều dạng (vd `"sink; sank"`) được tách và thử khớp từng dạng.
+- Bốc ngẫu nhiên **10 từ** từ danh sách trùng → hiển thị flashcard (ảnh, từ, IPA, nghĩa, phát âm word / meaning / example).
+- Nút **"Bốc lại 10 từ"** sau khi học hết để random batch khác từ cùng đoạn văn.
+- Nút **"Nhập đoạn khác"** ở header để quay lại ô nhập, giữ nguyên hoặc xoá đoạn cũ.
+
+### 7. Tuỳ chỉnh vị trí icon Meaning & Example
 
 - Setting cho phép đặt 2 icon Nghe Nghĩa / Nghe Ví dụ ở **trái / giữa / phải**.
 - **Inline picker** ngay trên thẻ học: 2 vị trí inactive hiển thị icon radio-button-off — chạm để chuyển nhanh, không phải vào Cài đặt.
 - **Double-tap** vào radio-button-off để **tắt inline picker** ngay (khi không muốn icon thừa hiện trên thẻ).
 - Setting toggle để bật / tắt inline picker (lưu vào `SETTINGS_SOUND_ICONS_INLINE_PICKER`).
 
-### 7. Cài đặt (Settings)
+### 8. Cài đặt (Settings)
 
 - **Tài khoản**: đăng nhập / đăng xuất Google.
 - **Âm thanh**: bật / tắt phát âm tự động.
@@ -94,29 +104,29 @@ Nút "Trộn lại" sau khi đi hết queue:
   - **Nhập** dữ liệu từ file JSON (Document Picker).
 - **Ứng dụng**: hiển thị phiên bản & bundle id.
 
-### 8. Sao lưu & khôi phục
+### 9. Sao lưu & khôi phục
 
 - Backup chứa: tiến độ học từng bộ, SRS state, sessions quiz, cài đặt (mute, theme, vị trí icon…).
 - File JSON có version (`BACKUP_VERSION = 3`), sanitize key trước khi import.
 - Hỗ trợ Google Drive (folder ẩn theo app data scope).
 
-### 9. Audio
+### 10. Audio
 
 - Mỗi từ có thể có 3 audio bundled (file MP3): `sound` (word), `meaningSound`, `exampleSound`.
 - Bộ Số & CVC fallback dùng **device TTS** (`expo-speech`) — đọc tiếng Anh cho từ, tiếng Việt cho meaning.
 - Tự dừng audio cũ khi user chuyển từ.
 
-### 10. Theme
+### 11. Theme
 
 - Light / Dark theme (mặc định Dark), hệ màu tự build theo OS hoặc theo lựa chọn trong Settings.
 
-### 11. Responsive (Phone + Tablet)
+### 12. Responsive (Phone + Tablet)
 
 - Helper `lib/layout.ts` clamp bề rộng nội dung ở **600px** trên tablet, ảnh card max **420px**.
 - Content tự căn giữa trên iPad / iPad Pro; phone hiển thị như cũ.
 - iOS `supportsTablet: true` → app chạy native trên iPad (không scale-up từ iPhone).
 
-### 12. Lưu trữ cục bộ (AsyncStorage keys)
+### 13. Lưu trữ cục bộ (AsyncStorage keys)
 
 | Key | Mô tả |
 |---|---|
@@ -198,6 +208,7 @@ app/                 # Routes (expo-router)
   (tabs)/settings.tsx
   review.tsx         # Bộ trộn / shuffle
   srs-quiz.tsx       # Quiz SRS
+  passage.tsx        # Học từ trong đoạn văn
 assets/
   vocs.ts            # ~4000 từ B2 (new_vocs, new_vocs2)
   vocs-learning-extra.ts  # Bộ Số + CVC sinh runtime
@@ -209,6 +220,7 @@ hooks/               # Custom hooks (use-app-theme, …)
 lib/                 # Business logic
   category-unlock.ts # Logic mở khoá theo tiến độ
   vocab-sets.ts      # Chunk vocab thành sets (theo setGroup)
+  vocab-passage-match.ts  # Tokenize đoạn văn + match vocab
   vocab-storage.ts   # AsyncStorage + migrations
   vocab-srs.ts       # SRS engine
   vocab-quiz-mcq.ts  # Sinh distractors
