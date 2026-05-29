@@ -5,6 +5,7 @@ import { useAppTheme } from "@/hooks/use-app-theme";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
 import {
+  keepEnglishWordsOnly,
   matchVocsInPassage,
   pickRandom,
 } from "@/lib/vocab-passage-match";
@@ -12,6 +13,7 @@ import type { Vocabulary } from "@/lib/vocab-types";
 import { createPassageStyles } from "@/styles/passage-styles";
 import { Ionicons } from "@expo/vector-icons";
 import { Audio } from "expo-av";
+import * as Clipboard from "expo-clipboard";
 import { Image } from "expo-image";
 import { useRouter } from "expo-router";
 import { useEffect, useMemo, useRef, useState } from "react";
@@ -22,7 +24,6 @@ import {
   KeyboardAvoidingView,
   Platform,
   Pressable,
-  ScrollView,
   Text,
   TextInput,
   TouchableOpacity,
@@ -31,7 +32,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
-const PASSAGE_LIMIT = 10;
+const PASSAGE_LIMIT = 15;
 const MAX_PASSAGE_CHARS = 20000;
 
 type Phase = "input" | "learn" | "empty";
@@ -69,6 +70,34 @@ export default function PassageScreen() {
       }
     };
   }, []);
+
+  const normalizePassage = (text: string): string => {
+    const cleaned = keepEnglishWordsOnly(text);
+    return cleaned.length > MAX_PASSAGE_CHARS
+      ? cleaned.slice(0, MAX_PASSAGE_CHARS)
+      : cleaned;
+  };
+
+  const handlePaste = async () => {
+    try {
+      const text = await Clipboard.getStringAsync();
+      if (!text.trim()) {
+        Alert.alert("Clipboard trống", "Không có nội dung để dán.");
+        return;
+      }
+      const cleaned = normalizePassage(text);
+      if (!cleaned) {
+        Alert.alert(
+          "Không có từ tiếng Anh",
+          "Nội dung dán không chứa từ tiếng Anh nào."
+        );
+        return;
+      }
+      setPassage(cleaned);
+    } catch {
+      Alert.alert("Không dán được", "Hãy thử dán thủ công vào ô nhập.");
+    }
+  };
 
   const findAndStart = () => {
     const trimmed = passage.trim();
@@ -173,64 +202,73 @@ export default function PassageScreen() {
       <View style={[styles.container, { paddingTop: insets.top }]}>
         {renderHeader()}
         <KeyboardAvoidingView
-          behavior={Platform.OS === "ios" ? "padding" : undefined}
-          style={{ flex: 1, width: "100%" }}
+          behavior={Platform.OS === "ios" ? "padding" : "height"}
+          style={[styles.inputBody, { paddingBottom: insets.bottom + 16 }]}
+          keyboardVerticalOffset={insets.top + 48}
         >
-          <ScrollView
-            keyboardShouldPersistTaps="handled"
-            contentContainerStyle={styles.inputScroll}
-          >
-            <Text style={styles.inputLabel}>
-              Dán một đoạn văn tiếng Anh. App sẽ quét toàn bộ kho từ vựng và
-              chọn ngẫu nhiên {PASSAGE_LIMIT} từ trong đoạn để bạn học.
-            </Text>
-            <TextInput
-              style={styles.textInput}
-              value={passage}
-              onChangeText={(t) =>
-                setPassage(t.length > MAX_PASSAGE_CHARS ? t.slice(0, MAX_PASSAGE_CHARS) : t)
-              }
-              placeholder="Paste your English paragraph here..."
-              placeholderTextColor={theme.textMuted}
-              multiline
-              textAlignVertical="top"
-              autoCorrect={false}
-              autoCapitalize="none"
-            />
-            <Text style={styles.charCount}>
-              {passage.length.toLocaleString()} / {MAX_PASSAGE_CHARS.toLocaleString()} ký tự
-            </Text>
-            <View style={styles.actionsRow}>
-              <TouchableOpacity
-                style={[styles.actionBtn, styles.actionBtnGhost]}
-                onPress={() => setPassage("")}
-                disabled={!passage}
-              >
-                <Ionicons name="trash-outline" size={18} color={theme.textSecondary} />
-                <Text style={styles.actionBtnGhostText}>Xóa</Text>
-              </TouchableOpacity>
-              <TouchableOpacity
-                style={[
-                  styles.actionBtn,
-                  styles.actionBtnPrimary,
-                  (loading || !passage.trim()) && { opacity: 0.5 },
-                ]}
-                onPress={findAndStart}
-                disabled={loading || !passage.trim()}
-              >
-                {loading ? (
-                  <ActivityIndicator color="#fff" />
-                ) : (
-                  <>
-                    <Ionicons name="sparkles" size={18} color="#fff" />
-                    <Text style={styles.actionBtnPrimaryText}>
-                      Tìm {PASSAGE_LIMIT} từ
-                    </Text>
-                  </>
-                )}
-              </TouchableOpacity>
-            </View>
-          </ScrollView>
+          <Text style={styles.inputLabel}>
+            Dán một đoạn văn tiếng Anh. Các từ không phải tiếng Anh sẽ tự động
+            bị loại bỏ. App chọn ngẫu nhiên {PASSAGE_LIMIT} từ trong đoạn để học.
+          </Text>
+          <TextInput
+            style={styles.textInput}
+            value={passage}
+            onChangeText={(t) => {
+              const capped =
+                t.length > MAX_PASSAGE_CHARS ? t.slice(0, MAX_PASSAGE_CHARS) : t;
+              const isPaste = Math.abs(capped.length - passage.length) > 1;
+              setPassage(isPaste ? normalizePassage(capped) : capped);
+            }}
+            placeholder="Paste your English paragraph here..."
+            placeholderTextColor={theme.textMuted}
+            multiline
+            scrollEnabled
+            textAlignVertical="top"
+            autoCorrect={false}
+            autoCapitalize="none"
+            underlineColorAndroid="transparent"
+            {...(Platform.OS === "android" ? { nestedScrollEnabled: true } : {})}
+          />
+          <Text style={styles.charCount}>
+            {passage.length.toLocaleString()} / {MAX_PASSAGE_CHARS.toLocaleString()} ký tự
+          </Text>
+          <View style={styles.actionsRow}>
+            <TouchableOpacity
+              style={[styles.actionBtn, styles.actionBtnGhost]}
+              onPress={handlePaste}
+            >
+              <Ionicons name="clipboard-outline" size={18} color={theme.textSecondary} />
+              <Text style={styles.actionBtnGhostText}>Dán</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[styles.actionBtn, styles.actionBtnGhost]}
+              onPress={() => setPassage("")}
+              disabled={!passage}
+            >
+              <Ionicons name="trash-outline" size={18} color={theme.textSecondary} />
+              <Text style={styles.actionBtnGhostText}>Xóa</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={[
+                styles.actionBtn,
+                styles.actionBtnPrimary,
+                (loading || !passage.trim()) && { opacity: 0.5 },
+              ]}
+              onPress={findAndStart}
+              disabled={loading || !passage.trim()}
+            >
+              {loading ? (
+                <ActivityIndicator color="#fff" />
+              ) : (
+                <>
+                  <Ionicons name="sparkles" size={18} color="#fff" />
+                  <Text style={styles.actionBtnPrimaryText}>
+                    Tìm {PASSAGE_LIMIT} từ
+                  </Text>
+                </>
+              )}
+            </TouchableOpacity>
+          </View>
         </KeyboardAvoidingView>
       </View>
     );

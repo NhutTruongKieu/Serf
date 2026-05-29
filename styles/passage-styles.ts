@@ -37,9 +37,10 @@ export function createPassageStyles(theme: AppTheme, screenWidth: number) {
       color: theme.text,
     },
 
-    inputScroll: {
+    inputBody: {
+      flex: 1,
+      width: "100%",
       paddingHorizontal: 20,
-      paddingBottom: 40,
       gap: 12,
     },
     inputLabel: {
@@ -48,8 +49,8 @@ export function createPassageStyles(theme: AppTheme, screenWidth: number) {
       lineHeight: 20,
     },
     textInput: {
-      minHeight: 240,
-      maxHeight: 400,
+      flex: 1,
+      minHeight: 200,
       backgroundColor: theme.card,
       borderRadius: 16,
       borderWidth: 1,
@@ -71,8 +72,9 @@ export function createPassageStyles(theme: AppTheme, screenWidth: number) {
     },
     actionBtn: {
       flex: 1,
+      minWidth: 0,
       paddingVertical: 14,
-      paddingHorizontal: 16,
+      paddingHorizontal: 12,
       borderRadius: 24,
       flexDirection: "row",
       alignItems: "center",

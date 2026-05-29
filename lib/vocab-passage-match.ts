@@ -94,3 +94,13 @@ export function pickRandom<T>(items: T[], limit: number): T[] {
   }
   return copy.slice(0, limit);
 }
+
+/** Giữ lại các từ tiếng Anh (chỉ a-z, nối bằng ' hoặc -), bỏ từ ngôn ngữ khác. */
+export function keepEnglishWordsOnly(text: string): string {
+  const englishWord = /^[a-zA-Z]+(?:[-'][a-zA-Z]+)*$/;
+  return text
+    .split(/\s+/)
+    .map((token) => token.replace(/^[^a-zA-Z]+|[^a-zA-Z'-]+$/g, ""))
+    .filter((token) => englishWord.test(token))
+    .join(" ");
+}
