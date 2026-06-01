@@ -592,6 +592,12 @@ export default function HomeScreen() {
           <View style={styles.meaningContainer}>
             <View style={styles.divider} />
             <Text style={styles.meaning}>{voc.meaning}</Text>
+            {!!voc.meaningText && (
+              <Text style={styles.meaningText}>{voc.meaningText}</Text>
+            )}
+            {!!voc.exampleText && (
+              <Text style={styles.exampleText}>{voc.exampleText}</Text>
+            )}
           </View>
         )}
 

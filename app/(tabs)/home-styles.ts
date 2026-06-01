@@ -131,6 +131,21 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       color: theme.meaning,
       textAlign: "center",
     },
+    meaningText: {
+      fontSize: 15,
+      color: theme.textSecondary,
+      textAlign: "center",
+      lineHeight: 22,
+      paddingHorizontal: 8,
+    },
+    exampleText: {
+      fontSize: 14,
+      color: theme.textMuted,
+      textAlign: "center",
+      fontStyle: "italic",
+      lineHeight: 20,
+      paddingHorizontal: 8,
+    },
     hiddenMeaningPlaceholder: {
       marginTop: 8,
       paddingVertical: 12,

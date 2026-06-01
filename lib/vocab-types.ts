@@ -3,6 +3,10 @@ export type Vocabulary = {
   voc: string;
   pos: string;
   meaning: string;
+  /** Định nghĩa tiếng Anh (từ Anki field 7, phần trước mũi tên). */
+  meaningText?: string;
+  /** Câu ví dụ tiếng Anh (từ Anki field 7, phần sau mũi tên). */
+  exampleText?: string;
   category: string;
   /**
    * Nhóm con trong cùng category — items khác `setGroup` sẽ không bị gộp
