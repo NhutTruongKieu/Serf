@@ -1,5 +1,6 @@
 import type { Vocabulary } from "@/lib/vocab-types";
 import { learningExtraVocs } from "./vocs-learning-extra";
+import { animalsLearningVocs } from "./vocs-learning-animals";
 import { new_vocs2 } from "./vocs2";
 
 export type { Vocabulary } from "@/lib/vocab-types";
@@ -8411,4 +8412,5 @@ export const vocs: Vocabulary[] = [
   ...new_vocs,
   ...new_vocs2,
   ...learningExtraVocs,
+  ...animalsLearningVocs,
 ];

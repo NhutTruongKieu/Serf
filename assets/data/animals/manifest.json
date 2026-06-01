@@ -1,0 +1,202 @@
+[
+  {
+    "slug": "cat",
+    "voc": "cat",
+    "meaning": "con mèo",
+    "pos": "n",
+    "ipa": "/kæt/",
+    "wiki": "Cat",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "dog",
+    "voc": "dog",
+    "meaning": "con chó",
+    "pos": "n",
+    "ipa": "/dɒɡ/",
+    "wiki": "Dog",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "bird",
+    "voc": "bird",
+    "meaning": "con chim",
+    "pos": "n",
+    "ipa": "/bɜːd/",
+    "wiki": "Bird",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "fish",
+    "voc": "fish",
+    "meaning": "con cá",
+    "pos": "n",
+    "ipa": "/fɪʃ/",
+    "wiki": "Fish",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "horse",
+    "voc": "horse",
+    "meaning": "con ngựa",
+    "pos": "n",
+    "ipa": "/hɔːs/",
+    "wiki": "Horse",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "cow",
+    "voc": "cow",
+    "meaning": "con bò",
+    "pos": "n",
+    "ipa": "/kaʊ/",
+    "wiki": "Cattle",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "pig",
+    "voc": "pig",
+    "meaning": "con heo",
+    "pos": "n",
+    "ipa": "/pɪɡ/",
+    "wiki": "Pig",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "sheep",
+    "voc": "sheep",
+    "meaning": "con cừu",
+    "pos": "n",
+    "ipa": "/ʃiːp/",
+    "wiki": "Sheep",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "chicken",
+    "voc": "chicken",
+    "meaning": "con gà",
+    "pos": "n",
+    "ipa": "/ˈtʃɪkɪn/",
+    "wiki": "Chicken",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "duck",
+    "voc": "duck",
+    "meaning": "con vịt",
+    "pos": "n",
+    "ipa": "/dʌk/",
+    "wiki": "Duck",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "rabbit",
+    "voc": "rabbit",
+    "meaning": "con thỏ",
+    "pos": "n",
+    "ipa": "/ˈræbɪt/",
+    "wiki": "Rabbit",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "monkey",
+    "voc": "monkey",
+    "meaning": "con khỉ",
+    "pos": "n",
+    "ipa": "/ˈmʌŋki/",
+    "wiki": "Monkey",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "elephant",
+    "voc": "elephant",
+    "meaning": "con voi",
+    "pos": "n",
+    "ipa": "/ˈelɪfənt/",
+    "wiki": "Elephant",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "lion",
+    "voc": "lion",
+    "meaning": "sư tử",
+    "pos": "n",
+    "ipa": "/ˈlaɪən/",
+    "wiki": "Lion",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "tiger",
+    "voc": "tiger",
+    "meaning": "con hổ",
+    "pos": "n",
+    "ipa": "/ˈtaɪɡə/",
+    "wiki": "Tiger",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "bear",
+    "voc": "bear",
+    "meaning": "con gấu",
+    "pos": "n",
+    "ipa": "/beə/",
+    "wiki": "Bear",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "snake",
+    "voc": "snake",
+    "meaning": "con rắn",
+    "pos": "n",
+    "ipa": "/sneɪk/",
+    "wiki": "Snake",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "frog",
+    "voc": "frog",
+    "meaning": "con ếch",
+    "pos": "n",
+    "ipa": "/frɒɡ/",
+    "wiki": "Frog",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "butterfly",
+    "voc": "butterfly",
+    "meaning": "con bướm",
+    "pos": "n",
+    "ipa": "/ˈbʌtəflaɪ/",
+    "wiki": "Butterfly",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  },
+  {
+    "slug": "bee",
+    "voc": "bee",
+    "meaning": "con ong",
+    "pos": "n",
+    "ipa": "/biː/",
+    "wiki": "Bee",
+    "ok": false,
+    "error": "Request failed with status code 404"
+  }
+]

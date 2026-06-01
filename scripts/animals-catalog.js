@@ -1,0 +1,105 @@
+/** Danh mục động vật — dùng cho download ảnh & generate vocs-learning-animals.ts */
+
+/** Bộ 1 — trung bình (giữ 5 con cũ + bổ sung) */
+const ANIMALS_SET1 = [
+  { slug: "horse", voc: "horse", meaning: "con ngựa", pos: "n", ipa: "/hɔːs/", wiki: "Horse" },
+  { slug: "sheep", voc: "sheep", meaning: "con cừu", pos: "n", ipa: "/ʃiːp/", wiki: "Sheep" },
+  { slug: "rabbit", voc: "rabbit", meaning: "con thỏ", pos: "n", ipa: "/ˈræbɪt/", wiki: "Rabbit" },
+  { slug: "frog", voc: "frog", meaning: "con ếch", pos: "n", ipa: "/frɒɡ/", wiki: "Frog" },
+  { slug: "bee", voc: "bee", meaning: "con ong", pos: "n", ipa: "/biː/", wiki: "Bee" },
+  { slug: "deer", voc: "deer", meaning: "con hươu", pos: "n", ipa: "/dɪə/", wiki: "Deer" },
+  { slug: "goat", voc: "goat", meaning: "con dê", pos: "n", ipa: "/ɡəʊt/", wiki: "Goat" },
+  { slug: "squirrel", voc: "squirrel", meaning: "con sóc", pos: "n", ipa: "/ˈskwɪrəl/", wiki: "Squirrel" },
+  { slug: "turtle", voc: "turtle", meaning: "con rùa", pos: "n", ipa: "/ˈtɜːtl/", wiki: "Turtle" },
+  { slug: "owl", voc: "owl", meaning: "con cú", pos: "n", ipa: "/aʊl/", wiki: "Owl" },
+  { slug: "fox", voc: "fox", meaning: "con cáo", pos: "n", ipa: "/fɒks/", wiki: "Fox" },
+  { slug: "wolf", voc: "wolf", meaning: "con sói", pos: "n", ipa: "/wʊlf/", wiki: "Wolf" },
+  { slug: "mouse", voc: "mouse", meaning: "con chuột", pos: "n", ipa: "/maʊs/", wiki: "Mouse" },
+  { slug: "monkey", voc: "monkey", meaning: "con khỉ", pos: "n", ipa: "/ˈmʌŋki/", wiki: "Monkey" },
+  { slug: "snake", voc: "snake", meaning: "con rắn", pos: "n", ipa: "/sneɪk/", wiki: "Snake" },
+  { slug: "butterfly", voc: "butterfly", meaning: "con bướm", pos: "n", ipa: "/ˈbʌtəflaɪ/", wiki: "Butterfly" },
+  { slug: "bear", voc: "bear", meaning: "con gấu", pos: "n", ipa: "/beə/", wiki: "Bear" },
+  { slug: "lion", voc: "lion", meaning: "sư tử", pos: "n", ipa: "/ˈlaɪən/", wiki: "Lion" },
+  { slug: "tiger", voc: "tiger", meaning: "con hổ", pos: "n", ipa: "/ˈtaɪɡə/", wiki: "Tiger" },
+  { slug: "elephant", voc: "elephant", meaning: "con voi", pos: "n", ipa: "/ˈelɪfənt/", wiki: "Elephant" },
+];
+
+/** Bộ 2 — khó hơn (từ dài, ít gặp) */
+const ANIMALS_SET2 = [
+  { slug: "giraffe", voc: "giraffe", meaning: "hươu cao cổ", pos: "n", ipa: "/dʒɪˈrɑːf/", wiki: "Giraffe" },
+  { slug: "zebra", voc: "zebra", meaning: "ngựa vằn", pos: "n", ipa: "/ˈzebrə/", wiki: "Zebra" },
+  { slug: "penguin", voc: "penguin", meaning: "chim cánh cụt", pos: "n", ipa: "/ˈpeŋɡwɪn/", wiki: "Penguin" },
+  { slug: "dolphin", voc: "dolphin", meaning: "cá heo", pos: "n", ipa: "/ˈdɒlfɪn/", wiki: "Dolphin" },
+  { slug: "whale", voc: "whale", meaning: "cá voi", pos: "n", ipa: "/weɪl/", wiki: "Whale" },
+  { slug: "shark", voc: "shark", meaning: "cá mập", pos: "n", ipa: "/ʃɑːk/", wiki: "Shark" },
+  { slug: "eagle", voc: "eagle", meaning: "chim đại bàng", pos: "n", ipa: "/ˈiːɡl/", wiki: "Eagle" },
+  { slug: "kangaroo", voc: "kangaroo", meaning: "chuột túi", pos: "n", ipa: "/ˌkæŋɡəˈruː/", wiki: "Kangaroo" },
+  { slug: "crocodile", voc: "crocodile", meaning: "cá sấu", pos: "n", ipa: "/ˈkrɒkədaɪl/", wiki: "Crocodile" },
+  { slug: "hippopotamus", voc: "hippopotamus", meaning: "hà mã", pos: "n", ipa: "/ˌhɪpəˈpɒtəməs/", wiki: "Hippopotamus" },
+  { slug: "rhinoceros", voc: "rhinoceros", meaning: "tê giác", pos: "n", ipa: "/raɪˈnɒsərəs/", wiki: "Rhinoceros" },
+  { slug: "camel", voc: "camel", meaning: "con lạc đà", pos: "n", ipa: "/ˈkæml/", wiki: "Camel" },
+  { slug: "leopard", voc: "leopard", meaning: "báo đốm", pos: "n", ipa: "/ˈlepəd/", wiki: "Leopard" },
+  { slug: "cheetah", voc: "cheetah", meaning: "báo săn", pos: "n", ipa: "/ˈtʃiːtə/", wiki: "Cheetah" },
+  { slug: "octopus", voc: "octopus", meaning: "bạch tuộc", pos: "n", ipa: "/ˈɒktəpəs/", wiki: "Octopus" },
+  { slug: "flamingo", voc: "flamingo", meaning: "hồng hạc", pos: "n", ipa: "/fləˈmɪŋɡəʊ/", wiki: "Flamingo" },
+  { slug: "peacock", voc: "peacock", meaning: "con công", pos: "n", ipa: "/ˈpiːkɒk/", wiki: "Peafowl" },
+  { slug: "chameleon", voc: "chameleon", meaning: "tắc kè hoa", pos: "n", ipa: "/kəˈmiːliən/", wiki: "Chameleon" },
+  { slug: "porcupine", voc: "porcupine", meaning: "nhím", pos: "n", ipa: "/ˈpɔːkjupaɪn/", wiki: "Porcupine" },
+  { slug: "bat", voc: "bat", meaning: "con dơi", pos: "n", ipa: "/bæt/", wiki: "Bat" },
+];
+
+/** Bộ 3 — nâng cao (động vật ít gặp, biển & rừng) */
+const ANIMALS_SET3 = [
+  { slug: "gorilla", voc: "gorilla", meaning: "tinh tinh", pos: "n", ipa: "/ɡəˈrɪlə/", wiki: "Gorilla" },
+  { slug: "orangutan", voc: "orangutan", meaning: "đười ươi", pos: "n", ipa: "/əˈræŋʊtæn/", wiki: "Orangutan" },
+  { slug: "walrus", voc: "walrus", meaning: "hải mã", pos: "n", ipa: "/ˈwɔːl.rəs/", wiki: "Walrus" },
+  { slug: "seal", voc: "seal", meaning: "hải cẩu", pos: "n", ipa: "/siːl/", wiki: "Harbor seal" },
+  { slug: "otter", voc: "otter", meaning: "rái cá", pos: "n", ipa: "/ˈɒtə/", wiki: "Otter" },
+  { slug: "beaver", voc: "beaver", meaning: "hải ly", pos: "n", ipa: "/ˈbiːvə/", wiki: "Beaver" },
+  { slug: "raccoon", voc: "raccoon", meaning: "gấu mèo", pos: "n", ipa: "/rəˈkuːn/", wiki: "Raccoon" },
+  { slug: "hedgehog", voc: "hedgehog", meaning: "nhím gai", pos: "n", ipa: "/ˈhedʒhɒɡ/", wiki: "Hedgehog" },
+  { slug: "armadillo", voc: "armadillo", meaning: "tê tấc", pos: "n", ipa: "/ˌɑːməˈdɪləʊ/", wiki: "Armadillo" },
+  { slug: "platypus", voc: "platypus", meaning: "thú mỏ vịt", pos: "n", ipa: "/ˈplætɪpəs/", wiki: "Platypus" },
+  { slug: "antelope", voc: "antelope", meaning: "linh dương", pos: "n", ipa: "/ˈæntɪləʊp/", wiki: "Antelope" },
+  { slug: "bison", voc: "bison", meaning: "trâu bison", pos: "n", ipa: "/ˈbaɪsən/", wiki: "American bison" },
+  { slug: "moose", voc: "moose", meaning: "nai sừng xẻ", pos: "n", ipa: "/muːs/", wiki: "Moose" },
+  { slug: "pelican", voc: "pelican", meaning: "bồ nông", pos: "n", ipa: "/ˈpelɪkən/", wiki: "Pelican" },
+  { slug: "toucan", voc: "toucan", meaning: "chim toucan", pos: "n", ipa: "/ˈtuːkæn/", wiki: "Toucan" },
+  { slug: "scorpion", voc: "scorpion", meaning: "bọ cạp", pos: "n", ipa: "/ˈskɔːpiən/", wiki: "Scorpion" },
+  { slug: "jellyfish", voc: "jellyfish", meaning: "sứa", pos: "n", ipa: "/ˈdʒelifɪʃ/", wiki: "Jellyfish" },
+  { slug: "starfish", voc: "starfish", meaning: "sao biển", pos: "n", ipa: "/ˈstɑːfɪʃ/", wiki: "Starfish" },
+  { slug: "seahorse", voc: "seahorse", meaning: "cá ngựa", pos: "n", ipa: "/ˈsiːhɔːs/", wiki: "Seahorse" },
+  { slug: "lobster", voc: "lobster", meaning: "tôm hùm", pos: "n", ipa: "/ˈlɒbstə/", wiki: "Lobster" },
+];
+
+/** Bộ 4 — chuyên sâu (từ hiếm, tên dài) */
+const ANIMALS_SET4 = [
+  { slug: "alligator", voc: "alligator", meaning: "cá sấu Mỹ", pos: "n", ipa: "/ˈælɪɡeɪtə/", wiki: "Alligator" },
+  { slug: "komodo-dragon", voc: "komodo dragon", meaning: "rồng Komodo", pos: "n", ipa: "/kəˈməʊdəʊ ˈdræɡən/", wiki: "Komodo dragon" },
+  { slug: "narwhal", voc: "narwhal", meaning: "kỳ lân biển", pos: "n", ipa: "/ˈnɑːwəl/", wiki: "Narwhal" },
+  { slug: "manatee", voc: "manatee", meaning: "lợn biển", pos: "n", ipa: "/ˌmænəˈtiː/", wiki: "Manatee" },
+  { slug: "pangolin", voc: "pangolin", meaning: "tê tẽ", pos: "n", ipa: "/ˈpæŋɡəlɪn/", wiki: "Pangolin" },
+  { slug: "axolotl", voc: "axolotl", meaning: "kỳ giông Mexico", pos: "n", ipa: "/ˈæksəlɒtəl/", wiki: "Axolotl" },
+  { slug: "ferret", voc: "ferret", meaning: "chồn", pos: "n", ipa: "/ˈferɪt/", wiki: "Ferret" },
+  { slug: "meerkat", voc: "meerkat", meaning: "cầy vằn", pos: "n", ipa: "/ˈmɪəkæt/", wiki: "Meerkat" },
+  { slug: "sloth", voc: "sloth", meaning: "lười", pos: "n", ipa: "/sləʊθ/", wiki: "Sloth" },
+  { slug: "anteater", voc: "anteater", meaning: "kiến ăn", pos: "n", ipa: "/ˈænt.iːtə/", wiki: "Anteater" },
+  { slug: "hyena", voc: "hyena", meaning: "linh cẩu", pos: "n", ipa: "/haɪˈiːnə/", wiki: "Hyena" },
+  { slug: "vulture", voc: "vulture", meaning: "kền kền", pos: "n", ipa: "/ˈvʌltʃə/", wiki: "Vulture" },
+  { slug: "ostrich", voc: "ostrich", meaning: "đà điểu", pos: "n", ipa: "/ˈɒstrɪtʃ/", wiki: "Ostrich" },
+  { slug: "emu", voc: "emu", meaning: "đà điểu Úc", pos: "n", ipa: "/ˈiːmjuː/", wiki: "Emu" },
+  { slug: "koala", voc: "koala", meaning: "koala", pos: "n", ipa: "/kəʊˈɑːlə/", wiki: "Koala" },
+  { slug: "panda", voc: "panda", meaning: "gấu trúc", pos: "n", ipa: "/ˈpændə/", wiki: "Giant panda" },
+  { slug: "lynx", voc: "lynx", meaning: "linh miêu", pos: "n", ipa: "/lɪŋks/", wiki: "Lynx" },
+  { slug: "badger", voc: "badger", meaning: "lửng", pos: "n", ipa: "/ˈbædʒə/", wiki: "Badger" },
+  { slug: "mantis", voc: "mantis", meaning: "bọ ngựa", pos: "n", ipa: "/ˈmæntɪs/", wiki: "Mantis" },
+  { slug: "centipede", voc: "centipede", meaning: "rết", pos: "n", ipa: "/ˈsentɪpiːd/", wiki: "Centipede" },
+];
+
+module.exports = {
+  ANIMALS_SET1,
+  ANIMALS_SET2,
+  ANIMALS_SET3,
+  ANIMALS_SET4,
+  ALL_ANIMALS: [...ANIMALS_SET1, ...ANIMALS_SET2, ...ANIMALS_SET3, ...ANIMALS_SET4],
+};

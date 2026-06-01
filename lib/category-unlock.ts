@@ -6,6 +6,7 @@ export const INITIAL_UNLOCKED_CATEGORY_COUNT = 2;
 /** Thứ tự học các loại từ vựng (không gồm "All"). */
 export const VOCAB_CATEGORY_ORDER = [
   "Numbers & big units",
+  "Animals",
   "Feelings & Emotions",
   "Nature & Landscape",
   "Human Body & Health",
@@ -29,6 +30,7 @@ export const CATEGORY_LABELS_VI: Record<string, string> = {
   "Abstract & Qualities": "Khái niệm & Phẩm chất",
   General: "Từ vựng chung",
   "Numbers & big units": "Số & Đánh vần (CVC)",
+  Animals: "Động vật & Trái cây",
 };
 
 export function isCategoryComplete(
@@ -41,7 +43,7 @@ export function isCategoryComplete(
 }
 
 /**
- * Hai loại đầu (số & đánh vần, cảm xúc) luôn mở cùng lúc.
+ * Hai loại đầu (số & đánh vần, động vật) luôn mở cùng lúc.
  * Loại thứ 3 trở đi: mở khi đã học hết các loại đầu (đối với loại ngay sau nhóm mở sẵn),
  * sau đó mỗi loại mở khi học hết loại ngay trước.
  * "All" mở khi học hết mọi loại.
