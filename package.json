@@ -12,7 +12,9 @@
     "build:apk": "cd android && gradlew.bat assembleRelease",
     "download:animal-images": "node scripts/download-animal-images.js",
     "download:fruit-images": "node scripts/download-fruit-images.js",
-    "generate:animals-vocs": "node scripts/generate-animals-vocs.js"
+    "generate:animals-vocs": "node scripts/generate-animals-vocs.js",
+    "generate:core3000-vocs": "node scripts/generate-core3000-vocs.js",
+    "download:core3000-images": "node scripts/download-core3000-images.js"
   },
   "dependencies": {
     "@expo/vector-icons": "^15.0.3",

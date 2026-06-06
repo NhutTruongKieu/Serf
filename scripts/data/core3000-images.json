@@ -1,0 +1,505 @@
+{
+  "a": {
+    "slug": "a",
+    "path": "./data/core3000/a.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "abandon": {
+    "slug": "abandon",
+    "path": "./data2/4000B3_1321.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "ability": {
+    "slug": "ability",
+    "path": "./data/4000B2_941.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "able": {
+    "slug": "able",
+    "path": "./data/core3000/able.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "about": {
+    "slug": "about",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "above": {
+    "slug": "above",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "abroad": {
+    "slug": "abroad",
+    "path": "./data/4000B2_701.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "absolute": {
+    "slug": "absolute",
+    "path": "./data/core3000/absolute.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "absolutely": {
+    "slug": "absolutely",
+    "path": "./data/core3000/absolutely.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "academic": {
+    "slug": "academic",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "accept": {
+    "slug": "accept",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "acceptable": {
+    "slug": "acceptable",
+    "path": "./data/core3000/acceptable.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "access": {
+    "slug": "access",
+    "path": "./data/core3000/access.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "accident": {
+    "slug": "accident",
+    "path": "./data/core3000/accident.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "accommodation": {
+    "slug": "accommodation",
+    "path": "./data/core3000/accommodation.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "accompany": {
+    "slug": "accompany",
+    "path": "./data/4000B2_1141.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "according to": {
+    "slug": "according-to",
+    "path": "./data/core3000/according-to.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "account": {
+    "slug": "account",
+    "status": "failed",
+    "error": "no Wikipedia image"
+  },
+  "accurate": {
+    "slug": "accurate",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "accuse": {
+    "slug": "accuse",
+    "path": "./data/4000B2_1101.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "achieve": {
+    "slug": "achieve",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "achievement": {
+    "slug": "achievement",
+    "path": "./data/core3000/achievement.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "acknowledge": {
+    "slug": "acknowledge",
+    "path": "./data2/4000B3_1701.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "acquire": {
+    "slug": "acquire",
+    "path": "./data2/4000B3_1221.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "across": {
+    "slug": "across",
+    "path": "./data/core3000/across.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "act": {
+    "slug": "act",
+    "path": "./data/core3000/act.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "action": {
+    "slug": "action",
+    "path": "./data/core3000/action.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "active": {
+    "slug": "active",
+    "path": "./data/core3000/active.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "activity": {
+    "slug": "activity",
+    "path": "./data/core3000/activity.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "actor": {
+    "slug": "actor",
+    "path": "./data/core3000/actor.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "actress": {
+    "slug": "actress",
+    "path": "./data/core3000/actress.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "actual": {
+    "slug": "actual",
+    "path": "./data/core3000/actual.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "actually": {
+    "slug": "actually",
+    "path": "./data/core3000/actually.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "ad": {
+    "slug": "ad",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "adapt": {
+    "slug": "adapt",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "add": {
+    "slug": "add",
+    "path": "./data/core3000/add.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "addition": {
+    "slug": "addition",
+    "path": "./data/core3000/addition.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "additional": {
+    "slug": "additional",
+    "status": "failed",
+    "error": "no Wikipedia image"
+  },
+  "address": {
+    "slug": "address",
+    "path": "./data/core3000/address.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "administration": {
+    "slug": "administration",
+    "path": "./data/core3000/administration.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "admire": {
+    "slug": "admire",
+    "path": "./data/4000B2_761.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "admit": {
+    "slug": "admit",
+    "path": "./data/4000B2_1081.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "adopt": {
+    "slug": "adopt",
+    "path": "./data/4000B2_961.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "adult": {
+    "slug": "adult",
+    "path": "./data/core3000/adult.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "advance": {
+    "slug": "advance",
+    "path": "./data/core3000/advance.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "advanced": {
+    "slug": "advanced",
+    "path": "./data/core3000/advanced.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "advantage": {
+    "slug": "advantage",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "adventure": {
+    "slug": "adventure",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "advertise": {
+    "slug": "advertise",
+    "path": "./data/core3000/advertise.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "advertisement": {
+    "slug": "advertisement",
+    "path": "./data/core3000/advertisement.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "advertising": {
+    "slug": "advertising",
+    "path": "./data/core3000/advertising.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "advice": {
+    "slug": "advice",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "advise": {
+    "slug": "advise",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "affair": {
+    "slug": "affair",
+    "path": "./data2/4000B3_1481.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "affect": {
+    "slug": "affect",
+    "path": "./data/core3000/affect.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "afford": {
+    "slug": "afford",
+    "path": "./data/4000B2_822.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "afraid": {
+    "slug": "afraid",
+    "path": "./data/core3000/afraid.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "after": {
+    "slug": "after",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "afternoon": {
+    "slug": "afternoon",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "afterwards": {
+    "slug": "afterwards",
+    "path": "./data/core3000/afterwards.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "again": {
+    "slug": "again",
+    "path": "./data/core3000/again.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "against": {
+    "slug": "against",
+    "path": "./data/core3000/against.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "age": {
+    "slug": "age",
+    "path": "./data/core3000/age.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "aged": {
+    "slug": "aged",
+    "path": "./data/core3000/aged.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "agency": {
+    "slug": "agency",
+    "path": "./data2/4000B3_1522.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "agenda": {
+    "slug": "agenda",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "agent": {
+    "slug": "agent",
+    "path": "./data/core3000/agent.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "aggressive": {
+    "slug": "aggressive",
+    "path": "./data/core3000/aggressive.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "ago": {
+    "slug": "ago",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "agree": {
+    "slug": "agree",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "agreement": {
+    "slug": "agreement",
+    "path": "./data/core3000/agreement.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "ah": {
+    "slug": "ah",
+    "path": "./data/core3000/ah.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "ahead": {
+    "slug": "ahead",
+    "path": "./data/core3000/ahead.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "aid": {
+    "slug": "aid",
+    "path": "./data/4000B2_762.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "aim": {
+    "slug": "aim",
+    "path": "./data/4000B2_921.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "air": {
+    "slug": "air",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "aircraft": {
+    "slug": "aircraft",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "airline": {
+    "slug": "airline",
+    "path": "./data/core3000/airline.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "airport": {
+    "slug": "airport",
+    "path": "./data/core3000/airport.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "alarm": {
+    "slug": "alarm",
+    "path": "./data/4000B2_1021.jpg",
+    "status": "ok",
+    "source": "existing"
+  },
+  "album": {
+    "slug": "album",
+    "path": "./data/core3000/album.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "alcohol": {
+    "slug": "alcohol",
+    "path": "./data/core3000/alcohol.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "alcoholic": {
+    "slug": "alcoholic",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "alive": {
+    "slug": "alive",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "all": {
+    "slug": "all",
+    "path": "./data/core3000/all.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "all right": {
+    "slug": "all-right",
+    "path": "./data/core3000/all-right.jpg",
+    "status": "ok",
+    "source": "wikipedia"
+  },
+  "allow": {
+    "slug": "allow",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  },
+  "almost": {
+    "slug": "almost",
+    "status": "failed",
+    "error": "Request failed with status code 429"
+  }
+}

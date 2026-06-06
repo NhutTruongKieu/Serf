@@ -1,6 +1,7 @@
 import type { Vocabulary } from "@/lib/vocab-types";
 import { learningExtraVocs } from "./vocs-learning-extra";
 import { animalsLearningVocs } from "./vocs-learning-animals";
+import { core3000LearningVocs } from "./vocs-learning-core3000";
 import { new_vocs2 } from "./vocs2";
 
 export type { Vocabulary } from "@/lib/vocab-types";
@@ -8408,9 +8409,16 @@ export const new_vocs: Vocabulary[] = [
   },
 ];
 
+/** Từ đã trích sang Core 3000 — không hiện lại ở category cũ. */
+const core3000WordKeys = new Set(
+  core3000LearningVocs.map((v) => v.voc.toLowerCase())
+);
+const notInCore3000 = (v: Vocabulary) => !core3000WordKeys.has(v.voc.toLowerCase());
+
 export const vocs: Vocabulary[] = [
-  ...new_vocs,
-  ...new_vocs2,
-  ...learningExtraVocs,
-  ...animalsLearningVocs,
+  ...new_vocs.filter(notInCore3000),
+  ...new_vocs2.filter(notInCore3000),
+  ...learningExtraVocs.filter(notInCore3000),
+  ...animalsLearningVocs.filter(notInCore3000),
+  ...core3000LearningVocs,
 ];

@@ -1,12 +1,16 @@
 export type CategoryProgress = { remaining: number; total: number };
 
-/** Hai loại đầu luôn mở khóa cùng lúc; loại thứ 3 mở khi đã học hết cả hai. */
+/** Hai loại đầu luôn mở khóa cùng lúc; loại thứ 3 (trừ ALWAYS_UNLOCKED) mở khi đã học hết cả hai. */
 export const INITIAL_UNLOCKED_CATEGORY_COUNT = 2;
+
+/** Luôn mở khóa — không phụ thuộc tiến độ các loại khác. */
+export const ALWAYS_UNLOCKED_CATEGORIES: readonly string[] = ["Core 3000"];
 
 /** Thứ tự học các loại từ vựng (không gồm "All"). */
 export const VOCAB_CATEGORY_ORDER = [
   "Numbers & big units",
   "Animals",
+  "Core 3000",
   "Feelings & Emotions",
   "Nature & Landscape",
   "Human Body & Health",
@@ -31,6 +35,7 @@ export const CATEGORY_LABELS_VI: Record<string, string> = {
   General: "Từ vựng chung",
   "Numbers & big units": "Số & Đánh vần (CVC)",
   Animals: "Động vật & Trái cây",
+  "Core 3000": "3000 từ cốt lõi (Oxford)",
 };
 
 export function isCategoryComplete(
@@ -43,8 +48,8 @@ export function isCategoryComplete(
 }
 
 /**
- * Hai loại đầu (số & đánh vần, động vật) luôn mở cùng lúc.
- * Loại thứ 3 trở đi: mở khi đã học hết các loại đầu (đối với loại ngay sau nhóm mở sẵn),
+ * Số & đánh vần, động vật + ALWAYS_UNLOCKED (Core 3000) luôn mở.
+ * Loại tiếp theo: mở khi đã học hết các loại đầu (đối với loại ngay sau nhóm mở sẵn),
  * sau đó mỗi loại mở khi học hết loại ngay trước.
  * "All" mở khi học hết mọi loại.
  */
@@ -55,6 +60,8 @@ export function isCategoryUnlocked(
   if (category === "All") {
     return VOCAB_CATEGORY_ORDER.every((cat) => isCategoryComplete(progress, cat));
   }
+
+  if (ALWAYS_UNLOCKED_CATEGORIES.includes(category)) return true;
 
   const idx = VOCAB_CATEGORY_ORDER.indexOf(category as VocabCategory);
   if (idx === -1) return true;
@@ -75,6 +82,7 @@ export function getCategoryUnlockHint(
   progress: Record<string, CategoryProgress>
 ): string | null {
   if (isCategoryUnlocked(category, progress)) return null;
+  if (ALWAYS_UNLOCKED_CATEGORIES.includes(category)) return null;
 
   if (category === "All") {
     return "Học thuộc hết tất cả các loại từ vựng để mở khóa chế độ Tất cả.";
