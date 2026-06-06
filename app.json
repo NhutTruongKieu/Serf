@@ -2,7 +2,7 @@
   "expo": {
     "name": "Serf",
     "slug": "Serf",
-    "version": "1.0.9",
+    "version": "1.1.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "serf",
@@ -25,7 +25,7 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "package": "com.truongkieu.Serf",
-      "versionCode": 9
+      "versionCode": 10
     },
     "web": {
       "output": "static",
