@@ -20,6 +20,14 @@ export function getVocTtsPayload(
   return { text: voc.voc, lang: "en-US" };
 }
 
+export function canPlayVocabularyMode(
+  voc: Vocabulary,
+  mode: VocSoundMode
+): boolean {
+  if (getVocTtsPayload(voc, mode)) return true;
+  return !!getVocAssetSource(voc, mode);
+}
+
 export function getVocAssetSource(voc: Vocabulary, mode: VocSoundMode): any {
   if (mode === "word") return voc.sound;
   if (mode === "meaning") return voc.meaningSound;

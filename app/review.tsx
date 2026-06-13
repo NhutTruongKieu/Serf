@@ -9,7 +9,12 @@ import {
 } from "@/lib/category-unlock";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
-import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
+import {
+  canPlayVocabularyMode,
+  playVocabularyMode,
+  stopDeviceTts,
+  type VocSoundMode,
+} from "@/lib/vocab-audio-playback";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
 import { countRemainingInSet } from "@/lib/vocab-storage";
 import { createReviewStyles } from "@/styles/review-styles";
@@ -39,6 +44,22 @@ const SCOPE_LABEL_SHORT: Record<ReviewScope, string> = {
   all: "Tất cả",
 };
 const ALL_SCOPE_LIMIT = 20;
+const REVIEW_SOUND_MODES: VocSoundMode[] = ["word", "meaning", "example"];
+const SOUND_MODE_LABEL: Record<VocSoundMode, string> = {
+  word: "Từ",
+  meaning: "Nghĩa",
+  example: "Ví dụ",
+};
+const SOUND_MODE_PLAY_LABEL: Record<VocSoundMode, string> = {
+  word: "Nghe lại từ",
+  meaning: "Nghe nghĩa",
+  example: "Nghe ví dụ",
+};
+
+function parseReviewSoundMode(value: string | null): VocSoundMode {
+  if (value === "meaning" || value === "example") return value;
+  return "word";
+}
 
 async function getUnlockedCategorySet(): Promise<Set<string>> {
   const progress: Record<string, { remaining: number; total: number }> = {};
@@ -82,6 +103,7 @@ export default function ReviewScreen() {
   const [setVocs, setSetVocs] = useState<typeof allVocs>([]);
   const [setLabel, setSetLabel] = useState<string>("");
   const [scope, setScope] = useState<ReviewScope>("set");
+  const [soundMode, setSoundMode] = useState<VocSoundMode>("word");
   const [index, setIndex] = useState(0);
   const [loading, setLoading] = useState(true);
   const soundRef = useRef<Audio.Sound | null>(null);
@@ -142,10 +164,14 @@ export default function ReviewScreen() {
   useFocusEffect(
     useCallback(() => {
       void (async () => {
-        const savedScope = parseReviewScope(
-          await AsyncStorage.getItem(STORAGE_KEYS.reviewScope)
-        );
+        const [savedScopeRaw, savedSoundModeRaw] = await Promise.all([
+          AsyncStorage.getItem(STORAGE_KEYS.reviewScope),
+          AsyncStorage.getItem(STORAGE_KEYS.reviewSoundMode),
+        ]);
+        const savedScope = parseReviewScope(savedScopeRaw);
+        const savedSoundMode = parseReviewSoundMode(savedSoundModeRaw);
         setScope(savedScope);
+        setSoundMode(savedSoundMode);
         await loadAndShuffle(savedScope);
       })();
     }, [loadAndShuffle])
@@ -156,6 +182,12 @@ export default function ReviewScreen() {
     setScope(next);
     void AsyncStorage.setItem(STORAGE_KEYS.reviewScope, next);
     void loadAndShuffle(next);
+  };
+
+  const selectSoundMode = (next: VocSoundMode) => {
+    if (next === soundMode) return;
+    setSoundMode(next);
+    void AsyncStorage.setItem(STORAGE_KEYS.reviewSoundMode, next);
   };
 
   useEffect(() => {
@@ -176,18 +208,21 @@ export default function ReviewScreen() {
   const total = setVocs.length;
   const reviewNumberValue = current ? getLearnNumberDigit(current) : null;
 
-  const playSound = async (voc: (typeof allVocs)[0] | null) => {
+  const playSound = async (
+    voc: (typeof allVocs)[0] | null,
+    mode: VocSoundMode = soundMode
+  ) => {
     if (!voc) return;
     if (isMute) return;
-    await playVocabularyMode(voc, "word", { isMute, soundRef });
+    await playVocabularyMode(voc, mode, { isMute, soundRef });
   };
 
   useEffect(() => {
     if (!current) return;
-    if (!current.sound && !current.useDeviceTts) return;
+    if (!canPlayVocabularyMode(current, soundMode)) return;
     const gen = ++autoPlayGenRef.current;
     void (async () => {
-      await playSound(current);
+      await playSound(current, soundMode);
       if (gen !== autoPlayGenRef.current) {
         stopDeviceTts();
         if (soundRef.current) {
@@ -200,7 +235,7 @@ export default function ReviewScreen() {
         }
       }
     })();
-  }, [current?.id, isMute]);
+  }, [current?.id, isMute, soundMode]);
 
   const handleNext = () => {
     if (total === 0) return;
@@ -317,6 +352,33 @@ export default function ReviewScreen() {
         })}
       </View>
 
+      <View style={styles.soundModeRow}>
+        {REVIEW_SOUND_MODES.map((mode, i) => {
+          const isActive = mode === soundMode;
+          return (
+            <TouchableOpacity
+              key={mode}
+              style={[
+                styles.soundModeBtn,
+                i === 0 && styles.soundModeBtnLeft,
+                i === REVIEW_SOUND_MODES.length - 1 && styles.soundModeBtnRight,
+                isActive && styles.soundModeBtnActive,
+              ]}
+              onPress={() => selectSoundMode(mode)}
+            >
+              <Text
+                style={[
+                  styles.soundModeBtnText,
+                  isActive && styles.soundModeBtnTextActive,
+                ]}
+              >
+                {SOUND_MODE_LABEL[mode]}
+              </Text>
+            </TouchableOpacity>
+          );
+        })}
+      </View>
+
       <Text style={styles.poolCount}>
         {setLabel} · {Math.min(index + 1, total)}/{total}
       </Text>
@@ -348,7 +410,7 @@ export default function ReviewScreen() {
               size={28}
               color={isMute ? theme.iconMuted : theme.success}
             />
-            <Text style={styles.playBtnText}>Nghe lại từ</Text>
+            <Text style={styles.playBtnText}>{SOUND_MODE_PLAY_LABEL[soundMode]}</Text>
           </TouchableOpacity>
 
           <Text style={styles.hint}>
@@ -357,6 +419,8 @@ export default function ReviewScreen() {
               : scope === "category"
                 ? `Bốc ngẫu nhiên ${ALL_SCOPE_LIMIT} từ trong loại đang chọn`
                 : `Bốc ngẫu nhiên ${ALL_SCOPE_LIMIT} từ trong các loại đã mở khóa`}
+            {" · "}
+            Phát âm: {SOUND_MODE_LABEL[soundMode].toLowerCase()}
           </Text>
         </View>
       </View>

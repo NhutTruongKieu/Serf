@@ -23,10 +23,47 @@ export function createSrsQuizStyles(theme: AppTheme, screenWidth: number) {
       fontWeight: "700",
       color: theme.text,
     },
+    progressRow: {
+      flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "center",
+      gap: 10,
+      paddingHorizontal: 20,
+      marginBottom: 8,
+    },
     progress: {
-      textAlign: "center",
       color: theme.textMuted,
       fontSize: 14,
+    },
+    timerBadge: {
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 4,
+      paddingVertical: 4,
+      paddingHorizontal: 10,
+      borderRadius: 14,
+      backgroundColor: theme.placeholderBg,
+    },
+    timerBadgeUrgent: {
+      backgroundColor: theme.card,
+      borderWidth: 1,
+      borderColor: theme.danger,
+    },
+    timerText: {
+      fontSize: 14,
+      fontWeight: "700",
+      color: theme.iconTeal,
+      minWidth: 22,
+    },
+    timerTextUrgent: {
+      color: theme.danger,
+    },
+    timeoutLabel: {
+      width: screenWidth - 40,
+      textAlign: "center",
+      color: theme.danger,
+      fontSize: 14,
+      fontWeight: "600",
       marginBottom: 8,
     },
     scrollInner: {

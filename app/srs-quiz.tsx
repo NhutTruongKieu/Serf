@@ -26,6 +26,7 @@ import {
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 const { width: SCREEN_WIDTH } = Dimensions.get("window");
+const QUESTION_TIME_LIMIT_SEC = 5;
 
 function shuffle<T>(items: T[]): T[] {
   const copy = [...items];
@@ -55,6 +56,8 @@ export default function SrsQuizScreen() {
     null
   );
   const [picked, setPicked] = useState<string | null>(null);
+  const [timedOut, setTimedOut] = useState(false);
+  const [secondsLeft, setSecondsLeft] = useState(QUESTION_TIME_LIMIT_SEC);
   const [sessionItems, setSessionItems] = useState<QuizSessionItem[]>([]);
   const [scoreSummary, setScoreSummary] = useState({ correct: 0, total: 0 });
 
@@ -62,6 +65,11 @@ export default function SrsQuizScreen() {
   const srsMapRef = useRef<SrsMap | null>(null);
   const sessionStartRef = useRef<string>("");
   const autoPlayGenRef = useRef(0);
+  const answerLockedRef = useRef(false);
+  const questionTimerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  const submitAnswerRef = useRef<
+    (correct: boolean, pickedOption: string | null) => Promise<void>
+  >(() => Promise.resolve());
 
   const current = queue[qIndex] ?? null;
 
@@ -79,6 +87,8 @@ export default function SrsQuizScreen() {
     setQIndex(0);
     setSessionItems([]);
     setPicked(null);
+    setTimedOut(false);
+    setSecondsLeft(QUESTION_TIME_LIMIT_SEC);
     setChoices(buildMeaningChoices(shuffled[0], allVocs));
     setPhase("quiz");
   }, []);
@@ -121,6 +131,13 @@ export default function SrsQuizScreen() {
     })();
   }, [current?.id, phase, isMute]);
 
+  const stopQuestionTimer = useCallback(() => {
+    if (questionTimerRef.current) {
+      clearInterval(questionTimerRef.current);
+      questionTimerRef.current = null;
+    }
+  }, []);
+
   const finishSession = useCallback(
     async (items: QuizSessionItem[]) => {
       const correct = items.filter((i) => i.correct).length;
@@ -146,26 +163,67 @@ export default function SrsQuizScreen() {
       }
       setQIndex(next);
       setPicked(null);
+      setTimedOut(false);
+      setSecondsLeft(QUESTION_TIME_LIMIT_SEC);
       setChoices(buildMeaningChoices(queue[next], allVocs));
     },
     [finishSession, qIndex, queue]
   );
 
-  const onPickMeaning = async (option: string) => {
-    if (!current || !choices || picked != null) return;
-    setPicked(option);
+  const submitAnswer = useCallback(
+    async (correct: boolean, pickedOption: string | null) => {
+      if (!current || !choices || answerLockedRef.current) return;
+      answerLockedRef.current = true;
+      stopQuestionTimer();
+
+      if (pickedOption) {
+        setPicked(pickedOption);
+      } else {
+        setTimedOut(true);
+      }
+
+      const map = srsMapRef.current ?? (await loadSrsMap());
+      srsMapRef.current = map;
+      await applySrsQuizAnswer(current.id, correct, map);
+
+      const item: QuizSessionItem = { vocabId: current.id, correct };
+      const nextItems = [...sessionItems, item];
+      setSessionItems(nextItems);
+
+      setTimeout(() => {
+        void goNext(nextItems);
+      }, correct ? 450 : 900);
+    },
+    [choices, current, goNext, sessionItems, stopQuestionTimer]
+  );
+
+  submitAnswerRef.current = submitAnswer;
+
+  useEffect(() => {
+    if (phase !== "quiz" || !current) return;
+
+    answerLockedRef.current = false;
+    setTimedOut(false);
+    setSecondsLeft(QUESTION_TIME_LIMIT_SEC);
+    stopQuestionTimer();
+
+    let remaining = QUESTION_TIME_LIMIT_SEC;
+    questionTimerRef.current = setInterval(() => {
+      remaining -= 1;
+      setSecondsLeft(remaining);
+      if (remaining <= 0) {
+        stopQuestionTimer();
+        void submitAnswerRef.current(false, null);
+      }
+    }, 1000);
+
+    return stopQuestionTimer;
+  }, [current?.id, phase, stopQuestionTimer]);
+
+  const onPickMeaning = (option: string) => {
+    if (!choices || picked != null || timedOut) return;
     const correct = option === choices.correctMeaning;
-    const map = srsMapRef.current ?? (await loadSrsMap());
-    srsMapRef.current = map;
-    await applySrsQuizAnswer(current.id, correct, map);
-
-    const item: QuizSessionItem = { vocabId: current.id, correct };
-    const nextItems = [...sessionItems, item];
-    setSessionItems(nextItems);
-
-    setTimeout(() => {
-      void goNext(nextItems);
-    }, correct ? 450 : 900);
+    void submitAnswer(correct, option);
   };
 
   const numberVal = current ? getLearnNumberDigit(current) : null;
@@ -260,9 +318,21 @@ export default function SrsQuizScreen() {
         <View style={styles.headerSide} />
       </View>
 
-      <Text style={styles.progress}>
-        {qIndex + 1}/{queue.length} · Chọn nghĩa đúng
-      </Text>
+      <View style={styles.progressRow}>
+        <Text style={styles.progress}>
+          {qIndex + 1}/{queue.length} · Chọn nghĩa đúng
+        </Text>
+        <View style={[styles.timerBadge, secondsLeft <= 2 && styles.timerBadgeUrgent]}>
+          <Ionicons
+            name="timer-outline"
+            size={16}
+            color={secondsLeft <= 2 ? theme.danger : theme.iconTeal}
+          />
+          <Text style={[styles.timerText, secondsLeft <= 2 && styles.timerTextUrgent]}>
+            {secondsLeft}s
+          </Text>
+        </View>
+      </View>
 
       <ScrollView
         contentContainerStyle={[styles.scrollInner, { paddingBottom: insets.bottom + 24 }]}
@@ -292,8 +362,12 @@ export default function SrsQuizScreen() {
           <Text style={styles.hint}>Xem ảnh và nghe — chọn nghĩa tiếng Việt</Text>
         </View>
 
+        {timedOut && (
+          <Text style={styles.timeoutLabel}>Hết giờ — tính là sai</Text>
+        )}
+
         {choices.options.map((opt) => {
-          const show = picked != null;
+          const show = picked != null || timedOut;
           const isCorrect = opt === choices.correctMeaning;
           const isPicked = opt === picked;
           const styleExtra =
@@ -306,15 +380,18 @@ export default function SrsQuizScreen() {
             <TouchableOpacity
               key={opt}
               style={[styles.choiceBtn, styleExtra]}
-              onPress={() => void onPickMeaning(opt)}
-              disabled={picked != null}
+              onPress={() => onPickMeaning(opt)}
+              disabled={picked != null || timedOut}
               activeOpacity={0.85}
             >
               <Text style={styles.choiceText}>{opt}</Text>
             </TouchableOpacity>
           );
         })}
-        <Text style={styles.footerHint}>Sai: lùi 1 bước SRS · Đúng: tiến lịch ôn</Text>
+        <Text style={styles.footerHint}>
+          Mỗi câu {QUESTION_TIME_LIMIT_SEC}s · Hết giờ = sai · Sai: lùi 1 bước SRS · Đúng: tiến
+          lịch ôn
+        </Text>
       </ScrollView>
     </View>
   );

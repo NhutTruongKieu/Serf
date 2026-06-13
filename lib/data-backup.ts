@@ -26,6 +26,8 @@ export function isBackupKey(key: string): boolean {
     key === STORAGE_KEYS.soundIconsAlign ||
     key === STORAGE_KEYS.soundIconsInlinePicker ||
     key === STORAGE_KEYS.themeMode ||
+    key === STORAGE_KEYS.reviewScope ||
+    key === STORAGE_KEYS.reviewSoundMode ||
     key === STORAGE_KEYS.progressUsesIds ||
     key === STORAGE_KEYS.reviewMasteredIds ||
     key === STORAGE_KEYS.srsCardStates ||

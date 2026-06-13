@@ -61,6 +61,32 @@ export function createReviewStyles(theme: AppTheme, screenWidth: number) {
     scopeBtnTextActive: {
       color: theme.floatingBtnText,
     },
+    soundModeRow: {
+      flexDirection: "row",
+      alignSelf: "center",
+      backgroundColor: theme.placeholderBg,
+      borderRadius: 999,
+      padding: 4,
+      marginBottom: 10,
+    },
+    soundModeBtn: {
+      paddingVertical: 6,
+      paddingHorizontal: 16,
+      borderRadius: 999,
+    },
+    soundModeBtnLeft: {},
+    soundModeBtnRight: {},
+    soundModeBtnActive: {
+      backgroundColor: theme.iconTeal,
+    },
+    soundModeBtnText: {
+      color: theme.textSecondary,
+      fontSize: 13,
+      fontWeight: "600",
+    },
+    soundModeBtnTextActive: {
+      color: theme.floatingBtnText,
+    },
     cardArea: {
       flex: 1,
       width: screenWidth - 40,
