@@ -72,7 +72,7 @@ export default function HomeScreen() {
     setSoundIconsInlinePicker,
     progressReloadToken,
   } = useAppSettings();
-  const { allVocs } = useVocabulary();
+  const { allVocs, isLoading } = useVocabulary();
   const SOUND_ALIGNS = ["left", "center", "right"] as const;
   const DOUBLE_TAP_WINDOW_MS = 300;
   const lastRadioTapRef = useRef<{ align: string; time: number } | null>(null);
@@ -179,6 +179,7 @@ export default function HomeScreen() {
   };
 
   const loadState = useCallback(async () => {
+    if (isLoading) return;
     try {
       await migrateAllProgressToIds(allVocs);
       await migrateMergeCvcIntoNumbers(allVocs);
@@ -200,11 +201,23 @@ export default function HomeScreen() {
         await AsyncStorage.setItem(STORAGE_KEYS.currentSet, "0");
       }
 
+      let currentSets = getSets(savedCat);
+      if (currentSets.length === 0) {
+        savedCat =
+          sortedCategories.find((c) => c !== "All" && getSets(c).length > 0) ??
+          VOCAB_CATEGORY_ORDER.find((c) => getSets(c).length > 0) ??
+          "All";
+        startingSet = 0;
+        currentSets = getSets(savedCat);
+        await AsyncStorage.setItem(STORAGE_KEYS.currentCategory, savedCat);
+        await AsyncStorage.setItem(STORAGE_KEYS.currentSet, "0");
+      }
+
       setCurrentCategory(savedCat);
       setCurrentSet(startingSet);
 
-      const currentSets = getSets(savedCat);
-      const setIdx = startingSet < currentSets.length ? startingSet : 0;
+      const setIdx =
+        startingSet < currentSets.length ? startingSet : 0;
       const setVocs = currentSets[setIdx] ?? [];
 
       setActiveVocs(
@@ -219,7 +232,7 @@ export default function HomeScreen() {
       setActiveVocs(getFilteredVocs(allVocs, "All").slice(0, 20));
     }
     calculateProgress();
-  }, [allVocs, sortedCategories]);
+  }, [allVocs, sortedCategories, isLoading]);
 
   useEffect(() => {
     loadState();
@@ -630,26 +643,61 @@ export default function HomeScreen() {
   );
   };
 
-  if (activeVocs.length === 0) {
+  if (isLoading) {
     return (
       <View style={styles.container}>
-        <Text style={styles.congratsText}>Tuyệt vời!</Text>
-        <Text style={styles.congratsSub}>Bạn đã học hết từ vựng bộ {currentSet + 1}.</Text>
-        <Ionicons
-          name="reload-circle"
-          size={64}
-          color={theme.accent} onPress={async () => {
-            setActiveVocs(vocSets[currentSet]);
-            setIndex(0);
-            try {
-              await AsyncStorage.removeItem(
-                STORAGE_KEYS.learnedVocs(currentCategory, currentSet)
-              );
-              calculateProgress();
-            } catch (e) { }
-          }}
-          style={{ marginTop: 20 }}
-        />
+        <Text style={styles.congratsSub}>Đang tải từ vựng...</Text>
+      </View>
+    );
+  }
+
+  if (activeVocs.length === 0) {
+    const setTotal = vocSets[currentSet]?.length ?? 0;
+    const isSetComplete = setTotal > 0;
+
+    return (
+      <View style={styles.container}>
+        {isSetComplete ? (
+          <>
+            <Text style={styles.congratsText}>Tuyệt vời!</Text>
+            <Text style={styles.congratsSub}>
+              Bạn đã học hết từ vựng bộ {currentSet + 1}.
+            </Text>
+          </>
+        ) : (
+          <>
+            <Text style={styles.congratsText}>Chưa có từ vựng</Text>
+            <Text style={styles.congratsSub}>
+              Bộ "{categoryMap[currentCategory] ?? currentCategory}" trống hoặc
+              chưa import xong. Chọn bộ khác bằng nút lọc góc trên.
+            </Text>
+            <TouchableOpacity
+              style={[styles.floatingButton, { position: "relative", marginTop: 24 }]}
+              onPress={() => void loadState()}
+            >
+              <Ionicons name="refresh" size={24} color={theme.floatingBtnText} />
+              <Text style={styles.floatingButtonText}>Tải lại bộ từ</Text>
+            </TouchableOpacity>
+          </>
+        )}
+        {isSetComplete ? (
+          <Ionicons
+            name="reload-circle"
+            size={64}
+            color={theme.accent}
+            onPress={async () => {
+              setActiveVocs(vocSets[currentSet]);
+              setIndex(0);
+              try {
+                await AsyncStorage.removeItem(
+                  STORAGE_KEYS.learnedVocs(currentCategory, currentSet)
+                );
+                calculateProgress();
+              } catch (e) {}
+            }}
+            style={{ marginTop: 20 }}
+          />
+        ) : null}
       </View>
     );
   }

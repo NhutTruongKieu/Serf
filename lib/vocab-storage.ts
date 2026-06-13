@@ -24,24 +24,30 @@ export function parseLearnedVocsKey(
   return { category, setIdx };
 }
 
-/** Converts legacy voc strings to ids using the set vocabulary list. */
+/** Tokens đã lưu dưới dạng id hợp lệ trong bộ hiện tại. */
 export function tokensToIds(tokens: string[], setVocs: Vocabulary[]): string[] {
   if (tokens.length === 0) return [];
   const vocToId = new Map(setVocs.map((v) => [v.voc, v.id]));
   const validIds = new Set(setVocs.map((v) => v.id));
 
   return tokens
-    .map((token) => (isVocabId(token) ? token : vocToId.get(token) ?? null))
-    .filter((id): id is string => !!id && validIds.has(id));
+    .map((token) => {
+      if (validIds.has(token)) return token;
+      return vocToId.get(token) ?? null;
+    })
+    .filter((id): id is string => !!id);
 }
 
 export function filterSetByRemainingIds(
   setVocs: Vocabulary[],
   remainingIds: string[]
 ): Vocabulary[] {
+  if (remainingIds.length === 0) return [];
   const idSet = new Set(remainingIds);
   const filtered = setVocs.filter((v) => idSet.has(v.id));
-  return filtered.length > 0 ? filtered : [];
+  // Tiến độ cũ không khớp bộ hiện tại — học lại từ đầu thay vì hiện màn "đã học hết".
+  if (filtered.length === 0 && setVocs.length > 0) return setVocs;
+  return filtered;
 }
 
 export async function loadRemainingIds(
@@ -58,8 +64,8 @@ export async function loadRemainingIds(
     if (!Array.isArray(tokens)) return null;
 
     const ids = tokensToIds(tokens, setVocs);
-    const needsRewrite =
-      tokens.length !== ids.length || tokens.some((t) => !isVocabId(t));
+    const validIds = new Set(setVocs.map((v) => v.id));
+    const needsRewrite = tokens.some((t) => !validIds.has(t));
 
     if (needsRewrite) {
       await AsyncStorage.setItem(key, JSON.stringify(ids));
@@ -125,11 +131,14 @@ export async function migrateAllProgressToIds(
 
     try {
       const tokens = JSON.parse(raw) as string[];
-      if (!Array.isArray(tokens) || tokens.every(isVocabId)) continue;
+      if (!Array.isArray(tokens)) continue;
 
       const sets = getSetsForCategory(allVocs, parsed.category);
       const setVocs = sets[parsed.setIdx];
       if (!setVocs) continue;
+
+      const validIds = new Set(setVocs.map((v) => v.id));
+      if (tokens.every((t) => validIds.has(t))) continue;
 
       const ids = tokensToIds(tokens, setVocs);
       await AsyncStorage.setItem(key, JSON.stringify(ids));
