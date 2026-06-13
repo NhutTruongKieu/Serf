@@ -2,7 +2,7 @@
   "expo": {
     "name": "Serf",
     "slug": "Serf",
-    "version": "1.1.0",
+    "version": "1.1.2",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
     "scheme": "serf",
@@ -25,7 +25,7 @@
       "edgeToEdgeEnabled": true,
       "predictiveBackGestureEnabled": false,
       "package": "com.truongkieu.Serf",
-      "versionCode": 10
+      "versionCode": 12
     },
     "web": {
       "output": "static",
@@ -44,7 +44,8 @@
             "backgroundColor": "#000000"
           }
         }
-      ]
+      ],
+      "expo-sqlite"
     ],
     "experiments": {
       "typedRoutes": true,

@@ -1,11 +1,10 @@
-import { vocs as allVocs } from "@/assets/vocs";
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { useAppSettings } from "@/contexts/app-settings";
+import { useVocabulary } from "@/contexts/vocabulary-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import {
   CATEGORY_LABELS_VI,
   isCategoryUnlocked,
-  VOCAB_CATEGORY_ORDER,
 } from "@/lib/category-unlock";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
@@ -17,6 +16,7 @@ import {
 } from "@/lib/vocab-audio-playback";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
 import { countRemainingInSet } from "@/lib/vocab-storage";
+import type { Vocabulary } from "@/lib/vocab-types";
 import { createReviewStyles } from "@/styles/review-styles";
 import { Ionicons } from "@expo/vector-icons";
 import AsyncStorage from "@react-native-async-storage/async-storage";
@@ -61,9 +61,10 @@ function parseReviewSoundMode(value: string | null): VocSoundMode {
   return "word";
 }
 
-async function getUnlockedCategorySet(): Promise<Set<string>> {
+async function getUnlockedCategorySet(allVocs: Vocabulary[]): Promise<Set<string>> {
+  const categories = [...new Set(allVocs.map((v) => v.category))];
   const progress: Record<string, { remaining: number; total: number }> = {};
-  for (const cat of VOCAB_CATEGORY_ORDER) {
+  for (const cat of categories) {
     const sets = getSetsForCategory(allVocs, cat);
     let total = 0;
     let remaining = 0;
@@ -79,7 +80,7 @@ async function getUnlockedCategorySet(): Promise<Set<string>> {
     progress[cat] = { remaining, total };
   }
   const unlocked = new Set<string>();
-  for (const cat of VOCAB_CATEGORY_ORDER) {
+  for (const cat of categories) {
     if (isCategoryUnlocked(cat, progress)) unlocked.add(cat);
   }
   return unlocked;
@@ -94,6 +95,7 @@ export default function ReviewScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { isMute } = useAppSettings();
+  const { allVocs } = useVocabulary();
   const { theme } = useAppTheme();
   const styles = useMemo(
     () => createReviewStyles(theme, SCREEN_WIDTH),
@@ -132,7 +134,7 @@ export default function ReviewScreen() {
         let label = "";
 
         if (chosenScope === "all") {
-          const unlocked = await getUnlockedCategorySet();
+          const unlocked = await getUnlockedCategorySet(allVocs);
           pool = allVocs.filter((v) => unlocked.has(v.category));
           label = `Tất cả · ${ALL_SCOPE_LIMIT} từ ngẫu nhiên`;
         } else if (chosenScope === "category") {
@@ -158,7 +160,7 @@ export default function ReviewScreen() {
         setLoading(false);
       }
     },
-    [shuffleArray]
+    [shuffleArray, allVocs]
   );
 
   useFocusEffect(

@@ -14,6 +14,8 @@ export const STORAGE_KEYS = {
   reviewMasteredIds: "REVIEW_MASTERED_IDS",
   srsCardStates: "SRS_CARD_STATES_V1",
   quizSessions: "QUIZ_SESSIONS_V1",
+  importedVocabDecks: "IMPORTED_VOCAB_DECKS",
+  importedVocabData: (deckId: string) => `IMPORTED_VOCAB_${deckId}`,
   learnedVocs: (category: string, setIdx: number) =>
     `LEARNED_VOCS_${category}_SET_${setIdx}`,
 } as const;

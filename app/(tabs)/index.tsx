@@ -1,6 +1,7 @@
-import { Vocabulary, vocs as initialVocs } from "@/assets/vocs";
+import { Vocabulary } from "@/assets/vocs";
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { useAppSettings } from "@/contexts/app-settings";
+import { importedCategoryLabel, useVocabulary } from "@/contexts/vocabulary-context";
 import {
   CATEGORY_LABELS_VI,
   getCategoryUnlockHint,
@@ -71,6 +72,7 @@ export default function HomeScreen() {
     setSoundIconsInlinePicker,
     progressReloadToken,
   } = useAppSettings();
+  const { allVocs } = useVocabulary();
   const SOUND_ALIGNS = ["left", "center", "right"] as const;
   const DOUBLE_TAP_WINDOW_MS = 300;
   const lastRadioTapRef = useRef<{ align: string; time: number } | null>(null);
@@ -99,14 +101,29 @@ export default function HomeScreen() {
   const modalScrollRef = useRef<ScrollView>(null);
   const scrollContentRef = useRef<View>(null);
   const activeSetRef = useRef<View>(null);
-  const categoryMap = CATEGORY_LABELS_VI;
+  const categoryMap = useMemo(() => {
+    const map = { ...CATEGORY_LABELS_VI };
+    for (const v of allVocs) {
+      if (v.category.startsWith("Imported:") && !map[v.category]) {
+        map[v.category] = importedCategoryLabel(v.category);
+      }
+    }
+    return map;
+  }, [allVocs]);
 
-  const sortedCategories = [
-    ...VOCAB_CATEGORY_ORDER.filter((c) =>
-      initialVocs.some((v) => v.category === c)
-    ),
-    "All",
-  ];
+  const sortedCategories = useMemo(() => {
+    const imported = [
+      ...new Set(
+        allVocs
+          .filter((v) => v.category.startsWith("Imported:"))
+          .map((v) => v.category)
+      ),
+    ].sort();
+    const builtIn = VOCAB_CATEGORY_ORDER.filter((c) =>
+      allVocs.some((v) => v.category === c)
+    );
+    return [...imported, ...builtIn, "All"];
+  }, [allVocs]);
 
   const categoryUnlockMap = useMemo(() => {
     const map: Record<string, boolean> = {};
@@ -122,7 +139,7 @@ export default function HomeScreen() {
     Alert.alert("Chưa mở khóa", hint);
   };
 
-  const getSets = (cat: string) => getSetsForCategory(initialVocs, cat);
+  const getSets = (cat: string) => getSetsForCategory(allVocs, cat);
 
   const vocSets = getSets(currentCategory);
 
@@ -163,8 +180,8 @@ export default function HomeScreen() {
 
   const loadState = useCallback(async () => {
     try {
-      await migrateAllProgressToIds(initialVocs);
-      await migrateMergeCvcIntoNumbers(initialVocs);
+      await migrateAllProgressToIds(allVocs);
+      await migrateMergeCvcIntoNumbers(allVocs);
 
       let savedCat =
         (await AsyncStorage.getItem(STORAGE_KEYS.currentCategory)) || "All";
@@ -199,10 +216,10 @@ export default function HomeScreen() {
       setShowMeaning(false);
     } catch (e) {
       console.log("Failed to load saved state", e);
-      setActiveVocs(getFilteredVocs(initialVocs, "All").slice(0, 20));
+      setActiveVocs(getFilteredVocs(allVocs, "All").slice(0, 20));
     }
     calculateProgress();
-  }, []);
+  }, [allVocs, sortedCategories]);
 
   useEffect(() => {
     loadState();

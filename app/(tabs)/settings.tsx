@@ -6,6 +6,16 @@ import {
   exportAppData,
   importAppDataFromPicker,
 } from "@/lib/data-backup";
+import {
+  apkgImportErrorMessage,
+  pickAndParseApkg,
+} from "@/lib/anki-apkg-import";
+import {
+  importApkgDeck,
+  listImportedDecks,
+  removeImportedDeck,
+  type ImportedDeckMeta,
+} from "@/lib/imported-vocab-storage";
 import { GOOGLE_LOGIN_ENABLED } from "@/lib/google-auth-config";
 import {
   downloadBackupFromGoogleDrive,
@@ -60,14 +70,16 @@ export default function SettingsScreen() {
     themeMode,
     setThemeMode,
     bumpProgressReload,
+    bumpVocabReload,
     reloadFromStorage,
   } = useAppSettings();
   const { theme } = useAppTheme();
   const styles = useMemo(() => createSettingsStyles(theme), [theme]);
   const [busyAction, setBusyAction] = useState<
-    "export" | "import" | "google-up" | "google-down" | null
+    "export" | "import" | "google-up" | "google-down" | "apkg-import" | null
   >(null);
   const [googleBackupAt, setGoogleBackupAt] = useState<string | null>(null);
+  const [importedDecks, setImportedDecks] = useState<ImportedDeckMeta[]>([]);
 
   const refreshGoogleBackupTime = useCallback(async () => {
     setGoogleBackupAt(await getGoogleBackupTimestamp());
@@ -77,6 +89,14 @@ export default function SettingsScreen() {
     if (user) void refreshGoogleBackupTime();
     else setGoogleBackupAt(null);
   }, [user, refreshGoogleBackupTime]);
+
+  const refreshImportedDecks = useCallback(async () => {
+    setImportedDecks(await listImportedDecks());
+  }, []);
+
+  useEffect(() => {
+    void refreshImportedDecks();
+  }, [refreshImportedDecks]);
 
   const formatBackupTime = (iso: string | null) => {
     if (!iso) return "Chưa có bản sao lưu trên Google";
@@ -219,6 +239,56 @@ export default function SettingsScreen() {
           },
         },
       ]
+    );
+  };
+
+  const runApkgImport = async () => {
+    setBusyAction("apkg-import");
+    try {
+      const parsed = await pickAndParseApkg();
+      const meta = await importApkgDeck(parsed);
+      await refreshImportedDecks();
+      bumpVocabReload();
+      Alert.alert(
+        "Import thành công",
+        `Đã thêm ${meta.wordCount} từ từ deck "${meta.name}". Mở mục "Nhập: ${meta.name}" trên màn học để bắt đầu.`
+      );
+    } catch (e) {
+      const code = e instanceof Error ? e.message : "";
+      const msg =
+        apkgImportErrorMessage(code) ||
+        (e instanceof Error ? e.message : "Không thể import file APKG.");
+      if (msg) Alert.alert("Import thất bại", msg);
+    } finally {
+      setBusyAction(null);
+    }
+  };
+
+  const handleImportApkg = () => {
+    if (busyAction) return;
+    Alert.alert(
+      "Import từ vựng Anki",
+      "Chọn file .apkg (deck Anki). Hỗ trợ deck 4000 Essential English Words, Basic 2 mặt và Anki mới (anki21b). Deck lớn chỉ import nội dung chữ — dùng TTS thiết bị cho âm thanh.",
+      [
+        { text: "Hủy", style: "cancel" },
+        {
+          text: "Chọn file .apkg",
+          onPress: () => void runApkgImport(),
+        },
+      ]
+    );
+  };
+
+  const handleRemoveImportedDeck = (deck: ImportedDeckMeta) => {
+    confirmAction(
+      "Xóa bộ từ đã import",
+      `Xóa "${deck.name}" (${deck.wordCount} từ) khỏi app? Tiến độ học của bộ này cũng sẽ mất.`,
+      async () => {
+        await removeImportedDeck(deck.id);
+        await refreshImportedDecks();
+        bumpVocabReload();
+        Alert.alert("Đã xong", `Đã xóa bộ "${deck.name}".`);
+      }
     );
   };
 
@@ -506,6 +576,52 @@ export default function SettingsScreen() {
             </View>
             <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
           </TouchableOpacity>
+        </View>
+
+        <Text style={styles.sectionLabel}>Từ vựng</Text>
+        <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.actionRow}
+            onPress={handleImportApkg}
+            disabled={busyAction !== null}
+          >
+            <Ionicons name="albums-outline" size={22} color={theme.success} />
+            <View style={styles.rowLabels}>
+              <Text style={styles.rowTitle}>Import từ Anki (.apkg)</Text>
+              <Text style={styles.rowSubtitle}>
+                {busyAction === "apkg-import"
+                  ? "Đang đọc deck Anki..."
+                  : "Thêm bộ từ vựng từ file deck Anki"}
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
+          </TouchableOpacity>
+
+          {importedDecks.length > 0 ? (
+            <>
+              <View style={styles.divider} />
+              {importedDecks.map((deck, idx) => (
+                <View key={deck.id}>
+                  {idx > 0 ? <View style={styles.divider} /> : null}
+                  <TouchableOpacity
+                    style={styles.actionRow}
+                    onPress={() => handleRemoveImportedDeck(deck)}
+                    disabled={busyAction !== null}
+                  >
+                    <Ionicons name="book-outline" size={22} color={theme.iconTeal} />
+                    <View style={styles.rowLabels}>
+                      <Text style={styles.rowTitle}>{deck.name}</Text>
+                      <Text style={styles.rowSubtitle}>
+                        {deck.wordCount} từ ·{" "}
+                        {new Date(deck.importedAt).toLocaleString("vi-VN")}
+                      </Text>
+                    </View>
+                    <Ionicons name="trash-outline" size={20} color={theme.danger} />
+                  </TouchableOpacity>
+                </View>
+              ))}
+            </>
+          ) : null}
         </View>
 
         <Text style={styles.sectionLabel}>Sao lưu dữ liệu</Text>

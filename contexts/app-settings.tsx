@@ -25,6 +25,8 @@ type AppSettingsContextValue = {
   setThemeMode: (value: ThemeMode) => void;
   progressReloadToken: number;
   bumpProgressReload: () => void;
+  vocabReloadToken: number;
+  bumpVocabReload: () => void;
   reloadFromStorage: () => Promise<void>;
 };
 
@@ -47,6 +49,7 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
     useState<boolean>(true);
   const [themeMode, setThemeModeState] = useState<ThemeMode>("dark");
   const [progressReloadToken, setProgressReloadToken] = useState(0);
+  const [vocabReloadToken, setVocabReloadToken] = useState(0);
 
   const reloadFromStorage = useCallback(async () => {
     const [mute, align, inlinePicker, theme] = await Promise.all([
@@ -92,6 +95,10 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
     setProgressReloadToken((t) => t + 1);
   }, []);
 
+  const bumpVocabReload = useCallback(() => {
+    setVocabReloadToken((t) => t + 1);
+  }, []);
+
   const value = useMemo(
     () => ({
       isMute,
@@ -104,6 +111,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setThemeMode,
       progressReloadToken,
       bumpProgressReload,
+      vocabReloadToken,
+      bumpVocabReload,
       reloadFromStorage,
     }),
     [
@@ -117,6 +126,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setThemeMode,
       progressReloadToken,
       bumpProgressReload,
+      vocabReloadToken,
+      bumpVocabReload,
       reloadFromStorage,
     ]
   );

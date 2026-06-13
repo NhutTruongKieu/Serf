@@ -61,6 +61,8 @@ export function isCategoryUnlocked(
     return VOCAB_CATEGORY_ORDER.every((cat) => isCategoryComplete(progress, cat));
   }
 
+  if (category.startsWith("Imported:")) return true;
+
   if (ALWAYS_UNLOCKED_CATEGORIES.includes(category)) return true;
 
   const idx = VOCAB_CATEGORY_ORDER.indexOf(category as VocabCategory);

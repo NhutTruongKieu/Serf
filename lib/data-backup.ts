@@ -4,7 +4,8 @@ import * as DocumentPicker from "expo-document-picker";
 import * as FileSystem from "expo-file-system/legacy";
 import * as Sharing from "expo-sharing";
 
-import { vocs } from "@/assets/vocs";
+import { vocs as builtInVocs } from "@/assets/vocs";
+import { loadImportedVocabulary } from "@/lib/imported-vocab-storage";
 import { migrateBackupProgressToIds } from "@/lib/vocab-storage";
 import { LEARNED_VOCS_PREFIX, STORAGE_KEYS } from "@/lib/storage-keys";
 
@@ -115,7 +116,8 @@ export async function applyBackupData(
   }
 
   await AsyncStorage.multiSet(Object.entries(data));
-  await migrateBackupProgressToIds(vocs);
+  const imported = await loadImportedVocabulary();
+  await migrateBackupProgressToIds([...builtInVocs, ...imported]);
 }
 
 function backupFileName(): string {

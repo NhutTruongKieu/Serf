@@ -1,6 +1,6 @@
-import { vocs as allVocs } from "@/assets/vocs";
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { useAppSettings } from "@/contexts/app-settings";
+import { useVocabulary } from "@/contexts/vocabulary-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
@@ -43,6 +43,7 @@ export default function SrsQuizScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
   const { isMute } = useAppSettings();
+  const { allVocs } = useVocabulary();
   const { theme } = useAppTheme();
   const styles = useMemo(
     () => createSrsQuizStyles(theme, SCREEN_WIDTH),
