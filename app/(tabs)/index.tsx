@@ -1,8 +1,10 @@
+import { createHomeStyles } from "@/app/(tabs)/home-styles";
 import { Vocabulary } from "@/assets/vocs";
-import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { VocabImageActionButtons } from "@/components/vocab-image-action-buttons";
+import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { useAppSettings } from "@/contexts/app-settings";
 import { importedCategoryLabel, useVocabulary } from "@/contexts/vocabulary-context";
+import { useAppTheme } from "@/hooks/use-app-theme";
 import {
   CATEGORY_LABELS_VI,
   getCategoryUnlockHint,
@@ -10,9 +12,9 @@ import {
   isCategoryUnlocked,
   VOCAB_CATEGORY_ORDER,
 } from "@/lib/category-unlock";
-import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
-import { playVocabularyMode, stopDeviceTts, canPlayVocabularyMode } from "@/lib/vocab-audio-playback";
+import { STORAGE_KEYS } from "@/lib/storage-keys";
+import { canPlayVocabularyMode, playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
 import { markVocabFullyMastered } from "@/lib/vocab-fully-mastered";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
 import { removeSrsEntry } from "@/lib/vocab-srs";
@@ -28,8 +30,6 @@ import AsyncStorage from "@react-native-async-storage/async-storage";
 import { Audio } from "expo-av";
 import { Image } from "expo-image";
 import { useFocusEffect, useRouter } from "expo-router";
-import { useAppTheme } from "@/hooks/use-app-theme";
-import { createHomeStyles } from "@/app/(tabs)/home-styles";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import {
   Alert,
@@ -718,11 +718,11 @@ export default function HomeScreen() {
     <GestureHandlerRootView style={styles.container}>
       {/* Floating Set Selection Button */}
       <TouchableOpacity
-        style={styles.floatingButton}
+        style={styles.deckPickerBtn}
         onPress={() => setIsSetPickerVisible(true)}
       >
         <Ionicons name="filter" size={24} color={theme.floatingBtnText} />
-        <Text style={styles.floatingButtonText} numberOfLines={1}>
+        <Text style={styles.deckPickerBtnText} numberOfLines={1}>
           {currentCategory === "All" ? `Bộ ${currentSet + 1}` : `${categoryMap[currentCategory] || currentCategory}`}
         </Text>
       </TouchableOpacity>
@@ -810,8 +810,7 @@ export default function HomeScreen() {
                             {sets.length > 1 ? `Phần ${i + 1}` : "Học ngay"}
                           </Text>
                           <Text style={styles.setCardSubText}>
-                            {sets[i].length} từ
-                            {setProg ? ` · ${setProg.learned}/${setProg.total}` : ""}
+                            {setProg ? `${setProg.learned}/${setProg.total}` : ""}
                           </Text>
                         </TouchableOpacity>
                         );

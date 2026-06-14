@@ -204,17 +204,33 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       fontSize: 18,
       color: theme.textSecondary,
     },
-    floatingButton: {
+    deckPickerBtn: {
       position: "absolute",
       top: 50,
       left: 20,
+      flexDirection: "row",
+      alignItems: "center",
+      gap: 8,
+      paddingHorizontal: 16,
+      paddingVertical: 10,
+      borderRadius: 25,
+      backgroundColor: theme.accent,
+      zIndex: 100,
+    },
+    deckPickerBtnText: {
+      color: theme.floatingBtnText,
+      fontWeight: "bold",
+      fontSize: 14,
+      maxWidth: screenWidth * 0.42,
+    },
+    floatingButton: {
       backgroundColor: theme.accent,
       paddingHorizontal: 16,
       paddingVertical: 10,
       borderRadius: 25,
       flexDirection: "row",
       alignItems: "center",
-      zIndex: 100,
+      gap: 8,
       shadowColor: theme.shadow,
       shadowOffset: { width: 0, height: 4 },
       shadowOpacity: 0.25,
@@ -224,7 +240,6 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
     floatingButtonText: {
       color: theme.floatingBtnText,
       fontWeight: "bold",
-      marginLeft: 8,
       fontSize: 14,
     },
     modalOverlay: {
