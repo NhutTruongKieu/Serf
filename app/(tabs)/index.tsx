@@ -1,5 +1,6 @@
 import { Vocabulary } from "@/assets/vocs";
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
+import { VocabImageActionButtons } from "@/components/vocab-image-action-buttons";
 import { useAppSettings } from "@/contexts/app-settings";
 import { importedCategoryLabel, useVocabulary } from "@/contexts/vocabulary-context";
 import {
@@ -12,7 +13,9 @@ import {
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
+import { markVocabFullyMastered } from "@/lib/vocab-fully-mastered";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
+import { removeSrsEntry } from "@/lib/vocab-srs";
 import {
   countRemainingInSet,
   loadActiveVocsForSet,
@@ -406,32 +409,40 @@ export default function HomeScreen() {
     }
   };
 
-  const markAsLearned = async () => {
+  const removeCurrentFromActiveSet = async () => {
     if (activeVocs.length === 0) return;
 
-    // Create new array without the current word
     const newVocs = [...activeVocs];
     newVocs.splice(index, 1);
 
     setActiveVocs(newVocs);
     setShowMeaning(false);
 
-    // Save to AsyncStorage
     try {
       await saveRemainingIds(currentCategory, currentSet, newVocs);
       calculateProgress();
     } catch (e) {}
 
-    // Adjust index if we removed the last item
     if (index >= newVocs.length) {
       setIndex(0);
     } else {
       setIndex(index);
     }
 
-    // Snap to center
     translateX.value = 0;
     translateY.value = 0;
+  };
+
+  const markAsLearned = async () => {
+    await removeCurrentFromActiveSet();
+  };
+
+  const markAsFullyMastered = async () => {
+    const voc = activeVocs[index];
+    if (!voc) return;
+    await markVocabFullyMastered(voc.id);
+    await removeSrsEntry(voc.id);
+    await removeCurrentFromActiveSet();
   };
 
   const handleSwipeComplete = (vx: number, dx: number, vy: number, dy: number) => {
@@ -505,25 +516,24 @@ export default function HomeScreen() {
     return (
     <Animated.View style={[styles.cardArea, animatedCardStyle]}>
       <Animated.View style={styles.card}>
-        <View style={styles.cardHeader}>
-          <Ionicons
-            name="checkmark-circle-outline"
-            size={32}
-            color={theme.success}
-            onPress={markAsLearned}
-            style={styles.learnButton}
-          />
-        </View>
-
-        {numberValue != null ? (
-          <VocabularyNumberGraphic
-            value={numberValue}
+        <View style={styles.imageWrap}>
+          <VocabImageActionButtons
             theme={theme}
-            style={styles.image}
+            showFullyMastered
+            showLearned
+            onFullyMastered={() => void markAsFullyMastered()}
+            onLearned={() => void markAsLearned()}
           />
-        ) : (
-          <Image source={voc.image} style={styles.image} contentFit="cover" pointerEvents="none" />
-        )}
+          {numberValue != null ? (
+            <VocabularyNumberGraphic
+              value={numberValue}
+              theme={theme}
+              style={styles.image}
+            />
+          ) : (
+            <Image source={voc.image} style={styles.image} contentFit="cover" pointerEvents="none" />
+          )}
+        </View>
         <Pressable
           style={{ alignItems: 'center', width: '100%' }}
           onPress={() => void playVocabularyMode(voc, "word", { isMute, soundRef })}

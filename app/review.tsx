@@ -1,4 +1,5 @@
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
+import { VocabImageActionButtons } from "@/components/vocab-image-action-buttons";
 import { useAppSettings } from "@/contexts/app-settings";
 import { useVocabulary } from "@/contexts/vocabulary-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
@@ -14,6 +15,12 @@ import {
   stopDeviceTts,
   type VocSoundMode,
 } from "@/lib/vocab-audio-playback";
+import {
+  filterOutFullyMastered,
+  loadFullyMasteredIds,
+  markVocabFullyMastered,
+} from "@/lib/vocab-fully-mastered";
+import { removeSrsEntry } from "@/lib/vocab-srs";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
 import { countRemainingInSet } from "@/lib/vocab-storage";
 import type { Vocabulary } from "@/lib/vocab-types";
@@ -133,17 +140,28 @@ export default function ReviewScreen() {
         let pool: typeof allVocs = [];
         let label = "";
 
+        const fullyMastered = await loadFullyMasteredIds();
+
         if (chosenScope === "all") {
           const unlocked = await getUnlockedCategorySet(allVocs);
-          pool = allVocs.filter((v) => unlocked.has(v.category));
+          pool = filterOutFullyMastered(
+            allVocs.filter((v) => unlocked.has(v.category)),
+            fullyMastered
+          );
           label = `Tất cả · ${ALL_SCOPE_LIMIT} từ ngẫu nhiên`;
         } else if (chosenScope === "category") {
-          pool = getFilteredVocs(allVocs, savedCat);
+          pool = filterOutFullyMastered(
+            getFilteredVocs(allVocs, savedCat),
+            fullyMastered
+          );
           const catLabel = CATEGORY_LABELS_VI[savedCat] ?? savedCat;
           label = `${catLabel} · ${ALL_SCOPE_LIMIT} từ ngẫu nhiên`;
         } else {
           const sets = getSetsForCategory(allVocs, savedCat);
-          pool = sets[savedSetIdx] ?? sets[0] ?? [];
+          pool = filterOutFullyMastered(
+            sets[savedSetIdx] ?? sets[0] ?? [],
+            fullyMastered
+          );
           const catLabel = CATEGORY_LABELS_VI[savedCat] ?? savedCat;
           label = `${catLabel} · Bộ ${
             Math.min(savedSetIdx, Math.max(0, sets.length - 1)) + 1
@@ -242,6 +260,15 @@ export default function ReviewScreen() {
   const handleNext = () => {
     if (total === 0) return;
     setIndex((prev) => Math.min(prev + 1, total));
+  };
+
+  const handleFullyMastered = async () => {
+    if (!current) return;
+    await markVocabFullyMastered(current.id);
+    await removeSrsEntry(current.id);
+    const newVocs = setVocs.filter((v) => v.id !== current.id);
+    setSetVocs(newVocs);
+    setIndex((prev) => Math.min(prev, Math.max(0, newVocs.length - 1)));
   };
 
   const handleReshuffle = () => {
@@ -385,23 +412,31 @@ export default function ReviewScreen() {
         {setLabel} · {Math.min(index + 1, total)}/{total}
       </Text>
 
-      <View style={styles.cardArea}>
-        <View style={styles.card}>
-          <Pressable onPress={() => void playSound(current)}>
-            {reviewNumberValue != null ? (
-              <VocabularyNumberGraphic
-                value={reviewNumberValue}
-                theme={theme}
-                style={styles.image}
-              />
-            ) : (
-              <Image
-                source={current.image}
-                style={styles.image}
-                contentFit="cover"
-              />
-            )}
-          </Pressable>
+      <View style={styles.cardSlot}>
+        <View style={styles.cardArea}>
+          <View style={styles.card}>
+          <View style={styles.imageWrap}>
+            <VocabImageActionButtons
+              theme={theme}
+              showFullyMastered
+              onFullyMastered={() => void handleFullyMastered()}
+            />
+            <Pressable onPress={() => void playSound(current)}>
+              {reviewNumberValue != null ? (
+                <VocabularyNumberGraphic
+                  value={reviewNumberValue}
+                  theme={theme}
+                  style={styles.image}
+                />
+              ) : (
+                <Image
+                  source={current.image}
+                  style={styles.image}
+                  contentFit="cover"
+                />
+              )}
+            </Pressable>
+          </View>
 
           <TouchableOpacity
             style={styles.playBtn}
@@ -424,6 +459,7 @@ export default function ReviewScreen() {
             {" · "}
             Phát âm: {SOUND_MODE_LABEL[soundMode].toLowerCase()}
           </Text>
+          </View>
         </View>
       </View>
 

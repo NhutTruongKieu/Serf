@@ -31,6 +31,7 @@ export function isBackupKey(key: string): boolean {
     key === STORAGE_KEYS.reviewSoundMode ||
     key === STORAGE_KEYS.progressUsesIds ||
     key === STORAGE_KEYS.reviewMasteredIds ||
+    key === STORAGE_KEYS.fullyMasteredIds ||
     key === STORAGE_KEYS.srsCardStates ||
     key === STORAGE_KEYS.quizSessions
   );

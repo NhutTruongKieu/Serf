@@ -1,4 +1,5 @@
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
+import { VocabImageActionButtons } from "@/components/vocab-image-action-buttons";
 import { useAppSettings } from "@/contexts/app-settings";
 import { useVocabulary } from "@/contexts/vocabulary-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
@@ -6,7 +7,8 @@ import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
 import { appendQuizSession, type QuizSessionItem } from "@/lib/vocab-quiz-history";
 import { buildMeaningChoices } from "@/lib/vocab-quiz-mcq";
-import { applySrsQuizAnswer, getDueLearnedVocs, loadSrsMap, type SrsMap } from "@/lib/vocab-srs";
+import { markVocabFullyMastered } from "@/lib/vocab-fully-mastered";
+import { applySrsQuizAnswer, getDueLearnedVocs, loadSrsMap, removeSrsEntry, type SrsMap } from "@/lib/vocab-srs";
 import type { Vocabulary } from "@/lib/vocab-types";
 import { createSrsQuizStyles } from "@/styles/srs-quiz-styles";
 import { Ionicons } from "@expo/vector-icons";
@@ -227,6 +229,42 @@ export default function SrsQuizScreen() {
     void submitAnswer(correct, option);
   };
 
+  const handleFullyMastered = useCallback(async () => {
+    if (!current || answerLockedRef.current) return;
+    answerLockedRef.current = true;
+    stopQuestionTimer();
+
+    await markVocabFullyMastered(current.id);
+    await removeSrsEntry(current.id);
+
+    const newQueue = queue.filter((v) => v.id !== current.id);
+    if (newQueue.length === 0) {
+      if (sessionItems.length > 0) {
+        await finishSession(sessionItems);
+      } else {
+        setPhase("empty");
+      }
+      return;
+    }
+
+    const nextIdx = Math.min(qIndex, newQueue.length - 1);
+    setQueue(newQueue);
+    setQIndex(nextIdx);
+    setPicked(null);
+    setTimedOut(false);
+    setSecondsLeft(QUESTION_TIME_LIMIT_SEC);
+    setChoices(buildMeaningChoices(newQueue[nextIdx], allVocs));
+    answerLockedRef.current = false;
+  }, [
+    allVocs,
+    current,
+    finishSession,
+    qIndex,
+    queue,
+    sessionItems,
+    stopQuestionTimer,
+  ]);
+
   const numberVal = current ? getLearnNumberDigit(current) : null;
 
   if (phase === "loading") {
@@ -339,28 +377,37 @@ export default function SrsQuizScreen() {
         contentContainerStyle={[styles.scrollInner, { paddingBottom: insets.bottom + 24 }]}
         keyboardShouldPersistTaps="handled"
       >
-        <View style={styles.card}>
-          <Pressable
-            onPress={() => void playVocabularyMode(current, "word", { isMute, soundRef })}
-          >
-            {numberVal != null ? (
-              <VocabularyNumberGraphic value={numberVal} theme={theme} style={styles.image} />
-            ) : (
-              <Image source={current.image} style={styles.image} contentFit="cover" />
-            )}
-          </Pressable>
-          <TouchableOpacity
-            style={styles.playBtn}
-            onPress={() => void playVocabularyMode(current, "word", { isMute, soundRef })}
-          >
-            <Ionicons
-              name={isMute ? "volume-mute" : "volume-high"}
-              size={26}
-              color={isMute ? theme.iconMuted : theme.success}
-            />
-            <Text style={styles.playBtnText}>Nghe từ</Text>
-          </TouchableOpacity>
-          <Text style={styles.hint}>Xem ảnh và nghe — chọn nghĩa tiếng Việt</Text>
+        <View style={styles.cardArea}>
+          <View style={styles.card}>
+            <View style={styles.imageWrap}>
+              <VocabImageActionButtons
+                theme={theme}
+                showFullyMastered
+                onFullyMastered={() => void handleFullyMastered()}
+              />
+              <Pressable
+                onPress={() => void playVocabularyMode(current, "word", { isMute, soundRef })}
+              >
+                {numberVal != null ? (
+                  <VocabularyNumberGraphic value={numberVal} theme={theme} style={styles.image} />
+                ) : (
+                  <Image source={current.image} style={styles.image} contentFit="cover" />
+                )}
+              </Pressable>
+            </View>
+            <TouchableOpacity
+              style={styles.playBtn}
+              onPress={() => void playVocabularyMode(current, "word", { isMute, soundRef })}
+            >
+              <Ionicons
+                name={isMute ? "volume-mute" : "volume-high"}
+                size={28}
+                color={isMute ? theme.iconMuted : theme.success}
+              />
+              <Text style={styles.playBtnText}>Nghe từ</Text>
+            </TouchableOpacity>
+            <Text style={styles.hint}>Xem ảnh và nghe — chọn nghĩa tiếng Việt</Text>
+          </View>
         </View>
 
         {timedOut && (

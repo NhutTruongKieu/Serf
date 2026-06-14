@@ -52,6 +52,12 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       shadowRadius: 16,
       elevation: 12,
     },
+    imageWrap: {
+      position: "relative",
+      width: 336,
+      height: 336,
+      overflow: "visible",
+    },
     image: {
       width: 336,
       height: 336,
@@ -184,12 +190,6 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       textAlign: "right",
       height: 50,
       textAlignVertical: "center",
-    },
-    cardHeader: {
-      position: "absolute",
-      bottom: "auto",
-      left: 16,
-      zIndex: 10,
     },
     learnButton: {
       padding: 8,

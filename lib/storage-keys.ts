@@ -12,6 +12,8 @@ export const STORAGE_KEYS = {
   progressUsesIds: "PROGRESS_STORAGE_V2",
   /** Legacy — chỉ đọc khi migrate sang SRS. */
   reviewMasteredIds: "REVIEW_MASTERED_IDS",
+  /** Thuộc hoàn toàn — không xuất hiện trong bộ trộn / kiểm tra. */
+  fullyMasteredIds: "FULLY_MASTERED_IDS_V1",
   srsCardStates: "SRS_CARD_STATES_V1",
   quizSessions: "QUIZ_SESSIONS_V1",
   importedVocabDecks: "IMPORTED_VOCAB_DECKS",

@@ -2,6 +2,7 @@ import type { Vocabulary } from "@/lib/vocab-types";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 import { STORAGE_KEYS } from "@/lib/storage-keys";
+import { loadFullyMasteredIds } from "@/lib/vocab-fully-mastered";
 import { collectLearnedVocs } from "@/lib/vocab-learned";
 
 /** 0 = mới vào SRS; 6 = ổn định, ôn hàng tháng. */
@@ -72,6 +73,13 @@ export async function saveSrsMap(map: SrsMap): Promise<void> {
   await AsyncStorage.setItem(STORAGE_KEYS.srsCardStates, JSON.stringify(map));
 }
 
+export async function removeSrsEntry(vocabId: string): Promise<void> {
+  const map = await loadSrsMap();
+  if (!map[vocabId]) return;
+  delete map[vocabId];
+  await saveSrsMap(map);
+}
+
 /** Đọc legacy REVIEW_MASTERED_IDS → bước max, ôn sau 1 tháng (local); xóa key cũ. */
 export async function migrateReviewMasteredToSrs(): Promise<void> {
   let map = await loadSrsMap();
@@ -110,11 +118,15 @@ export async function clearSrsAndLegacyReview(): Promise<void> {
 /** Từ đã học thuộc và đến hạn ôn (theo `nextReviewAt` ≤ now). */
 export async function getDueLearnedVocs(allVocs: Vocabulary[]): Promise<Vocabulary[]> {
   await migrateReviewMasteredToSrs();
-  const learned = await collectLearnedVocs(allVocs);
-  const srs = await loadSrsMap();
+  const [learned, fullyMastered, srs] = await Promise.all([
+    collectLearnedVocs(allVocs),
+    loadFullyMasteredIds(),
+    loadSrsMap(),
+  ]);
   const now = Date.now();
 
   return learned.filter((v) => {
+    if (fullyMastered.has(v.id)) return false;
     const s = srs[v.id];
     if (!s) return true;
     const t = new Date(s.nextReviewAt).getTime();

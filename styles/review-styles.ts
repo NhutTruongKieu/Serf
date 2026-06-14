@@ -87,18 +87,26 @@ export function createReviewStyles(theme: AppTheme, screenWidth: number) {
     soundModeBtnTextActive: {
       color: theme.floatingBtnText,
     },
-    cardArea: {
+    cardSlot: {
       flex: 1,
-      width: screenWidth - 40,
+      width: "100%",
       justifyContent: "center",
       alignItems: "center",
     },
+    cardArea: {
+      width: screenWidth - 40,
+      alignItems: "center",
+      justifyContent: "center",
+      overflow: "hidden",
+      borderRadius: 24,
+    },
     card: {
-      width: "100%",
+      width: screenWidth,
       backgroundColor: theme.card,
       borderRadius: 24,
       alignItems: "center",
-      paddingVertical: 28,
+      justifyContent: "center",
+      paddingVertical: 36,
       paddingHorizontal: 20,
       gap: 16,
       shadowColor: theme.shadow,
@@ -106,6 +114,12 @@ export function createReviewStyles(theme: AppTheme, screenWidth: number) {
       shadowOpacity: 0.2,
       shadowRadius: 16,
       elevation: 12,
+    },
+    imageWrap: {
+      position: "relative",
+      width: 336,
+      height: 336,
+      overflow: "visible",
     },
     image: {
       width: 336,
