@@ -11,6 +11,10 @@ import {
 
 import { ThemeMode } from "@/constants/app-theme";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
+import {
+  parseVocSoundMode,
+  type VocSoundMode,
+} from "@/lib/vocab-audio-playback";
 
 export type SoundIconsAlign = "left" | "center" | "right";
 
@@ -23,6 +27,8 @@ type AppSettingsContextValue = {
   setSoundIconsInlinePicker: (value: boolean) => void;
   themeMode: ThemeMode;
   setThemeMode: (value: ThemeMode) => void;
+  learningSoundMode: VocSoundMode;
+  setLearningSoundMode: (value: VocSoundMode) => void;
   progressReloadToken: number;
   bumpProgressReload: () => void;
   vocabReloadToken: number;
@@ -48,20 +54,24 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
   const [soundIconsInlinePicker, setSoundIconsInlinePickerState] =
     useState<boolean>(true);
   const [themeMode, setThemeModeState] = useState<ThemeMode>("dark");
+  const [learningSoundMode, setLearningSoundModeState] =
+    useState<VocSoundMode>("word");
   const [progressReloadToken, setProgressReloadToken] = useState(0);
   const [vocabReloadToken, setVocabReloadToken] = useState(0);
 
   const reloadFromStorage = useCallback(async () => {
-    const [mute, align, inlinePicker, theme] = await Promise.all([
+    const [mute, align, inlinePicker, theme, learningSound] = await Promise.all([
       AsyncStorage.getItem(STORAGE_KEYS.mute),
       AsyncStorage.getItem(STORAGE_KEYS.soundIconsAlign),
       AsyncStorage.getItem(STORAGE_KEYS.soundIconsInlinePicker),
       AsyncStorage.getItem(STORAGE_KEYS.themeMode),
+      AsyncStorage.getItem(STORAGE_KEYS.learningSoundMode),
     ]);
     setIsMuteState(mute === "true");
     setSoundIconsAlignState(parseSoundIconsAlign(align));
     setSoundIconsInlinePickerState(inlinePicker !== "false");
     setThemeModeState(parseThemeMode(theme));
+    setLearningSoundModeState(parseVocSoundMode(learningSound));
   }, []);
 
   useEffect(() => {
@@ -91,6 +101,11 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
     AsyncStorage.setItem(STORAGE_KEYS.themeMode, value);
   }, []);
 
+  const setLearningSoundMode = useCallback((value: VocSoundMode) => {
+    setLearningSoundModeState(value);
+    AsyncStorage.setItem(STORAGE_KEYS.learningSoundMode, value);
+  }, []);
+
   const bumpProgressReload = useCallback(() => {
     setProgressReloadToken((t) => t + 1);
   }, []);
@@ -109,6 +124,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setSoundIconsInlinePicker,
       themeMode,
       setThemeMode,
+      learningSoundMode,
+      setLearningSoundMode,
       progressReloadToken,
       bumpProgressReload,
       vocabReloadToken,
@@ -124,6 +141,8 @@ export function AppSettingsProvider({ children }: { children: ReactNode }) {
       setSoundIconsInlinePicker,
       themeMode,
       setThemeMode,
+      learningSoundMode,
+      setLearningSoundMode,
       progressReloadToken,
       bumpProgressReload,
       vocabReloadToken,

@@ -4,7 +4,7 @@ import { useAppSettings } from "@/contexts/app-settings";
 import { useVocabulary } from "@/contexts/vocabulary-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
-import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
+import { playVocabularyMode, stopDeviceTts, canPlayVocabularyMode } from "@/lib/vocab-audio-playback";
 import { appendQuizSession, type QuizSessionItem } from "@/lib/vocab-quiz-history";
 import { buildMeaningChoices } from "@/lib/vocab-quiz-mcq";
 import { markVocabFullyMastered } from "@/lib/vocab-fully-mastered";
@@ -44,7 +44,7 @@ type Phase = "loading" | "quiz" | "empty" | "done";
 export default function SrsQuizScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { isMute } = useAppSettings();
+  const { isMute, learningSoundMode } = useAppSettings();
   const { allVocs } = useVocabulary();
   const { theme } = useAppTheme();
   const styles = useMemo(
@@ -116,10 +116,10 @@ export default function SrsQuizScreen() {
 
   useEffect(() => {
     if (!current || phase !== "quiz") return;
-    if (!current.sound && !current.useDeviceTts) return;
+    if (!canPlayVocabularyMode(current, learningSoundMode)) return;
     const gen = ++autoPlayGenRef.current;
     void (async () => {
-      await playVocabularyMode(current, "word", { isMute, soundRef });
+      await playVocabularyMode(current, learningSoundMode, { isMute, soundRef });
       if (gen !== autoPlayGenRef.current) {
         stopDeviceTts();
         if (soundRef.current) {
@@ -132,7 +132,7 @@ export default function SrsQuizScreen() {
         }
       }
     })();
-  }, [current?.id, phase, isMute]);
+  }, [current?.id, phase, isMute, learningSoundMode]);
 
   const stopQuestionTimer = useCallback(() => {
     if (questionTimerRef.current) {

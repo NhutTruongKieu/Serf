@@ -3,7 +3,7 @@ import { useAppSettings } from "@/contexts/app-settings";
 import { useVocabulary } from "@/contexts/vocabulary-context";
 import { useAppTheme } from "@/hooks/use-app-theme";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
-import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
+import { playVocabularyMode, stopDeviceTts, canPlayVocabularyMode } from "@/lib/vocab-audio-playback";
 import {
   keepEnglishWordsOnly,
   matchVocsInPassage,
@@ -40,7 +40,7 @@ type Phase = "input" | "learn" | "empty";
 export default function PassageScreen() {
   const router = useRouter();
   const insets = useSafeAreaInsets();
-  const { isMute } = useAppSettings();
+  const { isMute, learningSoundMode } = useAppSettings();
   const { allVocs } = useVocabulary();
   const { theme } = useAppTheme();
   const styles = useMemo(
@@ -154,12 +154,12 @@ export default function PassageScreen() {
   const playSound = async (voc: Vocabulary | null) => {
     if (!voc) return;
     if (isMute) return;
-    await playVocabularyMode(voc, "word", { isMute, soundRef });
+    await playVocabularyMode(voc, learningSoundMode, { isMute, soundRef });
   };
 
   useEffect(() => {
     if (!current) return;
-    if (!current.sound && !current.useDeviceTts) return;
+    if (!canPlayVocabularyMode(current, learningSoundMode)) return;
     const gen = ++autoPlayGenRef.current;
     void (async () => {
       await playSound(current);
@@ -168,7 +168,7 @@ export default function PassageScreen() {
       }
     })();
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [current?.id, isMute]);
+  }, [current?.id, isMute, learningSoundMode]);
 
   const handleNext = () => {
     if (total === 0) return;

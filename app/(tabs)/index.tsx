@@ -12,7 +12,7 @@ import {
 } from "@/lib/category-unlock";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
-import { playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
+import { playVocabularyMode, stopDeviceTts, canPlayVocabularyMode } from "@/lib/vocab-audio-playback";
 import { markVocabFullyMastered } from "@/lib/vocab-fully-mastered";
 import { getFilteredVocs, getSetsForCategory } from "@/lib/vocab-sets";
 import { removeSrsEntry } from "@/lib/vocab-srs";
@@ -73,6 +73,7 @@ export default function HomeScreen() {
     setSoundIconsAlign,
     soundIconsInlinePicker,
     setSoundIconsInlinePicker,
+    learningSoundMode,
     progressReloadToken,
   } = useAppSettings();
   const { allVocs, isLoading } = useVocabulary();
@@ -333,10 +334,11 @@ export default function HomeScreen() {
   useEffect(() => {
     const voc = activeVocs[index] ?? activeVocs[0];
     if (!voc) return;
+    if (!canPlayVocabularyMode(voc, learningSoundMode)) return;
 
     const gen = ++autoPlayGenRef.current;
     (async () => {
-      await playVocabularyMode(voc, "word", { isMute, soundRef });
+      await playVocabularyMode(voc, learningSoundMode, { isMute, soundRef });
       if (gen !== autoPlayGenRef.current) {
         stopDeviceTts();
         if (soundRef.current) {
@@ -347,7 +349,7 @@ export default function HomeScreen() {
         }
       }
     })();
-  }, [activeVocs, index, currentCategory, currentSet, isMute]);
+  }, [activeVocs, index, currentCategory, currentSet, isMute, learningSoundMode]);
 
   const changeIndex = (isNext: boolean) => {
     if (activeVocs.length === 0) return;

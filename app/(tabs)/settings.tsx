@@ -23,6 +23,10 @@ import {
   uploadBackupToGoogleDrive,
 } from "@/lib/google-drive-backup";
 import { clearAllLearnedProgress, clearCurrentSetProgress } from "@/lib/vocab-progress";
+import {
+  VOC_SOUND_MODES,
+  VOC_SOUND_MODE_LABEL_VI,
+} from "@/lib/vocab-audio-playback";
 import { createSettingsStyles } from "@/styles/settings-styles";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
@@ -69,6 +73,8 @@ export default function SettingsScreen() {
     setSoundIconsInlinePicker,
     themeMode,
     setThemeMode,
+    learningSoundMode,
+    setLearningSoundMode,
     bumpProgressReload,
     bumpVocabReload,
     reloadFromStorage,
@@ -400,6 +406,43 @@ export default function SettingsScreen() {
               trackColor={{ false: theme.switchTrackOff, true: theme.accent }}
               thumbColor={theme.floatingBtnText}
             />
+          </View>
+
+          <View style={styles.divider} />
+
+          <View style={styles.rowColumn}>
+            <View style={styles.rowText}>
+              <Ionicons name="volume-high-outline" size={22} color={theme.success} />
+              <View style={styles.rowLabels}>
+                <Text style={styles.rowTitle}>Phát âm mặc định (học từ)</Text>
+                <Text style={styles.rowSubtitle}>
+                  Tự phát khi chuyển từ trên màn học, quiz và đoạn văn
+                </Text>
+              </View>
+            </View>
+            <View style={styles.segment}>
+              {VOC_SOUND_MODES.map((mode, i) => (
+                <TouchableOpacity
+                  key={mode}
+                  style={[
+                    styles.segmentBtn,
+                    i === 0 && styles.segmentBtnLeft,
+                    i === VOC_SOUND_MODES.length - 1 && styles.segmentBtnRight,
+                    learningSoundMode === mode && styles.segmentBtnActive,
+                  ]}
+                  onPress={() => setLearningSoundMode(mode)}
+                >
+                  <Text
+                    style={[
+                      styles.segmentText,
+                      learningSoundMode === mode && styles.segmentTextActive,
+                    ]}
+                  >
+                    {VOC_SOUND_MODE_LABEL_VI[mode]}
+                  </Text>
+                </TouchableOpacity>
+              ))}
+            </View>
           </View>
         </View>
 

@@ -6,6 +6,19 @@ import type { Vocabulary } from "@/lib/vocab-types";
 
 export type VocSoundMode = "word" | "meaning" | "example";
 
+export const VOC_SOUND_MODES: VocSoundMode[] = ["word", "meaning", "example"];
+
+export const VOC_SOUND_MODE_LABEL_VI: Record<VocSoundMode, string> = {
+  word: "Từ",
+  meaning: "Nghĩa",
+  example: "Ví dụ",
+};
+
+export function parseVocSoundMode(value: string | null): VocSoundMode {
+  if (value === "meaning" || value === "example") return value;
+  return "word";
+}
+
 export function getVocTtsPayload(
   voc: Vocabulary,
   mode: VocSoundMode
