@@ -6,7 +6,7 @@ import {
 import { markAppGuideCompleted } from "@/lib/app-guide-storage";
 import {
   APP_LAUNCHER_ICON_BACKGROUND,
-  appLauncherForeground,
+  appGuideLogo,
 } from "@/lib/app-launcher-icon";
 import { createAppGuideStyles } from "@/styles/app-guide-styles";
 import { Ionicons } from "@expo/vector-icons";
@@ -98,7 +98,7 @@ export function AppGuideModal({
               ]}
             >
               <Image
-                source={appLauncherForeground}
+                source={appGuideLogo}
                 style={styles.logoForeground}
                 contentFit="cover"
               />
