@@ -1,11 +1,16 @@
+import { useAppTheme } from "@/hooks/use-app-theme";
 import {
   APP_GUIDE_STEPS,
   resolveGuideIconColor,
 } from "@/lib/app-guide-content";
 import { markAppGuideCompleted } from "@/lib/app-guide-storage";
-import { useAppTheme } from "@/hooks/use-app-theme";
+import {
+  APP_LAUNCHER_ICON_BACKGROUND,
+  appLauncherForeground,
+} from "@/lib/app-launcher-icon";
 import { createAppGuideStyles } from "@/styles/app-guide-styles";
 import { Ionicons } from "@expo/vector-icons";
+import { Image } from "expo-image";
 import { useMemo, useState } from "react";
 import {
   Modal,
@@ -85,21 +90,20 @@ export function AppGuideModal({
             </TouchableOpacity>
           </View>
 
-          <View
-            style={[
-              styles.iconWrap,
-              step.icons.length > 1 && styles.iconWrapMulti,
-            ]}
-          >
-            {step.icons.map((icon) => (
-              <Ionicons
-                key={icon.name}
-                name={icon.name}
-                size={step.icons.length > 1 ? 28 : 36}
-                color={resolveGuideIconColor(icon.color, theme)}
+          {step.id === "welcome" ? (
+            <View
+              style={[
+                styles.logoWrap,
+                { backgroundColor: APP_LAUNCHER_ICON_BACKGROUND },
+              ]}
+            >
+              <Image
+                source={appLauncherForeground}
+                style={styles.logoForeground}
+                contentFit="cover"
               />
-            ))}
-          </View>
+            </View>
+          ) : null}
 
           <Text style={styles.title}>{step.title}</Text>
 

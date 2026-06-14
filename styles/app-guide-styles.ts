@@ -1,4 +1,5 @@
 import { AppTheme } from "@/constants/app-theme";
+import { APP_LAUNCHER_FOREGROUND_SCALE } from "@/lib/app-launcher-icon";
 import { StyleSheet } from "react-native";
 
 export function createAppGuideStyles(theme: AppTheme) {
@@ -13,6 +14,7 @@ export function createAppGuideStyles(theme: AppTheme) {
     card: {
       width: "100%",
       maxWidth: 420,
+      height: "60%",
       maxHeight: "82%",
       backgroundColor: theme.card,
       borderRadius: 24,
@@ -39,28 +41,21 @@ export function createAppGuideStyles(theme: AppTheme) {
     closeBtn: {
       padding: 4,
     },
-    iconWrap: {
+    logoWrap: {
       alignSelf: "center",
-      width: 72,
-      height: 72,
-      borderRadius: 36,
-      backgroundColor: theme.placeholderBg,
+      width: 84,
+      height: 84,
+      borderRadius: 20,
       alignItems: "center",
       justifyContent: "center",
       marginBottom: 16,
       marginTop: 8,
+      overflow: "hidden",
     },
-    iconWrapMulti: {
+    logoForeground: {
       width: "100%",
-      maxWidth: 320,
-      height: "auto",
-      minHeight: 56,
-      borderRadius: 16,
-      flexDirection: "row",
-      flexWrap: "wrap",
-      gap: 12,
-      paddingVertical: 14,
-      paddingHorizontal: 16,
+      height: "100%",
+      transform: [{ scale: APP_LAUNCHER_FOREGROUND_SCALE }],
     },
     title: {
       fontSize: 22,
@@ -68,6 +63,7 @@ export function createAppGuideStyles(theme: AppTheme) {
       color: theme.text,
       textAlign: "center",
       marginBottom: 12,
+      minHeight: 56,
     },
     body: {
       fontSize: 15,
@@ -77,8 +73,7 @@ export function createAppGuideStyles(theme: AppTheme) {
       marginBottom: 8,
     },
     scroll: {
-      flexGrow: 0,
-      maxHeight: 280,
+      flex: 1,
     },
     scrollContent: {
       paddingBottom: 4,

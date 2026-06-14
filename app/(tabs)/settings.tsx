@@ -767,7 +767,7 @@ export default function SettingsScreen() {
             style={styles.actionRow}
             onPress={() => setIsGuideVisible(true)}
           >
-            <Ionicons name="book-outline" size={22} color={theme.iconTeal} />
+            <Ionicons name="help-circle-outline" size={22} color={theme.iconTeal} />
             <View style={styles.rowLabels}>
               <Text style={styles.rowTitle}>Hướng dẫn sử dụng</Text>
               <Text style={styles.rowSubtitle}>

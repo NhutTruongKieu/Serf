@@ -25,7 +25,6 @@ export const APP_GUIDE_STEPS: AppGuideStep[] = [
   {
     id: "welcome",
     icons: [
-      { name: "help-circle-outline", color: "iconTeal" },
       { name: "shuffle", color: "iconTeal" },
       { name: "school", color: "iconTeal" },
       { name: "document-text-outline", color: "iconTeal" },

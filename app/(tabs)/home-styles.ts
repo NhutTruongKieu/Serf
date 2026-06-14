@@ -2,6 +2,15 @@ import { AppTheme } from "@/constants/app-theme";
 import { StyleSheet } from "react-native";
 
 export function createHomeStyles(theme: AppTheme, screenWidth: number) {
+  const deckPickerTop = 50;
+  const deckPickerPaddingV = 10;
+  const deckPickerInnerH = 24;
+  const deckPickerHeight = deckPickerPaddingV * 2 + deckPickerInnerH;
+  const headerIconSize = 24;
+  const headerBtnPadding = 4;
+  const headerActionsHeight = headerBtnPadding * 2 + headerIconSize;
+  const headerActionsTopOffset = (deckPickerHeight - headerActionsHeight) / 2;
+
   return StyleSheet.create({
     container: {
       flex: 1,
@@ -11,7 +20,7 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
     },
     header: {
       position: "absolute",
-      top: 50,
+      top: deckPickerTop,
       right: 20,
       alignItems: "flex-end",
       gap: 8,
@@ -21,6 +30,7 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
       flexDirection: "row",
       alignItems: "center",
       gap: 4,
+      marginTop: headerActionsTopOffset,
     },
     settingsBtn: {
       padding: 4,
@@ -206,7 +216,7 @@ export function createHomeStyles(theme: AppTheme, screenWidth: number) {
     },
     deckPickerBtn: {
       position: "absolute",
-      top: 50,
+      top: deckPickerTop,
       left: 20,
       flexDirection: "row",
       alignItems: "center",
