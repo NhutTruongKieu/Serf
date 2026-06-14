@@ -1,5 +1,6 @@
 import { createHomeStyles } from "@/app/(tabs)/home-styles";
 import { Vocabulary } from "@/assets/vocs";
+import { AppGuideModal } from "@/components/app-guide-modal";
 import { VocabImageActionButtons } from "@/components/vocab-image-action-buttons";
 import { VocabularyNumberGraphic } from "@/components/vocabulary-number-graphic";
 import { useAppSettings } from "@/contexts/app-settings";
@@ -12,6 +13,7 @@ import {
   isCategoryUnlocked,
   VOCAB_CATEGORY_ORDER,
 } from "@/lib/category-unlock";
+import { hasCompletedAppGuide } from "@/lib/app-guide-storage";
 import { getLearnNumberDigit } from "@/lib/number-voc-display";
 import { STORAGE_KEYS } from "@/lib/storage-keys";
 import { canPlayVocabularyMode, playVocabularyMode, stopDeviceTts } from "@/lib/vocab-audio-playback";
@@ -66,6 +68,7 @@ export default function HomeScreen() {
   const [index, setIndex] = useState(0);
   const [showMeaning, setShowMeaning] = useState(false);
   const [isSetPickerVisible, setIsSetPickerVisible] = useState(false);
+  const [isGuideVisible, setIsGuideVisible] = useState(false);
   const {
     isMute,
     setIsMute,
@@ -241,6 +244,20 @@ export default function HomeScreen() {
   useEffect(() => {
     loadState();
   }, [loadState]);
+
+  useEffect(() => {
+    if (isLoading) return;
+    let cancelled = false;
+    (async () => {
+      const completed = await hasCompletedAppGuide();
+      if (!cancelled && !completed) {
+        setIsGuideVisible(true);
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
+  }, [isLoading]);
 
   useFocusEffect(
     useCallback(() => {
@@ -716,6 +733,10 @@ export default function HomeScreen() {
 
   return (
     <GestureHandlerRootView style={styles.container}>
+      <AppGuideModal
+        visible={isGuideVisible}
+        onClose={() => setIsGuideVisible(false)}
+      />
       {/* Floating Set Selection Button */}
       <TouchableOpacity
         style={styles.deckPickerBtn}
@@ -827,6 +848,13 @@ export default function HomeScreen() {
       {/* Header: cài đặt + số thứ tự */}
       <View style={styles.header}>
         <View style={styles.headerActions}>
+          <TouchableOpacity
+            style={styles.settingsBtn}
+            onPress={() => setIsGuideVisible(true)}
+            hitSlop={{ top: 8, bottom: 8, left: 8, right: 8 }}
+          >
+            <Ionicons name="help-circle-outline" size={24} color={theme.iconTeal} />
+          </TouchableOpacity>
           <TouchableOpacity
             style={styles.settingsBtn}
             onPress={() => router.push("/review")}

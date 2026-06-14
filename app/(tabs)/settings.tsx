@@ -28,6 +28,7 @@ import {
   VOC_SOUND_MODE_LABEL_VI,
 } from "@/lib/vocab-audio-playback";
 import { createSettingsStyles } from "@/styles/settings-styles";
+import { AppGuideModal } from "@/components/app-guide-modal";
 import { Ionicons } from "@expo/vector-icons";
 import Constants from "expo-constants";
 import { Image } from "expo-image";
@@ -86,6 +87,7 @@ export default function SettingsScreen() {
   >(null);
   const [googleBackupAt, setGoogleBackupAt] = useState<string | null>(null);
   const [importedDecks, setImportedDecks] = useState<ImportedDeckMeta[]>([]);
+  const [isGuideVisible, setIsGuideVisible] = useState(false);
 
   const refreshGoogleBackupTime = useCallback(async () => {
     setGoogleBackupAt(await getGoogleBackupTimestamp());
@@ -322,6 +324,10 @@ export default function SettingsScreen() {
 
   return (
     <View style={[styles.container, { paddingTop: insets.top + 8 }]}>
+      <AppGuideModal
+        visible={isGuideVisible}
+        onClose={() => setIsGuideVisible(false)}
+      />
       <View style={styles.header}>
         <TouchableOpacity
           style={styles.backBtn}
@@ -757,6 +763,22 @@ export default function SettingsScreen() {
 
         <Text style={styles.sectionLabel}>Ứng dụng</Text>
         <View style={styles.card}>
+          <TouchableOpacity
+            style={styles.actionRow}
+            onPress={() => setIsGuideVisible(true)}
+          >
+            <Ionicons name="book-outline" size={22} color={theme.iconTeal} />
+            <View style={styles.rowLabels}>
+              <Text style={styles.rowTitle}>Hướng dẫn sử dụng</Text>
+              <Text style={styles.rowSubtitle}>
+                Cách học flashcard, chọn bộ, ôn tập và sao lưu dữ liệu
+              </Text>
+            </View>
+            <Ionicons name="chevron-forward" size={20} color={theme.iconMuted} />
+          </TouchableOpacity>
+
+          <View style={styles.divider} />
+
           <View style={styles.row}>
             <View style={styles.rowText}>
               <Ionicons name="information-circle-outline" size={22} color={theme.iconTeal} />

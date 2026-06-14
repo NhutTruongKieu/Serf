@@ -17,6 +17,7 @@ export const STORAGE_KEYS = {
   fullyMasteredIds: "FULLY_MASTERED_IDS_V1",
   srsCardStates: "SRS_CARD_STATES_V1",
   quizSessions: "QUIZ_SESSIONS_V1",
+  hasSeenGuide: "HAS_SEEN_APP_GUIDE_V1",
   importedVocabDecks: "IMPORTED_VOCAB_DECKS",
   importedVocabData: (deckId: string) => `IMPORTED_VOCAB_${deckId}`,
   learnedVocs: (category: string, setIdx: number) =>
